@@ -3,7 +3,7 @@ import { Message } from 'element-ui'
 
 
 const instance = axios.create({
-  baseURL: '/api',
+  baseURL: process.env.NODE_ENV === 'development' ? '/api' : 'http://chrisying.cn/api',
   timeout: 30000
 })
 
