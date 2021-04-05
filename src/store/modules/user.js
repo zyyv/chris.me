@@ -41,6 +41,7 @@ const user = {
                         <span class="fs14">亲爱的${res.data.userInfo.name}，您好，欢迎回家</span>
                       </div>`,
             type: 'success',
+            duration: 1500,
             dangerouslyUseHTMLString: true
           });
           commit('setToken', res.data.token)
@@ -84,7 +85,7 @@ const user = {
         getApi('/user/getTourist', {}).then(res => {
           Notification.closeAll()
           Notification({
-            duration: 0,
+            duration: 1500,
             title: 'Tips',
             message: `<div class="flex fs0">
                         <img class="mr5 radius-50" style="width:40px;height:40px" src="${res.data.avatar}"/>

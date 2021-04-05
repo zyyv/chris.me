@@ -106,17 +106,17 @@
                 </div>
               </div>
             </el-carousel-item>
-            <el-carousel-item name="sign">
+            <!-- <el-carousel-item name="sign">
               <div class="card flex flex-center flex-items-center">
                 <vueScroll>
                   <div class="pl20 pr20 pt10 pb10 flex flex-wrap"></div>
                 </vueScroll>
               </div>
-            </el-carousel-item>
+            </el-carousel-item> -->
             <el-carousel-item name="mine">
-              <!-- <div class="card flex flex-center flex-items-center">
+              <div class="card flex flex-center flex-items-center">
                 <Time color="#fff" />
-              </div>-->
+              </div>
             </el-carousel-item>
           </el-carousel>
         </section>
@@ -146,14 +146,14 @@
 </template>
 
 <script>
-// import Time from '@/components/Time'
+import Time from '@/components/Time'
 import { getApi } from '@/api'
 import { mapState } from "vuex"
 import menus from "@/utils/menus";
 export default {
   name: 'info',
   components: {
-    // Time,
+    Time,
     // Tag
   },
   props: {},
@@ -172,10 +172,10 @@ export default {
           { min: 5, max: 10, message: '密码长度不够哦~~ 5-10位', trigger: 'blur' }
         ]
       },
-      github: 'https://qiniu-apps.zoombin.com/github.png',
-      bilibili: 'https://qiniu-apps.zoombin.com/bilibili.png',
-      wechat: 'https://qiniu-apps.zoombin.com/wechat.png',
-      weibo: 'https://qiniu-apps.zoombin.com/weibo.png',
+      github: 'http://blog.chrisying.cn/github.png',
+      bilibili: 'http://blog.chrisying.cn/bilibili.png',
+      wechat: 'http://blog.chrisying.cn/wechat.png',
+      weibo: 'http://blog.chrisying.cn/weibo.png',
       dialogVisible: false,
       current: null,
       musicList: []
@@ -232,7 +232,7 @@ export default {
             title: '这是一条温馨小提示(u‿ฺu✿ฺ)',
             message: '点击下方头像可以播放动听的bgm哦~~',
             position: 'top-left',
-            duration: 0
+            duration: 1500
           });
         }
       })
@@ -283,7 +283,7 @@ export default {
 .noData {
   width: 200px;
   height: 163px;
-  background: url('../../assets/images/noDate.png') center/contain no-repeat;
+  background: url('http://blog.chrisying.cn/noDate.png') center/contain no-repeat;
 }
 .musicList {
   .musicItem {
