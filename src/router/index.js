@@ -34,7 +34,7 @@ const routes = [
   { path: "/about", name: "About", component: About }
 ];
 
-const router = new VueRouter({ routes, mode: 'history' });
+const router = new VueRouter({ routes, mode: 'hash' })
 
 router.beforeEach((to, from, next) => {
   NProgress.start()

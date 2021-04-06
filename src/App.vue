@@ -20,8 +20,8 @@ export default {
     return {}
   },
   created () {
-    localStorage.setItem('ip', window.returnCitySN['cip'])
-    localStorage.setItem('cityname', window.returnCitySN['cname'])
+    // localStorage.setItem('ip', window.returnCitySN['cip'])
+    // localStorage.setItem('cityname', window.returnCitySN['cname'])
     this.$store.state.user.token || this.$store.dispatch('user/getTourist')
   },
   computed: {
@@ -41,7 +41,7 @@ $night-color: #999;
   }
   .aside {
     transition: all 1s;
-    background-image: url('http://qfr5vuqoo.hn-bkt.clouddn.com/4k_1.jpg');
+    background-image: url('http://chat.chrisying.cn/1608021783130-8397.jfif');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;

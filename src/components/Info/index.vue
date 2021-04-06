@@ -82,7 +82,7 @@
                     <div style="width:100%;" class="flex flex-items-center flex-column">
                       <img
                         style="width:100%;"
-                        src="http://qfr5vuqoo.hn-bkt.clouddn.com/chris_qrcode.png"
+                        src="http://blog.chrisying.cn/avatar.jpg"
                         alt
                         srcset
                       />
@@ -156,7 +156,6 @@ export default {
     Time,
     // Tag
   },
-  props: {},
   data () {
     return {
       menus,
