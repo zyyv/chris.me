@@ -20,8 +20,8 @@ export default {
     return {}
   },
   created () {
-    // localStorage.setItem('ip', window.returnCitySN['cip'])
-    // localStorage.setItem('cityname', window.returnCitySN['cname'])
+    localStorage.setItem('ip', window.returnCitySN['cip'])
+    localStorage.setItem('cityname', window.returnCitySN['cname'])
     this.$store.state.user.token || this.$store.dispatch('user/getTourist')
   },
   computed: {

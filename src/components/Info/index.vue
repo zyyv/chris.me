@@ -2,61 +2,63 @@
   <div class="wrapper">
     <div class="body overlay">
       <div class="info flex flex-center flex-column flex-items-center">
-        <el-tooltip
-          :content="model?'夜间模式':'关闭夜间模式'"
-          placement="left"
-          :effect="model?'light':'dark'"
-        >
-          <span @click="changeModel" class="model">
+        <el-tooltip :content="model?'夜间模式':'关闭夜间模式'"
+                    placement="left"
+                    :effect="model?'light':'dark'">
+          <span @click="changeModel"
+                class="model">
             <i class="iconfont iconbofangye_gengduo_yejianmoshiyijingdakai"></i>
           </span>
         </el-tooltip>
-        <el-popover placement="right" popper-class="popper" trigger="hover">
-          <div style="height:220px" v-if="musicList.length">
+        <el-popover placement="right"
+                    popper-class="popper"
+                    trigger="hover">
+          <div style="height:220px"
+               v-if="musicList.length">
             <vueScroll>
-              <ul class="musicList" style="padding:12px;">
-                <li
-                  v-for="(item,i) in musicList"
-                  :key="item.url"
-                  class="musicItem"
-                  :class="{pb10: i != musicList.length-1,active: item.status}"
-                >
+              <ul class="musicList"
+                  style="padding:12px;">
+                <li v-for="(item,i) in musicList"
+                    :key="item.url"
+                    class="musicItem"
+                    :class="{pb10: i != musicList.length-1,active: item.status}">
                   <div class="musicCon flex flex-items-center pr">
                     <div class="sortNum noselect">{{i+1}}</div>
                     <div class="musicName ellipsis fs13">{{item.name}}</div>
-                    <i
-                      @click="musicPause"
-                      v-if="item.status"
-                      class="cursor iconfont el-icon-video-pause musicStatus"
-                    ></i>
-                    <i
-                      @click="musicPlay(i)"
-                      v-else
-                      class="cursor iconfont el-icon-video-play musicStatus"
-                    ></i>
+                    <i @click="musicPause"
+                       v-if="item.status"
+                       class="cursor iconfont el-icon-video-pause musicStatus"></i>
+                    <i @click="musicPlay(i)"
+                       v-else
+                       class="cursor iconfont el-icon-video-play musicStatus"></i>
                   </div>
                 </li>
               </ul>
             </vueScroll>
           </div>
-          <div v-else class="noData"></div>
-          <div slot="reference" class="action animate pr">
-            <img class="avatar" :class="m_status?'rotate':''" v-lazy="blogerInfo.avatar" alt />
-            <div
-              @click="m_status? musicPause() : musicPlay(current.index)"
-              class="fs0 audioBox pa flex flex-center flex-items-center"
-            >
-              <i v-show="m_status" class="iconfont iconpause" style="font-size:25px;"></i>
-              <i v-show="!m_status" class="iconfont iconplay" style="font-size:25px;"></i>
+          <div v-else
+               class="noData"></div>
+          <div slot="reference"
+               class="action animate pr">
+            <img class="avatar"
+                 :class="m_status?'rotate':''"
+                 v-lazy="blogerInfo.avatar"
+                 alt />
+            <div @click="m_status? musicPause() : musicPlay(current.index)"
+                 class="fs0 audioBox pa flex flex-center flex-items-center">
+              <i v-show="m_status"
+                 class="iconfont iconpause"
+                 style="font-size:25px;"></i>
+              <i v-show="!m_status"
+                 class="iconfont iconplay"
+                 style="font-size:25px;"></i>
             </div>
           </div>
         </el-popover>
         <section class="mt20">
-          <el-tooltip
-            :content="`Hi i'm ${blogerInfo.name}`"
-            placement="top"
-            :effect="model?'light':'dark'"
-          >
+          <el-tooltip :content="`Hi i'm ${blogerInfo.name}`"
+                      placement="top"
+                      :effect="model?'light':'dark'">
             <div @dblclick="login">
               <h2 class="fs18 noselect mb5">朱颖的博客</h2>
               <h2 class="fs16 noselect">Chris's Blog</h2>
@@ -64,44 +66,59 @@
           </el-tooltip>
         </section>
         <section class="mt20 sign">
-          <!-- <p class="fs13 lh1-5">我是一个 24 岁的 homeschooler，爱好旅行以及一切富有创造性的事物，尤其是摄影、设计和编程。这个世界就是我的学校。学自己之所想所爱。自由的身心定能使我成为一个一直朝前行走的行者。</p> -->
-          <p class="fs13 lh1-5">一位22岁的小码农</p>
+          <p class="fs13 lh1-5">一位22岁的小码农，努力做一位优秀的前端工程师。</p>
         </section>
-        <section class="mt20" style="width:100%">
-          <el-carousel :autoplay="false" indicator-position="none" height="230px" ref="carousel">
+        <section class="mt20"
+                 style="width:100%">
+          <el-carousel :autoplay="false"
+                       indicator-position="none"
+                       height="230px"
+                       ref="carousel">
             <el-carousel-item name="menu">
               <div class="card cfff fs14 flex flex-column flex-items-center flex-around">
-                <span
-                  v-for="menu in menus"
-                  :key="menu.path"
-                  @click="$router.push(menu.path)"
-                  class="cursor menu-item"
-                >{{menu.title}}</span>
+                <span v-for="menu in menus"
+                      :key="menu.path"
+                      @click="$router.push(menu.path)"
+                      class="cursor menu-item">{{menu.title}}</span>
                 <div class="icons flex flex-between">
-                  <el-popover placement="top-start" width="150" trigger="hover">
-                    <div style="width:100%;" class="flex flex-items-center flex-column">
-                      <img
-                        style="width:100%;"
-                        src="http://blog.chrisying.cn/avatar.jpg"
-                        alt
-                        srcset
-                      />
-                      <span style="color:#666" class="mt10 fs12">扫码了解有趣的他</span>
+                  <el-popover placement="top-start"
+                              width="150"
+                              trigger="hover">
+                    <div style="width:100%;"
+                         class="flex flex-items-center flex-column">
+                      <img style="width:100%;"
+                           src="http://blog.chrisying.cn/avatar.jpg"
+                           alt
+                           srcset />
+                      <span style="color:#666"
+                            class="mt10 fs12">扫码了解有趣的他</span>
                     </div>
-                    <img slot="reference" class="cursor" :src="wechat" alt />
+                    <img slot="reference"
+                         class="cursor"
+                         :src="wechat"
+                         alt />
                   </el-popover>
-                  <el-tooltip :effect="model?'light':'dark'" content="去github逛逛吗" placement="top">
-                    <img class="cursor" :src="github" alt />
+                  <el-tooltip :effect="model?'light':'dark'"
+                              content="去github逛逛吗"
+                              placement="top">
+                    <img class="cursor"
+                         :src="github"
+                         alt />
                   </el-tooltip>
-                  <el-tooltip
-                    :effect="model?'light':'dark'"
-                    content="即将成为Up🐖，先来个关注吧"
-                    placement="top"
-                  >
-                    <img @click="goBilibili" class="cursor" :src="bilibili" alt />
+                  <el-tooltip :effect="model?'light':'dark'"
+                              content="即将成为Up🐖，先来个关注吧"
+                              placement="top">
+                    <img @click="goBilibili"
+                         class="cursor"
+                         :src="bilibili"
+                         alt />
                   </el-tooltip>
-                  <el-tooltip :effect="model?'light':'dark'" content="微博。。。" placement="top">
-                    <img class="cursor" :src="weibo" alt />
+                  <el-tooltip :effect="model?'light':'dark'"
+                              content="微博。。。"
+                              placement="top">
+                    <img class="cursor"
+                         :src="weibo"
+                         alt />
                   </el-tooltip>
                 </div>
               </div>
@@ -122,53 +139,65 @@
         </section>
       </div>
     </div>
-    <el-dialog title="Login" :visible.sync="dialogVisible" width="30%">
-      <el-form ref="form" :rules="rules" :model="form" class="demo-form-inline" size="middle">
+    <el-dialog title="Login"
+               :visible.sync="dialogVisible"
+               width="30%">
+      <el-form ref="form"
+               :rules="rules"
+               :model="form"
+               class="demo-form-inline"
+               size="middle">
         <el-form-item prop="account">
-          <el-input prefix-icon="el-icon-user-solid" v-model="form.account" placeholder="用户名"></el-input>
+          <el-input prefix-icon="el-icon-user-solid"
+                    v-model="form.account"
+                    placeholder="用户名"></el-input>
         </el-form-item>
         <el-form-item prop="pwd">
-          <el-input
-            @keyup.enter.native="onSubmit"
-            prefix-icon="el-icon-lock"
-            placeholder="请输入密码"
-            v-model="form.pwd"
-            show-password
-          ></el-input>
+          <el-input @keyup.enter.native="onSubmit"
+                    prefix-icon="el-icon-lock"
+                    placeholder="请输入密码"
+                    v-model="form.pwd"
+                    show-password></el-input>
         </el-form-item>
         <el-form-item>
-          <el-button type="primary" @click="onSubmit">登录</el-button>
+          <el-button type="primary"
+                     @click="onSubmit">登录</el-button>
         </el-form-item>
       </el-form>
     </el-dialog>
-    <audio ref="audio" @ended="audioEnded"></audio>
+    <audio ref="audio"
+           @ended="audioEnded"></audio>
   </div>
 </template>
 
 <script>
 import Time from '@/components/Time'
 import { getApi } from '@/api'
-import { mapState } from "vuex"
-import menus from "@/utils/menus";
+import { mapState } from 'vuex'
+import menus from '@/utils/menus'
 export default {
   name: 'info',
   components: {
-    Time,
+    Time
     // Tag
   },
-  data () {
+  data() {
     return {
       menus,
       form: {
-        account: '', pwd: ''
+        account: '',
+        pwd: ''
       },
       rules: {
-        account: [
-          { required: true, message: '请输入用户名', trigger: 'blur' },
-        ],
+        account: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
         pwd: [
           { required: true, message: '请输入密码', trigger: 'blur' },
-          { min: 5, max: 10, message: '密码长度不够哦~~ 5-10位', trigger: 'blur' }
+          {
+            min: 5,
+            max: 10,
+            message: '密码长度不够哦~~ 5-10位',
+            trigger: 'blur'
+          }
         ]
       },
       github: 'http://blog.chrisying.cn/github.png',
@@ -182,48 +211,56 @@ export default {
   },
   computed: {
     ...mapState('user', ['blogerInfo', 'token', 'model']),
-    m_status () {
-      return this.musicList.some(it => it.status)
+    m_status() {
+      return this.musicList.some((it) => it.status)
     }
   },
-  mounted () {
+  mounted() {
     this.blogerInfo._id || this.$store.dispatch('user/loadSuperAdmin') //获取信息
     this.loadMusicList()
   },
   methods: {
-    changeModel () {
+    changeModel() {
       this.$store.commit('user/setModel')
     },
-    goBilibili () {
+    goBilibili() {
       window.open('https://space.bilibili.com/402454160')
     },
-    onSubmit () {
+    onSubmit() {
       this.$refs['form'].validate((valid) => {
         if (valid) {
-          this.$store.dispatch('user/login', this.form).then(() => {
-            this.dialogVisible = false
-            this.$refs['form'].resetFields()
-          }).catch(() => {
-            this.form.pwd = ''
-          })
+          this.$store
+            .dispatch('user/login', this.form)
+            .then(() => {
+              this.dialogVisible = false
+              this.$refs['form'].resetFields()
+            })
+            .catch(() => {
+              this.form.pwd = ''
+            })
         } else {
-          return false;
+          return false
         }
-      });
+      })
     },
-    login () {
+    login() {
+      console.log(111)
       if (this.token) {
         this.logout()
       } else {
         this.dialogVisible = true
       }
     },
-    logout () {
+    logout() {
       this.$store.dispatch('user/logout')
     },
-    loadMusicList () {
-      getApi('/qiniu/bgmMusic', { limit: 20 }).then(res => {
-        this.musicList = res.data.source.map((it, index) => ({ ...it, status: false, index }))
+    loadMusicList() {
+      getApi('/qiniu/bgmMusic', { limit: 20 }).then((res) => {
+        this.musicList = res.data.source.map((it, index) => ({
+          ...it,
+          status: false,
+          index
+        }))
         if (this.musicList.length) {
           this.audioCtrl = this.$refs.audio
           this.changeMusic(0, false)
@@ -232,11 +269,11 @@ export default {
             message: '点击下方头像可以播放动听的bgm哦~~',
             position: 'top-left',
             duration: 1500
-          });
+          })
         }
       })
     },
-    changeMusic (index, action = true) {
+    changeMusic(index, action = true) {
       if (this.audioCtrl) {
         if (this.current) {
           this.current.status = false
@@ -249,22 +286,22 @@ export default {
         }
       }
     },
-    audioEnded () {
+    audioEnded() {
       this.playNextMusic()
     },
-    playNextMusic () {
+    playNextMusic() {
       let index = this.current.index
       index++
       index = index < this.musicList.length ? index : 0
       this.changeMusic(index)
     },
-    musicPause () {
+    musicPause() {
       if (this.current) {
         this.current.status = false
         this.audioCtrl.pause()
       }
     },
-    musicPlay (index) {
+    musicPlay(index) {
       if (this.current) {
         const item = this.musicList[index]
         if (item.url === this.current.url) {
@@ -282,7 +319,8 @@ export default {
 .noData {
   width: 200px;
   height: 163px;
-  background: url('http://blog.chrisying.cn/noDate.png') center/contain no-repeat;
+  background: url('http://blog.chrisying.cn/noDate.png') center/contain
+    no-repeat;
 }
 .musicList {
   .musicItem {
