@@ -1,5 +1,5 @@
 <template>
-  <div>aaasdddddddddddd</div>
+  <div>hello world</div>
 </template>
 
 <script lang='ts' setup>
