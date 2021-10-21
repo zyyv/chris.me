@@ -1,0 +1,51 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe F:\workspace\node\node_global\node_modules\yarn\bin\yarn.js
+
+PATH: 
+  F:\workspace\git\Git\mingw64\bin;F:\workspace\git\Git\usr\bin;C:\Users\16337\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files\TortoiseSVN\bin;F:\workspace\git\Git\cmd;C:\Program Files\dotnet;C:\Users\16337\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files (x86)\NetSarang\Xshell 7;C:\Program Files (x86)\NetSarang\Xftp 7;C:\Users\16337\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Bandizip;F:\workspace\vscode\Microsoft VS Code\bin;C:\Users\16337\AppData\Roaming\nvm;C:\Program Files\nodejs;F:\workspace\node;F:\workspace\node\node_cache;F:\workspace\node\node_global;F:\workspace\mongodb\bin
+
+Yarn version: 
+  1.22.11
+
+Node version: 
+  10.16.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: connect ECONNREFUSED 61.184.215.179:443
+      at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1106:14)
+
+npm manifest: 
+  {
+    "name": "blog",
+    "version": "0.0.0",
+    "scripts": {
+      "dev": "vite",
+      "build": "vue-tsc --noEmit && vite build",
+      "serve": "vite preview"
+    },
+    "dependencies": {
+      "@vueuse/core": "^6.3.3",
+      "axios": "^0.21.4",
+      "vue": "^3.2.11",
+      "vue-router": "^4.0.11",
+      "vuex": "^4.0.2"
+    },
+    "devDependencies": {
+      "@types/node": "^16.9.1",
+      "@vitejs/plugin-vue": "^1.3.0",
+      "@vue/compiler-sfc": "^3.0.5",
+      "sass": "^1.40.0",
+      "typescript": "^4.3.2",
+      "vite": "^2.4.4",
+      "vue-tsc": "^0.2.2"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
