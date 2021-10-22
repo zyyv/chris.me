@@ -102,17 +102,17 @@ class HttpRequest {
     )
   }
 
-  get(url: string, params: IAny) {
-    this.instance.get(url, { params })
+  $get<T = IResponseData>(url: string, params?: IAny) {
+    return this.instance.get<T>(url, { params })
   }
-  delete(url: string, params: IAny) {
-    this.instance.delete(url, { params })
+  $delete<T = IResponseData>(url: string, params?: IAny) {
+    return this.instance.delete<T>(url, { params })
   }
-  post(url: string, data: IAny, config: AxiosRequestConfig) {
-    this.instance.post(url, data, config)
+  $post<T = IResponseData>(url: string, data: IAny, config: AxiosRequestConfig) {
+    return this.instance.post<T>(url, data, config)
   }
-  put(url: string, data: IAny, config: AxiosRequestConfig) {
-    this.instance.put(url, data, config)
+  $put<T = IResponseData>(url: string, data: IAny, config: AxiosRequestConfig) {
+    return this.instance.put<T>(url, data, config)
   }
 }
 
