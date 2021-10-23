@@ -7,7 +7,7 @@
 
 <script lang="ts" setup>
 import { ICursorStyle } from '@/types'
-import { ref, reactive } from 'vue'
+import { reactive } from 'vue'
 import { useCursor, useDot } from './index'
 
 const style = reactive<ICursorStyle>({

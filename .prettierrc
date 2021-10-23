@@ -1,8 +1,8 @@
 {
-    "semi": false,
-    "singleQuote": true,
-    "bracketSpacing": true,
-    "trailingComma": "none",
-    "tabWidth": 2,
-    "prettier.eslintIntegration": false
+  "semi": false,
+  "singleQuote": true,
+  "bracketSpacing": true,
+  "trailingComma": "none",
+  "tabWidth": 2,
+  "prettier.eslintIntegration": false
 }
