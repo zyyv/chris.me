@@ -5,13 +5,9 @@
       <div class="signup-bg-stars-2"></div>
       <div class="signup-bg-stars-3"></div>
     </div>
-    <!-- <img class="bg-img" src="" alt="Glowing universe" /> -->
   </div>
 </template>
 
-<script lang="ts" setup>
-import { ref, reactive } from 'vue'
-</script>
 <style lang="scss" scoped>
 .bg {
   position: fixed;
@@ -30,17 +26,6 @@ import { ref, reactive } from 'vue'
     background-repeat: no-repeat;
   }
 }
-// .bg-img {
-//   // z-index: 0;
-//   user-select: none;
-//   position: absolute;
-//   top: 50%;
-//   left: 50%;
-//   width: 100vw;
-//   transform: translate(-50%, -50%) scale(2);
-//   overflow: hidden;
-// }
-
 .signup-bg-stars {
   z-index: -200;
   width: 1px;
@@ -101,8 +86,13 @@ import { ref, reactive } from 'vue'
 .signup-bg-stars-2 {
   width: 2px;
   height: 2px;
-  /* box-shadow:18px 249px rgba(255,255,255,.2), 1010px 1194px #FFF, 1566px 862px #FFF, 1522px 47px #FFF, 1268px 1429px #FFF, 685px 239px #FFF, 511px 1827px #FFF, 1862px 1202px #FFF, 1869px 491px #FFF, 912px 344px #FFF, 11px 208px #FFF, 1694px 572px #FFF, 779px 662px #FFF, 1430px 812px #FFF, 365px 1526px #FFF, 185px 823px #FFF, 1954px 1745px #FFF, 445px 1728px #FFF, 826px 1711px #FFF, 1703px 1366px #FFF; */
-  /* animation:animStar 150s linear infinite; */
+  box-shadow: 18px 249px rgba(255, 255, 255, 0.2), 1010px 1194px #fff,
+    1566px 862px #fff, 1522px 47px #fff, 1268px 1429px #fff, 685px 239px #fff,
+    511px 1827px #fff, 1862px 1202px #fff, 1869px 491px #fff, 912px 344px #fff,
+    11px 208px #fff, 1694px 572px #fff, 779px 662px #fff, 1430px 812px #fff,
+    365px 1526px #fff, 185px 823px #fff, 1954px 1745px #fff, 445px 1728px #fff,
+    826px 1711px #fff, 1703px 1366px #fff;
+  animation: animStar 150s linear infinite;
 }
 
 .signup-bg-stars-2::after {
