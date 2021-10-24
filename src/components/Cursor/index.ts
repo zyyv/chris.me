@@ -1,7 +1,8 @@
 import { ICursorStyle } from '@/types'
+import { useMouse } from '@/use'
 import { getAngle, getSqueeze } from '@/utils'
-import { useMouse, useEventListener } from '@vueuse/core'
-import { reactive, ref, toRef, unref, watchEffect, nextTick } from 'vue'
+import { useEventListener } from '@vueuse/core'
+import { reactive, ref, toRef, unref, nextTick, watch } from 'vue'
 
 // 更新圆圈样式
 export function useCursor(style: ICursorStyle) {
@@ -43,27 +44,27 @@ export function useDot(style: ICursorStyle) {
     dotRef: ref<HTMLElement>()
   })
 
-  const toggleDotSize = () => {
-    const scale = dotState.enlarged ? '1.8' : '1'
+  const toggleDotSize = (newStatus: boolean) => {
+    const scale = newStatus ? '1.8' : '1'
     style.dot = {
       ...style.dot,
       transform: `translate(-50%, -50%) scale(${scale})`
     }
   }
-  const toggleDotVisibility = () => {
-    const opacity = dotState.visible ? '1' : '0'
+  const toggleDotVisibility = (newStatus: boolean) => {
+    const opacity = newStatus ? '1' : '0'
     style.dot = {
       ...style.dot,
       opacity
     }
   }
 
-  watchEffect(toggleDotSize) // update dot size
-  watchEffect(toggleDotVisibility) // update dot opacity
+  watch(() => dotState.enlarged, toggleDotSize) // update dot size
+  watch(() => dotState.visible, toggleDotVisibility, { immediate: true }) // update dot opacity
 
   useEventListener(document, 'mousemove', (e) => {
     dotState.visible = true
-    style.dot = { top: `${e.clientY}px`, left: `${e.clientX}px` }
+    style.dot = { ...style.dot, top: `${e.clientY}px`, left: `${e.clientX}px` }
   })
   useEventListener(document, 'mouseenter', () => {
     dotState.visible = true
@@ -77,7 +78,7 @@ export function useDot(style: ICursorStyle) {
   useEventListener(document, 'mouseup', () => {
     dotState.enlarged = false
   })
-  
+
   nextTick(() => {
     document.querySelectorAll('a').forEach(function (el) {
       useEventListener(el, 'mouseover', () => {
