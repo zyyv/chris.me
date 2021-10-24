@@ -11,7 +11,9 @@ export default defineConfig({
     alias: {
       '@': pathResolve('src'),
       '@c': pathResolve('src/components'),
-      '@v': pathResolve('src/views')
+      '@v': pathResolve('src/views'),
+      '@p': pathResolve('src/plugins'),
+      '@u': pathResolve('src/use')
     }
   },
   server: {
