@@ -281,6 +281,13 @@
     "@vue/compiler-dom" "3.2.20"
     "@vue/shared" "3.2.20"
 
+"@vue/composition-api@^1.0.0-rc.1", "@vue/composition-api@^1.1.0", "@vue/composition-api@^1.2.2":
+  "integrity" "sha1-S+/O/A4cVw/Qh5oti4+QHzpONdA="
+  "resolved" "https://registry.npmmirror.com/@vue/composition-api/download/@vue/composition-api-1.2.4.tgz"
+  "version" "1.2.4"
+  dependencies:
+    "tslib" "^2.3.0"
+
 "@vue/devtools-api@^6.0.0-beta.11", "@vue/devtools-api@^6.0.0-beta.18":
   "integrity" "sha1-+OiAWdqkJFFZkkJqDH6lzeB+mb8= sha512-ObzQhgkoVeoyKv+e8+tB/jQBL2smtk/NmC9OmFK8UqdDpoOdv/Kf9pyDWL+IFyM7qLD2C75rszJujvGSPSpGlw=="
   "resolved" "https://registry.npmmirror.com/@vue/devtools-api/download/@vue/devtools-api-6.0.0-beta.19.tgz?cache=0&sync_timestamp=1633376929470&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2F%40vue%2Fdevtools-api%2Fdownload%2F%40vue%2Fdevtools-api-6.0.0-beta.19.tgz"
@@ -1307,6 +1314,14 @@
   "resolved" "https://registry.nlark.com/picomatch/download/picomatch-2.3.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fpicomatch%2Fdownload%2Fpicomatch-2.3.0.tgz"
   "version" "2.3.0"
 
+"pinia@^2.0.0-rc.10":
+  "integrity" "sha1-gegjkxiXpM9cU8ET0MDmO3u6mXM="
+  "resolved" "https://registry.npmmirror.com/pinia/download/pinia-2.0.0-rc.10.tgz"
+  "version" "2.0.0-rc.10"
+  dependencies:
+    "@vue/devtools-api" "^6.0.0-beta.18"
+    "vue-demi" "*"
+
 "postcss-js@^3.0.3":
   "integrity" "sha1-LwvTcKLoWZ1FQ59pcEA7WHOr2jM="
   "resolved" "https://registry.npm.taobao.org/postcss-js/download/postcss-js-3.0.3.tgz"
@@ -1711,7 +1726,12 @@
   "resolved" "https://registry.nlark.com/treemate/download/treemate-0.3.8.tgz"
   "version" "0.3.8"
 
-"typescript@*", "typescript@^4.3.2":
+"tslib@^2.3.0":
+  "integrity" "sha1-6KM1rdXOrlGqJh0ypJAVjvBC7wE="
+  "resolved" "https://registry.nlark.com/tslib/download/tslib-2.3.1.tgz"
+  "version" "2.3.1"
+
+"typescript@*", "typescript@^4.3.2", "typescript@^4.4.3":
   "integrity" "sha1-LNAaGh8WBwTTEB/VpY/w+fy4Aww= sha512-DqGhF5IKoBl8WNf8C1gu8q0xZSInh9j1kJJMqT3a94w1JzVaBU4EXOSMrz9yDqMT0xt3selp83fuFMQ0uzv6qA=="
   "resolved" "https://registry.npmmirror.com/typescript/download/typescript-4.4.4.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Ftypescript%2Fdownload%2Ftypescript-4.4.4.tgz"
   "version" "4.4.4"
@@ -1916,7 +1936,7 @@
   dependencies:
     "vscode-vue-languageservice" "^0.27.0"
 
-"vue@^2.6.0 || ^3.2.0", "vue@^3.0.0", "vue@^3.0.0-0 || ^2.6.0", "vue@^3.0.11", "vue@^3.0.2", "vue@^3.2.20", "vue@3.2.20":
+"vue@^2.6.0 || ^3.2.0", "vue@^2.6.14 || ^3.2.0", "vue@^3.0.0", "vue@^3.0.0-0 || ^2.6.0", "vue@^3.0.11", "vue@^3.0.2", "vue@^3.2.20", "vue@>= 2.5 < 3", "vue@3.2.20":
   "integrity" "sha1-lA+KqL8+O+eCQ8pYK61B/NRa4+Y= sha512-81JjEP4OGk9oO8+CU0h2nFPGgJBm9mNa3kdCX2k6FuRdrWrC+CNe+tOnuIeTg8EWwQuI+wwdra5Q7vSzp7p4Iw=="
   "resolved" "https://registry.npmmirror.com/vue/download/vue-3.2.20.tgz?cache=0&sync_timestamp=1633712767060&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fvue%2Fdownload%2Fvue-3.2.20.tgz"
   "version" "3.2.20"
