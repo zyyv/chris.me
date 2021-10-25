@@ -1,9 +1,9 @@
-import { App } from 'vue'
+import { Plugin } from 'vue'
 import { http } from '@/utils'
 
-export function HttpRequest() {
+export function httpRequest(): Plugin {
   return {
-    install: (app: App) => {
+    install: (app) => {
       const { $get, $delete, $post, $put } = http
 
       app.config.globalProperties.$get = $get
