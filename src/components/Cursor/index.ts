@@ -1,7 +1,7 @@
 import { ICursorStyle } from '@/types'
 import { useMouse } from '@/use'
 import { getAngle, getSqueeze } from '@/utils'
-import { useEventListener } from '@vueuse/core'
+import { useEventListener, useRafFn } from '@vueuse/core'
 import { reactive, ref, toRef, unref, nextTick, watch } from 'vue'
 
 // 更新圆圈样式
@@ -28,12 +28,7 @@ export function useCursor(style: ICursorStyle) {
     style.circle = { ...style.circle, transform: rotate + scale }
   }
 
-  const loop = () => {
-    updateCursor()
-    requestAnimationFrame(loop)
-  }
-
-  requestAnimationFrame(loop)
+  useRafFn(updateCursor)
 }
 
 // 更新圆点
