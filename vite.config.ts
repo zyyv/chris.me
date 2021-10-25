@@ -6,10 +6,11 @@ const pathResolve = (src: string) => resolve(__dirname, src)
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [vue({ script: { refTransform: true } })],
   resolve: {
     alias: {
       '@': pathResolve('src'),
+      '@a': pathResolve('src/assets'),
       '@c': pathResolve('src/components'),
       '@v': pathResolve('src/views'),
       '@p': pathResolve('src/plugins'),
