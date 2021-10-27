@@ -1,5 +1,4 @@
-import { PersistStrategy } from '@/pinia'
-import { PiniaPluginContext } from 'pinia'
+import { PiniaPluginContext, PersistStrategy } from 'pinia'
 import { watch } from 'vue'
 
 type Store = PiniaPluginContext['store']
