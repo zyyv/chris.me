@@ -9,12 +9,32 @@ const routes: RouteRecordRaw[] = [
       {
         path: '/',
         name: 'home',
-        component: () => import('@v/home.vue')
+        component: () => import('@v/home/index.vue')
       },
       {
         path: '/posts',
         name: 'posts',
         component: () => import('@v/posts.vue')
+      },
+      {
+        path: '/share',
+        name: 'share',
+        component: () => import('@v/share.vue')
+      },
+      {
+        path: '/projects',
+        name: 'projects',
+        component: () => import('@v/projects.vue')
+      },
+      {
+        path: '/bookmarks',
+        name: 'bookmarks',
+        component: () => import('@v/bookmarks.vue')
+      },
+      {
+        path: '/notes',
+        name: 'notes',
+        component: () => import('@v/notes.vue')
       }
     ]
   },
