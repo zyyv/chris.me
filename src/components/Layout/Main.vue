@@ -2,7 +2,7 @@
   <main class="container m-auto">
     <router-view v-slot="{ Component, route }">
       <transition :name="route.meta.transition || 'fade'" mode="out-in">
-        <keep-alive :include="['home']">
+        <keep-alive include="Home">
           <component :is="Component" :key="route.path" />
         </keep-alive>
       </transition>
@@ -10,13 +10,10 @@
   </main>
 </template>
 
-<script lang="ts" setup>
-import { ref, reactive } from 'vue'
-</script>
 <style lang="scss" scoped>
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity .3s ease;
+  transition: opacity 0.3s ease;
 }
 
 .fade-enter-from,

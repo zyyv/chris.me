@@ -57,14 +57,14 @@ import { watch, ref, watchEffect, onMounted } from 'vue'
 import { NSwitch } from 'naive-ui'
 import { useCss, useHtml } from '.'
 
+onMounted(() => {
+  console.log('home mounted')
+})
+
 const allDown = ref(false) // 两个模块是否都打印完成
 const enableAnimate = ref(false) // 提前结束动画
 const { htmlState } = useHtml()
 const { cssState } = useCss()
-
-onMounted(() => {
-  console.log('home mounted')
-})
 
 watch(enableAnimate, (newVal) => {
   allDown.value = newVal
