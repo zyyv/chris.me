@@ -8,8 +8,8 @@ const routes: RouteRecordRaw[] = [
     children: [
       {
         path: '/',
-        name: 'Home',
-        component: () => import('@/views/home/home.vue'),
+        name: 'home',
+        component: () => import('@/views/home/index.vue'),
         meta: { keepAlive: true }
       },
       {
