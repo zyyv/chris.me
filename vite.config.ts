@@ -25,5 +25,8 @@ export default defineConfig({
         changeOrigin: true
       }
     }
+  },
+  optimizeDeps: {
+    include: ['naive-ui', '@vueuse/core']
   }
 })
