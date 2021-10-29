@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import { pinia } from './store'
 import { httpRequest, vDirective } from './plugins'
+import 'virtual:windi.css'
 import '@/styles/index.scss'
 
 const app = createApp(App)
