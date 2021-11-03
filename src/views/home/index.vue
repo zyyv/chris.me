@@ -37,7 +37,7 @@
             <pre v-typeWrite="cssState" class="whitespace-pre-wrap"></pre>
           </div>
         </div>
-        <div class="userCard w-1/2 text-center m-auto border" v-else>
+        <div m-auto p-2 text-center border v-else>
           <img class="inline-block" width="200" src="@a/logo.svg" />
         </div>
       </transition>
