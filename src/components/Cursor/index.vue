@@ -45,9 +45,6 @@ const { dotRef } = useDot(style)
 .dot {
   mix-blend-mode: normal;
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
-
-.dot {
   width: 9px;
   height: 9px;
   background-color: #adbac7;
