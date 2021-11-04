@@ -5,7 +5,7 @@
     opacity-0
     pointer-events-none
     rounded-full
-    p-c
+    fixed
     ref="dotRef"
     :style="style.dot"
   ></div>

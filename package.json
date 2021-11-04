@@ -1,6 +1,6 @@
 {
-  "name": "blog",
-  "version": "0.0.0",
+  "name": "chris.me",
+  "version": "0.0.1",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
@@ -9,7 +9,7 @@
   "dependencies": {
     "@vueuse/core": "^6.7.3",
     "axios": "^0.23.0",
-    "pinia": "^2.0.0-rc.10",
+    "pinia": "^2.0.2",
     "vue": "^3.2.20",
     "vue-router": "^4.0.12"
   },
