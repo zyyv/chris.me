@@ -47,6 +47,7 @@ const { dotRef } = useDot(style)
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
   width: 9px;
   height: 9px;
+  transform: translate(-50%, -50%);
   background-color: #adbac7;
 }
 .circle {
