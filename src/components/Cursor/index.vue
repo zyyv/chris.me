@@ -1,24 +1,31 @@
 <template>
   <div
-    class="dot"
-    z-99999
+    id="dot"
+    class="z-[99999]"
+    ref="dotRef"
+    :style="style.dot"
     opacity-0
     pointer-events-none
     rounded-full
     fixed
-    ref="dotRef"
-    :style="style.dot"
   ></div>
   <div
     id="cursor"
+    class="z-[99999]"
+    :style="style.cursor"
     fixed
     top-0
     left-0
-    z-99999
     pointer-events-none
-    :style="style.cursor"
   >
-    <div class="circle" rounded-full w-16 h-16 :style="style.circle"></div>
+    <div
+      id="circle"
+      class="mt--1/2 ml--1/2"
+      rounded-full
+      w-16
+      h-16
+      :style="style.circle"
+    ></div>
   </div>
 </template>
 
@@ -42,7 +49,7 @@ const { dotRef } = useDot(style)
   will-change: transform;
 }
 
-.dot {
+#dot {
   mix-blend-mode: normal;
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
   width: 9px;
@@ -50,9 +57,7 @@ const { dotRef } = useDot(style)
   transform: translate(-50%, -50%);
   background-color: #adbac7;
 }
-.circle {
-  margin-top: -50%;
-  margin-left: -50%;
+#circle {
   border: solid 1px #adbac7;
   transition: opacity 0.3s cubic-bezier(0.25, 1, 0.5, 1),
     background-color 0.3s cubic-bezier(0.25, 1, 0.5, 1),
