@@ -43,11 +43,11 @@
       </transition>
     </div>
     <div class="absolute bottom-5 right-5">
-      <n-switch
+      <!-- <n-switch
         size="small"
         :disabled="enableAnimate"
         v-model:value="enableAnimate"
-      />
+      /> -->
     </div>
   </div>
 </template>
@@ -59,7 +59,7 @@ export default {
 </script>
 <script lang="ts" setup>
 import { watch, ref, watchEffect, onMounted } from 'vue'
-import { NSwitch } from 'naive-ui'
+// import { NSwitch } from 'naive-ui'
 import { useCss, useHtml } from '.'
 
 onMounted(() => {

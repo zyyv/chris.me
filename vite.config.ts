@@ -29,6 +29,6 @@ export default defineConfig({
     }
   },
   optimizeDeps: {
-    include: ['naive-ui', '@vueuse/core']
+    include: ['@vueuse/core']
   }
 })

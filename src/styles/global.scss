@@ -1,5 +1,7 @@
-
-
+:root {
+  --default: #adbac7;
+  --bg-default: #040d21;
+}
 
 * {
   margin: 0;
@@ -8,10 +10,10 @@
   box-sizing: border-box;
 }
 
-html *{
+html * {
   cursor: none !important;
 }
 body {
-  background-color: #040d21;
-  color: #adbac7;
+  background-color: var(--bg-default);
+  color: var(--default);
 }
