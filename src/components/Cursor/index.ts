@@ -41,8 +41,10 @@ export function useDot(style: ICursorStyle) {
 
   const toggleDotSize = (newStatus: boolean) => {
     const scale = newStatus ? '1.8' : '1'
+    const opacity = newStatus ? '0.5' : '1'
     style.dot = {
       ...style.dot,
+      opacity,
       transform: `translate(-50%, -50%) scale(${scale})`
     }
   }
