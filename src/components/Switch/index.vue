@@ -2,7 +2,9 @@
   <p>111</p>
   <div class="switch">
     <div class="switch__rail">
-      <div class="switch__button"></div>
+      <div class="switch__button">
+        update something
+      </div>
     </div>
   </div>
 </template>
