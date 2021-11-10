@@ -1,4 +1,3 @@
-import { useEventListener, useRafFn } from '@vueuse/core'
 import { useMouse } from '@/use'
 import { getAngle, getSqueeze } from '@/utils'
 import { ICursorStyle } from '@/types'

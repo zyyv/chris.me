@@ -1,5 +1,4 @@
 import { PiniaPluginContext, PersistStrategy } from 'pinia'
-import { watch } from 'vue'
 
 type Store = PiniaPluginContext['store']
 type PartialState = Partial<Store['$state']>

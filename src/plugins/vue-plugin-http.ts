@@ -1,5 +1,5 @@
-import { Plugin } from 'vue'
 import { http } from '@/utils'
+import type { Plugin } from 'vue'
 
 export function httpRequest(): Plugin {
   return {

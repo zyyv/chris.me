@@ -15,10 +15,8 @@
 </template>
 
 <script lang="ts" setup>
-import { reactive } from 'vue'
 import { useCursor, useDot } from './index'
 import { ICursorStyle } from '@/types'
-
 
 const style = reactive<ICursorStyle>({
   dot: {},

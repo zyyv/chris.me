@@ -31,8 +31,6 @@ export default {
 }
 </script>
 <script lang="ts" setup>
-import { watch, ref, watchEffect, onMounted } from 'vue'
-// import { NSwitch } from 'naive-ui'
 import { useCss, useHtml } from '.'
 
 onMounted(() => {

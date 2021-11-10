@@ -6,7 +6,6 @@
 </template>
 
 <script lang="ts" setup>
-import { computed } from 'vue'
 import { addUnit } from '@/utils'
 const props = withDefaults(
   defineProps<{
@@ -50,7 +49,7 @@ $radius: v-bind(c_radius);
   &::before,
   &::after {
     position: absolute;
-    content: '';
+    content: "";
     display: block;
     z-index: 2;
     border-radius: $radius;
