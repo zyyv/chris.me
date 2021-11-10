@@ -1,5 +1,5 @@
-import { CancelToken } from '@/utils'
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
+import { CancelToken } from '@/utils'
 
 const routes: RouteRecordRaw[] = [
   {

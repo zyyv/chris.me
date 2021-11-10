@@ -4,7 +4,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "lint": "eslint \"**/*.{vue,ts,js}\"",
+    "lint:fix": "nr lint -- --fix"
   },
   "dependencies": {
     "@vueuse/core": "^6.7.3",
@@ -14,10 +16,12 @@
     "vue-router": "^4.0.12"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "^0.10.0",
     "@iconify-json/carbon": "^1.0.9",
     "@types/node": "^16.11.1",
     "@vitejs/plugin-vue": "^1.3.0",
     "@vue/compiler-sfc": "^3.0.5",
+    "eslint": "^8.2.0",
     "sass": "^1.40.0",
     "typescript": "^4.3.2",
     "unocss": "^0.6.6",

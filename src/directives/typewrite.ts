@@ -1,4 +1,4 @@
-import { Directive, nextTick } from 'vue'
+import type { Directive } from 'vue'
 
 interface ITypeState {
   status: boolean

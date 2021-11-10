@@ -1,5 +1,5 @@
 import { vTypeWrite } from '@/directives'
-import { Plugin } from 'vue'
+import type { Plugin } from 'vue'
 
 export function vDirective(): Plugin {
   return {

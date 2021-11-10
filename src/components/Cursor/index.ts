@@ -1,8 +1,7 @@
-import { ICursorStyle } from '@/types'
+import { useEventListener, useRafFn } from '@vueuse/core'
 import { useMouse } from '@/use'
 import { getAngle, getSqueeze } from '@/utils'
-import { useEventListener, useRafFn } from '@vueuse/core'
-import { reactive, ref, toRef, unref, nextTick, watch } from 'vue'
+import { ICursorStyle } from '@/types'
 
 // 更新圆圈样式
 export function useCursor(style: ICursorStyle) {

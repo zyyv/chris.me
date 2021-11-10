@@ -9,30 +9,16 @@
     rounded-full
     fixed
   ></div>
-  <div
-    id="cursor"
-    class="z-[99999]"
-    :style="style.cursor"
-    fixed
-    top-0
-    left-0
-    pointer-events-none
-  >
-    <div
-      id="circle"
-      class="mt--1/2 ml--1/2"
-      rounded-full
-      w-16
-      h-16
-      :style="style.circle"
-    ></div>
+  <div id="cursor" class="z-[99999]" :style="style.cursor" fixed top-0 left-0 pointer-events-none>
+    <div id="circle" class="mt--1/2 ml--1/2" rounded-full w-16 h-16 :style="style.circle"></div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { ICursorStyle } from '@/types'
 import { reactive } from 'vue'
 import { useCursor, useDot } from './index'
+import { ICursorStyle } from '@/types'
+
 
 const style = reactive<ICursorStyle>({
   dot: {},
