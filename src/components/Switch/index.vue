@@ -3,7 +3,7 @@
   <div class="switch">
     <div class="switch__rail">
       <div class="switch__button">
-        update something
+        <!-- update something -->
       </div>
     </div>
   </div>
