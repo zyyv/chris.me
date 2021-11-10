@@ -11,6 +11,8 @@ specifiers:
   sass: ^1.40.0
   typescript: ^4.3.2
   unocss: ^0.6.6
+  unplugin-auto-import: ^0.4.13
+  unplugin-vue-components: ^0.17.2
   vite: ^2.4.4
   vue: ^3.2.20
   vue-router: ^4.0.12
@@ -31,10 +33,20 @@ devDependencies:
   sass: registry.npmmirror.com/sass/1.43.4
   typescript: registry.npmmirror.com/typescript/4.4.4
   unocss: registry.npmmirror.com/unocss/0.6.6
+  unplugin-auto-import: registry.npmmirror.com/unplugin-auto-import/0.4.13_@vueuse+core@6.7.4+vite@2.6.13
+  unplugin-vue-components: registry.npmmirror.com/unplugin-vue-components/0.17.2_vite@2.6.13+vue@3.2.20
   vite: registry.npmmirror.com/vite/2.6.13_sass@1.43.4
   vue-tsc: registry.npmmirror.com/vue-tsc/0.2.3_typescript@4.4.4
 
 packages:
+
+  registry.nlark.com/@antfu/utils/0.3.0:
+    resolution: {integrity: sha1-YwbEO1Kog72Olz4+2N1kJIQYvMQ=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/@antfu/utils/download/@antfu/utils-0.3.0.tgz}
+    name: '@antfu/utils'
+    version: 0.3.0
+    dependencies:
+      '@types/throttle-debounce': registry.nlark.com/@types/throttle-debounce/2.1.0
+    dev: true
 
   registry.nlark.com/@babel/helper-validator-identifier/7.15.7:
     resolution: {integrity: sha1-Ig35k7/pBKSmsCq08zhaXr9uI4k=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/@babel/helper-validator-identifier/download/@babel/helper-validator-identifier-7.15.7.tgz}
@@ -53,6 +65,33 @@ packages:
       to-fast-properties: registry.nlark.com/to-fast-properties/2.0.0
     dev: true
 
+  registry.nlark.com/@nodelib/fs.scandir/2.1.5:
+    resolution: {integrity: sha1-dhnC6yGyVIP20WdUi0z9WnSIw9U=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/@nodelib/fs.scandir/download/@nodelib/fs.scandir-2.1.5.tgz}
+    name: '@nodelib/fs.scandir'
+    version: 2.1.5
+    engines: {node: '>= 8'}
+    dependencies:
+      '@nodelib/fs.stat': registry.nlark.com/@nodelib/fs.stat/2.0.5
+      run-parallel: registry.nlark.com/run-parallel/1.2.0
+    dev: true
+
+  registry.nlark.com/@nodelib/fs.stat/2.0.5:
+    resolution: {integrity: sha1-W9Jir5Tp0lvR5xsF3u1Eh2oiLos=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/@nodelib/fs.stat/download/@nodelib/fs.stat-2.0.5.tgz}
+    name: '@nodelib/fs.stat'
+    version: 2.0.5
+    engines: {node: '>= 8'}
+    dev: true
+
+  registry.nlark.com/@nodelib/fs.walk/1.2.8:
+    resolution: {integrity: sha1-6Vc36LtnRt3t9pxVaVNJTxlv5po=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/@nodelib/fs.walk/download/@nodelib/fs.walk-1.2.8.tgz}
+    name: '@nodelib/fs.walk'
+    version: 1.2.8
+    engines: {node: '>= 8'}
+    dependencies:
+      '@nodelib/fs.scandir': registry.nlark.com/@nodelib/fs.scandir/2.1.5
+      fastq: registry.nlark.com/fastq/1.13.0
+    dev: true
+
   registry.nlark.com/@rollup/pluginutils/4.1.1:
     resolution: {integrity: sha1-HU2obdTt7RVlalfZM/2iuaCNR+w=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/@rollup/pluginutils/download/@rollup/pluginutils-4.1.1.tgz}
     name: '@rollup/pluginutils'
@@ -61,6 +100,12 @@ packages:
     dependencies:
       estree-walker: registry.nlark.com/estree-walker/2.0.2
       picomatch: registry.nlark.com/picomatch/2.3.0
+    dev: true
+
+  registry.nlark.com/@types/throttle-debounce/2.1.0:
+    resolution: {integrity: sha1-HD32JL/Eti+ZLTASuExW1B6rN3Y=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/@types/throttle-debounce/download/@types/throttle-debounce-2.1.0.tgz}
+    name: '@types/throttle-debounce'
+    version: 2.1.0
     dev: true
 
   registry.nlark.com/acorn/7.4.1:
@@ -227,6 +272,27 @@ packages:
     name: estree-walker
     version: 2.0.2
 
+  registry.nlark.com/fast-glob/3.2.7:
+    resolution: {integrity: sha1-/Wy3otfpqnp4RhEehaGW1rL3ZqE=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/fast-glob/download/fast-glob-3.2.7.tgz?cache=0&sync_timestamp=1631501712703&other_urls=https%3A%2F%2Fregistry.nlark.com%2Ffast-glob%2Fdownload%2Ffast-glob-3.2.7.tgz}
+    name: fast-glob
+    version: 3.2.7
+    engines: {node: '>=8'}
+    dependencies:
+      '@nodelib/fs.stat': registry.nlark.com/@nodelib/fs.stat/2.0.5
+      '@nodelib/fs.walk': registry.nlark.com/@nodelib/fs.walk/1.2.8
+      glob-parent: registry.npmmirror.com/glob-parent/5.1.2
+      merge2: registry.nlark.com/merge2/1.4.1
+      micromatch: registry.nlark.com/micromatch/4.0.4
+    dev: true
+
+  registry.nlark.com/fastq/1.13.0:
+    resolution: {integrity: sha1-YWdg+Ip1Jr38WWt8q4wYk4w2uYw=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/fastq/download/fastq-1.13.0.tgz}
+    name: fastq
+    version: 1.13.0
+    dependencies:
+      reusify: registry.nlark.com/reusify/1.0.4
+    dev: true
+
   registry.nlark.com/follow-redirects/1.14.4:
     resolution: {integrity: sha1-g4/fSKi73XnlLuUfsclOPtmLk3k=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/follow-redirects/download/follow-redirects-1.14.4.tgz}
     name: follow-redirects
@@ -382,6 +448,23 @@ packages:
     dependencies:
       sourcemap-codec: registry.nlark.com/sourcemap-codec/1.4.8
 
+  registry.nlark.com/merge2/1.4.1:
+    resolution: {integrity: sha1-Q2iJL4hekHRVpv19xVwMnUBJkK4=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/merge2/download/merge2-1.4.1.tgz}
+    name: merge2
+    version: 1.4.1
+    engines: {node: '>= 8'}
+    dev: true
+
+  registry.nlark.com/micromatch/4.0.4:
+    resolution: {integrity: sha1-iW1Rnf6dsl/OlM63pQCRm/iB6/k=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/micromatch/download/micromatch-4.0.4.tgz}
+    name: micromatch
+    version: 4.0.4
+    engines: {node: '>=8.6'}
+    dependencies:
+      braces: registry.nlark.com/braces/3.0.2
+      picomatch: registry.nlark.com/picomatch/2.3.0
+    dev: true
+
   registry.nlark.com/minimatch/3.0.4:
     resolution: {integrity: sha1-UWbihkV/AzBgZL5Ul+jbsMPTIIM=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/minimatch/download/minimatch-3.0.4.tgz}
     name: minimatch
@@ -466,6 +549,12 @@ packages:
       asap: registry.nlark.com/asap/2.0.6
     dev: true
 
+  registry.nlark.com/queue-microtask/1.2.3:
+    resolution: {integrity: sha1-SSkii7xyTfrEPg77BYyve2z7YkM=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/queue-microtask/download/queue-microtask-1.2.3.tgz}
+    name: queue-microtask
+    version: 1.2.3
+    dev: true
+
   registry.nlark.com/readdirp/3.6.0:
     resolution: {integrity: sha1-dKNwvYVxFuJFspzJc0DNQxoCpsc=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/readdirp/download/readdirp-3.6.0.tgz}
     name: readdirp
@@ -482,6 +571,21 @@ packages:
     dependencies:
       is-core-module: registry.npmmirror.com/is-core-module/2.8.0
       path-parse: registry.nlark.com/path-parse/1.0.7
+    dev: true
+
+  registry.nlark.com/reusify/1.0.4:
+    resolution: {integrity: sha1-kNo4Kx4SbvwCFG6QhFqI2xKSXXY=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/reusify/download/reusify-1.0.4.tgz}
+    name: reusify
+    version: 1.0.4
+    engines: {iojs: '>=1.0.0', node: '>=0.10.0'}
+    dev: true
+
+  registry.nlark.com/run-parallel/1.2.0:
+    resolution: {integrity: sha1-ZtE2jae9+SHrnZW9GpIp5/IaQ+4=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/run-parallel/download/run-parallel-1.2.0.tgz}
+    name: run-parallel
+    version: 1.2.0
+    dependencies:
+      queue-microtask: registry.nlark.com/queue-microtask/1.2.3
     dev: true
 
   registry.nlark.com/semver/7.3.5:
@@ -557,6 +661,12 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
+  registry.nlark.com/webpack-virtual-modules/0.4.3:
+    resolution: {integrity: sha1-zVl8bVHVpey0c+6hmDpY+ooX3tk=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/webpack-virtual-modules/download/webpack-virtual-modules-0.4.3.tgz}
+    name: webpack-virtual-modules
+    version: 0.4.3
+    dev: true
+
   registry.nlark.com/with/7.0.2:
     resolution: {integrity: sha1-zO461ULSVTinp6gKrSErmChJW6w=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/with/download/with-7.0.2.tgz}
     name: with
@@ -579,6 +689,14 @@ packages:
     resolution: {integrity: sha1-m7knkNnA7/7GO+c1GeEaNQGaOnI=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/yallist/download/yallist-4.0.0.tgz}
     name: yallist
     version: 4.0.0
+    dev: true
+
+  registry.npmmirror.com/@antfu/utils/0.3.0:
+    resolution: {integrity: sha1-YwbEO1Kog72Olz4+2N1kJIQYvMQ=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@antfu/utils/download/@antfu/utils-0.3.0.tgz}
+    name: '@antfu/utils'
+    version: 0.3.0
+    dependencies:
+      '@types/throttle-debounce': registry.npmmirror.com/@types/throttle-debounce/2.1.0
     dev: true
 
   registry.npmmirror.com/@babel/parser/7.15.8:
@@ -636,6 +754,12 @@ packages:
     resolution: {integrity: sha1-a+96KgrWhM9ukPz+Mc7KvZzgo64=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/node/download/@types/node-16.11.6.tgz}
     name: '@types/node'
     version: 16.11.6
+    dev: true
+
+  registry.npmmirror.com/@types/throttle-debounce/2.1.0:
+    resolution: {integrity: sha1-HD32JL/Eti+ZLTASuExW1B6rN3Y=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/throttle-debounce/download/@types/throttle-debounce-2.1.0.tgz}
+    name: '@types/throttle-debounce'
+    version: 2.1.0
     dev: true
 
   registry.npmmirror.com/@unocss/config/0.6.6:
@@ -946,11 +1070,42 @@ packages:
       is-regex: registry.nlark.com/is-regex/1.1.4
     dev: true
 
+  registry.npmmirror.com/chokidar/3.5.2:
+    resolution: {integrity: sha1-26OXb8rbAW9m/TZQIdkWANAcHnU=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/chokidar/download/chokidar-3.5.2.tgz}
+    name: chokidar
+    version: 3.5.2
+    engines: {node: '>= 8.10.0'}
+    dependencies:
+      anymatch: registry.nlark.com/anymatch/3.1.2
+      braces: registry.nlark.com/braces/3.0.2
+      glob-parent: registry.npmmirror.com/glob-parent/5.1.2
+      is-binary-path: registry.nlark.com/is-binary-path/2.1.0
+      is-glob: registry.npmmirror.com/is-glob/4.0.3
+      normalize-path: registry.nlark.com/normalize-path/3.0.0
+      readdirp: registry.nlark.com/readdirp/3.6.0
+    optionalDependencies:
+      fsevents: registry.npmmirror.com/fsevents/2.3.2
+    dev: true
+
   registry.npmmirror.com/commander/4.1.1:
     resolution: {integrity: sha1-n9YCvZNilOnp70aj9NaWQESxgGg=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/commander/download/commander-4.1.1.tgz}
     name: commander
     version: 4.1.1
     engines: {node: '>= 6'}
+    dev: true
+
+  registry.npmmirror.com/debug/4.3.2:
+    resolution: {integrity: sha1-8KScGKyHeeMdSgxgKd+3aHPHQos=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/debug/download/debug-4.3.2.tgz}
+    name: debug
+    version: 4.3.2
+    engines: {node: '>=6.0'}
+    peerDependencies:
+      supports-color: '*'
+    peerDependenciesMeta:
+      supports-color:
+        optional: true
+    dependencies:
+      ms: registry.npmmirror.com/ms/2.1.2
     dev: true
 
   registry.npmmirror.com/doctypes/1.1.0:
@@ -1257,6 +1412,14 @@ packages:
     version: 3.0.0
     dev: true
 
+  registry.npmmirror.com/local-pkg/0.1.0:
+    resolution: {integrity: sha1-dCKyro/B47nvLxMrCg6S2HnfUu8=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/local-pkg/download/local-pkg-0.1.0.tgz}
+    name: local-pkg
+    version: 0.1.0
+    dependencies:
+      mlly: registry.npmmirror.com/mlly/0.2.10
+    dev: true
+
   registry.npmmirror.com/local-pkg/0.4.0:
     resolution: {integrity: sha1-5iIRcYE9WggS3YT6gP+xyPzABTE=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/local-pkg/download/local-pkg-0.4.0.tgz}
     name: local-pkg
@@ -1272,6 +1435,12 @@ packages:
     version: 0.2.10
     dependencies:
       import-meta-resolve: registry.npmmirror.com/import-meta-resolve/1.1.1
+    dev: true
+
+  registry.npmmirror.com/ms/2.1.2:
+    resolution: {integrity: sha1-0J0fNXtEP0kzgqjrPM0YOHKuYAk=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/ms/download/ms-2.1.2.tgz}
+    name: ms
+    version: 2.1.2
     dev: true
 
   registry.npmmirror.com/nanoid/3.1.30:
@@ -1499,6 +1668,86 @@ packages:
       '@unocss/preset-uno': registry.npmmirror.com/@unocss/preset-uno/0.6.6
       '@unocss/reset': registry.npmmirror.com/@unocss/reset/0.6.6
       '@unocss/vite': registry.npmmirror.com/@unocss/vite/0.6.6
+    dev: true
+
+  registry.npmmirror.com/unplugin-auto-import/0.4.13_@vueuse+core@6.7.4+vite@2.6.13:
+    resolution: {integrity: sha1-iYbUfw9SG0hdSocPfDnZUQBkINQ=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/unplugin-auto-import/download/unplugin-auto-import-0.4.13.tgz}
+    id: registry.npmmirror.com/unplugin-auto-import/0.4.13
+    name: unplugin-auto-import
+    version: 0.4.13
+    engines: {node: '>=14'}
+    peerDependencies:
+      '@vueuse/core': ^6.0.0
+    peerDependenciesMeta:
+      '@vueuse/core':
+        optional: true
+    dependencies:
+      '@antfu/utils': registry.nlark.com/@antfu/utils/0.3.0
+      '@rollup/pluginutils': registry.nlark.com/@rollup/pluginutils/4.1.1
+      '@vueuse/core': registry.npmmirror.com/@vueuse/core/6.7.4_vue@3.2.20
+      local-pkg: registry.npmmirror.com/local-pkg/0.1.0
+      magic-string: registry.nlark.com/magic-string/0.25.7
+      resolve: registry.nlark.com/resolve/1.20.0
+      unplugin: registry.npmmirror.com/unplugin/0.2.20_vite@2.6.13
+    transitivePeerDependencies:
+      - rollup
+      - vite
+      - webpack
+    dev: true
+
+  registry.npmmirror.com/unplugin-vue-components/0.17.2_vite@2.6.13+vue@3.2.20:
+    resolution: {integrity: sha1-235mn6w8w2uHugVvY+LqpHp/G5s=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/unplugin-vue-components/download/unplugin-vue-components-0.17.2.tgz}
+    id: registry.npmmirror.com/unplugin-vue-components/0.17.2
+    name: unplugin-vue-components
+    version: 0.17.2
+    engines: {node: '>=14'}
+    peerDependencies:
+      '@babel/parser': ^7.15.8
+      '@babel/traverse': ^7.15.4
+      vue: 2 || 3
+    peerDependenciesMeta:
+      '@babel/parser':
+        optional: true
+      '@babel/traverse':
+        optional: true
+    dependencies:
+      '@antfu/utils': registry.npmmirror.com/@antfu/utils/0.3.0
+      '@rollup/pluginutils': registry.nlark.com/@rollup/pluginutils/4.1.1
+      chokidar: registry.npmmirror.com/chokidar/3.5.2
+      debug: registry.npmmirror.com/debug/4.3.2
+      fast-glob: registry.nlark.com/fast-glob/3.2.7
+      local-pkg: registry.npmmirror.com/local-pkg/0.1.0
+      magic-string: registry.nlark.com/magic-string/0.25.7
+      minimatch: registry.nlark.com/minimatch/3.0.4
+      resolve: registry.nlark.com/resolve/1.20.0
+      unplugin: registry.npmmirror.com/unplugin/0.2.20_vite@2.6.13
+      vue: registry.npmmirror.com/vue/3.2.20
+    transitivePeerDependencies:
+      - rollup
+      - supports-color
+      - vite
+      - webpack
+    dev: true
+
+  registry.npmmirror.com/unplugin/0.2.20_vite@2.6.13:
+    resolution: {integrity: sha1-/VebjzAkWesa42FvccK6k+YHYYc=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/unplugin/download/unplugin-0.2.20.tgz}
+    id: registry.npmmirror.com/unplugin/0.2.20
+    name: unplugin
+    version: 0.2.20
+    peerDependencies:
+      rollup: ^2.50.0
+      vite: ^2.3.0
+      webpack: 4 || 5
+    peerDependenciesMeta:
+      rollup:
+        optional: true
+      vite:
+        optional: true
+      webpack:
+        optional: true
+    dependencies:
+      vite: registry.npmmirror.com/vite/2.6.13_sass@1.43.4
+      webpack-virtual-modules: registry.nlark.com/webpack-virtual-modules/0.4.3
     dev: true
 
   registry.npmmirror.com/vite/2.6.13_sass@1.43.4:

@@ -3,11 +3,14 @@
     posts
     <Switch />
     <div class="i-ph-anchor-simple-thin" />
+    {{ a }}
   </div>
 </template>
 
 <script lang="ts" setup>
-import { ref, reactive } from 'vue'
-import Switch from '@c/Switch/index.vue'
+let a = ref({
+  a: 19
+})
+// console.log(a)
 </script>
 <style lang="scss" scoped></style>
