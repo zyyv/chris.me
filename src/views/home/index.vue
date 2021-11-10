@@ -3,37 +3,10 @@
     <div class="w-4/5 m-auto relative">
       <transition name="display" mode="out-in">
         <div v-if="!allDown">
-          <div
-            class="
-              html
-              absolute
-              w-5/12
-              top-0
-              left-0
-              p-4
-              border
-              rounded-md
-              border-main
-            "
-          >
-            <pre
-              class="text-justify whitespace-pre-wrap"
-              v-typeWrite="htmlState"
-            ></pre>
+          <div class="html absolute w-5/12 top-0 left-0 p-4 border rounded-md border-main">
+            <pre class="text-justify whitespace-pre-wrap" v-typeWrite="htmlState"></pre>
           </div>
-          <div
-            class="
-              css
-              absolute
-              w-5/12
-              top-0
-              right-0
-              p-4
-              border
-              rounded-md
-              border-main
-            "
-          >
+          <div class="css absolute w-5/12 top-0 right-0 p-4 border rounded-md border-main">
             <pre v-typeWrite="cssState" class="whitespace-pre-wrap"></pre>
           </div>
         </div>
@@ -47,7 +20,7 @@
         size="small"
         :disabled="enableAnimate"
         v-model:value="enableAnimate"
-      /> -->
+      />-->
     </div>
   </div>
 </template>
@@ -63,7 +36,7 @@ import { watch, ref, watchEffect, onMounted } from 'vue'
 import { useCss, useHtml } from '.'
 
 onMounted(() => {
-  console.log('home mounted')
+  console.log("home mounted")
 })
 
 const allDown = ref(false) // 两个模块是否都打印完成
