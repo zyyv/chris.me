@@ -9,7 +9,7 @@ export const createConfig = ({ strict = true, dev = true } = {}) => {
       presetIcons({
         collections: {
           carbon: () =>
-            import('@iconify-json/carbon').then((i) => i.icons as any)
+            import('@iconify-json/carbon').then(i => i.icons as any)
           // mdi: () => import('@iconify-json/mdi/icons.json').then(i => i.default as any),
           // logos: () => import('@iconify-json/logos/icons.json').then(i => i.default as any),
           // twemoji: () => import('@iconify-json/twemoji/icons.json').then(i => i.default as any),
@@ -26,13 +26,13 @@ export const createConfig = ({ strict = true, dev = true } = {}) => {
           position: 'absolute',
           top: '50%',
           left: '50%',
-          transform: `translate(-50%, -50%)`
+          transform: 'translate(-50%, -50%)'
         }
       ],
       [
         'f-c',
         {
-          display: 'flex',
+          'display': 'flex',
           'justify-content': 'center',
           'align-items': 'center'
         }

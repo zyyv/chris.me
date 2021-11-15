@@ -31,6 +31,9 @@ export default defineConfig({
     }
   },
   server: {
+    fs: {
+      strict: true
+    },
     port: 9999,
     proxy: {
       '/api': {
@@ -40,6 +43,6 @@ export default defineConfig({
     }
   },
   optimizeDeps: {
-    include: ['@vueuse/core']
+    include: ['vue', 'vue-router', '@vueuse/core']
   }
 })
