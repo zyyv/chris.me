@@ -33,10 +33,10 @@ watchEffect(() => {
       <transition name="display" mode="out-in">
         <div v-if="!allDown">
           <div class="html w-5/12" absolute top-0 left-0 p-4 border rounded-md border-main>
-            <pre class="text-justify whitespace-pre-wrap" v-typeWrite="htmlState"></pre>
+            <pre v-typeWrite="htmlState" text-justify whitespace-pre-wrap font-mono></pre>
           </div>
           <div class="css w-5/12" absolute top-0 right-0 p-4 border rounded-md border-main>
-            <pre v-typeWrite="cssState" class="whitespace-pre-wrap"></pre>
+            <pre v-typeWrite="cssState" whitespace-pre-wrap font-mono></pre>
           </div>
         </div>
         <div m-auto p-2 text-center border v-else>

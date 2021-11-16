@@ -3,6 +3,12 @@ import { presetUno, presetAttributify, presetIcons, defineConfig } from 'unocss'
 export const createConfig = ({ strict = true, dev = true } = {}) => {
   return defineConfig({
     envMode: dev ? 'dev' : 'build',
+    theme: {
+      fontFamily: {
+        sans: '\'Inter\', sans-serif',
+        mono: '\'Fira Code\', monospace',
+      },
+    },
     presets: [
       presetAttributify({ strict }),
       presetUno(),
