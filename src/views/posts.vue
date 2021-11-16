@@ -1,7 +1,7 @@
 <template>
   <div>
     posts
-    <Switch v-model:value="a" disabled />
+    <Switch v-model:value="a" size="small" />
     {{ a }}
   </div>
 </template>
