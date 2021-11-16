@@ -14,8 +14,8 @@ export const createConfig = ({ strict = true, dev = true } = {}) => {
       presetUno(),
       presetIcons({
         collections: {
-          carbon: () =>
-            import('@iconify-json/carbon').then(i => i.icons as any)
+          carbon: () => import('@iconify-json/carbon').then(i => i.icons as any),
+          ri: () => import('@iconify-json/ri').then(i => i.icons as any)
           // mdi: () => import('@iconify-json/mdi/icons.json').then(i => i.default as any),
           // logos: () => import('@iconify-json/logos/icons.json').then(i => i.default as any),
           // twemoji: () => import('@iconify-json/twemoji/icons.json').then(i => i.default as any),
