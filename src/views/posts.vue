@@ -1,16 +1,17 @@
 <template>
   <div>
     posts
-    <Switch />
-    <div class="i-ph-anchor-simple-thin" />
+    <Switch v-model:value="a" disabled />
     {{ a }}
   </div>
 </template>
 
 <script lang="ts" setup>
-let a = ref({
-  a: 19
-})
+let a = ref(true)
 // console.log(a)
+
+function handleChage(a: boolean) {
+  console.log(a)
+}
 </script>
 <style lang="scss" scoped></style>
