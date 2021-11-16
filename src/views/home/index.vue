@@ -1,30 +1,3 @@
-<template>
-  <div>
-    <div class="w-4/5 m-auto relative">
-      <transition name="display" mode="out-in">
-        <div v-if="!allDown">
-          <div class="html absolute w-5/12 top-0 left-0 p-4 border rounded-md border-main">
-            <pre class="text-justify whitespace-pre-wrap" v-typeWrite="htmlState"></pre>
-          </div>
-          <div class="css absolute w-5/12 top-0 right-0 p-4 border rounded-md border-main">
-            <pre v-typeWrite="cssState" class="whitespace-pre-wrap"></pre>
-          </div>
-        </div>
-        <div m-auto p-2 text-center border v-else>
-          <img class="inline-block" width="200" src="@a/logo.svg" />
-        </div>
-      </transition>
-    </div>
-    <div class="absolute bottom-5 right-5">
-      <!-- <n-switch
-        size="small"
-        :disabled="enableAnimate"
-        v-model:value="enableAnimate"
-      />-->
-    </div>
-  </div>
-</template>
-
 <script lang="ts">
 export default {
   name: 'Home'
@@ -53,6 +26,30 @@ watchEffect(() => {
   }
 })
 </script>
+
+<template>
+  <div>
+    <div class="w-4/5 m-auto relative">
+      <transition name="display" mode="out-in">
+        <div v-if="!allDown">
+          <div class="html w-5/12" absolute top-0 left-0 p-4 border rounded-md border-main>
+            <pre v-typeWrite="htmlState" text-justify whitespace-pre-wrap font-mono></pre>
+          </div>
+          <div class="css w-5/12" absolute top-0 right-0 p-4 border rounded-md border-main>
+            <pre v-typeWrite="cssState" whitespace-pre-wrap font-mono></pre>
+          </div>
+        </div>
+        <div m-auto p-2 text-center border v-else>
+          <img inline-block width="200" src="@a/logo.svg" />
+        </div>
+      </transition>
+    </div>
+    <div absolute bottom-5 right-5>
+      <Switch :disabled="enableAnimate" v-model:value="enableAnimate" size="small" />
+    </div>
+  </div>
+</template>
+
 <style lang="scss" scoped>
 .display-enter-active {
   transition: all 1s ease-in-out;
