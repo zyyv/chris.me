@@ -4,6 +4,7 @@ import vue from '@vitejs/plugin-vue'
 import Unocss from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
+import vueI18n from '@intlify/vite-plugin-vue-i18n'
 
 const pathResolve = (src: string) => resolve(__dirname, src)
 
@@ -13,11 +14,16 @@ export default defineConfig({
     vue({ script: { refSugar: true } }),
     Unocss(),
     AutoImport({
-      imports: ['vue', '@vueuse/core', 'pinia', 'vue-router'],
+      imports: ['vue', 'pinia', 'vue-router', 'vue-i18n', '@vueuse/core'],
       dts: 'src/auto-imports.d.ts'
     }),
     Components({
       dts: 'src/components.d.ts'
+    }),
+    vueI18n({
+      runtimeOnly: true,
+      compositionOnly: true,
+      include: [pathResolve('locales/**')]
     })
   ],
   resolve: {
@@ -34,7 +40,6 @@ export default defineConfig({
     fs: {
       strict: true
     },
-    port: 9999,
     proxy: {
       '/api': {
         target: 'http://localhost:2430',

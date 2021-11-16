@@ -1,9 +1,14 @@
+<script lang='ts' setup>
+const { t } = useI18n()
+</script>
+
 <template>
-  <div></div>
+  <div>
+    <p>
+      {{ t('button.home') }}
+    </p>
+  </div>
 </template>
 
-<script lang='ts' setup>
-
-</script>
 <style lang='scss' scoped>
 </style>
