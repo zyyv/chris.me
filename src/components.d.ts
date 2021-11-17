@@ -4,12 +4,10 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
-    Bg: typeof import('./components/Layout/Bg.vue')['default']
+    Bg: typeof import('./components/Bg.vue')['default']
     Cursor: typeof import('./components/Cursor/index.vue')['default']
     GlassCard: typeof import('./components/GlassCard.vue')['default']
-    Header: typeof import('./components/Layout/Header.vue')['default']
-    Layout: typeof import('./components/Layout/index.vue')['default']
-    Main: typeof import('./components/Layout/Main.vue')['default']
+    Header: typeof import('./components/Header.vue')['default']
     Switch: typeof import('./components/Switch/index.vue')['default']
   }
 }

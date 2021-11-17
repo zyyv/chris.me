@@ -6,10 +6,6 @@ export default {
 <script lang="ts" setup>
 import { useCss, useHtml } from '.'
 
-onMounted(() => {
-  console.log("home mounted")
-})
-
 const allDown = ref(false) // 两个模块是否都打印完成
 const enableAnimate = ref(false) // 提前结束动画
 const { htmlState } = useHtml()
@@ -29,7 +25,7 @@ watchEffect(() => {
 
 <template>
   <div>
-    <div class="w-4/5 m-auto relative">
+    <div class="w-4/5" m-auto relative>
       <transition name="display" mode="out-in">
         <div v-if="!allDown">
           <div class="html w-5/12" absolute top-0 left-0 p-4 border rounded-md border-main>

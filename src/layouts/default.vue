@@ -1,9 +1,12 @@
 <template>
+    <Bg />
+    <Cursor />
+    <Header />
     <main class="container m-auto">
         <router-view v-slot="{ Component, route }">
             <transition :name="route.meta.transition || 'fade'" mode="out-in">
                 <keep-alive include="Home">
-                    <component :is="Component" :key="route.path" />
+                    <component :is="Component" :key="route.name" />
                 </keep-alive>
             </transition>
         </router-view>

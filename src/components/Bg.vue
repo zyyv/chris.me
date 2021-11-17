@@ -1,36 +1,36 @@
 <template>
-  <div class="bg bg-img">
+  <div
+    class="bg -z-1 bg-[#040d21]"
+    fixed
+    top-0
+    left-0
+    overflow-hidden
+    h-screen
+    w-screen
+    bg="no-repeat"
+  >
     <div>
-      <div class="signup-bg-stars"></div>
-      <div class="signup-bg-stars-2"></div>
-      <div class="signup-bg-stars-3"></div>
+      <div
+        class="signup-bg-stars -z-200"
+        w="1px"
+        h="1px"
+        bg-transparent
+        rounded-full
+        after="absolute top-2000px w-[1px] h-[1px] rounded-[10px] bg-transparent"
+      ></div>
+      <div class="signup-bg-stars-2" rounded-full w="2px" h="2px" after="w-[2px] h-[2px]"></div>
+      <div class="signup-bg-stars-3" rounded-full w="3px" h="3px" after="w-[3px] h-[3px]"></div>
     </div>
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 .bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  overflow: hidden;
-  height: 100vh;
-  width: 100vw;
-  background-color: #040d21;
-
-  &-img {
-    background-image: url('@/assets/hero-glow.svg');
-    background-size: 200% 200%;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-  }
+  background-image: url("@/assets/hero-glow.svg");
+  background-size: 200% 200%;
+  background-position: 50% 50%;
 }
 .signup-bg-stars {
-  z-index: -200;
-  width: 1px;
-  height: 1px;
-  background: transparent;
   box-shadow: 750px 740px rgba(255, 255, 255, 0.2), 1350px 631px #fff,
     56px 1452px #fff, 554px 1842px #fff, 1977px 711px #fff, 1773px 515px #fff,
     1874px 323px #fff, 382px 762px #fff, 1327px 1856px #fff, 921px 157px #fff,
@@ -54,13 +54,7 @@
 }
 
 .signup-bg-stars::after {
-  position: absolute;
-  top: 2000px;
-  width: 1px;
-  height: 1px;
-  content: ' ';
-  background: transparent;
-  border-radius: 10px;
+  content: " ";
   box-shadow: 750px 740px rgba(255, 255, 255, 0.2), 1350px 631px #fff,
     56px 1452px #fff, 554px 1842px #fff, 1977px 711px #fff, 1773px 515px #fff,
     1874px 323px #fff, 382px 762px #fff, 1327px 1856px #fff, 921px 157px #fff,
@@ -84,8 +78,6 @@
 }
 
 .signup-bg-stars-2 {
-  width: 2px;
-  height: 2px;
   box-shadow: 18px 249px rgba(255, 255, 255, 0.2), 1010px 1194px #fff,
     1566px 862px #fff, 1522px 47px #fff, 1268px 1429px #fff, 685px 239px #fff,
     511px 1827px #fff, 1862px 1202px #fff, 1869px 491px #fff, 912px 344px #fff,
@@ -96,8 +88,6 @@
 }
 
 .signup-bg-stars-2::after {
-  width: 2px;
-  height: 2px;
   box-shadow: 18px 249px rgba(255, 255, 255, 0.2), 1010px 1194px #fff,
     1566px 862px #fff, 1522px 47px #fff, 1268px 1429px #fff, 685px 239px #fff,
     511px 1827px #fff, 1862px 1202px #fff, 1869px 491px #fff, 912px 344px #fff,
@@ -107,8 +97,6 @@
 }
 
 .signup-bg-stars-3 {
-  width: 3px;
-  height: 3px;
   box-shadow: 588px 305px rgba(255, 255, 255, 0.2), 1968px 1036px #fff,
     970px 941px #fff, 655px 814px #fff, 376px 480px #fff, 257px 519px #fff,
     1417px 545px #fff, 872px 281px #fff, 724px 937px #fff, 304px 1811px #fff;
@@ -116,8 +104,6 @@
 }
 
 .signup-bg-stars-3::after {
-  width: 3px;
-  height: 3px;
   box-shadow: 588px 305px rgba(255, 255, 255, 0.2), 1968px 1036px #fff,
     970px 941px #fff, 655px 814px #fff, 376px 480px #fff, 257px 519px #fff,
     1417px 545px #fff, 872px 281px #fff, 724px 937px #fff, 304px 1811px #fff;

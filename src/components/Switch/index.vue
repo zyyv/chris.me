@@ -76,10 +76,6 @@ $dotHeight: calc(v-bind(_height) - 4px);
     }
   }
 
-  &.disabled {
-    opacity: 0.5;
-  }
-
   &__button {
     left: 1px;
     top: 1px;
