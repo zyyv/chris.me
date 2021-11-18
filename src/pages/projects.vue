@@ -5,7 +5,7 @@ console.log(t('project.h1'))
 <template>
   <div class="w-3/5 m-auto">
     <h1>{{ t('project.h1') }}</h1>
-    <h3>List of projects that I am proud of</h3>
+    <h2>{{t('project.h2')}}</h2>
   </div>
 </template>
 <style lang='scss' scoped>
