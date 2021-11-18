@@ -11,4 +11,7 @@ intro:
   hi: 안녕, {name}!
   whats-your-name: 이름이 뭐예요?
 not-found: 찾을 수 없습니다
+project:
+  h1: 프로젝트
+  h2: 내가 자랑스러워하는 몇 가지 프로젝트
 

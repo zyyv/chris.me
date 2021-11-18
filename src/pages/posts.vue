@@ -7,8 +7,10 @@
 </template>
 
 <script lang="ts" setup>
-let a = ref(true)
+import { useUserStore } from '@/store/user'
 
+let a = ref(true)
+useUserStore()
 
 </script>
 <style lang="scss" scoped></style>

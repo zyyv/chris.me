@@ -1,4 +1,4 @@
-import { defineStore } from 'pinia'
+import { defineStore, acceptHMRUpdate } from 'pinia'
 
 export const useUserStore = defineStore({
   id: 'user',
@@ -8,10 +8,13 @@ export const useUserStore = defineStore({
     }
   }),
   actions: {
-    async login(account: string, pwd: string) {}
+    async login(account: string, pwd: string) { }
   },
   persist: {
     enabled: true,
     strategies: [{ storage: localStorage }]
   }
 })
+
+if (import.meta.hot)
+  import.meta.hot.accept(acceptHMRUpdate(useUserStore, import.meta.hot))

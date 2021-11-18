@@ -11,3 +11,6 @@ intro:
   hi: こんにちは、{name}!
   whats-your-name: 君の名は。
 not-found: 見つかりませんでした
+project:
+  h1: 事業
+  h2: 私が誇りに思っているいくつかのプロジェクト

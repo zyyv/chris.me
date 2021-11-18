@@ -7,9 +7,7 @@
       <div class="spacer"></div>
       <div grid gap-5 auto-flow-col>
         <Navlink
-          v-for="route in routes"
-          :key="route.to"
-          :to="route.to"
+          to="/posts"
           text-inherit
           no-underline
           outline-none
@@ -18,42 +16,81 @@
           activeClass="op-100"
           inactiveClass="op-50"
         >
-          <div w-6 h-6 :class="route.icon"></div>
+          <div w-6 h-6 class="i-ri:article-line"></div>
+        </Navlink>
+        <Navlink
+          to="/projects"
+          text-inherit
+          no-underline
+          outline-none
+          hover="op-100"
+          transition-opacity-300
+          activeClass="op-100"
+          inactiveClass="op-50"
+        >
+          <div w-6 h-6 class="i-carbon:progress-bar-round"></div>
+        </Navlink>
+        <Navlink
+          to="/photoes"
+          text-inherit
+          no-underline
+          outline-none
+          hover="op-100"
+          transition-opacity-300
+          activeClass="op-100"
+          inactiveClass="op-50"
+        >
+          <div w-6 h-6 class="i-carbon:camera-action"></div>
+        </Navlink>
+        <Navlink
+          to="https://space.bilibili.com/402454160"
+          text-inherit
+          no-underline
+          outline-none
+          hover="op-100"
+          transition-opacity-300
+          activeClass="op-100"
+          inactiveClass="op-50"
+        >
+          <div w-6 h-6 class="i-carbon:chat-operational"></div>
+        </Navlink>
+        <Navlink
+          to="https://space.bilibili.com/402454160"
+          text-inherit
+          no-underline
+          outline-none
+          hover="op-100"
+          transition-opacity-300
+          activeClass="op-100"
+          inactiveClass="op-50"
+        >
+          <div w-6 h-6 class="i-ri:bilibili-line"></div>
+        </Navlink>
+        <Navlink
+          to="https://github.com/chris-zhu"
+          text-inherit
+          no-underline
+          outline-none
+          hover="op-100"
+          transition-opacity-300
+          activeClass="op-100"
+          inactiveClass="op-50"
+        >
+          <div w-6 h-6 class="i-carbon:logo-github"></div>
+        </Navlink>
+        <Navlink
+          to="/"
+          text-inherit
+          no-underline
+          outline-none
+          hover="op-100"
+          transition-opacity-300
+          activeClass="op-100"
+          inactiveClass="op-50"
+        >
+          <div w-6 h-6 class="i-carbon:language"></div>
         </Navlink>
       </div>
     </nav>
   </header>
 </template>
-
-<script lang="ts" setup>
-const routes = reactive([
-  {
-    icon: 'i-ri:article-line',
-    to: '/posts'
-  },
-  {
-    icon: 'i-carbon:progress-bar-round',
-    to: '/projects'
-  },
-  {
-    icon: 'i-carbon:camera-action',
-    to: '/photoes'
-  },
-  {
-    icon: 'i-carbon:chat-operational',
-    to: 'https://space.bilibili.com/402454160'
-  },
-  {
-    icon: 'i-ri:bilibili-line',
-    to: 'https://space.bilibili.com/402454160'
-  },
-  {
-    icon: 'i-carbon:logo-github',
-    to: 'https://github.com/chris-zhu'
-  },
-  {
-    icon: 'i-carbon:language',
-    to: '/'
-  }
-])
-</script>
