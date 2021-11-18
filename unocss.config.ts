@@ -42,7 +42,8 @@ export const createConfig = ({ strict = true, dev = true } = {}) => {
           'justify-content': 'center',
           'align-items': 'center'
         }
-      ]
+      ],
+      [/^z-\[(-?\d+)\]$/, ([, d]) => ({ 'z-index': d })]
     ]
   })
 }

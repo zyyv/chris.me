@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg -z-1 bg-[#040d21]"
+    class="bg z-[-1] bg-[#040d21]"
     fixed
     top-0
     left-0

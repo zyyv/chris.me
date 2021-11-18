@@ -8,6 +8,7 @@ declare module 'vue' {
     Cursor: typeof import('./components/Cursor/index.vue')['default']
     GlassCard: typeof import('./components/GlassCard.vue')['default']
     Header: typeof import('./components/Header.vue')['default']
+    Navlink: typeof import('./components/Navlink.vue')['default']
     Switch: typeof import('./components/Switch/index.vue')['default']
   }
 }

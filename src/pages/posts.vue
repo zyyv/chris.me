@@ -1,6 +1,6 @@
 <template>
   <div>
-    posts
+    <div class="text-light-600">posts111111111111</div>
     <Switch v-model:value="a" size="small" />
     {{ a }}
   </div>
@@ -8,10 +8,7 @@
 
 <script lang="ts" setup>
 let a = ref(true)
-// console.log(a)
 
-function handleChage(a: boolean) {
-  console.log(a)
-}
+
 </script>
 <style lang="scss" scoped></style>

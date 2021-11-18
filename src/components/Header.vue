@@ -1,62 +1,59 @@
 <template>
-  <header class="w-full">
+  <header w-full>
     <router-link to="/">
-      <img class="w-10 h-10 fixed left-6 top-6" src="@/assets/logo.svg" alt="logo" />
+      <img w-10 h-10 fixed left-6 top-6 src="@/assets/logo.svg" alt="logo" />
     </router-link>
-    <nav class="nav">
+    <nav p-8 w-full grid box-border class="grid-cols-[auto,max-content]">
       <div class="spacer"></div>
-      <div class="right">
-        <router-link to="/posts">
-          <div w-6 h-6 class="i-ri:article-line"></div>
-        </router-link>
-        <router-link to="/projects">
-          <div w-6 h-6 class="i-carbon:progress-bar-round"></div>
-        </router-link>
-        <router-link to="/photoes">
-          <div w-6 h-6 class="i-carbon:camera-action"></div>
-        </router-link>
-        <a href="/chat" target="_blank">
-          <div w-6 h-6 class="i-carbon:chat-operational"></div>
-        </a>
-        <a href="https://space.bilibili.com/402454160" target="_blank">
-          <div w-6 h-6 class="i-ri:bilibili-line"></div>
-        </a>
-        <a href="https://github.com/chris-zhu" target="_blank">
-          <div w-6 h-6 class="i-carbon:logo-github"></div>
-        </a>
-        <div>
-          <div w-6 h-6 class="i-carbon:language"></div>
-        </div>
+      <div grid gap-5 auto-flow-col>
+        <Navlink
+          v-for="route in routes"
+          :key="route.to"
+          :to="route.to"
+          text-inherit
+          no-underline
+          outline-none
+          hover="op-100"
+          transition-opacity-300
+          activeClass="op-100"
+          inactiveClass="op-50"
+        >
+          <div w-6 h-6 :class="route.icon"></div>
+        </Navlink>
       </div>
     </nav>
   </header>
 </template>
 
 <script lang="ts" setup>
+const routes = reactive([
+  {
+    icon: 'i-ri:article-line',
+    to: '/posts'
+  },
+  {
+    icon: 'i-carbon:progress-bar-round',
+    to: '/projects'
+  },
+  {
+    icon: 'i-carbon:camera-action',
+    to: '/photoes'
+  },
+  {
+    icon: 'i-carbon:chat-operational',
+    to: 'https://space.bilibili.com/402454160'
+  },
+  {
+    icon: 'i-ri:bilibili-line',
+    to: 'https://space.bilibili.com/402454160'
+  },
+  {
+    icon: 'i-carbon:logo-github',
+    to: 'https://github.com/chris-zhu'
+  },
+  {
+    icon: 'i-carbon:language',
+    to: '/'
+  }
+])
 </script>
-<style lang="scss" scoped>
-.nav {
-  padding: 2rem;
-  width: 100%;
-  display: grid;
-  grid-template-columns: auto max-content;
-  box-sizing: border-box;
-  a {
-    text-decoration: none;
-    color: inherit;
-    transition: opacity 0.2s ease;
-    opacity: 0.6;
-    outline: none;
-
-    &:hover {
-      opacity: 1;
-      text-decoration-color: inherit;
-    }
-  }
-  .right {
-    display: grid;
-    grid-gap: 1.2rem;
-    grid-auto-flow: column;
-  }
-}
-</style>
