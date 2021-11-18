@@ -3,8 +3,12 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <div class="w-3/5 m-auto">
-    <h1>{{ t('project.h1') }}</h1>
-    <h2>{{ t('project.h2') }}</h2>
+  <div class="max-w-65ch m-auto">
+    <h1 text-4xl class="mb-4 font-medium">
+      {{ t('project.h1') }}
+    </h1>
+    <p class="text-xl">
+      {{ t('project.h2') }}
+    </p>
   </div>
 </template>
