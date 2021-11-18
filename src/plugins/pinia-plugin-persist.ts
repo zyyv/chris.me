@@ -14,7 +14,8 @@ function updateStorage(strategy: PersistStrategy, store: Store) {
     }, {} as PartialState)
 
     storage.setItem(storeKey, JSON.stringify(partialState))
-  } else {
+  }
+  else {
     storage.setItem(storeKey, JSON.stringify(store.$state))
   }
 }

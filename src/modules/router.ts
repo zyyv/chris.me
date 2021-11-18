@@ -4,6 +4,6 @@ import { setupLayouts } from 'virtual:generated-layouts'
 import { UserModule } from '@/types'
 
 export const install: UserModule = (app) => {
-    const router = createRouter({ routes: setupLayouts(generatedRoutes), history: createWebHistory() })
-    app.use(router)
+  const router = createRouter({ routes: setupLayouts(generatedRoutes), history: createWebHistory() })
+  app.use(router)
 }

@@ -42,13 +42,14 @@ export class CancelToken {
       this.pending.delete(url)
     }
   }
+
   /**
    * 清空 pending 中的请求（在路由跳转时调用）
    */
   public static clearPending() {
-    for (const [url, cancel] of this.pending) {
+    for (const [url, cancel] of this.pending)
       cancel(url)
-    }
+
     this.pending.clear()
   }
 }

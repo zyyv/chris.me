@@ -16,7 +16,7 @@ const props = withDefaults(
     defaultValue: false,
     disabled: false,
     bgColor: 'rgba(0, 0, 0, 0.14)',
-    bgActiveColor: '#60bc95',
+    bgActiveColor: '#60bc95'
   }
 )
 
@@ -50,7 +50,6 @@ const handleClick = () => {
     <div absolute rounded-full class="switch__button bg-[#fff]"></div>
   </div>
 </template>
-
 
 <style lang="scss" scoped>
 $dotWidth: calc(v-bind(_height) - 4px);

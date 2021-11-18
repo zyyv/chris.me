@@ -1,7 +1,15 @@
 <template>
   <header w-full>
     <router-link to="/">
-      <img w-10 h-10 fixed left-6 top-6 src="@/assets/logo.svg" alt="logo" />
+      <img
+        w-10
+        h-10
+        fixed
+        left-6
+        top-6
+        src="@/assets/logo.svg"
+        alt="logo"
+      />
     </router-link>
     <nav p-8 w-full grid box-border class="grid-cols-[auto,max-content]">
       <div class="spacer"></div>
@@ -13,8 +21,8 @@
           outline-none
           hover="op-100"
           transition-opacity-300
-          activeClass="op-100"
-          inactiveClass="op-50"
+          active-class="op-100"
+          inactive-class="op-50"
         >
           <div w-6 h-6 class="i-ri:article-line"></div>
         </Navlink>
@@ -25,8 +33,8 @@
           outline-none
           hover="op-100"
           transition-opacity-300
-          activeClass="op-100"
-          inactiveClass="op-50"
+          active-class="op-100"
+          inactive-class="op-50"
         >
           <div w-6 h-6 class="i-carbon:progress-bar-round"></div>
         </Navlink>
@@ -37,8 +45,8 @@
           outline-none
           hover="op-100"
           transition-opacity-300
-          activeClass="op-100"
-          inactiveClass="op-50"
+          active-class="op-100"
+          inactive-class="op-50"
         >
           <div w-6 h-6 class="i-carbon:camera-action"></div>
         </Navlink>
@@ -49,8 +57,8 @@
           outline-none
           hover="op-100"
           transition-opacity-300
-          activeClass="op-100"
-          inactiveClass="op-50"
+          active-class="op-100"
+          inactive-class="op-50"
         >
           <div w-6 h-6 class="i-carbon:chat-operational"></div>
         </Navlink>
@@ -61,8 +69,8 @@
           outline-none
           hover="op-100"
           transition-opacity-300
-          activeClass="op-100"
-          inactiveClass="op-50"
+          active-class="op-100"
+          inactive-class="op-50"
         >
           <div w-6 h-6 class="i-ri:bilibili-line"></div>
         </Navlink>
@@ -73,8 +81,8 @@
           outline-none
           hover="op-100"
           transition-opacity-300
-          activeClass="op-100"
-          inactiveClass="op-50"
+          active-class="op-100"
+          inactive-class="op-50"
         >
           <div w-6 h-6 class="i-carbon:logo-github"></div>
         </Navlink>
@@ -85,8 +93,8 @@
           outline-none
           hover="op-100"
           transition-opacity-300
-          activeClass="op-100"
-          inactiveClass="op-50"
+          active-class="op-100"
+          inactive-class="op-50"
         >
           <div w-6 h-6 class="i-carbon:language"></div>
         </Navlink>

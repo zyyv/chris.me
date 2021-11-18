@@ -1,27 +1,27 @@
 <template>
-    <a v-if="isExternalLink" op-50 v-bind="$attrs" :href="to" target="_blank">
-        <slot />
+  <a v-if="isExternalLink" op-50 v-bind="$attrs" :href="to" target="_blank">
+    <slot />
+  </a>
+  <router-link v-else v-slot="{ isActive, href, navigate }" v-bind="$props" custom>
+    <a
+      v-bind="$attrs"
+      :href="href"
+      :class="isActive ? activeClass : inactiveClass"
+      @click="navigate"
+    >
+      <slot />
     </a>
-    <router-link v-else v-bind="$props" custom v-slot="{ isActive, href, navigate }">
-        <a
-            v-bind="$attrs"
-            :href="href"
-            @click="navigate"
-            :class="isActive ? activeClass : inactiveClass"
-        >
-            <slot />
-        </a>
-    </router-link>
+  </router-link>
 </template>
 
 <script lang='ts' setup>
 const props = defineProps<{
-    to: string,
-    activeClass?: string
-    inactiveClass?: string
+  to: string
+  activeClass?: string
+  inactiveClass?: string
 }>()
 
 const isExternalLink = computed(() => {
-    return typeof props.to === 'string' && props.to.startsWith('http')
+  return typeof props.to === 'string' && props.to.startsWith('http')
 })
 </script>

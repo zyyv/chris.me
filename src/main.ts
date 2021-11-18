@@ -4,5 +4,5 @@ import 'uno.css'
 import '@/styles/index.scss'
 
 createCtx(App, (ctx) => {
-    Object.values(import.meta.globEager('./modules/*.ts')).map(i => i.install?.(ctx))
+  Object.values(import.meta.globEager('./modules/*.ts')).map(i => i.install?.(ctx))
 })

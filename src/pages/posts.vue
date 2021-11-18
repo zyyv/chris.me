@@ -1,6 +1,8 @@
 <template>
   <div>
-    <div class="text-light-600">posts111111111111</div>
+    <div class="text-light-600">
+      posts111111111111
+    </div>
     <Switch v-model:value="a" size="small" />
     {{ a }}
   </div>
@@ -9,7 +11,7 @@
 <script lang="ts" setup>
 import { useUserStore } from '@/store/user'
 
-let a = ref(true)
+const a = ref(true)
 useUserStore()
 
 </script>

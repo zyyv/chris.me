@@ -8,7 +8,9 @@ export const useUserStore = defineStore({
     }
   }),
   actions: {
-    async login(account: string, pwd: string) { }
+    // async login(account: string, pwd: string) {
+    //   console.log(account, pwd)
+    // }
   },
   persist: {
     enabled: true,

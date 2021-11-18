@@ -10,7 +10,15 @@
     rounded-full
     fixed
   ></div>
-  <div id="cursor" :style="style.cursor" z-99999 fixed top-0 left-0 pointer-events-none>
+  <div
+    id="cursor"
+    :style="style.cursor"
+    z-99999
+    fixed
+    top-0
+    left-0
+    pointer-events-none
+  >
     <div
       id="circle"
       class="mt--1/2 ml--1/2 border-$default"

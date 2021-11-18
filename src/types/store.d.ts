@@ -1,7 +1,7 @@
-export interface RootStateTypes {}
+export interface RootStateTypes { }
 
-export interface AllStateTypes extends RootStateTypes {
-  user: UserStateTypes
+export interface IUser {
+  [key: string]: any
 }
 
 // user module
@@ -12,6 +12,6 @@ export interface UserStateTypes {
   userBtn: any[]
 }
 
-export interface IUser {
-  [key: string]: any
+export interface AllStateTypes extends RootStateTypes {
+  user: UserStateTypes
 }

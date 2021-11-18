@@ -1,5 +1,3 @@
-import { reactive } from 'vue'
-
 export function useHtml() {
   const html = `<transition name="display" mode="out-in">
   <div v-if="!allDown">

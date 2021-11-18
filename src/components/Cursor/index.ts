@@ -18,9 +18,9 @@ export function useCursor(style: ICursorStyle) {
     const angle = getAngle(diffX, diffY)
     const squeeze = getSqueeze(diffX, diffY)
 
-    const scale = 'scale(' + (1 + squeeze) + ', ' + (1 - squeeze) + ')'
-    const rotate = 'rotate(' + angle + 'deg)'
-    const translate = 'translate3d(' + pos.x + 'px ,' + pos.y + 'px, 0)'
+    const scale = `scale(${1 + squeeze}, ${1 - squeeze})`
+    const rotate = `rotate(${angle}deg)`
+    const translate = `translate3d(${pos.x}px ,${pos.y}px, 0)`
 
     style.cursor = { ...style.cursor, transform: translate }
     style.circle = { ...style.circle, transform: rotate + scale }
@@ -75,7 +75,7 @@ export function useDot(style: ICursorStyle) {
   })
 
   nextTick(() => {
-    document.querySelectorAll('a').forEach(function (el) {
+    document.querySelectorAll('a').forEach((el) => {
       useEventListener(el, 'mouseover', () => {
         dotState.enlarged = true
       })

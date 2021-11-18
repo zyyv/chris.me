@@ -6,8 +6,8 @@ export const createConfig = ({ strict = true, dev = true } = {}) => {
     theme: {
       fontFamily: {
         sans: '\'Inter\', sans-serif',
-        mono: '\'Fira Code\', monospace',
-      },
+        mono: '\'Fira Code\', monospace'
+      }
     },
     presets: [
       presetAttributify({ strict }),
@@ -23,7 +23,7 @@ export const createConfig = ({ strict = true, dev = true } = {}) => {
           // tabler: () => import('@iconify-json/tabler/icons.json').then(i => i.default as any),
           // uim: () => import('@iconify-json/uim/icons.json').then(i => i.default as any),
         }
-      }),
+      })
     ],
     rules: [
       [

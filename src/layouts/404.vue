@@ -3,8 +3,4 @@
 </template>
 
 <script lang='ts' setup>
-import { ref, reactive } from 'vue'
-var a = 1
 </script>
-<style lang='scss' scoped>
-</style>

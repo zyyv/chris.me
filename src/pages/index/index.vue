@@ -1,8 +1,3 @@
-<script lang="ts">
-export default {
-  name: 'Home'
-}
-</script>
 <script lang="ts" setup>
 import { useCss, useHtml } from '.'
 
@@ -22,26 +17,49 @@ watchEffect(() => {
   }
 })
 </script>
+<script lang="ts">
+export default {
+  name: 'Home'
+}
+</script>
 
 <template>
   <div>
     <div class="w-4/5" m-auto relative>
       <transition name="display" mode="out-in">
         <div v-if="!allDown">
-          <div class="html w-5/12" absolute top-0 left-0 p-4 border rounded-md border-main>
+          <div
+            class="html w-5/12"
+            absolute
+            top-0
+            left-0
+            p-4
+            border
+            rounded-md
+            border-main
+          >
             <pre v-typeWrite="htmlState" text-justify whitespace-pre-wrap font-mono></pre>
           </div>
-          <div class="css w-5/12" absolute top-0 right-0 p-4 border rounded-md border-main>
+          <div
+            class="css w-5/12"
+            absolute
+            top-0
+            right-0
+            p-4
+            border
+            rounded-md
+            border-main
+          >
             <pre v-typeWrite="cssState" whitespace-pre-wrap font-mono></pre>
           </div>
         </div>
-        <div m-auto p-2 text-center border v-else>
+        <div v-else m-auto p-2 text-center border>
           <img inline-block width="200" src="@a/logo.svg" />
         </div>
       </transition>
     </div>
     <div absolute bottom-5 right-5>
-      <Switch :disabled="enableAnimate" v-model:value="enableAnimate" size="small" />
+      <Switch v-model:value="enableAnimate" :disabled="enableAnimate" size="small" />
     </div>
   </div>
 </template>

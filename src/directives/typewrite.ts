@@ -16,7 +16,7 @@ function useTypeing(el: HTMLElement, value: ITypeState | string) {
   }
   el.innerText = ''
   let i = 0
-  let timer: NodeJS.Timer | null = setInterval(() => {
+  let timer: number | null = setInterval(() => {
     if (text.substr(i, 1) === '<')
       i = text.indexOf('>', i) + 1
     else i++
@@ -26,7 +26,7 @@ function useTypeing(el: HTMLElement, value: ITypeState | string) {
       if (i % 2 === 0)
         el.innerText = el.innerText.substring(0, el.innerText.length - 1)
 
-      clearInterval(timer as NodeJS.Timer)
+      clearInterval(timer as number)
       timer = null
       if (typeof value === 'object')
         value.status = true

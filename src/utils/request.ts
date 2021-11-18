@@ -1,6 +1,6 @@
-import type { IAny, IResponseData } from '@/types'
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios'
 import { CancelToken } from '.'
+import type { IAny, IResponseData } from '@/types'
 // import type { Result } from './type'
 // import { getToken, removeToken } from '/@/utils/auth'
 // import router from '@/router'
@@ -9,22 +9,22 @@ const message = (window as any).$message
 
 class HttpRequest {
   private instance: AxiosInstance
+  // eslint-disable-next-line no-use-before-define
   private static ins: HttpRequest
 
   private constructor() {
     this.instance = axios.create({
-      baseURL: process.env.NODE_ENV === 'development' ? `/api` : '',
+      baseURL: process.env.NODE_ENV === 'development' ? '/api' : '',
       timeout: 50000
     })
-    this.instance.defaults.headers.post['Content-Type'] =
-      'application/x-www-form-urlencoded'
+    this.instance.defaults.headers.post['Content-Type']
+      = 'application/x-www-form-urlencoded'
     this.init()
   }
 
   static getInstance() {
-    if (!HttpRequest.ins) {
+    if (!HttpRequest.ins)
       HttpRequest.ins = new HttpRequest()
-    }
 
     return HttpRequest.ins
   }
@@ -40,9 +40,9 @@ class HttpRequest {
         CancelToken.removePending(config)
         CancelToken.addPending(config)
         const token = 'getToken()'
-        if (token && config.headers) {
+        if (token && config.headers)
           config.headers.Authorization = token
-        }
+
         return config
       },
       (error) => {
@@ -105,12 +105,15 @@ class HttpRequest {
   $get<T = IResponseData>(url: string, params?: IAny) {
     return this.instance.get<T>(url, { params })
   }
+
   $delete<T = IResponseData>(url: string, params?: IAny) {
     return this.instance.delete<T>(url, { params })
   }
+
   $post<T = IResponseData>(url: string, data: IAny, config: AxiosRequestConfig) {
     return this.instance.post<T>(url, data, config)
   }
+
   $put<T = IResponseData>(url: string, data: IAny, config: AxiosRequestConfig) {
     return this.instance.put<T>(url, data, config)
   }
