@@ -1,3 +1,11 @@
+<script lang="ts" setup>
+const { availableLocales, locale } = useI18n()
+const toggleLocales = () => {
+  const locales = availableLocales
+  locale.value = locales[(locales.indexOf(locale.value) + 1) % locales.length]
+}
+</script>
+
 <template>
   <header w-full>
     <router-link to="/">
@@ -86,18 +94,16 @@
         >
           <div w-6 h-6 class="i-carbon:logo-github"></div>
         </Navlink>
-        <Navlink
-          to="/"
+        <a
           text-inherit
           no-underline
           outline-none
+          op-50
           hover="op-100"
           transition-opacity-300
-          active-class="op-100"
-          inactive-class="op-50"
         >
-          <div w-6 h-6 class="i-carbon:language"></div>
-        </Navlink>
+          <div w-6 h-6 class="i-carbon:language" @click="toggleLocales"></div>
+        </a>
       </div>
     </nav>
   </header>
