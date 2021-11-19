@@ -26,24 +26,8 @@ export const createConfig = ({ strict = true, dev = true } = {}) => {
       })
     ],
     rules: [
-      [
-        'p-c',
-        {
-          position: 'absolute',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)'
-        }
-      ],
-      [
-        'f-c',
-        {
-          'display': 'flex',
-          'justify-content': 'center',
-          'align-items': 'center'
-        }
-      ],
-      [/^z-\[(-?\d+)\]$/, ([, d]) => ({ 'z-index': d })]
+      ['p-c', { position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }],
+      ['f-c', { 'display': 'flex', 'justify-content': 'center', 'align-items': 'center' }]
     ]
   })
 }

@@ -9,7 +9,7 @@ export function useHtml() {
     </div>
   </div>
   <div m-auto p-2 text-center border v-else>
-    <img inline-block width="200" src="@a/logo.svg" />
+    <img inline-block width="200" src="logo.svg" />
   </div>
 </transition>
 `

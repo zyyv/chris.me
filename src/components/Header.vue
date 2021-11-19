@@ -15,7 +15,7 @@ const toggleLocales = () => {
         fixed
         left-6
         top-6
-        src="@/assets/logo.svg"
+        src="/logo.svg"
         alt="logo"
       />
     </router-link>

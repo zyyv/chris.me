@@ -27,7 +27,7 @@
     "eslint": "^8.2.0",
     "sass": "^1.40.0",
     "typescript": "^4.3.2",
-    "unocss": "^0.9.3",
+    "unocss": "latest",
     "unplugin-auto-import": "^0.4.13",
     "unplugin-vue-components": "^0.17.2",
     "vite": "^2.4.4",

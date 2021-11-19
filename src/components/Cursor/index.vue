@@ -1,3 +1,18 @@
+<script lang="ts" setup>
+import { useCursor, useDot } from './index'
+import { ICursorStyle } from '@/types'
+
+const style = reactive<ICursorStyle>({
+  dot: {},
+  cursor: {},
+  circle: {}
+})
+
+useCursor(style)
+
+const { dotRef } = useDot(style)
+</script>
+
 <template>
   <div
     id="dot"
@@ -31,20 +46,6 @@
   </div>
 </template>
 
-<script lang="ts" setup>
-import { useCursor, useDot } from './index'
-import { ICursorStyle } from '@/types'
-
-const style = reactive<ICursorStyle>({
-  dot: {},
-  cursor: {},
-  circle: {}
-})
-
-useCursor(style)
-
-const { dotRef } = useDot(style)
-</script>
 <style lang="scss" scoped>
 #cursor {
   will-change: transform;
