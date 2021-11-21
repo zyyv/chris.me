@@ -14,7 +14,7 @@ class HttpRequest {
 
   private constructor() {
     this.instance = axios.create({
-      baseURL: process.env.NODE_ENV === 'development' ? '/api' : '',
+      baseURL: import.meta.env.MODE === 'development' ? '/api' : '',
       timeout: 50000
     })
     this.instance.defaults.headers.post['Content-Type']
@@ -54,7 +54,7 @@ class HttpRequest {
   private _initResponse() {
     this.instance.interceptors.response.use(
       (res) => {
-        const data = res.data as IResponseData
+        // const data = res.data as IResponseData
         if (res.status !== 200) {
           message.error('网络错误')
           return Promise.reject(res)
