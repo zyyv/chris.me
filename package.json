@@ -9,7 +9,7 @@
     "lint:fix": "nr lint -- --fix"
   },
   "dependencies": {
-    "@vueuse/core": "^6.7.3",
+    "@vueuse/core": "latest",
     "axios": "^0.23.0",
     "pinia": "^2.0.2",
     "vue": "^3.2.20",

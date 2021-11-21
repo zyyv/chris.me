@@ -1,5 +1,21 @@
 <script lang="ts" setup>
-import { useSize } from '.'
+/** 根据size获取组件的宽高 */
+const useSize = (
+  size: 'small' | 'medium' | 'large'
+): {
+  _width: string
+  _height: string
+} => {
+  const sizeEnum = {
+    small: ['2rem', '1.125rem'],
+    medium: ['2.5rem', '1.375rem'],
+    large: ['3rem', '1.625rem']
+  }
+  return {
+    _width: sizeEnum[size][0],
+    _height: sizeEnum[size][1]
+  }
+}
 
 const props = withDefaults(
   defineProps<{
@@ -25,14 +41,15 @@ const emits = defineEmits<{
   (event: 'update:value', status: boolean): void
 }>()
 
-const { _width, _height } = useSize(props.size) // 容器组件的宽高
+const status = useVModel(props, 'value', emits)
+const { _width, _height } = useSize(props.size)
 const _bgColor = computed(() => props.bgColor)
 const _bgActiveColor = computed(() => props.bgActiveColor)
 
 const handleClick = () => {
   if (!props.disabled) {
-    emits('update:value', !props.value)
-    emits('change', !props.value)
+    status.value = !status.value
+    emits('change', status.value)
   }
 }
 </script>
@@ -40,7 +57,7 @@ const handleClick = () => {
 <template>
   <div
     class="switch border-$default"
-    :class="[disabled && 'op-50', value && 'active']"
+    :class="[disabled && 'op-50', status && 'active']"
     rounded-full
     overflow-hidden
     border
@@ -56,8 +73,6 @@ $dotWidth: calc(v-bind(_height) - 4px);
 $dotHeight: calc(v-bind(_height) - 4px);
 
 .switch {
-  margin: 100px 0 0 100px;
-
   width: v-bind(_width);
   height: v-bind(_height);
   transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
