@@ -1,4 +1,3 @@
-
 import { vTypeWrite } from '@/directives'
 import { UserModule } from '@/types'
 
