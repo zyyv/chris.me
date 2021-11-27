@@ -4,7 +4,7 @@
     "source.fixAll.eslint": true
   },
   "i18n-ally.localesPaths": [
-    "src/locales"
+    "locales"
   ],
   "i18n-ally.keystyle": "nested"
 }
