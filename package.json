@@ -1,6 +1,8 @@
 {
   "name": "chris.me",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "description": "This is my Blog, build with Vue3.",
+  "main": "src/main.js",
   "scripts": {
     "dev": "vite --port 9999 --open",
     "build": "vue-tsc --noEmit && vite build",
@@ -8,6 +10,17 @@
     "lint": "eslint \"**/*.{vue,ts,js}\"",
     "lint:fix": "nr lint -- --fix"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chris-zhu/chris.me.git"
+  },
+  "keywords": ["blog", "vue3", "vite", "unocss"],
+  "author": "chris-zhu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chris-zhu/chris.me/issues"
+  },
+  "homepage": "https://github.com/chris-zhu/chris.me#readme",
   "dependencies": {
     "@vueuse/core": "latest",
     "axios": "^0.23.0",
@@ -35,6 +48,5 @@
     "vite-plugin-pages": "^0.18.2",
     "vite-plugin-vue-layouts": "^0.5.0",
     "vue-tsc": "^0.2.2"
-  },
-  "license": "MIT"
+  }
 }
