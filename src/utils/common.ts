@@ -134,7 +134,7 @@ export class BetterMap<K, V> extends Map<K, V> {
 }
 
 export function toArray<T>(value: T | T[] = []): T[] {
-  return Array.isArray(value) ? value : [value]
+  return isArray(value) ? value : [value]
 }
 
 export function uniq<T>(value: T[]): T[] {
