@@ -14,7 +14,7 @@ export const addUnit = (val: any) => {
 
 export const inBrowser = typeof window !== 'undefined'
 
-export const NOOP = () => {}
+export const NOOP = () => { }
 
 export const isArray = Array.isArray
 
@@ -144,4 +144,19 @@ export function uniq<T>(value: T[]): T[] {
 export function mergeSet<T>(target: Set<T>, append: Set<T>): Set<T> {
   append.forEach(i => target.add(i))
   return target
+}
+
+export function immutable<T = Record<string, object>>(value: T) {
+  return {
+    set(path: string, val: any) {
+      const paths = path.split('.')
+      const lastK = paths.pop()
+      this.get(paths.join('.'))[lastK] = val
+      return this
+    },
+    get(path: string) {
+      const paths = path.split('.')
+      return paths.reduce((v, k) => v[k], value)
+    }
+  }
 }
