@@ -146,17 +146,17 @@ export function mergeSet<T>(target: Set<T>, append: Set<T>): Set<T> {
   return target
 }
 
-export function immutable<T = Record<string, object>>(value: T) {
-  return {
-    set(path: string, val: any) {
-      const paths = path.split('.')
-      const lastK = paths.pop()
-      this.get(paths.join('.'))[lastK] = val
-      return this
-    },
-    get(path: string) {
-      const paths = path.split('.')
-      return paths.reduce((v, k) => v[k], value)
-    }
-  }
-}
+// export function immutable<T = Record<string, object>>(value: T) {
+//   return {
+//     set(path: string, val: any) {
+//       const paths = path.split('.')
+//       const lastK = paths.pop()
+//       this.get(paths.join('.'))[lastK] = val
+//       return this
+//     },
+//     get(path: string) {
+//       const paths = path.split('.')
+//       return paths.reduce((v, k) => v[k], value)
+//     }
+//   }
+// }
