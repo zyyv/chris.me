@@ -35,7 +35,7 @@
     "vue-router": "^4.0.12"
   },
   "devDependencies": {
-    "@chris-zhu/eslint-config": "^0.0.3",
+    "@chris-zhu/eslint-config": "^0.0.5",
     "@iconify-json/carbon": "^1.0.9",
     "@iconify-json/ri": "^1.0.1",
     "@intlify/vite-plugin-vue-i18n": "^3.1.0",
