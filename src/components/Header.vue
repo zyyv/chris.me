@@ -16,12 +16,19 @@ const routes = reactive([
         h-10
         fixed
         left-6
-        top-6
+        top-2
         :src="Logo"
         alt="logo"
       >
     </Navlink>
-    <nav p-8 w-full grid box-border class="grid-cols-[auto_max-content]">
+    <nav
+      px-8
+      py-4
+      w-full
+      grid
+      box-border
+      class="grid-cols-[auto_max-content]"
+    >
       <div class="spacer" />
       <div grid gap-5 auto-flow-col>
         <Navlink
