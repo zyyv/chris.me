@@ -1,6 +1,6 @@
 
-import { UserModule } from '@/types'
 import { http } from '@/utils'
+import type { UserModule } from '@/types'
 
 export const install: UserModule = (app) => {
   const { $get, $delete, $post, $put } = http

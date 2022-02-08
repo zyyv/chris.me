@@ -64,7 +64,7 @@ const handleClick = () => {
     relative
     @click="handleClick"
   >
-    <div absolute rounded-full class="switch__button bg-[#fff]"></div>
+    <div absolute rounded-full class="switch__button bg-[#fff]" />
   </div>
 </template>
 

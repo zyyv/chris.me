@@ -1,5 +1,6 @@
-import axios, { AxiosInstance, AxiosRequestConfig } from 'axios'
+import axios from 'axios'
 import { CancelToken } from '.'
+import type { AxiosInstance, AxiosRequestConfig } from 'axios'
 import type { IAny, IResponseData } from '@/types'
 // import type { Result } from './type'
 // import { getToken, removeToken } from '/@/utils/auth'
@@ -78,24 +79,24 @@ class HttpRequest {
       (error) => {
         const { data, status } = error.response
         switch (status) {
-          case 401:
-            message.warning('请先登录后操作')
-            // todo
-            break
-          case 403:
-            message.warning('登录过期，请重新登录')
-            // todo
-            break
-          case 404:
-            message.error('网络请求不存在')
-            // todo
-            break
-          case 500:
-            message.error('服务器内部错误')
-            // todo
-            break
-          default:
-            message.error(data?.msg || '未知错误')
+        case 401:
+          message.warning('请先登录后操作')
+          // todo
+          break
+        case 403:
+          message.warning('登录过期，请重新登录')
+          // todo
+          break
+        case 404:
+          message.error('网络请求不存在')
+          // todo
+          break
+        case 500:
+          message.error('服务器内部错误')
+          // todo
+          break
+        default:
+          message.error(data?.msg || '未知错误')
         }
         return Promise.reject(error)
       }

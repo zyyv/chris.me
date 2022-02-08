@@ -1,7 +1,6 @@
 <template>
   <div>
-    <div class="text-light-600">
-    </div>
+    <div class="text-light-600" />
     <Switch v-model:value="a" size="small" />
     {{ a }}
   </div>

@@ -1,4 +1,4 @@
-import { PiniaPluginContext, PersistStrategy } from 'pinia'
+import type { PersistStrategy, PiniaPluginContext } from 'pinia'
 
 type Store = PiniaPluginContext['store']
 type PartialState = Partial<Store['$state']>
@@ -14,8 +14,7 @@ function updateStorage(strategy: PersistStrategy, store: Store) {
     }, {} as PartialState)
 
     storage.setItem(storeKey, JSON.stringify(partialState))
-  }
-  else {
+  } else {
     storage.setItem(storeKey, JSON.stringify(store.$state))
   }
 }

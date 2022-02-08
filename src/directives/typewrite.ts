@@ -10,8 +10,7 @@ function useTypeing(el: HTMLElement, value: ITypeState | string) {
   if (typeof value === 'object') {
     text = value.text
     value.status = false
-  }
-  else {
+  } else {
     text = value
   }
   el.innerText = ''

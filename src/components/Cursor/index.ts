@@ -1,6 +1,6 @@
 import { useMouse } from '@/use'
 import { getAngle, getSqueeze } from '@/utils'
-import { ICursorStyle } from '@/types'
+import type { ICursorStyle } from '@/types'
 
 // 更新圆圈样式
 export function useCursor(style: ICursorStyle) {

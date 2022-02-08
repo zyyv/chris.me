@@ -1,5 +1,5 @@
 import { createI18n } from 'vue-i18n'
-import { UserModule } from '@/types'
+import type { UserModule } from '@/types'
 
 export const install: UserModule = (app) => {
   const messages = Object.fromEntries(

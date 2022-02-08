@@ -1,4 +1,4 @@
-import { DeepPartial } from '@/types'
+import type { DeepPartial } from '@/types'
 
 export const isDef = (val: any) => val !== undefined && val !== null
 
@@ -61,8 +61,7 @@ export const mergeDeep = <T>(original: T, patch: DeepPartial<T>): T => {
           Object.assign(output, { [key]: p[key] })
         else
           output[key] = mergeDeep(o[key], p[key])
-      }
-      else {
+      } else {
         Object.assign(output, { [key]: p[key] })
       }
     })

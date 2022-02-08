@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { useCursor, useDot } from './index'
-import { ICursorStyle } from '@/types'
+import type { ICursorStyle } from '@/types'
 
 const style = reactive<ICursorStyle>({
   dot: {},
@@ -24,7 +24,7 @@ const { dotRef } = useDot(style)
     pointer-events-none
     rounded-full
     fixed
-  ></div>
+  />
   <div
     id="cursor"
     :style="style.cursor"
@@ -42,7 +42,7 @@ const { dotRef } = useDot(style)
       w-16
       h-16
       :style="style.circle"
-    ></div>
+    />
   </div>
 </template>
 

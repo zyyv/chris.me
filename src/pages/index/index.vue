@@ -38,7 +38,7 @@ export default {
             rounded-md
             border-main
           >
-            <pre v-typeWrite="htmlState" text-justify whitespace-pre-wrap font-mono></pre>
+            <pre v-typeWrite="htmlState" text-justify whitespace-pre-wrap font-mono />
           </div>
           <div
             class="css w-5/12"
@@ -50,11 +50,11 @@ export default {
             rounded-md
             border-main
           >
-            <pre v-typeWrite="cssState" whitespace-pre-wrap font-mono></pre>
+            <pre v-typeWrite="cssState" whitespace-pre-wrap font-mono />
           </div>
         </div>
         <div v-else m-auto p-2 text-center border>
-          <img inline-block width="200" src="/logo.svg" />
+          <img inline-block width="200" src="/logo.svg">
         </div>
       </transition>
     </div>

@@ -1,4 +1,5 @@
-import axios, { AxiosRequestConfig, Canceler } from 'axios'
+import axios from 'axios'
+import type { AxiosRequestConfig, Canceler } from 'axios'
 
 export class CancelToken {
   // 声明一个 Map 用于存储每个请求的标识 和 取消函数

@@ -17,9 +17,9 @@
         bg-transparent
         rounded-full
         after="absolute top-2000px w-[1px] h-[1px] rounded-[10px] bg-transparent"
-      ></div>
-      <div class="signup-bg-stars-2" rounded-full w="2px" h="2px" after="w-[2px] h-[2px]"></div>
-      <div class="signup-bg-stars-3" rounded-full w="3px" h="3px" after="w-[3px] h-[3px]"></div>
+      />
+      <div class="signup-bg-stars-2" rounded-full w="2px" h="2px" after="w-[2px] h-[2px]" />
+      <div class="signup-bg-stars-3" rounded-full w="3px" h="3px" after="w-[3px] h-[3px]" />
     </div>
   </div>
 </template>

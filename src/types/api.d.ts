@@ -1,4 +1,4 @@
-import { IAny } from '.'
+import type { IAny } from '.'
 
 export interface IResponseData extends IAny {
   code: number

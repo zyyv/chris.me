@@ -8,7 +8,7 @@
     "build": "vue-tsc --noEmit && vite build",
     "serve": "vite preview",
     "lint": "eslint \"**/*.{vue,ts,js}\"",
-    "lint:fix": "nr lint -- --fix"
+    "lint:fix": "pnpm lint -- --fix"
   },
   "repository": {
     "type": "git",
