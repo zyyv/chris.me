@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script lang="ts" setup name="Home">
 import { useCss, useHtml } from '.'
 
 const allDown = ref(false) // 两个模块是否都打印完成
@@ -16,11 +16,6 @@ watchEffect(() => {
     enableAnimate.value = true
   }
 })
-</script>
-<script lang="ts">
-export default {
-  name: 'Home'
-}
 </script>
 
 <template>

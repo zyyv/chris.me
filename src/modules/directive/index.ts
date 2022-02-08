@@ -1,4 +1,4 @@
-import { vTypeWrite } from '@/directives'
+import { vTypeWrite } from './vtype'
 import type { UserModule } from '@/types'
 
 export const install: UserModule = (app) => {

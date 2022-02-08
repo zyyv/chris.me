@@ -1,4 +1,4 @@
-import { useMouse } from '@/use'
+import { useMouse } from '@/composables'
 import { getAngle, getSqueeze } from '@/utils'
 import type { ICursorStyle } from '@/types'
 

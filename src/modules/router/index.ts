@@ -3,7 +3,6 @@ import generatedRoutes from 'virtual:generated-pages'
 import { setupLayouts } from 'virtual:generated-layouts'
 import type { UserModule } from '@/types'
 
-export const install: UserModule = (app) => {
-  const router = createRouter({ routes: setupLayouts(generatedRoutes), history: createWebHistory() })
-  app.use(router)
-}
+export const router = createRouter({ routes: setupLayouts(generatedRoutes), history: createWebHistory() })
+
+export const install: UserModule = app => app.use(router)

@@ -1,2 +1,22 @@
-@import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@5.2/distr/fira_code.css);
-@import url(./global.css);
+@import url(./transition.css);
+
+:root {
+    --default: #adbac7;
+    --bg-default: #040d21;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+html * {
+    cursor: none !important;
+}
+
+body {
+    background-color: var(--bg-default);
+    color: var(--default);
+}

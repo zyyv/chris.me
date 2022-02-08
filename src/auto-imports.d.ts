@@ -4,6 +4,7 @@ declare global {
   const acceptHMRUpdate: typeof import('pinia')['acceptHMRUpdate']
   const asyncComputed: typeof import('@vueuse/core')['asyncComputed']
   const autoResetRef: typeof import('@vueuse/core')['autoResetRef']
+  const axios: typeof import('axios')['default']
   const biSyncRef: typeof import('@vueuse/core')['biSyncRef']
   const computed: typeof import('vue')['computed']
   const computedInject: typeof import('@vueuse/core')['computedInject']

@@ -13,3 +13,9 @@ export interface ICursorStyle {
 export type UserModule = (ctx: App) => void
 
 export type DeepPartial<T> = { [P in keyof T]?: DeepPartial<T[P]> }
+
+export interface IResponseData<T> {
+  code: number
+  data?: T
+  msg: string
+}

@@ -4,12 +4,14 @@ import Vue from '@vitejs/plugin-vue'
 import Unocss from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
-import vueI18n from '@intlify/vite-plugin-vue-i18n'
+import VueI18n from '@intlify/vite-plugin-vue-i18n'
 import Pages from 'vite-plugin-pages'
 import Layouts from 'vite-plugin-vue-layouts'
 import Markdown from 'vite-plugin-md'
+import ViteImages from 'vite-plugin-vue-images'
+import VueSetupExtend from 'vite-plugin-vue-setup-extend'
 
-const pathResolve = (src: string) => resolve(__dirname, src)
+const r = (src: string) => resolve(__dirname, src)
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -19,7 +21,7 @@ export default defineConfig({
     Pages({ extensions: ['vue', 'md'] }),
     Layouts(),
     AutoImport({
-      imports: ['vue', 'pinia', 'vue-router', 'vue-i18n', '@vueuse/core'],
+      imports: ['vue', 'pinia', 'vue-router', 'vue-i18n', '@vueuse/core',{ axios: [['default', 'axios']] }],
       dts: 'src/auto-imports.d.ts'
     }),
     Components({
@@ -27,19 +29,22 @@ export default defineConfig({
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
       dts: 'src/components.d.ts'
     }),
-    vueI18n({
+    VueI18n({
       runtimeOnly: true,
       compositionOnly: true,
-      include: [pathResolve('locales/**')]
+      include: [r('locales/**')]
     }),
-    Markdown()
+    Markdown(),
+    ViteImages(),
+    VueSetupExtend()
   ],
   resolve: {
     alias: {
-      '@': pathResolve('src'),
-      '@a': pathResolve('src/assets'),
-      '@p': pathResolve('src/plugins'),
-      '@u': pathResolve('src/use')
+      '@': r('src'),
+      '@a': r('src/assets'),
+      '@p': r('src/plugins'),
+      '@s': r('src/modules/pinia'),
+      '@u': r('src/composables')
     }
   },
   server: {
