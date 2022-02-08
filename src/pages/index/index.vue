@@ -49,7 +49,7 @@ watchEffect(() => {
           </div>
         </div>
         <div v-else m-auto p-2 text-center border>
-          <img inline-block width="200" src="/logo.svg">
+          <img inline-block width="200" :src="Logo">
         </div>
       </transition>
     </div>

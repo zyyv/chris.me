@@ -24,7 +24,7 @@ const menus = reactive([
         fixed
         left-6
         top-6
-        src="/logo.svg"
+        :src="Logo"
         alt="logo"
       >
     </router-link>

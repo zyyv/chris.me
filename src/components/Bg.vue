@@ -26,7 +26,7 @@
 
 <style scoped>
 .bg {
-  background-image: url("@/assets/hero-glow.svg");
+  background-image: url("@/assets/img/hero-glow.svg");
   background-size: 200% 200%;
   background-position: 50% 50%;
 }
