@@ -16,20 +16,22 @@ watchEffect(() => {
     enableAnimate.value = true
   }
 })
+
+useTitle('Chris\' Blog')
 </script>
 
 <template>
   <div>
-    <div class="w-4/5" m-auto relative>
+    <div class="w-4/5" m-auto pr>
       <transition name="display" mode="out-in">
         <div v-if="!allDown">
           <div
             class="html w-5/12"
-            absolute
+            pa
             top-0
             left-0
             p-4
-            border
+            b
             rounded-md
             border-main
           >
@@ -37,11 +39,11 @@ watchEffect(() => {
           </div>
           <div
             class="css w-5/12"
-            absolute
+            pa
             top-0
             right-0
             p-4
-            border
+            b
             rounded-md
             border-main
           >
@@ -53,7 +55,7 @@ watchEffect(() => {
         </div>
       </transition>
     </div>
-    <div absolute bottom-5 right-5>
+    <div pa bottom-5 right-5>
       <Switch v-model:value="enableAnimate" :disabled="enableAnimate" size="small" />
     </div>
   </div>

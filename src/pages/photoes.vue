@@ -1,5 +1,5 @@
 <script lang='ts' setup>
-
+useTitle('Chris\' Blog | Photoes')
 </script>
 
 <template>

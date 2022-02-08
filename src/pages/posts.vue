@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { isDark } from '@u/index'
+useTitle('Chris\' Blog | Posts')
 </script>
 
 <template>

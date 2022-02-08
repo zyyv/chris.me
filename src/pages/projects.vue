@@ -1,5 +1,7 @@
 <script lang='ts' setup>
 const { t } = useI18n()
+
+useTitle('Chris\' Blog | Projects')
 </script>
 
 <template>
