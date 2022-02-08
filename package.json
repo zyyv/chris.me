@@ -52,6 +52,6 @@
     "vite-plugin-md": "^0.11.4",
     "vite-plugin-pages": "^0.20.2",
     "vite-plugin-vue-layouts": "^0.6.0",
-    "vue-tsc": "^0.2.2"
+    "vue-tsc": "^0.31.2"
   }
 }
