@@ -1,4 +1,4 @@
-import { presetUno, presetAttributify, presetIcons, defineConfig } from 'unocss'
+import { defineConfig, presetAttributify, presetIcons, presetUno } from 'unocss'
 
 export const createConfig = ({ strict = true, dev = true } = {}) => {
   return defineConfig({
@@ -28,7 +28,7 @@ export const createConfig = ({ strict = true, dev = true } = {}) => {
     rules: [
       ['p-c', { position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }],
       ['f-c', { 'display': 'flex', 'justify-content': 'center', 'align-items': 'center' }]
-    ],
+    ]
   })
 }
 
