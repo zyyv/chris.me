@@ -31,10 +31,11 @@ useTitle('Chris\' Blog')
           top-0
           left-0
           p-4
-          b
+          border="1 gray-300 dark:gray-700"
           rounded-md
+          toDark
         >
-          <pre v-typeWrite="htmlState" text-justify whitespace-pre-wrap font-mono />
+          <pre v-typeWrite="htmlState" base text-justify whitespace-pre-wrap font-mono />
         </div>
         <div
           class="css w-5/12"
@@ -42,10 +43,11 @@ useTitle('Chris\' Blog')
           top-0
           right-0
           p-4
-          b
+          border="1 gray-300 dark:gray-700"
           rounded-md
+          toDark
         >
-          <pre v-typeWrite="cssState" whitespace-pre-wrap font-mono />
+          <pre v-typeWrite="cssState" base whitespace-pre-wrap font-mono />
         </div>
       </div>
       <div v-else class="max-w-75ch" m-auto p-2>

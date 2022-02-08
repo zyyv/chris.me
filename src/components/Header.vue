@@ -9,7 +9,10 @@ const routes = reactive([
 </script>
 
 <template>
-  <header w-full>
+  <header
+    w-full
+    border="0 b-1 dashed gray-300 dark:b-gray-700"
+  >
     <Navlink to="/">
       <img
         w-10
