@@ -14,7 +14,8 @@
       "@/*": ["src/*"],
       "@a/*": ["src/assets/*"],
       "@p/*": ["src/plugins/*"],
-      "@u/*": ["src/composabless/*"],
+      "@u/*": ["src/composables/*"],
+      "@s/*": ["src/modules/pinia/*"],
     },
     "types": ["vite/client", "vite-plugin-pages/client", "vite-plugin-vue-layouts/client"]
   },

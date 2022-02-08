@@ -36,7 +36,9 @@
   },
   "devDependencies": {
     "@chris-zhu/eslint-config": "latest",
+    "@iconify-json/akar-icons": "^1.0.8",
     "@iconify-json/carbon": "^1.0.9",
+    "@iconify-json/logos": "^1.0.4",
     "@iconify-json/ri": "^1.0.1",
     "@intlify/vite-plugin-vue-i18n": "^3.1.0",
     "@types/node": "^17.0.15",

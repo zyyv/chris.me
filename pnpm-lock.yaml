@@ -2,7 +2,9 @@ lockfileVersion: 5.3
 
 specifiers:
   '@chris-zhu/eslint-config': latest
+  '@iconify-json/akar-icons': ^1.0.8
   '@iconify-json/carbon': ^1.0.9
+  '@iconify-json/logos': ^1.0.4
   '@iconify-json/ri': ^1.0.1
   '@intlify/vite-plugin-vue-i18n': ^3.1.0
   '@types/node': ^17.0.15
@@ -38,7 +40,9 @@ dependencies:
 
 devDependencies:
   '@chris-zhu/eslint-config': 0.0.5_eslint@8.6.0+typescript@4.5.4
+  '@iconify-json/akar-icons': 1.0.8
   '@iconify-json/carbon': 1.0.12
+  '@iconify-json/logos': 1.0.4
   '@iconify-json/ri': 1.0.2
   '@intlify/vite-plugin-vue-i18n': 3.2.1_e0e5baa7a97e037d901367e0937f27b5
   '@types/node': 17.0.16
@@ -243,8 +247,20 @@ packages:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
     dev: true
 
+  /@iconify-json/akar-icons/1.0.8:
+    resolution: {integrity: sha512-R5KrjYYHwFWJ1YA2Cyh5aenHJPYrSQBdSac0JbanBL96kvKi7LQ3Jb4HP+teGvfpGWcooaJNGWnFDNI7rVSxPg==}
+    dependencies:
+      '@iconify/types': 1.0.12
+    dev: true
+
   /@iconify-json/carbon/1.0.12:
     resolution: {integrity: sha512-wqO/tnPis6BRxY9QP2Wqprfnb90dPr3O0LBkaG7e/nE5C7KySrLEweBoTn129muENM40wwHCJ6hqzXrmgfhH/A==}
+    dependencies:
+      '@iconify/types': 1.0.12
+    dev: true
+
+  /@iconify-json/logos/1.0.4:
+    resolution: {integrity: sha512-jxNfvLj5ZCQUSe8bBN3mUxePKWcS9JbmoNd4t95PI5nDbwjOqAs1B4pgsJAn0T99foeThTn7r/69AQDqPQXCBA==}
     dependencies:
       '@iconify/types': 1.0.12
     dev: true
