@@ -1,3 +1,9 @@
+<script setup lang="ts">
+import { isDark } from '@/composables'
+
+const color = computed(() => isDark.value ? '#fff' : '#0d9488')
+</script>
+
 <template>
   <div
     class="bg -z-1 bg-white dark:bg-[#040d21]"
@@ -12,6 +18,7 @@
     <div>
       <div
         class="signup-bg-stars -z-200"
+        :class="isDark ? 'text-white' : 'text-red'"
         w="1px"
         h="1px"
         bg-transparent
@@ -31,82 +38,126 @@
   background-position: 50% 50%;
 }
 .signup-bg-stars {
-  box-shadow: 750px 740px rgba(255, 255, 255, 0.2), 1350px 631px #fff,
-    56px 1452px #fff, 554px 1842px #fff, 1977px 711px #fff, 1773px 515px #fff,
-    1874px 323px #fff, 382px 762px #fff, 1327px 1856px #fff, 921px 157px #fff,
-    1802px 703px #fff, 1612px 757px #fff, 1758px 724px #fff, 1706px 307px #fff,
-    616px 487px #fff, 702px 1618px #fff, 424px 1839px #fff, 648px 1417px #fff,
-    1671px 319px #fff, 304px 750px #fff, 1140px 1473px #fff, 572px 193px #fff,
-    1501px 1292px #fff, 119px 1214px #fff, 1637px 1164px #fff,
-    1540px 1242px #fff, 1722px 1715px #fff, 1691px 1010px #fff, 236px 433px #fff,
-    1336px 950px #fff, 1168px 1193px #fff, 304px 855px #fff, 322px 1892px #fff,
-    260px 231px #fff, 1984px 1336px #fff, 1630px 149px #fff, 650px 1260px #fff,
-    1208px 1841px #fff, 1361px 628px #fff, 261px 412px #fff, 1105px 869px #fff,
-    1207px 1819px #fff, 1923px 323px #fff, 224px 1390px #fff, 1248px 540px #fff,
-    1024px 1544px #fff, 986px 1703px #fff, 425px 1150px #fff, 547px 1821px #fff,
-    1470px 1215px #fff, 1511px 1178px #fff, 472px 1850px #fff,
-    1684px 1003px #fff, 1987px 1466px #fff, 453px 1830px #fff, 482px 433px #fff,
-    835px 1784px #fff, 1193px 958px #fff, 306px 88px #fff, 928px 1389px #fff,
-    349px 1592px #fff, 1053px 1676px #fff, 1492px 513px #fff, 1855px 1115px #fff,
-    93px 1316px #fff, 1244px 95px #fff, 1429px 545px #fff, 1802px 1521px #fff,
-    479px 714px #fff, 221px 785px #fff;
+  box-shadow: 750px 740px rgba(255, 255, 255, 0.2), 1350px 631px v-bind(color),
+    56px 1452px v-bind(color), 554px 1842px v-bind(color),
+    1977px 711px v-bind(color), 1773px 515px v-bind(color),
+    1874px 323px v-bind(color), 382px 762px v-bind(color),
+    1327px 1856px v-bind(color), 921px 157px v-bind(color),
+    1802px 703px v-bind(color), 1612px 757px v-bind(color),
+    1758px 724px v-bind(color), 1706px 307px v-bind(color),
+    616px 487px v-bind(color), 702px 1618px v-bind(color),
+    424px 1839px v-bind(color), 648px 1417px v-bind(color),
+    1671px 319px v-bind(color), 304px 750px v-bind(color),
+    1140px 1473px v-bind(color), 572px 193px v-bind(color),
+    1501px 1292px v-bind(color), 119px 1214px v-bind(color),
+    1637px 1164px v-bind(color), 1540px 1242px v-bind(color),
+    1722px 1715px v-bind(color), 1691px 1010px v-bind(color),
+    236px 433px v-bind(color), 1336px 950px v-bind(color),
+    1168px 1193px v-bind(color), 304px 855px v-bind(color),
+    322px 1892px v-bind(color), 260px 231px v-bind(color),
+    1984px 1336px v-bind(color), 1630px 149px v-bind(color),
+    650px 1260px v-bind(color), 1208px 1841px v-bind(color),
+    1361px 628px v-bind(color), 261px 412px v-bind(color),
+    1105px 869px v-bind(color), 1207px 1819px v-bind(color),
+    1923px 323px v-bind(color), 224px 1390px v-bind(color),
+    1248px 540px v-bind(color), 1024px 1544px v-bind(color),
+    986px 1703px v-bind(color), 425px 1150px v-bind(color),
+    547px 1821px v-bind(color), 1470px 1215px v-bind(color),
+    1511px 1178px v-bind(color), 472px 1850px v-bind(color),
+    1684px 1003px v-bind(color), 1987px 1466px v-bind(color),
+    453px 1830px v-bind(color), 482px 433px v-bind(color),
+    835px 1784px v-bind(color), 1193px 958px v-bind(color),
+    306px 88px v-bind(color), 928px 1389px v-bind(color),
+    349px 1592px v-bind(color), 1053px 1676px v-bind(color),
+    1492px 513px v-bind(color), 1855px 1115px v-bind(color),
+    93px 1316px v-bind(color), 1244px 95px v-bind(color),
+    1429px 545px v-bind(color), 1802px 1521px v-bind(color),
+    479px 714px v-bind(color), 221px 785px v-bind(color);
   animation: animStar 100s linear infinite;
 }
 
 .signup-bg-stars::after {
   content: " ";
-  box-shadow: 750px 740px rgba(255, 255, 255, 0.2), 1350px 631px #fff,
-    56px 1452px #fff, 554px 1842px #fff, 1977px 711px #fff, 1773px 515px #fff,
-    1874px 323px #fff, 382px 762px #fff, 1327px 1856px #fff, 921px 157px #fff,
-    1802px 703px #fff, 1612px 757px #fff, 1758px 724px #fff, 1706px 307px #fff,
-    616px 487px #fff, 702px 1618px #fff, 424px 1839px #fff, 648px 1417px #fff,
-    1671px 319px #fff, 304px 750px #fff, 1140px 1473px #fff, 572px 193px #fff,
-    1501px 1292px #fff, 119px 1214px #fff, 1637px 1164px #fff,
-    1540px 1242px #fff, 1722px 1715px #fff, 1691px 1010px #fff, 236px 433px #fff,
-    1336px 950px #fff, 1168px 1193px #fff, 304px 855px #fff, 322px 1892px #fff,
-    260px 231px #fff, 1984px 1336px #fff, 1630px 149px #fff, 650px 1260px #fff,
-    1208px 1841px #fff, 1361px 628px #fff, 261px 412px #fff, 1105px 869px #fff,
-    1207px 1819px #fff, 1923px 323px #fff, 224px 1390px #fff, 1248px 540px #fff,
-    1024px 1544px #fff, 986px 1703px #fff, 425px 1150px #fff, 547px 1821px #fff,
-    1470px 1215px #fff, 1511px 1178px #fff, 472px 1850px #fff,
-    1684px 1003px #fff, 1987px 1466px #fff, 453px 1830px #fff, 482px 433px #fff,
-    835px 1784px #fff, 1193px 958px #fff, 306px 88px #fff, 928px 1389px #fff,
-    349px 1592px #fff, 1053px 1676px #fff, 1492px 513px #fff, 1855px 1115px #fff,
-    93px 1316px #fff, 1244px 95px #fff, 1429px 545px #fff, 1802px 1521px #fff,
-    479px 714px #fff, 221px 785px #fff;
+  box-shadow: 750px 740px rgba(255, 255, 255, 0.2), 1350px 631px v-bind(color),
+    56px 1452px v-bind(color), 554px 1842px v-bind(color),
+    1977px 711px v-bind(color), 1773px 515px v-bind(color),
+    1874px 323px v-bind(color), 382px 762px v-bind(color),
+    1327px 1856px v-bind(color), 921px 157px v-bind(color),
+    1802px 703px v-bind(color), 1612px 757px v-bind(color),
+    1758px 724px v-bind(color), 1706px 307px v-bind(color),
+    616px 487px v-bind(color), 702px 1618px v-bind(color),
+    424px 1839px v-bind(color), 648px 1417px v-bind(color),
+    1671px 319px v-bind(color), 304px 750px v-bind(color),
+    1140px 1473px v-bind(color), 572px 193px v-bind(color),
+    1501px 1292px v-bind(color), 119px 1214px v-bind(color),
+    1637px 1164px v-bind(color), 1540px 1242px v-bind(color),
+    1722px 1715px v-bind(color), 1691px 1010px v-bind(color),
+    236px 433px v-bind(color), 1336px 950px v-bind(color),
+    1168px 1193px v-bind(color), 304px 855px v-bind(color),
+    322px 1892px v-bind(color), 260px 231px v-bind(color),
+    1984px 1336px v-bind(color), 1630px 149px v-bind(color),
+    650px 1260px v-bind(color), 1208px 1841px v-bind(color),
+    1361px 628px v-bind(color), 261px 412px v-bind(color),
+    1105px 869px v-bind(color), 1207px 1819px v-bind(color),
+    1923px 323px v-bind(color), 224px 1390px v-bind(color),
+    1248px 540px v-bind(color), 1024px 1544px v-bind(color),
+    986px 1703px v-bind(color), 425px 1150px v-bind(color),
+    547px 1821px v-bind(color), 1470px 1215px v-bind(color),
+    1511px 1178px v-bind(color), 472px 1850px v-bind(color),
+    1684px 1003px v-bind(color), 1987px 1466px v-bind(color),
+    453px 1830px v-bind(color), 482px 433px v-bind(color),
+    835px 1784px v-bind(color), 1193px 958px v-bind(color),
+    306px 88px v-bind(color), 928px 1389px v-bind(color),
+    349px 1592px v-bind(color), 1053px 1676px v-bind(color),
+    1492px 513px v-bind(color), 1855px 1115px v-bind(color),
+    93px 1316px v-bind(color), 1244px 95px v-bind(color),
+    1429px 545px v-bind(color), 1802px 1521px v-bind(color),
+    479px 714px v-bind(color), 221px 785px v-bind(color);
   opacity: 0.7;
 }
 
 .signup-bg-stars-2 {
-  box-shadow: 18px 249px rgba(255, 255, 255, 0.2), 1010px 1194px #fff,
-    1566px 862px #fff, 1522px 47px #fff, 1268px 1429px #fff, 685px 239px #fff,
-    511px 1827px #fff, 1862px 1202px #fff, 1869px 491px #fff, 912px 344px #fff,
-    11px 208px #fff, 1694px 572px #fff, 779px 662px #fff, 1430px 812px #fff,
-    365px 1526px #fff, 185px 823px #fff, 1954px 1745px #fff, 445px 1728px #fff,
-    826px 1711px #fff, 1703px 1366px #fff;
+  box-shadow: 18px 249px rgba(255, 255, 255, 0.2), 1010px 1194px v-bind(color),
+    1566px 862px v-bind(color), 1522px 47px v-bind(color),
+    1268px 1429px v-bind(color), 685px 239px v-bind(color),
+    511px 1827px v-bind(color), 1862px 1202px v-bind(color),
+    1869px 491px v-bind(color), 912px 344px v-bind(color), 11px 208px v-bind(color),
+    1694px 572px v-bind(color), 779px 662px v-bind(color),
+    1430px 812px v-bind(color), 365px 1526px v-bind(color),
+    185px 823px v-bind(color), 1954px 1745px v-bind(color),
+    445px 1728px v-bind(color), 826px 1711px v-bind(color),
+    1703px 1366px v-bind(color);
   animation: animStar 150s linear infinite;
 }
 
 .signup-bg-stars-2::after {
-  box-shadow: 18px 249px rgba(255, 255, 255, 0.2), 1010px 1194px #fff,
-    1566px 862px #fff, 1522px 47px #fff, 1268px 1429px #fff, 685px 239px #fff,
-    511px 1827px #fff, 1862px 1202px #fff, 1869px 491px #fff, 912px 344px #fff,
-    11px 208px #fff, 1694px 572px #fff, 779px 662px #fff, 1430px 812px #fff,
-    365px 1526px #fff, 185px 823px #fff, 1954px 1745px #fff, 445px 1728px #fff,
-    826px 1711px #fff, 1703px 1366px #fff;
+  box-shadow: 18px 249px rgba(255, 255, 255, 0.2), 1010px 1194px v-bind(color),
+    1566px 862px v-bind(color), 1522px 47px v-bind(color),
+    1268px 1429px v-bind(color), 685px 239px v-bind(color),
+    511px 1827px v-bind(color), 1862px 1202px v-bind(color),
+    1869px 491px v-bind(color), 912px 344px v-bind(color), 11px 208px v-bind(color),
+    1694px 572px v-bind(color), 779px 662px v-bind(color),
+    1430px 812px v-bind(color), 365px 1526px v-bind(color),
+    185px 823px v-bind(color), 1954px 1745px v-bind(color),
+    445px 1728px v-bind(color), 826px 1711px v-bind(color),
+    1703px 1366px v-bind(color);
 }
 
 .signup-bg-stars-3 {
-  box-shadow: 588px 305px rgba(255, 255, 255, 0.2), 1968px 1036px #fff,
-    970px 941px #fff, 655px 814px #fff, 376px 480px #fff, 257px 519px #fff,
-    1417px 545px #fff, 872px 281px #fff, 724px 937px #fff, 304px 1811px #fff;
+  box-shadow: 588px 305px rgba(255, 255, 255, 0.2), 1968px 1036px v-bind(color),
+    970px 941px v-bind(color), 655px 814px v-bind(color), 376px 480px v-bind(color),
+    257px 519px v-bind(color), 1417px 545px v-bind(color),
+    872px 281px v-bind(color), 724px 937px v-bind(color),
+    304px 1811px v-bind(color);
   animation: animStar 200s linear infinite;
 }
 
 .signup-bg-stars-3::after {
-  box-shadow: 588px 305px rgba(255, 255, 255, 0.2), 1968px 1036px #fff,
-    970px 941px #fff, 655px 814px #fff, 376px 480px #fff, 257px 519px #fff,
-    1417px 545px #fff, 872px 281px #fff, 724px 937px #fff, 304px 1811px #fff;
+  box-shadow: 588px 305px rgba(255, 255, 255, 0.2), 1968px 1036px v-bind(color),
+    970px 941px v-bind(color), 655px 814px v-bind(color), 376px 480px v-bind(color),
+    257px 519px v-bind(color), 1417px 545px v-bind(color),
+    872px 281px v-bind(color), 724px 937px v-bind(color),
+    304px 1811px v-bind(color);
 }
 
 @keyframes animStar {

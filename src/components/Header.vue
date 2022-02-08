@@ -1,10 +1,5 @@
 <script lang="ts" setup>
-import { isDark } from '@u/index'
-const { availableLocales, locale } = useI18n()
-const toggleLocales = () => {
-  const locales = availableLocales
-  locale.value = locales[(locales.indexOf(locale.value) + 1) % locales.length]
-}
+import { isDark, toggleLocales } from '@u/index'
 
 const routes = reactive([
   { icon: 'i-ri:article-line', path: '/posts' },
