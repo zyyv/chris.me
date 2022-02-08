@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg -z-1 bg-[#040d21]"
+    class="bg -z-1 bg-white dark:bg-[#040d21]"
     fixed
     top-0
     left-0
@@ -26,7 +26,7 @@
 
 <style scoped>
 .bg {
-  background-image: url("@/assets/img/hero-glow.svg");
+  /* background-image: url("@/assets/img/hero-glow.svg"); */
   background-size: 200% 200%;
   background-position: 50% 50%;
 }

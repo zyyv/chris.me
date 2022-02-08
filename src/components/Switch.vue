@@ -1,7 +1,9 @@
 <script lang="ts" setup>
 /** 根据size获取组件的宽高 */
 const useSize = (
-  size: 'small' | 'medium' | 'large'
+  size: 'small' | 'medium' | 'large' = 'small',
+  w?: string,
+  h?: string
 ): {
   _width: string
   _height: string
@@ -12,23 +14,24 @@ const useSize = (
     large: ['3rem', '1.625rem']
   }
   return {
-    _width: sizeEnum[size][0],
-    _height: sizeEnum[size][1]
+    _width: w ?? sizeEnum[size][0],
+    _height: h ?? sizeEnum[size][1]
   }
 }
 
 const props = withDefaults(
   defineProps<{
-    size?: 'small' | 'medium' | 'large'
+    size?: 'small' | 'medium' | 'large' | undefined
     value?: string | number | boolean
     loading?: boolean
     defaultValue?: string | number | boolean
     disabled?: boolean
     bgColor?: string
     bgActiveColor?: string
+    width?: string
+    height?: string
   }>(),
   {
-    size: 'medium',
     defaultValue: false,
     disabled: false,
     bgColor: 'rgba(0, 0, 0, 0.14)',
@@ -42,7 +45,7 @@ const emits = defineEmits<{
 }>()
 
 const status = useVModel(props, 'value', emits)
-const { _width, _height } = useSize(props.size)
+const { _width, _height } = useSize(props.size, props.width, props.height)
 const _bgColor = computed(() => props.bgColor)
 const _bgActiveColor = computed(() => props.bgActiveColor)
 
@@ -60,11 +63,15 @@ const handleClick = () => {
     :class="[disabled && 'op-50', status && 'active']"
     rounded-full
     overflow-hidden
-    border
-    relative
+    b
+    pr
     @click="handleClick"
   >
-    <div absolute rounded-full class="switch__button bg-[#fff]" />
+    <div pa rounded-full overflow-hidden class="switch__button">
+      <slot name="dot">
+        <div w-full h-full bg-white />
+      </slot>
+    </div>
   </div>
 </template>
 

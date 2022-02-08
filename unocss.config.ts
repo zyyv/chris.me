@@ -46,7 +46,8 @@ export default defineConfig({
     ['f-c', 'flex justify-center items-center'],
     ['f-c-c', 'f-c flex-col'],
     ['p-c', 'pa top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'],
-    ['icon-btn', 'w-5.5 h-5.5 cursor-pointer select-none transition-duration-200 ease-in-out hover:text-teal-600 dark:text-[#afbac6] dark:hover:text-[#d9dfe9]']
+    ['icon', 'w-6 h-6 cursor-pointer select-none transition-opacity-300 ease-in-out dark:text-[#afbac6] dark:hover:text-[#d9dfe9]'],
+    ['icon-btn', 'icon text-inherit'],
+    ['icon-link', 'icon text-gray-700 op-50 hover:op-100']
   ]
 })
-
