@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { useCursor, useDot } from './index'
+import { useCursor, useDot } from '@/composables'
 import type { ICursorStyle } from '@/types'
 
 const style = reactive<ICursorStyle>({

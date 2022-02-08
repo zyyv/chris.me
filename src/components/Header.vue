@@ -18,7 +18,15 @@ const menus = reactive([
 <template>
   <header w-full>
     <router-link to="/">
-      <img w-10 h-10 fixed left-6 top-6 src="/logo.svg" alt="logo" />
+      <img
+        w-10
+        h-10
+        fixed
+        left-6
+        top-6
+        src="/logo.svg"
+        alt="logo"
+      >
     </router-link>
     <nav p-8 w-full grid box-border class="grid-cols-[auto_max-content]">
       <div class="spacer" />
@@ -109,7 +117,14 @@ const menus = reactive([
         >
           <div w-6 h-6 class="i-carbon:logo-github"></div>
         </Navlink>-->
-        <a text-inherit no-underline outline-none op-50 hover="op-100" transition-opacity-300>
+        <a
+          text-inherit
+          no-underline
+          outline-none
+          op-50
+          hover="op-100"
+          transition-opacity-300
+        >
           <div w-6 h-6 class="i-carbon:language" @click="toggleLocales" />
         </a>
       </div>
