@@ -47,7 +47,7 @@ export default defineConfig({
     ['f-c-c', 'f-c flex-col'],
     ['p-c', 'pa top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'],
     ['toDark', 'transition-all-500 ease-in-out'],
-    ['base', 'toDark text-[#555] dark:text-[#d9dfe9]'],
+    ['base', 'toDark text-$text-black dark:text-$text-black-dark'],
     ['icon', 'w-6 h-6 cursor-pointer select-none transition-opacity-300 ease-in-out dark:text-[#afbac6] dark:hover:text-[#d9dfe9]'],
     ['icon-btn', 'icon text-inherit'],
     ['icon-link', 'icon text-gray-700 op-50 hover:op-100']

@@ -11,6 +11,7 @@ const routes = reactive([
 <template>
   <header
     w-full
+    toDark
     border="0 b-1 dashed gray-300 dark:b-gray-700"
   >
     <Navlink to="/">

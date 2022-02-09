@@ -9,12 +9,12 @@ useTitle('Chris\' Blog | Projects')
     <h1 text-3xl base text-black class="mb-4 font-medium">
       {{ t('project.h1') }}
     </h1>
-    <p text-sm base font-lobster>
+    <p text-base base font-lobster>
       {{ t('project.h2') }}
     </p>
 
-    <section mt-10>
-      <h2 mb-2 text-xl>
+    <section v-for="i in 3" :key="i" mt-10>
+      <h2 base mb-2 text-xl>
         Latest
       </h2>
       <div grid py-2 gap-2 style="grid-template-columns: repeat(auto-fit,minmax(250px,1fr))">
@@ -23,7 +23,7 @@ useTitle('Chris\' Blog | Projects')
           :key="i"
           flex
           op-60
-          hover="op-100 bg-[#fbfbfb]"
+          hover="op-100 bg-[#fbfbfb] dark:bg-transparent"
           transition-all-300
           ease-in-out
           class="px-3.5 py-4"
@@ -33,15 +33,24 @@ useTitle('Chris\' Blog | Projects')
             <img w-10 h-10 :src="Logo" alt="" srcset="">
           </div>
           <div>
-            <div text-base>
+            <div text-base dark:text-white-800 toDark>
               Utils
             </div>
-            <div mt-2 text-sm text-black op-50>
+            <div
+              toDark
+              mt-2
+              text-sm
+              text-black
+              dark:text-white
+              op-50
+            >
               Collection of common and useful JavaScript / TypeScript utilities
             </div>
           </div>
         </Navlink>
       </div>
     </section>
+
+    <BBack />
   </div>
 </template>
