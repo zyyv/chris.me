@@ -67,7 +67,7 @@ const routes = reactive([
         <Navlink to="https://space.bilibili.com/402454160">
           <div icon-link i-ri:bilibili-line />
         </Navlink>
-        <Navlink to="https://github.com/chris-zhu">
+        <Navlink to="https://github.com/chris-zhu/chris.me">
           <div icon-link i-carbon:logo-github />
         </Navlink>
       </div>

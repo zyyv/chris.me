@@ -6,7 +6,7 @@ const color = computed(() => isDark.value ? '#fff' : '#0d9488')
 
 <template>
   <div
-    class="bg -z-1 bg-white dark:bg-[#040d21] toDark"
+    class="bg -z-1 bg-[#fefefe] dark:bg-[#040d21] toDark"
     fixed
     top-0
     left-0
@@ -33,7 +33,6 @@ const color = computed(() => isDark.value ? '#fff' : '#0d9488')
 
 <style scoped>
 .bg {
-  /* background-image: url("@/assets/img/hero-glow.svg"); */
   background-size: 200% 200%;
   background-position: 50% 50%;
 }
