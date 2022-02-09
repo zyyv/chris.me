@@ -10,8 +10,12 @@ const routes = reactive([
 
 <template>
   <header
-    w-full
+    fixed
+    z-99
+    top-0
+    inset-x-0
     toDark
+    backdrop-blur
     border="0 b-1 dashed gray-300 dark:b-gray-700"
   >
     <Navlink to="/">
@@ -74,4 +78,5 @@ const routes = reactive([
       </div>
     </nav>
   </header>
+  <div class="h-4.5rem" />
 </template>
