@@ -1,7 +1,7 @@
 <script lang="ts" setup name="Home">
 import { useCss, useHtml } from '.'
+const { t } = useI18n()
 
-// const allDown = ref(true) // 两个模块是否都打印完成
 const allDown = ref(false) // 两个模块是否都打印完成
 const enableAnimate = ref(false) // 提前结束动画
 const { htmlState } = useHtml()
@@ -63,19 +63,18 @@ useTitle('Chris\' Blog')
               </Navlink>
             </h1>
             <p leading-7 base>
-              Front-end Engineer 🧑🏻‍💻 Focus on Vue, Vite & Unocss.
+              {{ t('home.desc.one') }}
             </p>
             <p leading-7 base>
-              ✨ Open source community contributors ✨
+              {{ t('home.desc.two') }}
             </p>
           </div>
         </div>
         <p mb-6 base>
-          <!-- Hi, I am Chris, a person who loves programming, living in Chengdu, Sichuan. -->
-          嗨，你好，我是朱颖，一个喜欢编程的人，现居住在美丽的四川成都
+          {{ t("home.intro0") }}
         </p>
         <p mb-6 base>
-          3年的工作经验，Github开源社区的积极贡献者。为
+          {{ t('home.intro1.line1') }}
           <Navlink class="!text-red-300" to="https://github.com/unocss/unocss">
             Unocss
           </Navlink>&
@@ -84,20 +83,20 @@ useTitle('Chris\' Blog')
             to="https://github.com/vuejs-translations/docs-zh-cn"
           >
             vuejs-translations/docs-zh-cn
-          </Navlink>等贡献多个pr。喜欢学习探索框架源码，梦想造一个很Cool的轮子。
+          </Navlink>{{ t('home.intro1.line2') }}
         </p>
         <p mb-6 base>
-          兴趣广泛，看动漫、爬山、听音乐、学外语、打游戏···最近在学习剪辑视频，准备做一名<Navlink
+          {{ t('home.intro2.desc') }} <Navlink
             class="!text-red-300"
             to="https://space.bilibili.com/402454160"
           >
-            Up
-          </Navlink>主
+            {{ t('home.intro2.uploader') }}
+          </Navlink>
         </p>
         <p mb-6 base>
-          对了，我也喜欢旅行，拍照，你也可以简单
+          {{ t('home.intro3.desc') }}
           <Navlink class="!text-red-300" to="/photoes">
-            看看
+            {{ t('home.intro3.look') }}
           </Navlink>
         </p>
         <p text="sm gray-400">

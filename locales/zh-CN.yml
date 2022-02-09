@@ -15,3 +15,17 @@ not-found: 未找到页面
 project:
   h1: 项目
   h2: 一些我引以为豪的项目
+home:
+  desc:
+    one: 前端工程师 🧑🏻‍💻 专注于Vue, Vite & Unocss的生态环境
+    two: ✨ 开源社区积极贡献者 ✨ 
+  intro0: 嗨，你好，我是朱颖，一个喜欢编程的人，现居住在美丽的四川成都。
+  intro1:
+    line1: 3年的工作经验，Github开源社区的积极贡献者。为
+    line2: 等贡献多个pr。喜欢学习探索框架源码，梦想造一个很Cool的轮子。
+  intro2: 
+    desc: 兴趣广泛，看动漫、爬山、听音乐、学外语、打游戏···最近在学习剪辑视频，准备做一名
+    uploader: Up主
+  intro3:
+    desc: 对了，我也喜欢旅行，拍照，你也可以简单
+    look: 看看
