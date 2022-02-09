@@ -42,7 +42,7 @@ useTitle('Chris\' Blog | Projects')
               text-sm
               text-black
               dark:text-white
-              op-50
+              op-80
             >
               Collection of common and useful JavaScript / TypeScript utilities
             </div>

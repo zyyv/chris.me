@@ -1,13 +1,12 @@
 export function useHtml() {
   const html = `<p mb-6 base>
-  console.log('qishimeishayong, dankanqilaihenku!')
+  console.log('如果你不喜欢这段动画，你可以点击右下角按钮，提前结束折磨')
 </p>
 <p mb-6 base>
-  Github开源社区的积极贡献者。为
-  <Navlink> Unocss </Navlink> & <Navlink> vuejs-translations/docs-zh-cn </Navlink>等贡献多个pr
+  这段代码完全没用，只是为了让你觉得很酷🤣
 </p>
 <p mb-6 base>
-  兴趣广泛，看动漫、爬山、听音乐、学外语、打游戏···最近在学习剪辑视频，准备做一名Up主
+  如果没有，那那那。。。打扰了😅，请跳过
 </p>
 `
   const htmlState = reactive({
@@ -20,17 +19,15 @@ export function useHtml() {
 
 export function useCss() {
   const css = `.display-enter-active {
+  transition: all 1s ease-in-out;
+}
+.display-leave-active {
+  transition: all 2s ease-in-out;
+  .css,
+  .html {
     transition: all 1s ease-in-out;
   }
-  .display-leave-active {
-    transition: all 2s ease-in-out;
-  
-    .css,
-    .html {
-      transition: all 1s ease-in-out;
-    }
-  }
-  `
+}`
   const cssState = reactive({
     status: false,
     text: css

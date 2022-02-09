@@ -1,7 +1,7 @@
 <script lang="ts" setup name="Home">
 import { useCss, useHtml } from '.'
-const { t } = useI18n()
 
+const { t } = useI18n()
 const allDown = ref(false) // 两个模块是否都打印完成
 const enableAnimate = ref(false) // 提前结束动画
 const { htmlState } = useHtml()
@@ -18,7 +18,9 @@ watchEffect(() => {
   }
 })
 
-useTitle('Chris\' Blog')
+onActivated(() => {
+  useTitle('Chris\' Blog')
+})
 </script>
 
 <template>
@@ -34,6 +36,7 @@ useTitle('Chris\' Blog')
           border="1 gray-300 dark:gray-700"
           rounded-md
           toDark
+          overflow-hidden
         >
           <pre v-typeWrite="htmlState" base text-justify whitespace-pre-wrap font-mono />
         </div>
@@ -46,26 +49,27 @@ useTitle('Chris\' Blog')
           border="1 gray-300 dark:gray-700"
           rounded-md
           toDark
+          overflow-hidden
         >
           <pre v-typeWrite="cssState" base whitespace-pre-wrap font-mono />
         </div>
       </div>
       <div v-else class="max-w-75ch" m-auto p-2>
-        <div mb-8 f-c justify-start>
-          <div mr-10 text-0>
+        <div mb-8 md="f-c justify-start">
+          <div text-center md:mr-10 text-0>
             <img w-40 h-40 rounded-full :src="Avatar" alt="Avatar">
           </div>
           <div>
-            <h1 mb-6 font-lobster>
+            <h1 text-center md:text-left mt-4 mb-6 font-lobster>
               <Navlink class="!text-purple-400" f-c inline-flex to="https://github.com/chris-zhu">
                 Chris-Zhu
                 <div ml-2 inline-block i-carbon:logo-github />
               </Navlink>
             </h1>
-            <p leading-7 base>
+            <p text-center md:text-left leading-7 base>
               {{ t('home.desc.one') }}
             </p>
-            <p leading-7 base>
+            <p text-center md:text-left leading-7 base>
               {{ t('home.desc.two') }}
             </p>
           </div>
@@ -109,9 +113,21 @@ useTitle('Chris\' Blog')
         </p>
       </div>
     </transition>
-    <div f-c pa bottom-5 right-5>
-      <span v-if="!enableAnimate" base text-12px mr-2>提前结束动画</span>
-      <Switch v-model:value="enableAnimate" :disabled="enableAnimate" size="small" />
+    <div
+      f-c
+      fixed
+      bottom-5
+      right-5
+    >
+      <span
+        v-if="!enableAnimate"
+        hidden
+        md:inline
+        base
+        text-12px
+        mr-2
+      >提前结束动画</span>
+      <Switch v-model:value="enableAnimate" :class="enableAnimate && 'animate-[fade-out_2s_ease-in-out_2s_both]'" :disabled="enableAnimate" size="small" />
     </div>
   </div>
 </template>

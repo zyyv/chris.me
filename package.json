@@ -4,7 +4,7 @@
   "description": "This is my Blog, build with Vue3.",
   "main": "src/main.js",
   "scripts": {
-    "dev": "vite --port 9999 --open",
+    "dev": "vite --port 9999 --open --host",
     "build": "vue-tsc --noEmit && vite build",
     "serve": "vite preview",
     "lint": "eslint \"**/*.{vue,ts,js}\"",
@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/chris-zhu/chris.me#readme",
   "dependencies": {
+    "@chris-zhu/utils": "^0.0.7",
     "@vueuse/core": "latest",
     "axios": "^0.25.0",
     "pinia": "latest",
@@ -36,6 +37,7 @@
   },
   "devDependencies": {
     "@chris-zhu/eslint-config": "latest",
+    "@faker-js/faker": "^6.0.0-alpha.5",
     "@iconify-json/akar-icons": "^1.0.8",
     "@iconify-json/carbon": "^1.0.9",
     "@iconify-json/logos": "^1.0.4",

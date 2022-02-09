@@ -34,6 +34,11 @@ export default defineConfig({
       }
     })
   ],
+  // theme: {
+  //   animation: {
+  //     keyframes: {}
+  //   }
+  // },
   layers: {
     default: 1,
     modele: 2
