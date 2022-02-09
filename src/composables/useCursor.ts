@@ -63,6 +63,19 @@ export function useDot(style: ICursorStyle) {
       opacity
     }
   }
+  const domListener = () => {
+    [
+      ...Array.from(document.querySelectorAll('a')),
+      ...Array.from(document.querySelectorAll('button'))
+    ].forEach((el) => {
+      useEventListener(el, 'mouseover', () => {
+        dotState.enlarged = true
+      })
+      useEventListener(el, 'mouseout', () => {
+        dotState.enlarged = false
+      })
+    })
+  }
 
   watch(() => dotState.enlarged, toggleDotSize) // update dot size
   watch(() => dotState.visible, toggleDotVisibility, { immediate: true }) // update dot opacity
@@ -84,16 +97,7 @@ export function useDot(style: ICursorStyle) {
     dotState.enlarged = false
   })
 
-  nextTick(() => {
-    document.querySelectorAll('a').forEach((el) => {
-      useEventListener(el, 'mouseover', () => {
-        dotState.enlarged = true
-      })
-      useEventListener(el, 'mouseout', () => {
-        dotState.enlarged = false
-      })
-    })
-  })
+  nextTick(domListener)
 
-  return { dotRef: toRef(dotState, 'dotRef') }
+  return { dotRef: toRef(dotState, 'dotRef'), domListener }
 }

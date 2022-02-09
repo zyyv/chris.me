@@ -109,7 +109,8 @@ useTitle('Chris\' Blog')
         </p>
       </div>
     </transition>
-    <div pa bottom-5 right-5>
+    <div f-c pa bottom-5 right-5>
+      <span v-if="!enableAnimate" base text-12px mr-2>提前结束动画</span>
       <Switch v-model:value="enableAnimate" :disabled="enableAnimate" size="small" />
     </div>
   </div>

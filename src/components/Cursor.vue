@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { useCursor, useDot } from '@/composables'
 import type { ICursorStyle } from '@/types'
-
+const route = useRoute()
 const style = reactive<ICursorStyle>({
   dot: {},
   cursor: {},
@@ -10,7 +10,10 @@ const style = reactive<ICursorStyle>({
 
 useCursor(style)
 
-const { dotRef } = useDot(style)
+const { dotRef, domListener } = useDot(style)
+watch(() => route.fullPath, () => {
+  setTimeout(domListener, 800) // 等待 transition 时间片断完成
+})
 </script>
 
 <template>
