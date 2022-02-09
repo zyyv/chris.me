@@ -19,14 +19,14 @@ const routes = reactive([
         h-10
         fixed
         left-6
-        top-2
+        top-4
         :src="Logo"
         alt="logo"
       >
     </Navlink>
     <nav
       px-8
-      py-4
+      py-6
       w-full
       grid
       box-border

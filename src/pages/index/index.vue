@@ -75,11 +75,11 @@ useTitle('Chris\' Blog')
         </p>
         <p mb-6 base>
           {{ t('home.intro1.line1') }}
-          <Navlink class="!text-red-300" to="https://github.com/unocss/unocss">
+          <Navlink class="!text-red-300 !underline" to="https://github.com/unocss/unocss">
             Unocss
           </Navlink>&
           <Navlink
-            class="!text-red-300"
+            class="!text-red-300 !underline"
             to="https://github.com/vuejs-translations/docs-zh-cn"
           >
             vuejs-translations/docs-zh-cn
@@ -87,7 +87,7 @@ useTitle('Chris\' Blog')
         </p>
         <p mb-6 base>
           {{ t('home.intro2.desc') }} <Navlink
-            class="!text-red-300"
+            class="!text-red-300 !underline"
             to="https://space.bilibili.com/402454160"
           >
             {{ t('home.intro2.uploader') }}
@@ -95,7 +95,7 @@ useTitle('Chris\' Blog')
         </p>
         <p mb-6 base>
           {{ t('home.intro3.desc') }}
-          <Navlink class="!text-red-300" to="/photoes">
+          <Navlink class="!text-red-300 !underline" to="/photoes">
             {{ t('home.intro3.look') }}
           </Navlink>
         </p>

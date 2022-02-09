@@ -5,12 +5,17 @@ const router = useRouter()
 <template>
   <div>
     <slot>
-      <button @click="router.back()">
-        cd ..
+      <button
+        op-70
+        hover:op-100
+        text="#7D7D7D dark:#acbac6"
+        font-mono
+        bg-transparent
+        border="0 b-1 #7D7D7D dark:#acbac6 op-70 hover:op-100"
+        @click="router.back()"
+      >
+        cd ··
       </button>
     </slot>
   </div>
 </template>
-
-<style lang='scss' scoped>
-</style>

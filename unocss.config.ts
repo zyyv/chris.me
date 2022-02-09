@@ -17,7 +17,7 @@ export default defineConfig({
       fonts: {
         // these will extend the default theme
         sans: 'Roboto',
-        mono: ['Fira Code', 'Fira Mono:400,700'],
+        fira: ['Fira Code', 'Fira Mono:400,700'],
         // custom ones
         lobster: 'Lobster',
         lato: [
