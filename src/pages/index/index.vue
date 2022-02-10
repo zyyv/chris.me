@@ -127,7 +127,7 @@ onActivated(() => {
         text-12px
         mr-2
       >提前结束动画</span>
-      <Switch v-model:value="enableAnimate" :class="enableAnimate && 'animate-[fade-out_2s_ease-in-out_2s_both]'" :disabled="enableAnimate" size="small" />
+      <Switch v-model:value="enableAnimate" keyframes-fade-out :class="enableAnimate && 'animate-[fade-out_3s_ease-in-out_3s_both]'" :disabled="enableAnimate" size="small" />
     </div>
   </div>
 </template>
