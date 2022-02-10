@@ -6,6 +6,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     BBack: typeof import('./components/BBack.vue')['default']
     Bg: typeof import('./components/Bg.vue')['default']
+    BMenuIcon: typeof import('./components/BMenuIcon.vue')['default']
     Cursor: typeof import('./components/Cursor.vue')['default']
     Header: typeof import('./components/Header.vue')['default']
     Navlink: typeof import('./components/Navlink.vue')['default']
