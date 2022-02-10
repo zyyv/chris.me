@@ -57,7 +57,7 @@ onActivated(() => {
       <div v-else class="max-w-75ch" m-auto p-2>
         <div mb-8 md="f-c justify-start">
           <div text-center md:mr-10 text-0>
-            <img w-40 h-40 rounded-full :src="Avatar" alt="Avatar">
+            <img w-40 h-40 rounded-full src="@a/img/avatar.jpg" alt="Avatar">
           </div>
           <div>
             <h1 text-center md:text-left mt-4 mb-6 font-lobster>

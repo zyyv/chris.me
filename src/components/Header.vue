@@ -25,7 +25,7 @@ const routes = reactive([
         fixed
         left-6
         top-4
-        :src="Logo"
+        src="@a/img/logo.svg"
         alt="logo"
       >
     </Navlink>

@@ -30,7 +30,7 @@ useTitle('Chris\' Blog | Projects')
           to=""
         >
           <div text-0 pt-2 pr-4>
-            <img w-10 h-10 :src="Logo" alt="" srcset="">
+            <img w-10 h-10 src="@a/img/logo.svg" alt="" srcset="">
           </div>
           <div>
             <div text-base dark:text-white-800 toDark>
