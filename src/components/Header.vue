@@ -31,14 +31,13 @@ const routes = reactive([
     </Navlink>
     <nav
       px-8
-      py-6
       w-full
       grid
       box-border
-      class="grid-cols-[auto_max-content]"
+      class="grid-cols-[auto_max-content] h-4.5rem"
     >
       <div class="spacer" />
-      <div grid gap-5 auto-flow-col>
+      <div grid gap-5 auto-flow-col items-center>
         <Navlink
           v-for="route in routes"
           :key="route.path"
@@ -49,7 +48,7 @@ const routes = reactive([
         >
           <div icon-btn :class="route.icon" />
         </Navlink>
-        <div f-c>
+        <div hidden lg:block f-c>
           <Switch
             v-model:value="isDark"
             size="small"
@@ -66,17 +65,91 @@ const routes = reactive([
             </template>
           </Switch>
         </div>
-        <a>
+        <a hidden lg:block>
           <div icon-link i-carbon:language @click="toggleLocales" />
         </a>
-        <Navlink to="https://space.bilibili.com/402454160">
+        <Navlink hidden lg:block to="https://space.bilibili.com/402454160">
           <div icon-link i-ri:bilibili-line />
         </Navlink>
-        <Navlink to="https://github.com/chris-zhu/chris.me">
+        <Navlink hidden lg:block to="https://github.com/chris-zhu/chris.me">
           <div icon-link i-carbon:logo-github />
         </Navlink>
+        <div
+          pr
+          w-6
+          h-full
+          lg:hidden
+          f-c
+          class="menus"
+        >
+          <BMenuIcon />
+          <div
+            pa
+            right-0
+            toDark
+            w-45
+            b="1 gray-200 dark:gray-600"
+            bg="white dark:gray-900"
+            rounded-md
+            class="-bottom-full menuItem"
+            invisible
+            translate-y-2px
+            transition-300
+            op-0
+          >
+            <div
+              p-3
+              f-c
+              justify-between
+              b="0 b-1 gray-200 dark:gray-600"
+            >
+              <span text="12px $text-black dark:$text-black-dark">外貌</span>
+              <Switch
+                v-model:value="isDark"
+                size="small"
+                bg-color="#f1f1f1"
+                bg-active-color="#2f2f2f"
+              >
+                <template #dot>
+                  <div w-full h-full f-c class="bg-white dark:bg-[#1a1a1a]">
+                    <div v-if="!isDark" class="w-1em h-1em i-carbon:light-filled text-gray" />
+                    <div v-else class="i-akar-icons:moon-fill w-1em h-1em text-white" />
+                  </div>
+                </template>
+              </Switch>
+            </div>
+            <div
+              p-3
+              f-c
+              justify-start
+            >
+              <a mr-3>
+                <div icon-link i-carbon:language @click="toggleLocales" />
+              </a>
+              <Navlink mr-3 to="https://space.bilibili.com/402454160">
+                <div icon-link i-ri:bilibili-line />
+              </Navlink>
+              <Navlink mr-3 to="https://github.com/chris-zhu/chris.me">
+                <div icon-link i-carbon:logo-github />
+              </Navlink>
+            </div>
+            <div />
+          </div>
+        </div>
       </div>
     </nav>
   </header>
   <div class="h-4.5rem" />
 </template>
+
+<style lang="scss" scoped>
+.menus{
+  &:hover{
+    .menuItem{
+      opacity: 1;
+      transform: translateY(8px);
+      visibility: visible;
+    }
+  }
+}
+</style>

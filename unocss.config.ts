@@ -55,6 +55,8 @@ export default defineConfig({
     ['base', 'toDark text-$text-black dark:text-$text-black-dark'],
     ['icon', 'w-6 h-6 cursor-pointer select-none transition-opacity-300 ease-in-out dark:text-[#afbac6] dark:hover:text-[#d9dfe9]'],
     ['icon-btn', 'icon text-inherit'],
-    ['icon-link', 'icon text-gray-700 op-50 hover:op-100']
+    ['icon-link', 'icon text-gray-700 op-50 hover:op-100'],
+    ['menu-icon-line', 'transition pa block bg-gray-700 op-50 dark:bg-[#afbac6] w-5/7 h-2px'],
+    ['clearBtn', 'bg-transparent border-none outline-none']
   ]
 })
