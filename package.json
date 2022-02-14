@@ -29,7 +29,7 @@
   "dependencies": {
     "@chris-zhu/utils": "^0.0.7",
     "@vueuse/core": "latest",
-    "axios": "^0.25.0",
+    "axios": "^0.26.0",
     "pinia": "latest",
     "vue": "latest",
     "vue-i18n": "^9.2.0-beta.30",
