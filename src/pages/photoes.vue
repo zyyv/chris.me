@@ -14,7 +14,8 @@ const imgs: string[] = ['http://placeimg.com/303/576/abstract', 'http://placeimg
 
 <template>
   <div>
-    <div>111</div>
+    <p>developing···</p>
+    <div>mock images</div>
     <img v-for="src in imgs" :key="src" width="200" :src="src">
   </div>
 </template>

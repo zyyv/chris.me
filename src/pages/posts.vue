@@ -4,6 +4,7 @@ useTitle('Chris\' Blog | Posts')
 
 <template>
   <div>
+    <p>developing···</p>
     <BBack />
   </div>
 </template>
