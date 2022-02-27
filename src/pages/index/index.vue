@@ -58,7 +58,7 @@ onActivated(() => {
       <div v-else class="max-w-75ch" m-auto p-2>
         <div mb-8 md="f-c justify-start">
           <div text-center md:mr-10 text-0>
-            <img w-40 h-40 rounded-full src="@a/img/avatar.jpg" alt="Avatar" />
+            <img w-40 h-40 rounded-full src="@a/img/avatar.jpg" alt="Avatar">
           </div>
           <div>
             <h1 text-center md:text-left mt-4 mb-6 font-lobster>
@@ -67,18 +67,28 @@ onActivated(() => {
                 <div ml-2 inline-block i-carbon:logo-github />
               </Navlink>
             </h1>
-            <p text-center md:text-left leading-7 base>{{ t('home.desc.one') }}</p>
-            <p text-center md:text-left leading-7 base>{{ t('home.desc.two') }}</p>
+            <p text-center md:text-left leading-7 base>
+              {{ t('home.desc.one') }}
+            </p>
+            <p text-center md:text-left leading-7 base>
+              {{ t('home.desc.two') }}
+            </p>
           </div>
         </div>
-        <p mb-6 base>{{ t("home.intro0") }}</p>
+        <p mb-6 base>
+          {{ t("home.intro0") }}
+        </p>
         <p mb-6 base>
           {{ t('home.intro1.line1') }}
-          <Navlink class="!text-red-300 !underline" to="https://github.com/unocss/unocss">Unocss</Navlink>&
+          <Navlink class="!text-red-300 !underline" to="https://github.com/unocss/unocss">
+            Unocss
+          </Navlink>&
           <Navlink
             class="!text-red-300 !underline"
             to="https://github.com/vuejs-translations/docs-zh-cn"
-          >vuejs-translations/docs-zh-cn</Navlink>
+          >
+            vuejs-translations/docs-zh-cn
+          </Navlink>
           {{ t('home.intro1.line2') }}
         </p>
         <p mb-6 base>
@@ -86,22 +96,35 @@ onActivated(() => {
           <Navlink
             class="!text-red-300 !underline"
             to="https://space.bilibili.com/402454160"
-          >{{ t('home.intro2.uploader') }}</Navlink>
+          >
+            {{ t('home.intro2.uploader') }}
+          </Navlink>
         </p>
         <p mb-6 base>
           {{ t('home.intro3.desc') }}
-          <Navlink class="!text-red-300 !underline" to="/photoes">{{ t('home.intro3.look') }}</Navlink>
+          <Navlink class="!text-red-300 !underline" to="/photoes">
+            {{ t('home.intro3.look') }}
+          </Navlink>
         </p>
         <p text="sm gray-400">
           <Navlink
             hover:text-red-300
             to="https://creativecommons.org/licenses/by-nc-sa/4.0/"
-          >CC BY-NC-SA 4.0</Navlink>2022 © Chris-Zhu
+          >
+            CC BY-NC-SA 4.0
+          </Navlink>2022 © Chris-Zhu
         </p>
       </div>
     </transition>
     <div f-c fixed bottom-5 right-5>
-      <span v-if="!enableAnimate" hidden md:inline base text-12px mr-2>提前结束动画</span>
+      <span
+        v-if="!enableAnimate"
+        hidden
+        md:inline
+        base
+        text-12px
+        mr-2
+      >提前结束动画</span>
       <Switch
         v-model:value="enableAnimate"
         :class="enableAnimate && 'disappear'"
