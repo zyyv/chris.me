@@ -1,12 +1,18 @@
 @import url(./transition.css);
 
 :root {
-    --default: #adbac7; /* 用于cursor的颜色 */
-    --bg-default: #fefefe; /* 背景色 */
-    --bg-dark-default: #040d21; /* dark 背景色 */
-    --text-black: #334155; /* 文字颜色 */
-    --text-black-dark: #94a3b8; /* dark 文字颜色 */
-    --text-black-2: #0f172a; /* 文字颜色2 */
+    --default: #adbac7;
+    /* 用于cursor的颜色 */
+    --bg-default: #fefefe;
+    /* 背景色 */
+    --bg-dark-default: #040d21;
+    /* dark 背景色 */
+    --text-black: #334155;
+    /* 文字颜色 */
+    --text-black-dark: #94a3b8;
+    /* dark 文字颜色 */
+    --text-black-2: #0f172a;
+    /* 文字颜色2 */
 
 }
 
@@ -15,6 +21,10 @@
     padding: 0;
     list-style: none;
     box-sizing: border-box;
+}
+
+body, html {
+    -webkit-overflow-scrolling: touch;
 }
 
 html * {
