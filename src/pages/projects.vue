@@ -19,8 +19,8 @@ useTitle('Chris\' Blog | Projects')
       </h2>
       <div grid py-2 gap-2 style="grid-template-columns: repeat(auto-fit,minmax(250px,1fr))">
         <Navlink
-          v-for="i in 5"
-          :key="i"
+          v-for="j in 5"
+          :key="j"
           flex
           op-60
           hover="op-100 bg-[#fbfbfb] dark:bg-transparent"
