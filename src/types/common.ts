@@ -1,8 +1,6 @@
 import type { App } from 'vue'
 
-export interface IAny {
-  [x: string]: any
-}
+export type IAny = Record<string, any>
 
 export interface ICursorStyle {
   dot: object

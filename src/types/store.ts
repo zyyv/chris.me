@@ -1,8 +1,6 @@
 export interface RootStateTypes { }
 
-export interface IUser {
-  [key: string]: any
-}
+export type IUser = Record<string, any>
 
 // user module
 export interface UserStateTypes {

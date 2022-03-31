@@ -10,6 +10,7 @@ import Layouts from 'vite-plugin-vue-layouts'
 import Markdown from 'vite-plugin-md'
 import ViteImages from 'vite-plugin-vue-images'
 import VueSetupExtend from 'vite-plugin-vue-setup-extend'
+import Image from 'unplugin-vue-image/vite'
 
 const r = (src: string) => resolve(__dirname, src)
 
@@ -28,6 +29,10 @@ export default defineConfig({
       extensions: ['vue', 'md'],
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
       dts: 'src/components.d.ts'
+    }),
+    Image({
+      dirs: 'src/assets/imgs',
+      dts: 'src/auto-import-image.d.ts'
     }),
     VueI18n({
       runtimeOnly: true,

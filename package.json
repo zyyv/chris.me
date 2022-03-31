@@ -2,62 +2,63 @@
   "name": "chris.me",
   "version": "1.0.0",
   "description": "This is my Blog, build with Vue3.",
-  "main": "src/main.js",
-  "scripts": {
-    "dev": "vite --port 9999 --open --host",
-    "build": "vue-tsc --noEmit && vite build",
-    "serve": "vite preview",
-    "lint": "eslint \"**/*.{vue,ts,js}\"",
-    "lint:fix": "pnpm lint -- --fix"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/chris-zhu/chris.me.git"
-  },
   "keywords": [
     "blog",
     "vue3",
     "vite",
     "unocss"
   ],
-  "author": "chris-zhu",
   "license": "MIT",
+  "author": "chris-zhu",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chris-zhu/chris.me.git"
+  },
+  "main": "src/main.js",
+  "scripts": {
+    "dev": "vite --port 9999 --open --host",
+    "build": "vue-tsc --noEmit && vite build",
+    "serve": "vite preview",
+    "lint": "eslint .",
+    "lint:fix": "nr lint --fix"
+  },
   "bugs": {
     "url": "https://github.com/chris-zhu/chris.me/issues"
   },
   "homepage": "https://github.com/chris-zhu/chris.me#readme",
   "dependencies": {
     "@chris-zhu/utils": "^0.0.7",
-    "@vueuse/core": "^8.1.2",
-    "axios": "^0.26.0",
-    "pinia": "latest",
-    "vue": "latest",
-    "vue-i18n": "^9.2.0-beta.30",
-    "vue-router": "latest"
+    "@vueuse/core": "^8.2.2",
+    "axios": "^0.26.1",
+    "pinia": "^2.0.12",
+    "vue": "^3.2.31",
+    "vue-i18n": "9",
+    "vue-router": "^4.0.14"
   },
   "devDependencies": {
-    "@chris-zhu/eslint-config": "latest",
+    "@chris-zhu/eslint-config": "^1.0.0",
     "@faker-js/faker": "^6.0.0-alpha.5",
-    "@iconify-json/akar-icons": "^1.0.8",
-    "@iconify-json/carbon": "^1.0.9",
-    "@iconify-json/logos": "^1.0.4",
-    "@iconify-json/ri": "^1.0.1",
-    "@intlify/vite-plugin-vue-i18n": "^3.2.0",
-    "@types/node": "^17.0.15",
-    "@vitejs/plugin-vue": "^2.1.0",
-    "@vue/compiler-sfc": "^3.0.5",
-    "eslint": "^8.2.0",
-    "sass": "^1.40.0",
-    "typescript": "^4.3.2",
-    "unocss": "^0.30.1",
-    "unplugin-auto-import": "^0.6.0",
-    "unplugin-vue-components": "^0.18.0",
-    "vite": "^2.4.4",
-    "vite-plugin-md": "^0.12.3",
-    "vite-plugin-pages": "^0.21.4",
+    "@iconify-json/akar-icons": "^1.1.2",
+    "@iconify-json/carbon": "^1.1.2",
+    "@iconify-json/logos": "^1.1.3",
+    "@iconify-json/ri": "^1.1.1",
+    "@intlify/vite-plugin-vue-i18n": "^3.3.1",
+    "@types/node": "^17.0.23",
+    "@vitejs/plugin-vue": "^2.3.1",
+    "@vue/compiler-sfc": "^3.2.31",
+    "eslint": "^8.12.0",
+    "sass": "^1.49.10",
+    "typescript": "^4.6.3",
+    "unocss": "^0.30.8",
+    "unplugin-auto-import": "^0.6.8",
+    "unplugin-vue-components": "^0.18.5",
+    "unplugin-vue-image": "^0.1.6-beta.1",
+    "vite": "^2.9.0",
+    "vite-plugin-md": "^0.12.4",
+    "vite-plugin-pages": "^0.22.0",
     "vite-plugin-vue-images": "^0.6.1",
     "vite-plugin-vue-layouts": "^0.6.0",
     "vite-plugin-vue-setup-extend": "^0.4.0",
-    "vue-tsc": "^0.33.2"
+    "vue-tsc": "^0.33.9"
   }
 }
