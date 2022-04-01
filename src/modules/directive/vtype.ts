@@ -39,6 +39,6 @@ export function vTypeWrite(): Directive {
       const defaultText = el.innerText || ''
       const { value = defaultText } = binding
       useTypeing(el, value)
-    }
+    },
   }
 }

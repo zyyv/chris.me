@@ -21,14 +21,14 @@ function updateStorage(strategy: PersistStrategy, store: Store) {
 
 export const piniaPluginPersist = ({
   options,
-  store
+  store,
 }: PiniaPluginContext): void => {
   if (options.persist?.enabled) {
     const defaultStrat: PersistStrategy[] = [
       {
         key: store.$id,
-        storage: sessionStorage
-      }
+        storage: sessionStorage,
+      },
     ]
 
     const strategies = options.persist.strategies?.length
@@ -53,7 +53,7 @@ export const piniaPluginPersist = ({
           updateStorage(strategy, store)
         })
       },
-      { immediate: true, deep: true }
+      { immediate: true, deep: true },
     )
   }
 }

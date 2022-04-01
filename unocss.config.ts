@@ -10,8 +10,8 @@ export default defineConfig({
         'logos': () => import('@iconify-json/logos/icons.json').then(i => i.default as any),
         'carbon': () => import('@iconify-json/carbon/icons.json').then(i => i.default as any),
         'akar-icons': () => import('@iconify-json/akar-icons/icons.json').then(i => i.default as any),
-        'ri': () => import('@iconify-json/ri').then(i => i.icons as any)
-      }
+        'ri': () => import('@iconify-json/ri').then(i => i.icons as any),
+      },
     }),
     presetWebFonts({
       fonts: {
@@ -24,15 +24,15 @@ export default defineConfig({
           {
             name: 'Lato',
             weights: ['400', '700'],
-            italic: true
+            italic: true,
           },
           {
             name: 'sans-serif',
-            provider: 'none'
-          }
-        ]
-      }
-    })
+            provider: 'none',
+          },
+        ],
+      },
+    }),
   ],
   // theme: {
   //   animation: {
@@ -41,11 +41,11 @@ export default defineConfig({
   // },
   layers: {
     default: 1,
-    modele: 2
+    modele: 2,
   },
   rules: [
     ['pr', { position: 'relative' }, { layer: 'modele' }],
-    ['pa', { position: 'absolute' }, { layer: 'modele' }]
+    ['pa', { position: 'absolute' }, { layer: 'modele' }],
   ],
   shortcuts: [
     ['f-c', 'flex justify-center items-center'],
@@ -57,6 +57,6 @@ export default defineConfig({
     ['icon-btn', 'icon text-inherit'],
     ['icon-link', 'icon text-gray-700 op-50 hover:op-100'],
     ['menu-icon-line', 'transition pa block bg-gray-700 op-50 dark:bg-[#afbac6] w-5/7 h-2px'],
-    ['clearBtn', 'bg-transparent border-none outline-none']
-  ]
+    ['clearBtn', 'bg-transparent border-none outline-none'],
+  ],
 })

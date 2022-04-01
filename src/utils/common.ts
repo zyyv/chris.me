@@ -117,7 +117,7 @@ export class TwoKeyMap<K1, K2, V> {
         Array.from(m2.entries())
           .map(([k2, v]) => {
             return fn(v, k1, k2)
-          })
+          }),
       )
   }
 }

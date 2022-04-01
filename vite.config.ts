@@ -23,25 +23,25 @@ export default defineConfig({
     Layouts(),
     AutoImport({
       imports: ['vue', 'pinia', 'vue-router', 'vue-i18n', '@vueuse/core', { axios: [['default', 'axios']] }],
-      dts: 'src/auto-imports.d.ts'
+      dts: 'src/auto-imports.d.ts',
     }),
     Components({
       extensions: ['vue', 'md'],
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
-      dts: 'src/components.d.ts'
+      dts: 'src/components.d.ts',
     }),
     Image({
       dirs: 'src/assets/imgs',
-      dts: 'src/auto-import-image.d.ts'
+      dts: 'src/auto-import-image.d.ts',
     }),
     VueI18n({
       runtimeOnly: true,
       compositionOnly: true,
-      include: [r('locales/**')]
+      include: [r('locales/**')],
     }),
     Markdown(),
     ViteImages(),
-    VueSetupExtend()
+    VueSetupExtend(),
   ],
   resolve: {
     alias: {
@@ -49,22 +49,22 @@ export default defineConfig({
       '@a': r('src/assets'),
       '@p': r('src/plugins'),
       '@s': r('src/modules/pinia'),
-      '@u': r('src/composables')
-    }
+      '@u': r('src/composables'),
+    },
   },
   server: {
     fs: {
-      strict: true
+      strict: true,
     },
     proxy: {
       '/api': {
         target: 'http://localhost:2430',
-        changeOrigin: true
-      }
-    }
+        changeOrigin: true,
+      },
+    },
   },
   optimizeDeps: {
-    include: ['vue', 'vue-router', '@vueuse/core']
+    include: ['vue', 'vue-router', '@vueuse/core'],
   },
-  base: './'
+  base: './',
 })

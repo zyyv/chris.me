@@ -3,7 +3,7 @@
 const useSize = (
   size: 'small' | 'medium' | 'large' = 'small',
   w?: string,
-  h?: string
+  h?: string,
 ): {
   _width: string
   _height: string
@@ -11,11 +11,11 @@ const useSize = (
   const sizeEnum = {
     small: ['2rem', '1.125rem'],
     medium: ['2.5rem', '1.375rem'],
-    large: ['3rem', '1.625rem']
+    large: ['3rem', '1.625rem'],
   }
   return {
     _width: w ?? sizeEnum[size][0],
-    _height: h ?? sizeEnum[size][1]
+    _height: h ?? sizeEnum[size][1],
   }
 }
 
@@ -35,8 +35,8 @@ const props = withDefaults(
     defaultValue: false,
     disabled: false,
     bgColor: 'rgba(0, 0, 0, 0.14)',
-    bgActiveColor: '#60bc95'
-  }
+    bgActiveColor: '#60bc95',
+  },
 )
 
 const emits = defineEmits<{

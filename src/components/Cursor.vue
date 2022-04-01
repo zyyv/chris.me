@@ -5,7 +5,7 @@ const route = useRoute()
 const style = reactive<ICursorStyle>({
   dot: {},
   cursor: {},
-  circle: {}
+  circle: {},
 })
 
 useCursor(style)

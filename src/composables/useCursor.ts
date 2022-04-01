@@ -44,7 +44,7 @@ export function useDot(style: ICursorStyle) {
   const dotState = reactive({
     visible: true,
     enlarged: false,
-    dotRef: ref<HTMLElement>()
+    dotRef: ref<HTMLElement>(),
   })
 
   const toggleDotSize = (newStatus: boolean) => {
@@ -53,20 +53,20 @@ export function useDot(style: ICursorStyle) {
     style.dot = {
       ...style.dot,
       opacity,
-      transform: `translate(-50%, -50%) scale(${scale})`
+      transform: `translate(-50%, -50%) scale(${scale})`,
     }
   }
   const toggleDotVisibility = (newStatus: boolean) => {
     const opacity = newStatus ? '1' : '0'
     style.dot = {
       ...style.dot,
-      opacity
+      opacity,
     }
   }
   const domListener = () => {
     [
       ...Array.from(document.querySelectorAll('a')),
-      ...Array.from(document.querySelectorAll('button'))
+      ...Array.from(document.querySelectorAll('button')),
     ].forEach((el) => {
       useEventListener(el, 'mouseover', () => {
         dotState.enlarged = true

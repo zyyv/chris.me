@@ -4,7 +4,7 @@ import { isDark, toggleLocales } from '@u/index'
 const routes = reactive([
   { icon: 'i-ri:article-line', path: '/posts' },
   { icon: 'i-carbon:progress-bar-round', path: '/projects' },
-  { icon: 'i-carbon:camera-action', path: '/photoes' }
+  { icon: 'i-carbon:camera-action', path: '/photoes' },
 ])
 </script>
 

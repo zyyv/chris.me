@@ -5,7 +5,7 @@ const errorList: ErrorIns[] = [
   { code: 401, type: 'warning', msg: '请先登录后操作' },
   { code: 403, type: 'warning', msg: '登录过期，请重新登录' },
   { code: 404, type: 'error', msg: '网络请求不存在' },
-  { code: 500, type: 'error', msg: '服务器内部错误' }
+  { code: 500, type: 'error', msg: '服务器内部错误' },
 ]
 
 class CancelToken {
@@ -57,13 +57,13 @@ export class HttpRequest {
   private constructor(userConfig: UserConfig) {
     const defaults: ConfigBase = {
       baseURL: '/api',
-      timeout: 5000
+      timeout: 5000,
     }
 
     this.config = Object.assign({}, defaults, userConfig)
     this._ins = axios.create({
       baseURL: this.config.baseURL,
-      timeout: this.config.timeout
+      timeout: this.config.timeout,
     })
     this._ins.defaults.headers.post['Content-Type']
       = 'application/x-www-form-urlencoded'
@@ -89,7 +89,7 @@ export class HttpRequest {
       },
       (error) => {
         return Promise.reject(error)
-      }
+      },
     )
   }
 
@@ -128,7 +128,7 @@ export class HttpRequest {
           this.config.message?.error(data?.msg || '未知错误')
 
         return Promise.reject(error)
-      }
+      },
     )
   }
 

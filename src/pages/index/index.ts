@@ -11,7 +11,7 @@ export function useHtml() {
 `
   const htmlState = reactive({
     status: false,
-    text: html
+    text: html,
   })
 
   return { htmlState }
@@ -30,7 +30,7 @@ export function useCss() {
 }`
   const cssState = reactive({
     status: false,
-    text: css
+    text: css,
   })
   return { cssState }
 }

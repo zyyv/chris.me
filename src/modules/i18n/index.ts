@@ -7,13 +7,13 @@ const messages = Object.fromEntries(
     .map(([key, value]) => {
       const [, language] = key.match(/locales\/(.*)\.ya?ml/)!
       return [language, value.default]
-    })
+    }),
 )
 
 export const i18n = createI18n({
   legacy: false,
   locale: 'zh-cn',
-  messages
+  messages,
 })
 
 export const install: UserModule = (app) => {
