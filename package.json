@@ -49,7 +49,7 @@
     "eslint": "^8.12.0",
     "sass": "^1.49.10",
     "typescript": "^4.6.3",
-    "unocss": "^0.30.8",
+    "unocss": "^0.31.0",
     "unplugin-auto-import": "^0.6.8",
     "unplugin-vue-components": "^0.18.5",
     "unplugin-vue-image": "^0.1.6-beta.1",
