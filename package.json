@@ -59,6 +59,6 @@
     "vite-plugin-vue-images": "^0.6.1",
     "vite-plugin-vue-layouts": "^0.6.0",
     "vite-plugin-vue-setup-extend": "^0.4.0",
-    "vue-tsc": "^0.33.9"
+    "vue-tsc": "^0.34.6"
   }
 }
