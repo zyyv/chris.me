@@ -1,0 +1,31 @@
+button:
+  about: About
+  back: Back
+  go: GO
+  home: Home
+  toggle_dark: Toggle dark mode
+  toggle_langs: Change languages
+intro:
+  desc: Opinionated Vite Starter Template
+  dynamic-route: Demo of dynamic route
+  hi: Hi, {name}!
+  aka: Also known as
+  whats-your-name: What's your name?
+not-found: Not found
+project:
+  h1: Projects
+  h2: Some projects I'm proud of
+home:
+  desc:
+    one: Front-end Engineer 🧑🏻‍💻 Focus on Vue, Vite & Unocss ecosystem
+    two: ✨ Open source community contributors ✨
+  intro0: Hi, I am Chris, a person who loves programming, living in Chengdu, Sichuan.
+  intro1:
+    line1: 3 years of work experience, active contributor to Github open source community.Contributed multiple pull requests to
+    line2: . I like to learn and explore the source code of the framework, and I dream of building a very cool framework.
+  intro2:
+    desc: I have a wide range of interests, watching anime, climbing mountains, listening to music, learning foreign languages, playing games... Recently I am learning to edit videos and I am going to be a
+    uploader: Uploader
+  intro3:
+    desc: By the way, I also like to travel and take pictures, you can also simply
+    look: take a look
