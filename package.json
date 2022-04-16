@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/chris-zhu/chris.me#readme",
   "dependencies": {
-    "@chris-zhu/utils": "^0.0.7",
+    "@chris-zhu/utils": "^0.0.9",
     "@vueuse/core": "^8.2.5",
     "axios": "^0.26.1",
     "pinia": "^2.0.13",
