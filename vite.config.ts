@@ -10,7 +10,7 @@ import Layouts from 'vite-plugin-vue-layouts'
 import Markdown from 'vite-plugin-md'
 import ViteImages from 'vite-plugin-vue-images'
 import VueSetupExtend from 'vite-plugin-vue-setup-extend'
-import Image from 'unplugin-vue-image/vite'
+import Image from 'unplugin-vue-image/dist/vite'
 
 const r = (src: string) => resolve(__dirname, src)
 

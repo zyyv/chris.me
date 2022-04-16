@@ -55,14 +55,14 @@ onActivated(() => {
           <pre v-typeWrite="cssState" base whitespace-pre-wrap font-mono />
         </div>
       </div>
-      <div v-else class="max-w-75ch" m-auto p-2>
-        <div mb-8 md="f-c justify-start">
-          <div text-center md:mr-10 text-0>
-            <img w-40 h-40 rounded-full src="@a/img/avatar.jpg" alt="Avatar">
+      <div v-else prose m-auto p-2>
+        <div md="f-c justify-start">
+          <div text-center md:mr-10 text-0 shrink-0>
+            <img w-40 h-40 rounded-full src="@a/img/avatar.jpeg" alt="Avatar">
           </div>
           <div>
             <h1 text-center md:text-left mt-4 mb-6 font-lobster>
-              <Navlink class="!text-purple-400" f-c inline-flex to="https://github.com/chris-zhu">
+              <Navlink class="!text-purple-400 !no-underline" f-c inline-flex to="https://github.com/chris-zhu">
                 Chris-Zhu
                 <div ml-2 inline-block i-carbon:logo-github />
               </Navlink>
@@ -75,40 +75,41 @@ onActivated(() => {
             </p>
           </div>
         </div>
-        <p mb-6 base>
+        <p base>
           {{ t("home.intro0") }}
         </p>
-        <p mb-6 base>
+        <p base>
           {{ t('home.intro1.line1') }}
-          <Navlink class="!text-red-300 !underline" to="https://github.com/unocss/unocss">
+          <Navlink class="!text-red-300 !decoration-dashed underline-offset-4" to="https://github.com/unocss/unocss">
             Unocss
           </Navlink>&
           <Navlink
-            class="!text-red-300 !underline"
+            class="!text-red-300 !decoration-dashed underline-offset-4"
             to="https://github.com/vuejs-translations/docs-zh-cn"
           >
             vuejs-translations/docs-zh-cn
           </Navlink>
           {{ t('home.intro1.line2') }}
         </p>
-        <p mb-6 base>
+        <p base>
           {{ t('home.intro2.desc') }}
           <Navlink
-            class="!text-red-300 !underline"
+            class="!text-red-300 !decoration-dashed underline-offset-4"
             to="https://space.bilibili.com/402454160"
           >
             {{ t('home.intro2.uploader') }}
           </Navlink>
         </p>
-        <p mb-6 base>
+        <p base>
           {{ t('home.intro3.desc') }}
-          <Navlink class="!text-red-300 !underline" to="/photoes">
+          <Navlink class="!text-red-300 !decoration-dashed underline-offset-4" to="/photoes">
             {{ t('home.intro3.look') }}
           </Navlink>
         </p>
         <p text="sm gray-400">
           <Navlink
             hover:text-red-300
+            underline-offset-2
             to="https://creativecommons.org/licenses/by-nc-sa/4.0/"
           >
             CC BY-NC-SA 4.0

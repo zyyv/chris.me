@@ -1,10 +1,11 @@
 
-import { defineConfig, presetAttributify, presetIcons, presetUno, presetWebFonts } from 'unocss'
+import { defineConfig, presetAttributify, presetIcons, presetTypography, presetUno, presetWebFonts } from 'unocss'
+// import { presetUseful } from 'unocss-preset-useful'
 
 export default defineConfig({
   presets: [
-    presetAttributify(),
     presetUno(),
+    presetAttributify(),
     presetIcons({
       collections: {
         'logos': () => import('@iconify-json/logos/icons.json').then(i => i.default as any),
@@ -33,12 +34,8 @@ export default defineConfig({
         ],
       },
     }),
+    presetTypography(),
   ],
-  // theme: {
-  //   animation: {
-  //     keyframes: {}
-  //   }
-  // },
   layers: {
     default: 1,
     modele: 2,
