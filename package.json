@@ -52,7 +52,7 @@
     "unocss": "^0.30.12",
     "unocss-preset-useful": "^0.0.1-beta.4",
     "unplugin-auto-import": "^0.6.9",
-    "unplugin-vue-components": "^0.18.5",
+    "unplugin-vue-components": "^0.19.3",
     "unplugin-vue-image": "^0.1.6-beta.1",
     "vite": "^2.9.1",
     "vite-plugin-md": "^0.12.4",
