@@ -28,6 +28,7 @@ export default defineNuxtConfig({
       scale: 1.2,
     },
     shortcuts: [
+      ['navlink', 'no-underline outline-none text-inherit'],
       ['pr', 'relative'],
       ['pa', 'absolute'],
       ['pf', 'fixed'],

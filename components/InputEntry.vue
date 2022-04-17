@@ -26,13 +26,13 @@ const go = () => {
       @keydown.enter="go"
     >
     <div>
-      <button
-        class="m-3 text-sm btn"
-        :disabled="!name"
-        @click="go"
-      >
-        GO
-      </button>
+      <NavLink :to="`/hi/${encodeURIComponent(name)}`">
+        <button
+          class="m-3 text-sm btn b"
+        >
+          GO
+        </button>
+      </NavLink>
     </div>
   </div>
 </template>
