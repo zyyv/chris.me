@@ -1,4 +1,6 @@
-<script lang="ts" setup>
+<script lang="ts" setup>import { MaybeRef } from '@vueuse/core'
+import { WritableComputedRef } from 'vue'
+
 /** 根据size获取组件的宽高 */
 const useSize = (
   size: 'small' | 'medium' | 'large' = 'small',
@@ -22,7 +24,7 @@ const useSize = (
 const props = withDefaults(
   defineProps<{
     size?: 'small' | 'medium' | 'large'
-    value: boolean
+    value: MaybeRef<boolean>
     disabled?: boolean
     bgColor?: string
     bgActiveColor?: string

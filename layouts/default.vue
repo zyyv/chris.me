@@ -1,7 +1,6 @@
 <template>
-  <div>
-    <TheHeader />
-    <Nuxt />
-    <TheFooter />
-  </div>
+  <TheHeader />
+  <main px-7 py-10>
+    <slot />
+  </main>
 </template>
