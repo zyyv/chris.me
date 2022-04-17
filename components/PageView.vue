@@ -10,6 +10,8 @@ const toggleLocales = () => {
   const locales = availableLocales
   locale.value = locales[(locales.indexOf(locale.value) + 1) % locales.length]
 }
+
+const flag = ref(false)
 </script>
 
 <template>
@@ -21,5 +23,6 @@ const toggleLocales = () => {
     <button b @click="toggleLocales">
       change language
     </button>
+    <Switch v-model:value="flag" />
   </div>
 </template>
