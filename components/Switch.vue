@@ -1,4 +1,5 @@
-<script lang="ts" setup>import { MaybeRef } from '@vueuse/core'
+<script lang="ts" setup>
+import { MaybeRef } from '@vueuse/core'
 import { WritableComputedRef } from 'vue'
 
 /** 根据size获取组件的宽高 */

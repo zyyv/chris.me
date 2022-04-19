@@ -43,6 +43,11 @@ export default defineNuxtConfig({
       ['menu-icon-line', 'transition pa block bg-gray-700 op-50 dark:bg-[#afbac6] w-5/7 h-2px'],
       ['clearBtn', 'bg-transparent border-none outline-none'],
     ],
+    theme: {
+      colors: {
+        primary: '#00bcd4',
+      },
+    },
   },
   intlify: {
     localeDir: 'locales',
