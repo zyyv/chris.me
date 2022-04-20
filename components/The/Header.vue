@@ -20,12 +20,12 @@ const toggleLocales = () => {
 <template>
   <header
     fixed
-    z-99
+    z-9999
     top-0
     inset-x-0
     toDark
     backdrop-blur
-    border="0 b-1 dashed gray-300 dark:b-gray-700"
+    b="b-1 dashed gray-300 dark:b-gray-700"
   >
     <NavLink to="/">
       <img

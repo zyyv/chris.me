@@ -1,4 +1,5 @@
 import { defineNuxtConfig } from 'nuxt3'
+import { transformerDirectives, transformerVariantGroup } from 'unocss'
 
 export default defineNuxtConfig({
   meta: {
@@ -19,6 +20,7 @@ export default defineNuxtConfig({
     ssrHandlers: true,
   },
   unocss: {
+    transformers: [transformerDirectives(), transformerVariantGroup()],
     uno: true,
     attributify: true,
     preflight: true,
