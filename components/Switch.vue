@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import { MaybeRef } from '@vueuse/core'
-import { WritableComputedRef } from 'vue'
 
 /** 根据size获取组件的宽高 */
 const useSize = (
@@ -59,11 +58,11 @@ const handleClick = () => {
 
 <template>
   <div
-    class="switch border-$default"
+    class="switch"
     :class="[disabled && 'op-50', status && 'active']"
     rounded-full
     overflow-hidden
-    b
+    b="~ c-red"
     pr
     @click="handleClick"
   >

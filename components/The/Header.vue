@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import { useI18n } from 'vue-i18n'
 import { isDark } from '~~/composables/dark'
-// import { toggleLocales } from '~~/composables/i18n'
 
 const routes = reactive([
   { icon: 'i-ri:article-line', path: '/posts' },
@@ -25,51 +24,48 @@ const toggleLocales = () => {
     inset-x-0
     toDark
     backdrop-blur
-    b="b-1 dashed gray-300 dark:b-gray-700"
+    b="b-1 dashed gray-300 dark:b-gray-500"
   >
-    <NavLink to="/">
+    <NuxtLink to="/">
       <img
         w-10
         h-10
         fixed
-        left-6
+        left-8
         top-4
         src="/logo.svg"
         alt="logo"
       >
-    </NavLink>
+    </NuxtLink>
     <nav
       px-8
       w-full
-      grid
+      grid="~ cols-[auto_max-content]"
       box-border
-      class="grid-cols-[auto_max-content] h-4.5rem"
+      class="h-4.5rem"
     >
+      <!-- 垫片 -->
       <div class="spacer" />
       <div grid gap-5 auto-flow-col items-center>
-        <NavLink
+        <NuxtLink
           v-for="route in routes"
           :key="route.path"
+          :to="route.path"
           inactive-class="op-50 text-gray-700"
           active-class="op-100 text-teal-600"
           hover="op-100 text-teal-600"
-          :to="route.path"
         >
           <div icon-btn :class="route.icon" />
-        </NavLink>
+        </NuxtLink>
         <div hidden lg:block f-c>
           <Switch
             v-model:value="isDark"
             size="small"
-            bg-color="#f1f1f1"
-            bg-active-color="#2f2f2f"
-            width="36px"
-            height="21px"
           >
             <template #dot>
               <div w-full h-full f-c class="bg-white dark:bg-[#1a1a1a]">
-                <div v-if="!isDark" class="w-1em h-1em i-carbon:light-filled text-gray" />
-                <div v-else class="i-akar-icons:moon-fill w-1em h-1em text-white" />
+                <div v-if="!isDark" i-carbon:light-filled text-gray />
+                <div v-else i-akar-icons:moon-fill text-white />
               </div>
             </template>
           </Switch>
@@ -77,12 +73,12 @@ const toggleLocales = () => {
         <a hidden lg:block>
           <div icon-link i-carbon:language @click="toggleLocales" />
         </a>
-        <NavLink hidden lg:block to="https://space.bilibili.com/402454160">
+        <NuxtLink hidden lg:block to="https://space.bilibili.com/402454160">
           <div icon-link i-ri:bilibili-line />
-        </NavLink>
-        <NavLink hidden lg:block to="https://github.com/chris-zhu/chris.me">
+        </NuxtLink>
+        <NuxtLink hidden lg:block to="https://github.com/chris-zhu/chris.me">
           <div icon-link i-carbon:logo-github />
-        </NavLink>
+        </NuxtLink>
         <div
           pr
           w-6
@@ -135,12 +131,12 @@ const toggleLocales = () => {
               <a mr-3>
                 <div icon-link i-carbon:language @click="toggleLocales" />
               </a>
-              <NavLink mr-3 to="https://space.bilibili.com/402454160">
+              <NuxtLink mr-3 to="https://space.bilibili.com/402454160">
                 <div icon-link i-ri:bilibili-line />
-              </NavLink>
-              <NavLink mr-3 to="https://github.com/chris-zhu/chris.me">
+              </NuxtLink>
+              <NuxtLink mr-3 to="https://github.com/chris-zhu/chris.me">
                 <div icon-link i-carbon:logo-github />
-              </NavLink>
+              </NuxtLink>
             </div>
             <div />
           </div>
@@ -148,6 +144,7 @@ const toggleLocales = () => {
       </div>
     </nav>
   </header>
+  <!-- For header fixed -->
   <div class="h-4.5rem" />
 </template>
 
