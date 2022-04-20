@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { useI18n } from 'vue-i18n'
 import { isDark } from '~~/composables/dark'
-import { toggleLocales } from '~~/composables/i18n'
+// import { toggleLocales } from '~~/composables/i18n'
 
 const routes = reactive([
   { icon: 'i-ri:article-line', path: '/posts' },
@@ -10,11 +10,11 @@ const routes = reactive([
 ])
 
 // i18n
-// const { availableLocales, locale } = useI18n()
-// const toggleLocales = () => {
-//   const locales = availableLocales
-//   locale.value = locales[(locales.indexOf(locale.value) + 1) % locales.length]
-// }
+const { availableLocales, locale } = useI18n()
+const toggleLocales = () => {
+  const locales = availableLocales
+  locale.value = locales[(locales.indexOf(locale.value) + 1) % locales.length]
+}
 </script>
 
 <template>
