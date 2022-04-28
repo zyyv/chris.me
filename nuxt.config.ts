@@ -14,7 +14,7 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@unocss/nuxt',
     '@pinia/nuxt',
-    '@intlify/nuxt3',
+    // '@intlify/nuxt3',
   ],
   vueuse: {
     ssrHandlers: true,
@@ -51,12 +51,12 @@ export default defineNuxtConfig({
       },
     },
   },
-  intlify: {
-    localeDir: 'locales',
-    vueI18n: {
-      locale: 'zh-cn',
-    },
-  },
+  // intlify: {
+  //   localeDir: 'locales',
+  //   vueI18n: {
+  //     locale: 'zh-cn',
+  //   },
+  // },
   // experimental: {
   //   viteNode: true,
   // },

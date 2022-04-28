@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { useI18n } from 'vue-i18n'
+// import { useI18n } from 'vue-i18n'
 import { isDark } from '~~/composables/dark'
 
 const routes = reactive([
@@ -10,11 +10,11 @@ const routes = reactive([
 ])
 
 // i18n
-const { availableLocales, locale } = useI18n()
-const toggleLocales = () => {
-  const locales = availableLocales
-  locale.value = locales[(locales.indexOf(locale.value) + 1) % locales.length]
-}
+// const { availableLocales, locale } = useI18n()
+// const toggleLocales = () => {
+//   const locales = availableLocales
+//   locale.value = locales[(locales.indexOf(locale.value) + 1) % locales.length]
+// }
 </script>
 
 <template>
@@ -71,9 +71,9 @@ const toggleLocales = () => {
             </template>
           </Switch>
         </div>
-        <a hidden lg:block>
+        <!-- <a hidden lg:block>
           <div icon-link i-carbon:language @click="toggleLocales" />
-        </a>
+        </a> -->
         <NuxtLink hidden lg:block to="https://space.bilibili.com/402454160">
           <div icon-link i-ri:bilibili-line />
         </NuxtLink>
