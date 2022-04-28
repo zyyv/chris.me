@@ -3,9 +3,10 @@ import { useI18n } from 'vue-i18n'
 import { isDark } from '~~/composables/dark'
 
 const routes = reactive([
-  { icon: 'i-ri:article-line', path: '/posts' },
-  { icon: 'i-carbon:progress-bar-round', path: '/projects' },
-  { icon: 'i-carbon:camera-action', path: '/photoes' },
+  { icon: 'i-ri-article-line', path: '/posts' },
+  { icon: 'i-carbon-progress-bar-round', path: '/projects' },
+  { icon: 'i-carbon-bookmark', path: '/bookmark' },
+  { icon: 'i-carbon-notebook', path: '/notes' },
 ])
 
 // i18n
@@ -22,7 +23,7 @@ const toggleLocales = () => {
     z-9999
     top-0
     inset-x-0
-    toDark
+    trans
     backdrop-blur
     b="b-1 dashed gray-300 dark:b-gray-500"
   >
@@ -51,8 +52,8 @@ const toggleLocales = () => {
           v-for="route in routes"
           :key="route.path"
           :to="route.path"
-          inactive-class="op-50 text-gray-700"
-          active-class="op-100 text-teal-600"
+          op-50
+          base
           hover="op-100 text-teal-600"
         >
           <div icon-btn :class="route.icon" />
@@ -91,7 +92,7 @@ const toggleLocales = () => {
           <div
             pa
             right-0
-            toDark
+            trans
             w-45
             b="1 gray-200 dark:gray-600"
             bg="white dark:gray-900"
