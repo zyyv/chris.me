@@ -117,9 +117,9 @@ const toggleLocales = () => {
                 bg-active-color="#2f2f2f"
               >
                 <template #dot>
-                  <div w-full h-full f-c class="bg-white dark:bg-[#1a1a1a]">
-                    <div v-if="!isDark" class="w-1em h-1em i-carbon:light-filled text-gray" />
-                    <div v-else class="i-akar-icons:moon-fill w-1em h-1em text-white" />
+                  <div w-full h-full f-c bg="white dark:#1a1a1a">
+                    <div v-if="!isDark" w-1em h-1em i-carbon:light-filled text-gray />
+                    <div v-else i-akar-icons:moon-fill w-1em h-1em text-white />
                   </div>
                 </template>
               </Switch>

@@ -26,21 +26,21 @@
   },
   "homepage": "https://github.com/chris-zhu/chris.me#readme",
   "dependencies": {
-    "@intlify/nuxt3": "^0.1.10",
+    "@intlify/nuxt3": "^0.2.1",
     "pinia": "^2.0.13"
   },
   "devDependencies": {
     "@chris-zhu/eslint-config": "^1.0.0",
-    "@iconify-json/akar-icons": "^1.1.3",
+    "@iconify-json/akar-icons": "^1.1.4",
     "@iconify-json/carbon": "^1.1.3",
     "@iconify-json/ri": "^1.1.1",
     "@iconify-json/twemoji": "^1.1.3",
     "@pinia/nuxt": "^0.1.8",
-    "@unocss/nuxt": "^0.31.5",
-    "@vueuse/nuxt": "^8.2.6",
-    "eslint": "^8.13.0",
-    "nuxt3": "^3.0.0-27501460.04a72f8",
-    "sass": "^1.50.0",
+    "@unocss/nuxt": "^0.32.1",
+    "@vueuse/nuxt": "^8.3.1",
+    "eslint": "^8.14.0",
+    "nuxt3": "^3.0.0-rc.1-27517945.7e912e7",
+    "sass": "^1.51.0",
     "typescript": "^4.6.3",
     "unplugin-auto-import": "^0.7.1"
   },
