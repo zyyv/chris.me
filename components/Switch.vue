@@ -1,5 +1,6 @@
 <script lang="ts" setup>
-import { MaybeRef } from '@vueuse/core'
+import type { MaybeRef } from '@vueuse/core'
+import type { WritableComputedRef } from 'vue'
 
 /** 根据size获取组件的宽高 */
 const useSize = (
@@ -24,7 +25,7 @@ const useSize = (
 const props = withDefaults(
   defineProps<{
     size?: 'small' | 'medium' | 'large'
-    value: MaybeRef<boolean>
+    value: MaybeRef<boolean> | WritableComputedRef<boolean>
     disabled?: boolean
     bgColor?: string
     bgActiveColor?: string
@@ -58,8 +59,7 @@ const handleClick = () => {
 
 <template>
   <div
-    class="switch"
-    :class="[disabled && 'op-50', status && 'active']"
+    :class="['switch', disabled && 'op-50', status && 'active']"
     rounded-full
     overflow-hidden
     b="~ c-red"

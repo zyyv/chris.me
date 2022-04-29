@@ -1,20 +1,11 @@
 <script lang="ts" setup>
-// import { useI18n } from 'vue-i18n'
-import { isDark } from '~~/composables/dark'
-
 const routes = reactive([
   { icon: 'i-ri-article-line', path: '/posts' },
-  { icon: 'i-carbon-progress-bar-round', path: '/projects' },
-  { icon: 'i-carbon-bookmark', path: '/bookmark' },
-  { icon: 'i-carbon-notebook', path: '/notes' },
+  // { icon: 'i-carbon-progress-bar-round', path: '/projects' },
+  // { icon: 'i-carbon-bookmark', path: '/bookmark' },
+  // { icon: 'i-carbon-notebook', path: '/notes' },
 ])
 
-// i18n
-// const { availableLocales, locale } = useI18n()
-// const toggleLocales = () => {
-//   const locales = availableLocales
-//   locale.value = locales[(locales.indexOf(locale.value) + 1) % locales.length]
-// }
 </script>
 
 <template>
@@ -59,17 +50,7 @@ const routes = reactive([
           <div icon-btn :class="route.icon" />
         </NuxtLink>
         <div hidden lg:block f-c>
-          <Switch
-            v-model:value="isDark"
-            size="small"
-          >
-            <template #dot>
-              <div w-full h-full f-c class="bg-white dark:bg-[#1a1a1a]">
-                <div v-if="!isDark" i-carbon:light-filled text-gray />
-                <div v-else i-akar-icons:moon-fill text-white />
-              </div>
-            </template>
-          </Switch>
+          <DrakToggle />
         </div>
         <!-- <a hidden lg:block>
           <div icon-link i-carbon:language @click="toggleLocales" />
