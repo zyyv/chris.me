@@ -1,10 +1,14 @@
+<script lang="ts" setup>
+const val = ref(true)
+
+</script>
+
 <template>
   <NuxtLayout>
     <div>
-      <!-- <Switch v-model:value="isDark" /> -->
       11
       <div b p-4>
-        <DrakToggle />
+        <Switch v-model="val" />
       </div>
       <!-- <Wave /> -->
     </div>

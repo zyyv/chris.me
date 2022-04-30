@@ -16,6 +16,11 @@ const handleClick = () => {
   }
 }
 </script>
+<!-- <script lang="ts">
+export default {
+  name: 'Switch',
+}
+</script> -->
 
 <template>
   <div

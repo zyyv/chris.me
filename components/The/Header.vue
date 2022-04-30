@@ -50,7 +50,7 @@ const routes = reactive([
           <div icon-btn :class="route.icon" />
         </NuxtLink>
         <div hidden lg:block f-c>
-          <DrakToggle />
+          <!-- <DrakToggle /> -->
         </div>
         <!-- <a hidden lg:block>
           <div icon-link i-carbon:language @click="toggleLocales" />
