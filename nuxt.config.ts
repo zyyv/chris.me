@@ -1,4 +1,4 @@
-import { defineNuxtConfig } from 'nuxt3'
+import { defineNuxtConfig } from 'nuxt'
 import { transformerDirectives, transformerVariantGroup } from 'unocss'
 
 export default defineNuxtConfig({
@@ -48,6 +48,9 @@ export default defineNuxtConfig({
     theme: {
       colors: {
         primary: '#00bcd4',
+      },
+      boxShadow: {
+        switch: '0 0 0 2px rgba(24, 160, 88, 0.2)',
       },
     },
   },

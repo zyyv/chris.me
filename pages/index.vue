@@ -3,7 +3,10 @@
     <div>
       <!-- <Switch v-model:value="isDark" /> -->
       11
-      <Wave />
+      <div b p-4>
+        <DrakToggle />
+      </div>
+      <!-- <Wave /> -->
     </div>
   </NuxtLayout>
 </template>

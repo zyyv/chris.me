@@ -91,7 +91,7 @@ const routes = reactive([
               b="0 b-1 gray-200 dark:gray-600"
             >
               <span text="12px $text-black dark:$text-black-dark">外貌</span>
-              <Switch
+              <!-- <Switch
                 v-model:value="isDark"
                 size="small"
                 bg-color="#f1f1f1"
@@ -103,16 +103,13 @@ const routes = reactive([
                     <div v-else i-akar-icons:moon-fill w-1em h-1em text-white />
                   </div>
                 </template>
-              </Switch>
+              </Switch> -->
             </div>
             <div
               p-3
               f-c
               justify-start
             >
-              <a mr-3>
-                <div icon-link i-carbon:language @click="toggleLocales" />
-              </a>
               <NuxtLink mr-3 to="https://space.bilibili.com/402454160">
                 <div icon-link i-ri:bilibili-line />
               </NuxtLink>
