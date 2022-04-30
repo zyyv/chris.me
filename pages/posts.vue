@@ -8,7 +8,7 @@ const val = ref(true)
     posts
 
     <div b p-4>
-      <Switch v-model="val" name="Switch" />
+      <Switch v-model="val" />
     </div>
   </div>
 </template>

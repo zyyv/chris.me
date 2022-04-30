@@ -1,12 +1,12 @@
 <script lang="ts" setup>
-import { initSize } from '.'
+import { useSize } from '.'
 import type { SwitchEvents, SwitchProps } from '.'
 
 const props = withDefaults(defineProps<SwitchProps>(), {})
 const emits = defineEmits<SwitchEvents>()
 
 const status = useVModel(props, 'value', emits)
-const [w, h] = initSize(props.size, props.width, props.height)
+const [w, h] = useSize(props.size, props.width, props.height)
 
 const handleClick = () => {
   if (!props.disabled) {

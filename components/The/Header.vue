@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 const routes = reactive([
   { icon: 'i-ri-article-line', path: '/posts' },
-  // { icon: 'i-carbon-progress-bar-round', path: '/projects' },
+  { icon: 'i-carbon-progress-bar-round', path: '/projects' },
   // { icon: 'i-carbon-bookmark', path: '/bookmark' },
   // { icon: 'i-carbon-notebook', path: '/notes' },
 ])

@@ -22,7 +22,7 @@ export interface SwitchEvents {
  * @param h height class of the switch  |  h-2xl
  * @returns [width, height]
  */
-export function initSize(size: 'mini' | 'medium' | 'large' = 'mini', w?: string, h?: string): [string, string] {
+export function useSize(size: 'mini' | 'medium' | 'large' = 'mini', w?: string, h?: string): [string, string] {
   const sizes = {
     small: ['2rem', '1.125rem'],
     medium: ['2.5rem', '1.375rem'],
