@@ -1,10 +1,8 @@
 <template>
   <div>
-    <TheHeader />
     <main px-7 py-10>
+      error layout
       <slot />
-      <!-- <NuxtPage /> -->
     </main>
-    <TheFooter />
   </div>
 </template>

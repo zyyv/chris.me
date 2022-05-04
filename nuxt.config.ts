@@ -47,6 +47,14 @@ export default defineNuxtConfig({
     ],
     theme: {
       colors: {
+        bg: {
+          default: '#fefefe',
+          dark: '#1c1f24',
+        },
+        text: {
+          default: '#3D4248',
+          dark: '#C8CCD0',
+        },
         primary: '#00bcd4',
       },
       boxShadow: {

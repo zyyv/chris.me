@@ -4,13 +4,15 @@ const val = ref(true)
 </script>
 
 <template>
-  <div>
-    posts
+  <NuxtLayout>
+    <div>
+      posts
 
-    <div b p-4>
-      <Switch v-model="val" />
+      <div b p-4>
+        <Switch v-model="val" />
+      </div>
     </div>
-  </div>
+  </NuxtLayout>
 </template>
 
 <style lang='scss' scoped>

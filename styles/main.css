@@ -1,17 +1,9 @@
-:root {
-  --bg: #fefefe;
-  --text: #3D4248;
-  --dark-bg: #1c1f24;
-  /* --dark-bg: #1F2023; */
-  --dark-text: #C8CCD0;
-}
-
 html,
 body {
   @apply m0 p0;
 }
 
 html {
-  @apply h-full trans bg-$bg text-$text dark:bg-$dark-bg dark:text-$dark-text;
+  @apply h-full trans bg-bg text-text dark:bg-bg-dark dark:text-text-dark;
 }
 
