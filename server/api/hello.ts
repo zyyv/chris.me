@@ -5,3 +5,9 @@ export default () => ({
   pageview: count++,
   startAt,
 })
+
+// export default defineEventHandler((event) => {
+//   return {
+//     api: 'works',
+//   }
+// })
