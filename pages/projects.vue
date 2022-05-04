@@ -61,7 +61,7 @@ const state = reactive({
         </div>
       </section>
 
-      <BBack />
+      <Back />
     </div>
   </NuxtLayout>
 </template>
