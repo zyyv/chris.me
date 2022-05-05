@@ -5,7 +5,7 @@ const waveRef = ref<HTMLCanvasElement | null>(null)
 const config = reactive({
   width: 400,
   height: 100,
-  lineWidth: 1,
+  lineWidth: 2,
   waveColor: '#d9d9d9',
   progressColor: '#fa0000',
 })
@@ -35,28 +35,15 @@ function create(ctx: CanvasRenderingContext2D, color = '#fff') {
   ctx.lineWidth = config.lineWidth
   const levelY = config.height / 2 //  对称轴纵坐标
   // (n-1) * config.lineWidth * 2 + config.lineWidth < config.width, n为容器内可显示点数
-  const n = Math.floor(
-    (config.width + config.lineWidth)
-          / (config.lineWidth * 2),
-  )
+  const n = Math.floor((config.width + config.lineWidth) / (config.lineWidth * 2))
   const dotSpace = waveData.length / n // 取waveData的平均因子
   for (
     let i = config.lineWidth / 2, k = 1;
     i < config.width;
     i = i + config.lineWidth * 2, k++
   ) {
-    ctx.moveTo(i, levelY)
-    ctx.lineTo(
-      i,
-      levelY
-            + ((waveData[Math.floor(k * dotSpace)] / 64) * levelY || 0.1),
-    )
-    ctx.moveTo(i, levelY)
-    ctx.lineTo(
-      i,
-      levelY
-            - ((waveData[Math.floor(k * dotSpace)] / 64) * levelY || 0.1),
-    )
+    ctx.moveTo(i, levelY + ((waveData[Math.floor(k * dotSpace)] / 80) * levelY || 0.1))
+    ctx.lineTo(i, levelY - ((waveData[Math.floor(k * dotSpace)] / 80) * levelY || 0.1))
   }
   ctx.strokeStyle = color
   ctx.lineCap = 'round'

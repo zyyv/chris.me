@@ -5,7 +5,7 @@ export const waveRef = ref<HTMLCanvasElement | null>(null)
 export const config = reactive({
   width: 400,
   height: 100,
-  lineWidth: 1,
+  lineWidth: 2,
   waveColor: '#d9d9d9',
   progressColor: '#fa0000',
 })
