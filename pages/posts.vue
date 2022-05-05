@@ -9,7 +9,11 @@ const val = ref(true)
       posts
 
       <div b p-4>
-        <Switch v-model="val" />
+        <!-- <Switch v-model="val" /> -->
+        <Wave3 />
+
+        <hr my-4>
+        <Wave2 />
       </div>
     </div>
   </NuxtLayout>

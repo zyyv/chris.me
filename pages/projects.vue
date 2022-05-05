@@ -28,7 +28,7 @@ const state = reactive({
           {{ list.name }}
         </h2>
         <div grid py-2 gap-2 style="grid-template-columns: repeat(auto-fit,minmax(250px,1fr))">
-          <Navlink
+          <div
             v-for="repo in list.repos"
             :key="repo.id"
             flex
@@ -37,7 +37,6 @@ const state = reactive({
             transition-all-300
             ease-in-out
             class="px-3.5 py-4"
-            to=""
           >
             <div text-0 pt-2 pr-4>
               <img w-10 h-10 src="/logo.svg" alt="" srcset="">
@@ -57,7 +56,7 @@ const state = reactive({
                 {{ repo.description }}
               </div>
             </div>
-          </Navlink>
+          </div>
         </div>
       </section>
 
