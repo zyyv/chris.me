@@ -7,7 +7,6 @@ const waveData = await getPathData(wavePath)
 
 nextTick(() => {
   setTimeout(() => {
-    console.log(waveRef.value)
     draw(waveRef.value, waveData)
   }, 1000)
   // console.log(waveRef.value)
