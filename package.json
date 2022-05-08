@@ -42,6 +42,7 @@
     "nuxt": "npm:nuxt3@latest",
     "sass": "^1.51.0",
     "typescript": "^4.6.3",
+    "unocss-preset-scrollbar": "^0.2.0",
     "unplugin-auto-import": "^0.7.1"
   },
   "pnpm": {
