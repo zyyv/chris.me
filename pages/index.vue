@@ -10,7 +10,6 @@ const val = ref(true)
       <div b p-4>
         <Switch v-model="val" />
       </div>
-      <!-- <Wave /> -->
     </div>
   </NuxtLayout>
 </template>

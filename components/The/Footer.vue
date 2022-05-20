@@ -1,12 +1,13 @@
 <template>
   <div
-    text="xl gray4"
+    text="sm gray4"
     m-5
     flex
     justify-center
     gap-3
   >
-    <NuxtLink i-carbon-campsite to="/" />
-    <a i-carbon-logo-github href="https://github.com/antfu/vitesse-nuxt3" target="__blank" />
+    <a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备2022005364号</a>
+    2022 ©
+    <a href="https://github.com/chris-zhu" target="_blank">Chris</a>
   </div>
 </template>

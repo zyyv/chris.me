@@ -1,5 +1,4 @@
 import { defineNuxtConfig } from 'nuxt'
-import { transformerDirectives, transformerVariantGroup } from 'unocss'
 
 export default defineNuxtConfig({
   meta: {
