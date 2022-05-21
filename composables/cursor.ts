@@ -78,17 +78,19 @@ export function useDot(style: ICursorStyle) {
     }
   }
   const domListener = () => {
-    [
-      ...Array.from(document.querySelectorAll('a')),
-      ...Array.from(document.querySelectorAll('button')),
-    ].forEach((el) => {
-      useEventListener(el, 'mouseover', () => {
-        dotState.enlarged = true
+    if (process.client) {
+      [
+        ...Array.from(document.querySelectorAll('a')),
+        ...Array.from(document.querySelectorAll('button')),
+      ].forEach((el) => {
+        useEventListener(el, 'mouseover', () => {
+          dotState.enlarged = true
+        })
+        useEventListener(el, 'mouseout', () => {
+          dotState.enlarged = false
+        })
       })
-      useEventListener(el, 'mouseout', () => {
-        dotState.enlarged = false
-      })
-    })
+    }
   }
 
   watch(() => dotState.enlarged, toggleDotSize) // update dot size
