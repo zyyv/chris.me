@@ -86,9 +86,9 @@ userStore.setUser(user)
         兴趣广泛，看动漫、爬山、听音乐、学外语、打游戏···最近在学习剪辑视频，准备做一名 <a href="https://space.bilibili.com/402454160" target="_blank" linkOutside>Up主</a>。
       </p>
       <p>
-        对了，我也喜欢旅行，拍照，你也可以简单<nuxt to="/" class="linkBtn">
+        对了，我也喜欢旅行，拍照，你也可以简单<nuxt-link to="/" class="linkBtn">
           看看
-        </nuxt>我的作品🤪。
+        </nuxt-link>我的作品🤪。
       </p>
     </div>
   </NuxtLayout>

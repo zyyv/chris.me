@@ -46,8 +46,8 @@ const routes = reactive([
         >
           <div icon-btn :class="route.icon" />
         </NuxtLink>
-        <div hidden lg:block fcc>
-          <!-- <DrakToggle /> -->
+        <div fcc>
+          <DrakToggle />
         </div>
         <!-- <a hidden lg:block>
           <div icon-link i-carbon:language @click="toggleLocales" />
@@ -58,7 +58,7 @@ const routes = reactive([
         <NuxtLink hidden lg:block to="https://github.com/chris-zhu/chris.me">
           <div icon-link i-carbon:logo-github />
         </NuxtLink>
-        <div
+        <!-- <div
           pr
           w-6
           h-full
@@ -66,7 +66,6 @@ const routes = reactive([
           fcc
           class="group"
         >
-          <!-- <BMenuIcon /> -->
           <div
             pa
             right-0
@@ -88,19 +87,6 @@ const routes = reactive([
               b="0 b-1 gray2 dark:gray6"
             >
               <span text="size-2 text-text dark:text-text-dark">外貌</span>
-              <!-- <Switch
-                v-model:value="isDark"
-                size="small"
-                bg-color="#f1f1f1"
-                bg-active-color="#2f2f2f"
-              >
-                <template #dot>
-                  <div w-full h-full f-c bg="white dark:#1a1a1a">
-                    <div v-if="!isDark" w-1em h-1em i-carbon:light-filled text-gray />
-                    <div v-else i-akar-icons:moon-fill w-1em h-1em text-white />
-                  </div>
-                </template>
-              </Switch> -->
             </div>
             <div
               p-3
@@ -117,7 +103,7 @@ const routes = reactive([
             </div>
             <div />
           </div>
-        </div>
+        </div> -->
       </div>
     </nav>
   </header>

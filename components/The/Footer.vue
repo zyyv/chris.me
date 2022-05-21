@@ -14,6 +14,6 @@ const userStore = useUserStore()
   >
     <a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备2022005364号</a>
     2022 ©
-    <a href="https://github.com/chris-zhu" target="_blank">{{ userStore.user.name }}</a>
+    <a href="https://github.com/chris-zhu" target="_blank">{{ userStore.user?.name }}</a>
   </div>
 </template>

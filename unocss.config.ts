@@ -40,7 +40,7 @@ export default defineConfig({
   shortcuts: [
     ...usefulShortcuts,
 
-    ['trans', 'transition-all-500 ease-in-out'],
+    ['trans', 'transition-all-500'],
     ['text', 'text-text dark:text-text-dark'],
     ['bg', 'bg-bg dark:bg-bg-dark'],
     ['base', 'trans text'],
@@ -48,7 +48,7 @@ export default defineConfig({
     ['icon', 'w-5.5 h-5.5 cursor-pointer select-none transition-opacity-300 ease-in-out text'],
     ['icon-btn', 'icon text-inherit op64 hover-op100'],
     ['icon-link', 'icon op64 hover:op100'],
-    ['link-hoverImportant', '!no-underline !hover-underline !hover-underline-offset-4'],
+    ['link-hoverImportant', '!no-underline !hover-underline !hover-underline-offset-4 trans'],
     ['link', '!text-red-300 link-hoverImportant'],
     ['linkOutside', '!text-teal-500 link-hoverImportant'],
     ['linkOrg', '!text-blue-300 link-hoverImportant'],
