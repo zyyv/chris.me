@@ -60,7 +60,7 @@ const state = reactive({
                   {{ repo.description }}
                 </div>
                 <div fic gap-3 mb2 text-sm>
-                  <a i-carbon-logo-github :href="repo.html_url" target="__blank" />
+                  <a i-carbon-logo-github :href="repo.html_url" target="_blank" />
                   <div fic>
                     <div i-carbon-fork mr1 />
                     <span>{{ repo.forks_count }}</span>
