@@ -5,11 +5,8 @@ const val = ref(true)
 
 <template>
   <NuxtLayout>
-    <div>
-      11
-      <div b p-4>
-        <Switch v-model="val" />
-      </div>
+    <div prose ma>
+      <h1>1</h1>
     </div>
   </NuxtLayout>
 </template>

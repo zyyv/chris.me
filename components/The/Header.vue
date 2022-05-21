@@ -34,7 +34,7 @@ const routes = reactive([
       w-full
       grid="~ cols-[auto_max-content]"
       box-border
-      class="h-4.5rem"
+      class="h-18"
     >
       <!-- 垫片 -->
       <div class="spacer" />
@@ -43,13 +43,10 @@ const routes = reactive([
           v-for="route in routes"
           :key="route.path"
           :to="route.path"
-          op-50
-          base
-          hover="op-100 text-teal-600"
         >
           <div icon-btn :class="route.icon" />
         </NuxtLink>
-        <div hidden lg:block f-c>
+        <div hidden lg:block fcc>
           <!-- <DrakToggle /> -->
         </div>
         <!-- <a hidden lg:block>
@@ -66,8 +63,8 @@ const routes = reactive([
           w-6
           h-full
           lg:hidden
-          f-c
-          class="menus"
+          fcc
+          class="group"
         >
           <!-- <BMenuIcon /> -->
           <div
@@ -75,10 +72,11 @@ const routes = reactive([
             right-0
             trans
             w-45
-            b="1 gray-200 dark:gray-600"
-            bg="white dark:gray-900"
+            b="1 gray2 dark:gray2"
+            bg="white dark:gray9"
             rounded-md
-            class="-bottom-full menuItem"
+            class="-bottom-full"
+            group-hover="op100 translate-y-8px visible"
             invisible
             translate-y-2px
             transition-300
@@ -86,11 +84,10 @@ const routes = reactive([
           >
             <div
               p-3
-              f-c
-              justify-between
-              b="0 b-1 gray-200 dark:gray-600"
+              fb
+              b="0 b-1 gray2 dark:gray6"
             >
-              <span text="12px $text-black dark:$text-black-dark">外貌</span>
+              <span text="size-2 text-text dark:text-text-dark">外貌</span>
               <!-- <Switch
                 v-model:value="isDark"
                 size="small"
@@ -107,13 +104,14 @@ const routes = reactive([
             </div>
             <div
               p-3
-              f-c
-              justify-start
+              fsc
+              flex
+              gap-3
             >
-              <NuxtLink mr-3 to="https://space.bilibili.com/402454160">
+              <NuxtLink to="https://space.bilibili.com/402454160">
                 <div icon-link i-ri:bilibili-line />
               </NuxtLink>
-              <NuxtLink mr-3 to="https://github.com/chris-zhu/chris.me">
+              <NuxtLink to="https://github.com/chris-zhu/chris.me">
                 <div icon-link i-carbon:logo-github />
               </NuxtLink>
             </div>
@@ -124,17 +122,5 @@ const routes = reactive([
     </nav>
   </header>
   <!-- For header fixed -->
-  <div class="h-4.5rem" />
+  <div class="h-18" />
 </template>
-
-<style lang="scss" scoped>
-.menus{
-  &:hover{
-    .menuItem{
-      opacity: 1;
-      transform: translateY(8px);
-      visibility: visible;
-    }
-  }
-}
-</style>

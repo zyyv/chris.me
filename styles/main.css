@@ -4,6 +4,10 @@ body {
 }
 
 html {
-  @apply h-full trans bg-bg text-text dark:bg-bg-dark dark:text-text-dark;
+  @apply h-full base bg;
+}
+
+body::-webkit-scrollbar{
+  @apply w0;
 }
 

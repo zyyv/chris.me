@@ -1,5 +1,6 @@
 <script lang='ts' setup>
-const { ps, templates } = await $fetch('/api/github')
+const { data } = await useFetch('/api/github')
+const { ps, templates } = data.value
 
 const state = reactive({
   data: [{
@@ -16,14 +17,14 @@ const state = reactive({
 <template>
   <NuxtLayout>
     <div max-w-68ch m-auto>
-      <h1 text-3xl base text-black class="mb-4 font-medium">
+      <h1 text-3xl base text-black class="mb4 fw500">
         Projects
       </h1>
-      <p text-base base font-lobster>
+      <p text-base base font-mono>
         Some projects I'm proud of
       </p>
 
-      <section v-for="(list,i) in state.data" :key="i" mt-10>
+      <section v-for="(list,i) in state.data" :key="i" mt10>
         <h2 base mb-2 text-xl>
           {{ list.name }}
         </h2>
@@ -31,29 +32,44 @@ const state = reactive({
           <div
             v-for="repo in list.repos"
             :key="repo.id"
-            flex
-            op-60
-            hover="op-100 bg-[#fbfbfb] dark:bg-transparent"
-            transition-all-300
-            ease-in-out
+            op60
+            hover="op100 bg-[#fbfbfb] dark:bg-transparent"
+            trans
+            duration-300
             class="px-3.5 py-4"
           >
-            <div text-0 pt-2 pr-4>
-              <img w-10 h-10 src="/logo.svg" alt="" srcset="">
-            </div>
-            <div>
-              <div text-base dark:text-white-800 toDark>
-                {{ repo.name }}
+            <div flex>
+              <div class="flex-[0_0_4rem]" text-0 pt-2 pr-4>
+                <img w-full class="aspect-1/1" src="/logo.svg" alt="repo logo">
               </div>
-              <div
-                toDark
-                mt-2
-                text-sm
-                text-black
-                dark:text-white
-                op-80
-              >
-                {{ repo.description }}
+              <div>
+                <div text-base dark:text-white-800 trans mb2>
+                  {{ repo.name }}
+                </div>
+                <div
+                  v-if="repo.description"
+                  mb2
+                  trans
+                  text-sm
+                  text-black
+                  dark:text-white
+                  op-80
+                  line-clamp-2
+                  :title="repo.description"
+                >
+                  {{ repo.description }}
+                </div>
+                <div fic gap-3 mb2 text-sm>
+                  <a i-carbon-logo-github :href="repo.html_url" target="__blank" />
+                  <div fic>
+                    <div i-carbon-fork mr1 />
+                    <span>{{ repo.forks_count }}</span>
+                  </div>
+                  <div fic>
+                    <div i-carbon-star mr1 />
+                    <span>{{ repo.stargazers_count }}</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

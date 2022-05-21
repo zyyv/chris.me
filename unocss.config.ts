@@ -8,24 +8,46 @@ import {
   transformerDirectives,
   transformerVariantGroup,
 } from 'unocss'
-import { presetScrollbar } from 'unocss-preset-scrollbar'
+import type { Shortcut } from 'unocss'
+
+const usefulShortcuts: Shortcut[] = [
+  ['pr', 'relative'],
+  ['pa', 'absolute'],
+  ['pf', 'fixed'],
+  ['f-c', 'flex justify-center items-center'],
+  ['f-c-c', 'f-c flex-col'],
+
+  ['fc', 'flex justify-center'],
+  ['fcc', 'flex justify-center items-center'],
+  ['fs', 'flex justify-start'],
+  ['fsc', 'flex justify-start items-center'],
+  ['fe', 'flex justify-end'],
+  ['fec', 'flex justify-end items-center'],
+  ['fb', 'flex justify-between'],
+  ['fbc', 'flex justify-between items-center'],
+  ['fw', 'flex justify-wrap'],
+  ['fwr', 'flex justify-wrap-reverse'],
+  ['fa', 'flex justify-around'],
+  ['fac', 'flex justify-around items-center'],
+
+  ['fic', 'flex items-center'],
+  ['fccc', 'flex justify-center items-center flex-col'],
+
+  ['p-c', 'pa top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'],
+]
 
 export default defineConfig({
   shortcuts: [
-    ['navlink', 'no-underline outline-none text-inherit'],
-    ['pr', 'relative'],
-    ['pa', 'absolute'],
-    ['pf', 'fixed'],
-    ['f-c', 'flex justify-center items-center'],
-    ['f-c-c', 'f-c flex-col'],
-    ['p-c', 'pa top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'],
+    ...usefulShortcuts,
+
     ['trans', 'transition-all-500 ease-in-out'],
-    ['base', 'trans text-$text-black dark:text-$text-black-dark'],
-    ['icon', 'w-6 h-6 cursor-pointer select-none transition-opacity-300 ease-in-out dark:text-[#afbac6] dark:hover:text-[#d9dfe9]'],
-    ['icon-btn', 'icon text-inherit'],
-    ['icon-link', 'icon text-gray-700 op-50 hover:op-100'],
-    ['menu-icon-line', 'transition pa block bg-gray-700 op-50 dark:bg-[#afbac6] w-5/7 h-2px'],
-    ['clearBtn', 'bg-transparent border-none outline-none'],
+    ['text', 'text-text dark:text-text-dark'],
+    ['bg', 'bg-bg dark:bg-bg-dark'],
+    ['base', 'trans text'],
+
+    ['icon', 'w-5.5 h-5.5 cursor-pointer select-none transition-opacity-300 ease-in-out text'],
+    ['icon-btn', 'icon text-inherit op64 hover-op100'],
+    ['icon-link', 'icon op64 hover:op100'],
   ],
   theme: {
     colors: {
@@ -57,7 +79,6 @@ export default defineConfig({
         mono: 'DM Mono',
       },
     }),
-    presetScrollbar(),
   ],
   transformers: [
     transformerDirectives(),
