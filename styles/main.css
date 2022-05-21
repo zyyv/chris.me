@@ -7,6 +7,10 @@ html {
   @apply h-full base bg;
 }
 
+html * {
+  cursor: none !important;
+}
+
 body::-webkit-scrollbar{
   @apply w0;
 }

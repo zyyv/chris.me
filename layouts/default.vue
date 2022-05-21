@@ -6,5 +6,6 @@
       <!-- <NuxtPage /> -->
     </main>
     <TheFooter />
+    <Cursor />
   </div>
 </template>

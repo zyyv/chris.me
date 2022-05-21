@@ -41,3 +41,9 @@ export interface Repo{
   archived: false
   private: boolean
 }
+
+export interface ICursorStyle {
+  dot: object
+  cursor: object
+  circle: object
+}
