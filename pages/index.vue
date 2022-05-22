@@ -10,7 +10,7 @@ userStore.setUser(user)
 
 <template>
   <NuxtLayout>
-    <div prose ma>
+    <div prose ma base>
       <div flex flex-col items-center md="gap-10 flex-row">
         <img
           w-30

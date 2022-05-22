@@ -52,12 +52,22 @@ const routes = reactive([
         <!-- <a hidden lg:block>
           <div icon-link i-carbon:language @click="toggleLocales" />
         </a> -->
-        <NuxtLink hidden lg:block to="https://space.bilibili.com/402454160">
-          <div icon-link i-ri:bilibili-line />
-        </NuxtLink>
-        <NuxtLink hidden lg:block to="https://github.com/chris-zhu/chris.me">
-          <div icon-link i-carbon:logo-github />
-        </NuxtLink>
+        <a
+          hidden
+          lg:block
+          href="https://space.bilibili.com/402454160"
+          target="_blank"
+          icon-link
+          i-ri:bilibili-line
+        />
+        <a
+          hidden
+          lg:block
+          href="https://github.com/chris-zhu/chris.me"
+          target="_blank"
+          icon-link
+          i-carbon:logo-github
+        />
         <!-- <div
           pr
           w-6
