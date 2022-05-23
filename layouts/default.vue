@@ -7,5 +7,6 @@
     </main>
     <TheFooter />
     <Cursor />
+    <Bg />
   </div>
 </template>
