@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { useSize } from '.'
-import type { SwitchEvents, SwitchProps } from '.'
+import { useSize } from './logic'
+import type { SwitchEvents, SwitchProps } from './logic'
 
 const props = withDefaults(defineProps<SwitchProps>(), {})
 const emits = defineEmits<SwitchEvents>()
