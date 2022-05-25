@@ -5,7 +5,7 @@
 <template>
   <NuxtLayout>
     <div>
-      posts
+      posts1
     </div>
   </NuxtLayout>
 </template>
