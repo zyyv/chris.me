@@ -1,19 +1,11 @@
 html,
 body {
-  @apply m0 p0;
+  @apply m0 p0 h-full base bg cursor-none;
 }
 
-html {
-  @apply h-full base bg;
-}
-
-body{
-  @apply h-full;
-}
-
-html * {
-  @apply !cursor-none;
-}
+/* html * {
+  @apply cursor-none;
+} */
 
 body::-webkit-scrollbar{
   @apply w0;
