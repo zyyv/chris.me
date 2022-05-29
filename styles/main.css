@@ -1,6 +1,6 @@
 html,
 body {
-  @apply m0 p0 h-full base bg;
+  @apply m0 p0 h-full base;
 }
 
 html * {

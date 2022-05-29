@@ -6,7 +6,7 @@ const color = computed(() => isDark.value ? '#fff' : '#0d9488')
 
 <template>
   <div
-    class="bg -z-1 bg-$bg-default dark:bg-$bg-dark-default toDark"
+    class="bg -z-1"
     pf
     top-0
     left-0
