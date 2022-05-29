@@ -42,7 +42,7 @@ export default defineConfig({
 
     ['trans', 'transition-all-350 ease-linear'],
     ['text', 'text-text-default dark:text-text-dark'],
-    ['bg', 'bg-bg-default dark:bg-bg-dark'],
+    ['bg', 'trans bg-bg-default dark:bg-bg-dark'],
     ['base', 'trans text'],
 
     ['icon', 'w-5.5 h-5.5 cursor-pointer select-none transition-opacity-300 ease-in-out text'],
