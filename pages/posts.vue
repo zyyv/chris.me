@@ -4,7 +4,7 @@
 
 <template>
   <NuxtLayout>
-    <div>
+    <div prose>
       postss
     </div>
   </NuxtLayout>
