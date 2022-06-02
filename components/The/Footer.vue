@@ -11,6 +11,7 @@ const userStore = useUserStore()
     flex
     justify-center
     gap-3
+    py-2
   >
     <a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备2022005364号</a>
     2022 ©

@@ -4,9 +4,8 @@
 
 <template>
   <NuxtLayout>
-    <div prose>
-      postss
-    </div>
+    1
+    <Back />
   </NuxtLayout>
 </template>
 

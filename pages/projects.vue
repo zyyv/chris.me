@@ -16,8 +16,8 @@ const state = reactive({
 
 <template>
   <NuxtLayout>
-    <div max-w-68ch m-auto>
-      <h1 text-3xl base text-black class="mb4 fw500">
+    <div prose ma>
+      <h1 text-3xl base text-black mb4 fw500>
         Projects
       </h1>
       <p text-base base font-mono>
@@ -28,12 +28,13 @@ const state = reactive({
         <h2 base mb-2 text-xl>
           {{ list.name }}
         </h2>
-        <div grid py-2 gap-2 style="grid-template-columns: repeat(auto-fit,minmax(250px,1fr))">
+        <div grid="~ cols-2 gap-2" py-2>
           <div
             v-for="repo in list.repos"
             :key="repo.id"
             op60
-            hover="op100 bg-[#fbfbfb] dark:bg-transparent"
+            rounded-md
+            hover="op100 bg-#f6f6f6 dark:bg-transparent"
             trans
             duration-300
             class="px-3.5 py-4"
