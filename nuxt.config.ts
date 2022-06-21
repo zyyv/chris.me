@@ -20,7 +20,7 @@ export default defineNuxtConfig({
   buildModules: [
     '@vueuse/nuxt',
     '@unocss/nuxt',
-    '@pinia/nuxt',
+    // '@pinia/nuxt',
     '@nuxtjs/color-mode',
     // '@intlify/nuxt3',
   ],
