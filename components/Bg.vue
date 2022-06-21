@@ -6,35 +6,32 @@ const color = computed(() => isDark.value ? '#fff' : '#0d9488')
 
 <template>
   <div
-    class="bg -z-1"
+    z--1
     pf
     top-0
     left-0
     overflow-hidden
     h-screen
     w-screen
-    bg="no-repeat [length:200%_200%]"
   >
-    <div>
+    <div un-children="z--200 rounded-full pa" un-children-after="content-none rounded-md">
       <div
-        class="signup-bg-stars -z-200"
-        :class="isDark ? 'text-white' : 'text-red'"
-        w="1px"
-        h="1px"
-        bg-transparent
-        rounded-full
-        after="absolute top-2000px w-[1px] h-[1px] rounded-[10px] bg-transparent"
+        class="signup-bg-stars w-1px h-1px"
+        un-after="w-1px h-1px"
       />
-      <div class="signup-bg-stars-2" rounded-full w="2px" h="2px" after="w-[2px] h-[2px]" />
-      <div class="signup-bg-stars-3" rounded-full w="3px" h="3px" after="w-[3px] h-[3px]" />
+      <div
+        class="signup-bg-stars-2 w-2px h-2px"
+        un-after="w-2px h-2px"
+      />
+      <div
+        class="signup-bg-stars-3 w-3px h-3px"
+        un-after="w-3px h-3px"
+      />
     </div>
   </div>
 </template>
 
 <style scoped>
-.bg {
-  background-position: 50% 50%;
-}
 .signup-bg-stars {
   box-shadow: 750px 740px rgba(255, 255, 255, 0.2), 1350px 631px v-bind(color),
     56px 1452px v-bind(color), 554px 1842px v-bind(color),
@@ -75,7 +72,6 @@ const color = computed(() => isDark.value ? '#fff' : '#0d9488')
 }
 
 .signup-bg-stars::after {
-  content: " ";
   box-shadow: 750px 740px rgba(255, 255, 255, 0.2), 1350px 631px v-bind(color),
     56px 1452px v-bind(color), 554px 1842px v-bind(color),
     1977px 711px v-bind(color), 1773px 515px v-bind(color),
