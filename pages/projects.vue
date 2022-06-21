@@ -27,7 +27,7 @@ const state = reactive({
       <h2 base mb-2 text-xl>
         {{ list.name }}
       </h2>
-      <div grid="~ cols-2 gap-2" py-2>
+      <div grid="~ cols-1 md:cols-2 gap-4" py-2>
         <div
           v-for="repo in list.repos"
           :key="repo.id"
