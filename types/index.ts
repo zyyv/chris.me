@@ -43,7 +43,7 @@ export interface Repo{
 }
 
 export interface ICursorStyle {
-  dot: object
-  cursor: object
-  circle: object
+  dot: Record<string, number | string>
+  cursor: Record<string, number | string>
+  circle: Record<string, number | string>
 }

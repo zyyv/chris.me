@@ -2,8 +2,9 @@ import { useStorage } from '@vueuse/core'
 import type { ICursorStyle } from '~~/types'
 
 function useCustomMouse() {
-  const x = ref(0)
-  const y = ref(0)
+  const pos = useStorage('dotPos', { x: 0, y: 0 })
+  const x = ref(pos.value.x)
+  const y = ref(pos.value.y)
 
   const mouseHandler = (event: MouseEvent) => {
     x.value = event.clientX
@@ -65,10 +66,11 @@ export function useDot(style: ICursorStyle) {
   const toggleDotSize = (newStatus: boolean) => {
     const scale = newStatus ? '1.8' : '1'
     const opacity = newStatus ? '0.5' : '1'
+
     style.dot = {
       ...style.dot,
-      opacity,
-      transform: `translate(-50%, -50%) scale(${scale})`,
+      '--un-bg-opacity': opacity,
+      'transform': `translate(-50%, -50%) scale(${scale})`,
     }
   }
   const toggleDotVisibility = (newStatus: boolean) => {
@@ -98,7 +100,7 @@ export function useDot(style: ICursorStyle) {
   watch(() => dotState.visible, toggleDotVisibility, { immediate: true, flush: 'post' }) // update dot opacity
 
   if (process.client) {
-    const pos = useStorage('dotPos', { x: 0, y: 0 }, sessionStorage)
+    const pos = useStorage('dotPos', { x: 0, y: 0 })
 
     useEventListener(document, 'mousemove', (e) => {
       dotState.visible = true
