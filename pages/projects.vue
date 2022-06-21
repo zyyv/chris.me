@@ -11,7 +11,6 @@ const state = reactive({
     repos: templates,
   }],
 })
-
 </script>
 
 <template>
@@ -23,7 +22,7 @@ const state = reactive({
       Some projects I'm proud of
     </p>
 
-    <section v-for="(list,i) in state.data" :key="i" mt10>
+    <section v-for="(list, i) in state.data" :key="i" mt10>
       <h2 base mb-2 text-xl>
         {{ list.name }}
       </h2>

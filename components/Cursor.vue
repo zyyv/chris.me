@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import type { ICursorStyle } from '~~/types'
 import { useStorage } from '@vueuse/core'
+import type { ICursorStyle } from '~~/types'
 
 const route = useRoute()
 const pos = useStorage('dotPos', { x: 0, y: 0 })
@@ -21,10 +21,35 @@ watch(() => route.fullPath, () => {
 </script>
 
 <template>
-  <div id="dot" ref="dotRef" :style="style.dot" class="bg-gray4" z-99999 opacity-0 pointer-events-none rounded-full
-    fixed />
-  <div id="cursor" :style="style.cursor" z-99999 fixed top-0 left-0 pointer-events-none>
-    <div id="circle" class="mt--1/2 ml--1/2 border-gray4" border rounded-full w-16 h-16 :style="style.circle" />
+  <div
+    id="dot"
+    ref="dotRef"
+    :style="style.dot"
+    class="bg-gray4"
+    z-99999
+    opacity-0
+    pointer-events-none
+    rounded-full
+    fixed
+  />
+  <div
+    id="cursor"
+    :style="style.cursor"
+    z-99999
+    fixed
+    top-0
+    left-0
+    pointer-events-none
+  >
+    <div
+      id="circle"
+      class="mt--1/2 ml--1/2 border-gray4"
+      border
+      rounded-full
+      w-16
+      h-16
+      :style="style.circle"
+    />
   </div>
 </template>
 

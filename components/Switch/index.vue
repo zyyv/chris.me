@@ -24,7 +24,8 @@ export default {
 
 <template>
   <div
-    :class="['switch', w, h, disabled && 'op-50', status && 'active']"
+    class="switch"
+    :class="[w, h, disabled && 'op-50', status && 'active']"
     rounded-full
     overflow-hidden
     bg="black op-14"
@@ -42,7 +43,6 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-
 .switch {
   transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
   box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);

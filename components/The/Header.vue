@@ -5,7 +5,6 @@ const routes = reactive([
   // { icon: 'i-carbon-bookmark', path: '/bookmark' },
   // { icon: 'i-carbon-notebook', path: '/notes' },
 ])
-
 </script>
 
 <template>
