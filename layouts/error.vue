@@ -4,5 +4,7 @@
       error layout
       <slot />
     </main>
+    <Cursor />
+    <Bg />
   </div>
 </template>
