@@ -11,7 +11,7 @@ useCursor(style)
 
 const { dotRef, domListener } = useDot(style)
 watch(() => route.fullPath, () => {
-  setTimeout(domListener, 800) // 等待 transition 时间片断完成
+  setTimeout(domListener, 500) // 等待 transition 时间片断完成
 })
 </script>
 

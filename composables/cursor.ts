@@ -1,3 +1,4 @@
+import { useStorage } from '@vueuse/core'
 import type { ICursorStyle } from '~~/types'
 
 function useCustomMouse() {
@@ -93,13 +94,17 @@ export function useDot(style: ICursorStyle) {
     }
   }
 
-  watch(() => dotState.enlarged, toggleDotSize) // update dot size
-  watch(() => dotState.visible, toggleDotVisibility, { immediate: true }) // update dot opacity
+  watch(() => dotState.enlarged, toggleDotSize, { flush: 'post' }) // update dot size
+  watch(() => dotState.visible, toggleDotVisibility, { immediate: true, flush: 'post' }) // update dot opacity
 
   if (process.client) {
+    const pos = useStorage('dotPos', { x: 0, y: 0 }, sessionStorage)
+
     useEventListener(document, 'mousemove', (e) => {
       dotState.visible = true
-      style.dot = { ...style.dot, top: `${e.clientY}px`, left: `${e.clientX}px` }
+      pos.value.x = e.clientX
+      pos.value.y = e.clientY
+      style.dot = { ...style.dot, top: `${pos.value.y}px`, left: `${pos.value.x}px` }
     })
     useEventListener(document, 'mouseenter', () => {
       dotState.visible = true
