@@ -5,7 +5,6 @@ export default defineNuxtConfig({
     title: 'Chris\'s Blog',
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'preload', as: 'font' },
     ],
     meta: [
       { hid: 'description', name: 'description', content: 'Chirs blog is a place to share my thoughts and learn new things.' },

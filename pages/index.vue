@@ -11,13 +11,13 @@ const user = data
         h-30
         md="w-50 h-50"
         rounded-full
-        :src="user.avatar_url"
+        :src="user?.avatar_url"
         alt=""
         srcset=""
       >
       <div>
         <h1 fic justify-center md="justify-start">
-          {{ user.name }}
+          {{ user?.name }}
           <a
             op50
             hover-op100
@@ -26,38 +26,38 @@ const user = data
             ml2
             text-6
             i-carbon-logo-github
-            :href="user.html_url"
+            :href="user?.html_url"
             target="_blank"
           />
         </h1>
         <p text-lg font-sans text-center md="text-left">
-          {{ user.bio }}
+          {{ user?.bio }}
         </p>
         <div fic gap-4 justify-center md="justify-start">
           <div fic gap-2>
             <div class="text-3.5" i-carbon-building />
-            {{ user.company }}
+            {{ user?.company }}
           </div>
           <div fic gap-2>
             <div class="text-3.5" i-carbon-location />
-            {{ user.location }}
+            {{ user?.location }}
           </div>
           <div fic gap-2>
             <div class="text-3.5" i-carbon-campsite />
-            {{ user.blog }}
+            {{ user?.blog }}
           </div>
         </div>
         <div my-4 fic justify-center md="justify-start">
           <div i-carbon-user-favorite-alt-filled mr2 />
           <span>
-            {{ user.followers }}
+            {{ user?.followers }}
             <span class="text-xs">
               followers
             </span>
           </span>
           <span mx-2>·</span>
           <span>
-            {{ user.following }}
+            {{ user?.following }}
             <span class="text-xs">
               following
             </span>
