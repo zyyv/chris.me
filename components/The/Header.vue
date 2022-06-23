@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { isDark } from '#imports'
 const routes = reactive([
   { icon: 'i-carbon-blog', path: '/posts' },
   { icon: 'i-carbon-delivery-parcel', path: '/projects' },
@@ -19,12 +20,11 @@ const routes = reactive([
   >
     <NuxtLink to="/">
       <img
-        w-10
-        h-10
+        h-6
         fixed
         left-8
-        top-4
-        src="/logo.svg"
+        top-6
+        :src="`/logo${isDark ? '-light' : ''}.svg`"
         alt="logo"
       >
     </NuxtLink>

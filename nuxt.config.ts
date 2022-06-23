@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   meta: {
     title: 'Chris\' Blog',
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', type: 'image/x-icon', href: '/logo-light.svg' },
     ],
     meta: [
       { hid: 'description', name: 'description', content: 'Chirs blog is a place to share my thoughts and learn new things.' },
