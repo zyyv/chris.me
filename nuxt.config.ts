@@ -2,7 +2,7 @@ import { defineNuxtConfig } from 'nuxt'
 
 export default defineNuxtConfig({
   meta: {
-    title: 'Chris\'s Blog',
+    title: 'Chris\' Blog',
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
     ],

@@ -1,6 +1,10 @@
 <script lang="ts" setup>
+import { useTitle } from '@vueuse/core'
+
 const { data } = await useFetch('/api/user')
 const user = data
+
+useTitle('Chris\' Blog')
 </script>
 
 <template>

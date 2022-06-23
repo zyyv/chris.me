@@ -1,4 +1,6 @@
 <script lang='ts' setup>
+import { useTitle } from '@vueuse/core'
+
 interface IPost {
   id: number;
   title: string;
@@ -7,6 +9,8 @@ interface IPost {
   updatedAt: string;
   ago: string;
 }
+
+useTitle('Chris\' Blog | Posts')
 
 const posts = reactive<IPost[]>([
   {
