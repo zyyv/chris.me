@@ -60,8 +60,6 @@ const routes = reactive([
           i-ri:bilibili-line
         />
         <a
-          hidden
-          lg:block
           href="https://github.com/chris-zhu/chris.me"
           target="_blank"
           icon-link

@@ -18,17 +18,6 @@ const user = data
       <div>
         <h1 fic justify-center md="justify-start">
           {{ user?.name }}
-          <a
-            op50
-            hover-op100
-            trans
-            duration-300
-            ml2
-            text-6
-            i-carbon-logo-github
-            :href="user?.html_url"
-            target="_blank"
-          />
         </h1>
         <p text-lg font-sans text-center md="text-left">
           {{ user?.bio }}
