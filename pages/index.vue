@@ -76,18 +76,22 @@ useTitle('Chris\' Blog')
         link
         href="https://github.com/element-plus/element-plus"
         target="_blank"
-      >Element-plus</a> & etc. 积极贡献者✨
+      >element-plus</a> & etc. 积极贡献者✨
     </p>
     <p>
-      Introduce: 前端工程师 🧑🏻‍💻 专注于Vue3、Vite、Nuxt3 & UnoCSS的生态环境。同时我也是Creator of `<a
+      Introduce: 前端工程师 🧑🏻‍💻 专注于Vue3、Vite、Nuxt3 & UnoCSS的生态环境。同时我也是Creator of <a
         linkOrg
         href="https://github.com/onu-ui/onu-ui"
         target="_blank"
-      >ONU-UI</a>`，`<a
+      >ONU-UI</a>，<a
+        linkOrg
+        href="https://github.com/unocss"
+        target="_blank"
+      >UnoCSS</a>、<a
         linkOrg
         href="https://github.com/developer-plus"
         target="_blank"
-      >developer-plus</a>` team member。
+      >developer-plus</a> team member。
     </p>
 
     <p>
