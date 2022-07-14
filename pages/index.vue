@@ -83,7 +83,7 @@ useTitle('Chris\' Blog')
         linkOrg
         href="https://github.com/onu-ui/onu-ui"
         target="_blank"
-      >ONU-UI</a>，<a
+      >onu-ui</a>，<a
         linkOrg
         href="https://github.com/unocss"
         target="_blank"
