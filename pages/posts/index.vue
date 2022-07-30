@@ -38,7 +38,7 @@ const posts = reactive<IPost[]>([
       Posts
     </h1>
     <p text-base base font-mono>
-      Some boring but useful text
+      Some boring but useful articles.
     </p>
 
     <section>
@@ -53,7 +53,7 @@ const posts = reactive<IPost[]>([
       >
         <h3>{{ item.title }}</h3>
         <div fic text-sm text-gray4 fw-normal>
-          {{ item.createdAt }}&nbsp;&nbsp;&nbsp;<sub>{{ item.ago }}</sub>
+          {{ item.createdAt }}&nbsp;&nbsp;&nbsp;<sub bottom-0>{{ item.ago }}</sub>
         </div>
       </nuxt-link>
     </section>
