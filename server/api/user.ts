@@ -1,4 +1,4 @@
-import type { User } from '~~/types'
+import type { User } from '~/types'
 
 const baseUrl = 'https://api.github.com'
 const user = 'chris-zhu'

@@ -1,6 +1,5 @@
 {
   "name": "chris.me",
-  "version": "1.0.0",
   "private": true,
   "description": "Chris' blog build with Nuxt3.",
   "keywords": [
@@ -10,14 +9,14 @@
     "unocss"
   ],
   "license": "MIT",
-  "author": "chris-zhu",
+  "author": "chris-zhu <https://github.com/chris-zhu>",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/chris-zhu/chris.me.git"
   },
   "scripts": {
     "build": "nuxi build",
-    "dev": "nuxi dev --open",
+    "dev": "nuxi dev -o",
     "start": "node .output/server/index.mjs",
     "lint": "eslint ."
   },
@@ -28,16 +27,16 @@
   "devDependencies": {
     "@chris-zhu/eslint-config": "^1.0.5",
     "@iconify-json/akar-icons": "^1.1.7",
-    "@iconify-json/carbon": "^1.1.7",
+    "@iconify-json/carbon": "^1.1.8",
     "@iconify-json/ri": "^1.1.3",
     "@iconify-json/twemoji": "^1.1.5",
-    "@nuxtjs/color-mode": "^3.1.5",
-    "@unocss/nuxt": "^0.45.21",
-    "@vueuse/nuxt": "^9.2.0",
+    "@nuxtjs/color-mode": "^3.1.6",
+    "@unocss/nuxt": "^0.45.25",
+    "@vueuse/nuxt": "^9.3.0",
     "eslint": "^8.23.1",
-    "nuxt": "^3.0.0-rc.4",
-    "sass": "^1.54.9",
-    "typescript": "^4.8.3",
+    "nuxt": "3.0.0-rc.11",
+    "sass": "^1.55.0",
+    "typescript": "^4.8.4",
     "unocss-preset-scrollbar": "^0.2.0"
   },
   "pnpm": {
