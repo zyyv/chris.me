@@ -60,54 +60,41 @@ useTitle('Chris\' Blog')
       </div>
     </div>
     <p>
-      ✨ <a href="https://github.com/unocss/unocss" target="_blank" link><strong>UnoCSS</strong></a>、<a
+      ✨ <a href="https://github.com/unocss/unocss" target="_blank" link><strong>UnoCSS</strong></a> core team member、<a
         link
         href="https://github.com/vitejs/vite"
         target="_blank"
       >Vite</a>、<a
         link
-        href="https://github.com/nuxt/framework"
-        target="_blank"
-      >Nuxt3</a>、<a
-        link
         href="https://github.com/vuejs-translations/docs-zh-cn"
         target="_blank"
-      >Vue3-docs</a>、<a
+      >Vue3</a>、<a
         link
-        href="https://github.com/element-plus/element-plus"
+        href="https://github.com/nuxt/framework"
         target="_blank"
-      >element-plus</a> & etc. 积极贡献者✨
+      >Nuxt3</a> & etc. Ecological contributors
     </p>
     <p>
-      Introduce: 前端工程师 🧑🏻‍💻 专注于Vue3、Vite、Nuxt3 & UnoCSS的生态环境。同时我也是Creator of <a
-        linkOrg
-        href="https://github.com/onu-ui/onu-ui"
-        target="_blank"
-      >onu-ui</a>，<a
-        linkOrg
-        href="https://github.com/unocss"
-        target="_blank"
-      >UnoCSS</a>、<a
-        linkOrg
-        href="https://github.com/developer-plus"
-        target="_blank"
-      >developer-plus</a> team member。
+      Introduce: Front-end Engineer 🧑🏻‍💻 Focus on UnoCSS, Vite, Vue & Nuxt3。At the same time, I am also the Creator
+      of <a linkOrg href="https://github.com/onu-ui/onu-ui" target="_blank">Onu-UI</a>.
     </p>
 
     <p>
-      一个喜欢编程的人，喜欢造各种轮子，写脚本。现居住在美丽的四川成都。
+      A person who likes programming, likes to build all kinds of wheels and write scripts. Now living in the beautiful
+      Chengdu, China.
     </p>
     <p>
-      兴趣广泛，看动漫、爬山、听音乐、学外语、打游戏···最近在学习剪辑视频，准备做一名 <a
+      I have a wide range of interests, watching anime, climbing mountains, listening to music, learning foreign
+      languages, playing games... Recently I am learning to edit videos and I am going to be an <a
         href="https://space.bilibili.com/402454160"
         target="_blank"
         linkOutside
-      >Up主</a>。
+      >uploader</a>。
     </p>
     <p>
-      对了，我也喜欢旅行，拍照，你也可以简单<nuxt-link to="/" class="linkBtn">
-        看看
-      </nuxt-link>我的作品🤪。
+      By the way, I also like to travel and take pictures, you can also simply <nuxt-link to="/" class="linkBtn">
+        take a look
+      </nuxt-link> at my works 🤪.
     </p>
   </div>
 </template>
