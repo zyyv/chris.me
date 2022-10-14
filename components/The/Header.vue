@@ -60,7 +60,7 @@ const routes = reactive([
           i-ri:bilibili-line
         />
         <a
-          href="https://github.com/chris-zhu/chris.me"
+          href="https://github.com/chris-zhu"
           target="_blank"
           icon-link
           i-carbon:logo-github

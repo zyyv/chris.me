@@ -1,9 +1,9 @@
-<script lang='ts' setup>
+<!-- <script lang='ts' setup>
 import { useTitle } from '@vueuse/core'
 
 useTitle('Chris\' Blog | Projects')
 const { data } = await useFetch('/api/github')
-const { ps, templates } = data.value
+const { ps, templates } = data.value!
 
 const state = reactive({
   data: [{
@@ -83,4 +83,4 @@ const state = reactive({
 </template>
 
 <style lang='scss' scoped>
-</style>
+</style> -->

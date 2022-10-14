@@ -6,3 +6,4 @@ dist
 .env
 .vscode
 *.zip
+data

@@ -13,7 +13,7 @@ useHead({
     { rel: 'icon', type: 'image/x-icon', href: '/logo-light.svg' },
   ],
   meta: [
-    { hid: 'description', name: 'description', content: 'Chirs blog is a place to share my thoughts and learn new things.' },
+    { hid: 'description', name: 'description', content: 'Chris blog is a place to share my thoughts and learn new things.' },
     { hid: 'keywords', name: 'keywords', content: 'chris, blog, thoughts, learn, new, things' },
     { 'http-equiv': 'pragma', 'content': 'no-cache' },
     { 'http-equiv': 'cache-control', 'content': 'no-cache' },

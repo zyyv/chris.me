@@ -1,19 +1,23 @@
+import path from 'path'
+import fs from 'fs-extra'
 import type { Repo } from '~/types'
 
 const baseUrl = 'https://api.github.com'
 const user = 'chris-zhu'
 const url = `${baseUrl}/users/${user}/repos`
 
+const fileUrl = import.meta.url
+const __dirname = path.dirname(fileUrl.slice(7))
+
 export default async() => {
   let repos: Repo[] = await $fetch(url)
+
+  // console.log(path.resolve(__dirname, '../../data/repos.json'))
+
+  await fs.writeJSON(path.resolve(__dirname, '../../data/repos.json'), repos)
+
   repos = repos
     .filter(i => !i.disabled && !i.fork && !i.archived && !i.private)
-    .sort((a, b) => {
-      const v = b.stargazers_count - a.stargazers_count
-      if (v === 0)
-        return b.forks_count - a.forks_count
-      return v
-    })
 
   return {
     ps: repos.filter(i => !i.is_template),

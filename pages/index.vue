@@ -1,8 +1,11 @@
 <script lang="ts" setup>
 import { useTitle } from '@vueuse/core'
+// import repos from '~/data/repos.json'
 
 const { data } = await useFetch('/api/user')
 const user = data
+
+// console.log(repos)
 
 useTitle('Chris\' Blog')
 </script>
@@ -72,11 +75,11 @@ useTitle('Chris\' Blog')
         link
         href="https://github.com/nuxt/framework"
         target="_blank"
-      >Nuxt3</a> & etc. Ecological contributors
+      >Nuxt3</a> & etc. Ecological contributors ✨
     </p>
     <p>
       Introduce: Front-end Engineer 🧑🏻‍💻 Focus on UnoCSS, Vite, Vue & Nuxt3。At the same time, I am also the Creator
-      of <a linkOrg href="https://github.com/onu-ui/onu-ui" target="_blank">Onu-UI</a>.
+      of <a linkOrg href="https://github.com/onu-ui/onu-ui" target="_blank" title="Just a awesome ui library toys now.">Onu-UI</a>.
     </p>
 
     <p>
