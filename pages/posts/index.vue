@@ -2,7 +2,7 @@
 import { useTitle } from '@vueuse/core'
 
 interface IPost {
-  id: number;
+  id: number | string;
   title: string;
   content: string;
   createdAt: string;
@@ -14,15 +14,7 @@ useTitle('Chris\' Blog | Posts')
 
 const posts = reactive<IPost[]>([
   {
-    id: 1,
-    title: 'Hello World',
-    content: 'Hello World',
-    createdAt: 'May 21, 2020',
-    ago: '2 days ago',
-    updatedAt: 'May 21, 2020',
-  },
-  {
-    id: 2,
+    id: 'test',
     title: 'Hello World',
     content: 'Hello World',
     createdAt: 'May 21, 2020',
