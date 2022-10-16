@@ -1,27 +1,15 @@
 <script lang='ts' setup>
 import { useTitle } from '@vueuse/core'
+import posts from '~/data/posts.json'
 
 interface IPost {
   id: number | string;
-  title: string;
-  content: string;
-  createdAt: string;
-  updatedAt: string;
-  ago: string;
+  mtime: string;
+  ctime: string;
+  slug: string;
 }
 
 useTitle('Chris\' Blog | Posts')
-
-const posts = reactive<IPost[]>([
-  {
-    id: 'test',
-    title: 'Hello World',
-    content: 'Hello World',
-    createdAt: 'May 21, 2020',
-    ago: '2 days ago',
-    updatedAt: 'May 21, 2020',
-  },
-])
 </script>
 
 <template>
@@ -37,15 +25,16 @@ const posts = reactive<IPost[]>([
       <nuxt-link
         v-for="item in posts"
         :key="item.id"
-        :to="`/posts/${item.id}`"
+        :to="`/posts/${item.slug}`"
         important-no-underline
         block
         op-70
         hover:op-100
       >
-        <h3>{{ item.title }}</h3>
+        <h3>{{ item.slug }}</h3>
         <div fic text-sm text-gray4 fw-normal>
-          {{ item.createdAt }}&nbsp;&nbsp;&nbsp;<sub bottom-0>{{ item.ago }}</sub>
+          {{ item.ctime }}
+          <!-- <sub bottom-0>{{ item.ago }}</sub> -->
         </div>
       </nuxt-link>
     </section>

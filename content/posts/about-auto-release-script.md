@@ -1,19 +1,22 @@
-# 背景
+# test
+<p>10:20</p>
+
+## 背景
 可能大家在公司写业务的时候，可能都会涉及到不同环境的分支的上线部署。测试，预发，正式服也都是不同的分支，打不同的`tag`去触发`CI/CD`。我们可能会在测试服改很多次bug，打很多的`tag`，发布不同的测试版本。
 
 我个人是个非常不喜欢记太多命令的人，于是为了偷懒，为什么这么多的操作何不去写个脚本，一行命令就搞定呢。由于这样的契机，写了这个针对多环境的`tag`触发脚本。
 
-# 原理
+## 原理
 1. 通过写入的命令获取发布的环境，并判断环境和部署的分支名是否对应
 2. 打tag，更改 `package.json` 版本号
 3. `git push`
 
-# 实现
+## 实现
 实现方式为`node`，然后使用`zx` run shell cmd
 
 zx的介绍参考[# zx, 如何用Javascript优雅的书写脚本命令](https://juejin.cn/post/7011464539141046279)
 
-## script
+### script
 首先我们在`scripts`文件夹下面建立我们的`release`脚本文件
 
 然后思考，如何接受我们需要接受的**环境变量**（`env`）呢？
@@ -30,7 +33,7 @@ zx的介绍参考[# zx, 如何用Javascript优雅的书写脚本命令](https://
 }
 ```
 
-## env
+### env
 上面我们脚本命令传入参数，区别与不同的环境，于是我们接受环境变量（`env`）
 ```mjs
 const [,,,, env] = process.argv // test or pre or prod
@@ -67,7 +70,7 @@ const currentBranch = branchs.find(b => b.includes('*')).replace(/[\*|\s]*/g, ''
 
 然后判断`currentBranch`是否是`env`所对应的正确分支。
 
-## newVersion
+### newVersion
 
 我们做了`env`与`branch`的判断，接下来我们需要生成下一次正确发布的版本。于是很简单 我们只需要对上一次的版本号进行+1操作就好了
 
@@ -88,28 +91,29 @@ const currentBranch = branchs.find(b => b.includes('*')).replace(/[\*|\s]*/g, ''
 
 获取`env`对应的所有`versions`
 
-```mjs
+```javascript
 const res = await $`git tag`
 const prefix = `${env}-`
 const allVersions = res.stdout.split('\n').filter(tag => tag.includes(env)).map(tag => tag.replace(new RegExp(prefix), ''))
 ```
 然后在对`veisons`进行正确的排序，排序算法参考的别人的算法，待会见源码
 
-```mjs
+```javascript
 const sortVersions = sortVersion(allVersions) // 排序
 ```
 这样`sortVersions[sortVersions.length - 1]`便是我们的最新的版本号
 
 我们再进行+1操作，生成最新的版本号。
-```mjs
+```js
 const latestVersion = sortVersions[sortVersions.length - 1]
 const ltStr = latestVersion.split('.')
 ltStr[ltStr.length - 1] = Number(ltStr[ltStr.length - 1]) + 1
+
 return ltStr.join('.') // 最新的版本号， 也就是需要发布的版本号
 ```
 我们再去使用`bumpp`去更改我们`package.json`的`version`。
 
-## runShell
+### runShell
 功能已经全部完善了，最后我们再`git push`就好了
 
 ```mjs
@@ -125,7 +129,7 @@ async function runShell(version) {
 }
 ```
 
-# 源码
+## 源码
 ```json
 // package.json
 {
@@ -139,7 +143,7 @@ async function runShell(version) {
 ```
 
 
-```mjs
+```javascript
 // release.mjs
 import { $ } from 'zx'
 
@@ -254,5 +258,5 @@ function sortVersion(arr) {
 
 ```
 
-# 不足
+## 不足
 该脚本暂时只支持小版本号+1，如`v1.0.1`，使用脚本只能发`v1.0.2`，所以很局限性，大家可以根据自己的要求更改代码。好了，就这么多，欢迎使用。

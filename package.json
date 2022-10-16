@@ -15,6 +15,7 @@
     "url": "git+https://github.com/chris-zhu/chris.me.git"
   },
   "scripts": {
+    "postinstall": "esno scripts/posts-route.ts",
     "build": "nuxi build",
     "dev": "nuxi dev -o",
     "start": "node .output/server/index.mjs",
@@ -36,6 +37,7 @@
     "@unocss/nuxt": "^0.45.25",
     "@vueuse/nuxt": "^9.3.0",
     "eslint": "^8.23.1",
+    "esno": "^0.16.3",
     "fs-extra": "^10.1.0",
     "nuxt": "3.0.0-rc.11",
     "sass": "^1.55.0",
