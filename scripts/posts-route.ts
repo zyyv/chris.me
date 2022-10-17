@@ -33,12 +33,12 @@ async function reWrite(file: string) {
   const stat = fs.statSync(filePath)
   await fs.ensureFile(filePath)
   const content = (await fs.readFile(filePath)).toString()
-  const meta = await reWriteMeta(file, content, stat)
-  await reWriteHeader(file, meta)
+  await reWriteMeta(file, content, stat)
+  await reWriteHeader(file)
   return stat
 }
 
-async function reWriteHeader(file: string, meta: Record<string, any>) {
+async function reWriteHeader(file: string) {
   const content = (await fs.readFile(path.resolve(source, file))).toString()
   const cs = content.split('---')
   const realContent = cs[2]
@@ -48,7 +48,7 @@ async function reWriteHeader(file: string, meta: Record<string, any>) {
     header.push(':ArticleToc')
 
   if (!realContent.includes(':ArticleHeader'))
-    header.push(`:ArticleHeader={${meta.title}}`)
+    header.push(':ArticleHeader')
 
   if (header.length <= 0) return
 
