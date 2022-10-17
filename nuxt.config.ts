@@ -14,6 +14,7 @@ export default defineNuxtConfig({
     highlight: {
       theme: 'vitesse-dark',
     },
+    documentDriven: true,
   },
 
   // intlify: {
@@ -23,6 +24,6 @@ export default defineNuxtConfig({
   //   },
   // },
   experimental: {
-    viteNode: true,
+    // viteNode: true,
   },
 })

@@ -63,7 +63,7 @@ useTitle('Chris\' Blog')
       </div>
     </div>
     <p>
-      ✨ <a href="https://github.com/unocss/unocss" target="_blank" link><strong>UnoCSS</strong></a> core team member、<a
+      ✨ <a href="https://github.com/unocss/unocss" target="_blank" link><strong>UnoCSS</strong></a> team member、<a
         link
         href="https://github.com/vitejs/vite"
         target="_blank"

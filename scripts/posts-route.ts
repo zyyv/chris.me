@@ -12,15 +12,15 @@ async function prepareRoute() {
 
   const files = await fs.readdir(source)
   const routes = files.map(async(file) => {
-    const { uid, mtime, ctime, mtimeMs, ctimeMs } = fs.statSync(path.resolve(source, file))
-    await writeHeader(file)
+    const { uid, mtime, ctime, mtimeMs, ctimeMs } = await reWrite(file)
     return {
       id: uid,
-      mtime: mtime.toDateString(),
+      mtime, // Date
       mtimeMs,
-      ctime: ctime.toDateString(),
+      ctime, // Date
       ctimeMs,
       slug: file.replace('.md', ''),
+      path: `/posts/${file.replace('.md', '')}`,
     }
   })
 
@@ -28,12 +28,58 @@ async function prepareRoute() {
   await fs.writeJSON(path.join(out, 'posts.json'), await Promise.all(routes))
 }
 
-async function writeHeader(file: string) {
+async function reWrite(file: string) {
   const filePath = path.resolve(source, file)
+  const stat = fs.statSync(filePath)
   await fs.ensureFile(filePath)
-  const content = await fs.readFile(filePath)
-  if (!content.includes(':ArticleHeader'))
-    await fs.writeFile(filePath, `:ArticleHeader={title:${file.replace('.md', '')}}\n\n${content}`)
+  const content = (await fs.readFile(filePath)).toString()
+  const meta = await reWriteMeta(file, content, stat)
+  await reWriteHeader(file, meta)
+  return stat
+}
+
+async function reWriteHeader(file: string, meta: Record<string, any>) {
+  const content = (await fs.readFile(path.resolve(source, file))).toString()
+  const cs = content.split('---')
+  const realContent = cs[2]
+  const header = []
+
+  if (!realContent.includes(':ArticleToc'))
+    header.push(':ArticleToc')
+
+  if (!realContent.includes(':ArticleHeader'))
+    header.push(`:ArticleHeader={${meta.title}}`)
+
+  if (header.length <= 0) return
+
+  cs[2] = `\n\n${header.join('\n')}\n${realContent.trim()}`
+
+  await fs.writeFile(path.resolve(source, file), cs.join('---'))
+}
+
+async function reWriteMeta(file: string, content: string, stat: fs.Stats) {
+  const meta = generateMeta(file, content, stat)
+  const metaContent = Object.entries(meta).map(([key, value]) => `${key}: ${value}`).join('\n')
+  const newContent = `---\n${metaContent}\n---\n\n${content.split('---')[2].trim()}`
+
+  await fs.writeFile(path.resolve(source, file), newContent)
+
+  return meta
+}
+
+function generateMeta(file: string, content: string, stat: fs.Stats) {
+  const meta: Record<string, any> = Object.fromEntries(content.split('---')[1].trim().split('\n').map((i) => {
+    const reg = /(\w+): (.+)/
+    const match = i.match(reg)!
+    return [match[1], match[2]]
+  }))
+
+  if (!meta.title) meta.title = file.replace('.md', '')
+  if (!meta.uid) meta.uid = stat.uid
+  if (!meta.ctime) meta.ctime = stat.ctime.toISOString()
+  if (!meta.mtime) meta.mtime = stat.mtime.toISOString()
+
+  return meta
 }
 
 async function prepare() {

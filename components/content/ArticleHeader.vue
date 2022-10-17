@@ -1,18 +1,16 @@
 <script lang='ts' setup>
-import { Article } from '~/types'
-import data from '~/data/posts.json'
+const { page } = useContent()
 
-const props = defineProps<{
-  title: string
-}>()
+const title = computed(() => page.value.title)
+const time = computed(() => new Date(page.value.ctime).toDateString())
+const timeAgo = useTimeAgo(new Date(page.value.ctime)).value.replace('"', '')
 
-const article = computed(() => (data as Article[]).find(i => i.slug === props.title))
-const timeAgo = useTimeAgo(new Date(article.value?.ctimeMs!)).value.replace('"', '')
+useContentHead(page)
 </script>
 
 <template>
   <div>
-    <h1>{{ article?.slug }}</h1>
-    <p>{{ article?.ctime }} <sub bottom-0>{{ timeAgo }}</sub></p>
+    <h1>{{ title }}</h1>
+    <p>{{ time }} <sub bottom-0>{{ timeAgo }}</sub></p>
   </div>
 </template>

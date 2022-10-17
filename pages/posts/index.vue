@@ -20,39 +20,25 @@ useTitle('Chris\' Blog | Posts')
       Some boring but useful articles.
     </p>
     <ContentList v-slot="{ list }" path="/posts">
-      {{ list }}
-      <nuxt-link
+      <template
         v-for="article in list"
         :key="article._path"
-        :to="article"
-        important-no-underline
-        block
-        op-70
-        hover:op-100
       >
-        <h3>{{ article.title }}</h3>
-        <!-- <div fic text-sm text-gray4 fw-normal>
-          {{ item.ctime }}
-        </div> -->
-      </nuxt-link>
+        <nuxt-link
+          v-if="!article.draft"
+          :to="article._path"
+          important-no-underline
+          block
+          op-70
+          hover:op-100
+        >
+          <h3>{{ article.title }}</h3>
+          <div fic text-sm text-gray4 fw-normal>
+            {{ new Date(article.ctime).toDateString() }}
+          </div>
+        </nuxt-link>
+      </template>
     </ContentList>
-
-    <!-- <section>
-      <nuxt-link
-        v-for="item in posts"
-        :key="item.id"
-        :to="`/posts/${item.slug}`"
-        important-no-underline
-        block
-        op-70
-        hover:op-100
-      >
-        <h3>{{ item.slug }}</h3>
-        <div fic text-sm text-gray4 fw-normal>
-          {{ item.ctime }}
-        </div>
-      </nuxt-link>
-    </section> -->
   </div>
 </template>
 
