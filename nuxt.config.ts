@@ -14,6 +14,11 @@ export default defineNuxtConfig({
     highlight: {
       theme: 'vitesse-dark',
     },
+    markdown: {
+      toc: {
+        depth: 3,
+      },
+    },
     documentDriven: true,
   },
 

@@ -15,10 +15,10 @@ mtime: 2022-10-17T10:56:06.284Z
 
 ![image.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d96b0f1f65dd443f888e8bce38a3c0b2~tplv-k3u1fbpfcp-watermark.image)
 5.0的提案非常具有新鲜感，对比`vuex4`具有很大的改进
-- 支持`options api` and `composition api`
-- 没有`mutations`
+- 支持`options api`{lang=ts} and `composition api`{lang=ts}
+- 没有`mutations`{lang=ts}
 - 没有嵌套的模块
-- 更好`typescript`支持
+- 更好`typescript`{lang=ts}支持
 - 自动化的代码差分
 
 于是我`fork`的一份代码，为了充分的理解`pinia`的流程，我在`examples`文件夹下使用`webpack`搭建了一个本地服务进行代码调试，欢迎大家`clone`和`debug`
