@@ -15,13 +15,14 @@ export default defineNuxtConfig({
       theme: 'vitesse-dark',
     },
   },
+
   // intlify: {
   //   localeDir: 'locales',
   //   vueI18n: {
   //     locale: 'zh-cn',
   //   },
   // },
-  // experimental: {
-  //   viteNode: true,
-  // },
+  experimental: {
+    viteNode: true,
+  },
 })

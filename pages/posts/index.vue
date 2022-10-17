@@ -1,6 +1,5 @@
 <script lang='ts' setup>
 import { useTitle } from '@vueuse/core'
-import posts from '~/data/posts.json'
 
 interface IPost {
   id: number | string;
@@ -20,8 +19,25 @@ useTitle('Chris\' Blog | Posts')
     <p text-base base font-mono>
       Some boring but useful articles.
     </p>
+    <ContentList v-slot="{ list }" path="/posts">
+      {{ list }}
+      <nuxt-link
+        v-for="article in list"
+        :key="article._path"
+        :to="article"
+        important-no-underline
+        block
+        op-70
+        hover:op-100
+      >
+        <h3>{{ article.title }}</h3>
+        <!-- <div fic text-sm text-gray4 fw-normal>
+          {{ item.ctime }}
+        </div> -->
+      </nuxt-link>
+    </ContentList>
 
-    <section>
+    <!-- <section>
       <nuxt-link
         v-for="item in posts"
         :key="item.id"
@@ -34,10 +50,9 @@ useTitle('Chris\' Blog | Posts')
         <h3>{{ item.slug }}</h3>
         <div fic text-sm text-gray4 fw-normal>
           {{ item.ctime }}
-          <!-- <sub bottom-0>{{ item.ago }}</sub> -->
         </div>
       </nuxt-link>
-    </section>
+    </section> -->
   </div>
 </template>
 

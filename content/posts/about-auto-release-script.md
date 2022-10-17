@@ -1,5 +1,4 @@
-# test
-<p>10:20</p>
+:ArticleHeader={title:About-auto-release-script}
 
 ## 背景
 可能大家在公司写业务的时候，可能都会涉及到不同环境的分支的上线部署。测试，预发，正式服也都是不同的分支，打不同的`tag`去触发`CI/CD`。我们可能会在测试服改很多次bug，打很多的`tag`，发布不同的测试版本。
@@ -12,9 +11,7 @@
 3. `git push`
 
 ## 实现
-实现方式为`node`，然后使用`zx` run shell cmd
-
-zx的介绍参考[# zx, 如何用Javascript优雅的书写脚本命令](https://juejin.cn/post/7011464539141046279)
+实现方式为`node`，然后使用`zx` 去执行`git`命令。`zx`是一个`node`的`shell`工具，可以直接在`node`中执行`shell`命令，不需要`child_process`，`zx`的文档在这里：[zx](github.com/google/zx)
 
 ### script
 首先我们在`scripts`文件夹下面建立我们的`release`脚本文件
@@ -46,7 +43,7 @@ const [,,,, env] = process.argv // test or pre or prod
 例如：
 ```mjs
 // 自行更改
-const env2branch = {
+const tag2branch = {
     test: 'dev', // test 对应 dev 分支
     pre: 'pre', // pre 对应 pre 分支
     prod: 'master' // prod 对应 master 分支
@@ -133,21 +130,25 @@ async function runShell(version) {
 ```json
 // package.json
 {
-    "type": "module", // 需要开启
+    "type": "module",
     "scripts": {
-        "release:test": "zx scripts/release.mjs -- test", // 根据情况自己更改配置
-        "release:pre": "zx scripts/release.mjs -- pre", // 根据情况自己更改配置
-        "release:prod": "zx scripts/release.mjs -- prod" // 根据情况自己更改配置
+        "release:test": "zx scripts/release.mjs -- test",
+        "release:pre": "zx scripts/release.mjs -- pre",
+        "release:prod": "zx scripts/release.mjs -- prod"
     }
 }
 ```
 
-
-```javascript
-// release.mjs
+```typescript
+// scripts/release.mjs
 import { $ } from 'zx'
 
 const env = getEnv()
+const tag2branch = {
+  test: 'test',
+  pre: 'pre',
+  prod: 'main',
+}
 
 run()
 
@@ -158,105 +159,88 @@ async function run() {
     return
   }
 
-  const version = await generateVersion()
-
-  await changeVersion(version)
-
-  await runShell(version)
+  await modifyLastVersion()
+  await release()
 }
 
 function getEnv() {
-  const [,,,, env] = process.argv
+  const [, , , , env] = process.argv
   return env
 }
 
-async function generateVersion() {
-  const [, lastVersion] = await getLatestTag(env)
-  const ltStr = lastVersion.split('.')
-  ltStr[ltStr.length - 1] = Number(ltStr[ltStr.length - 1]) + 1
-  return ltStr.join('.')
+// 修改最新的版本号
+async function modifyLastVersion() {
+  const lastVersion = await getLatestTag()
+  if (!lastVersion)
+    console.log('没有历史 tag 版本，自动从 0.0.0 开始')
+
+  await modifyPkgVersion(lastVersion ?? '0.0.0')
 }
 
-async function changeVersion(v) {
-  await $`pnpm exec bumpp ${v}`
+// 修改package.json的版本号
+async function modifyPkgVersion(version) {
+  const pkg = await $`cat package.json`
+  await $`echo ${pkg.stdout.replace(/\"version\":\s*\"[^\"]+\"/, `"version": "${version}"`)} > package.json`
+  await clearLog()
 }
 
-async function runShell(version) {
-  const tag = `${env}-${version}`
-  await $`git add .`
-  await $`git commit -m "chore: release ${tag}"`
-  await $`git tag ${tag}`
-  await $`git push`
-  await $`git push origin --tags`
-  await $`clear`
-  console.log(`release success for ${tag} !`)
+async function release() {
+  await $`pnpm exec bumpp package.json --commit "chore: release ${env} v%s" --push --tag "v%s-${env}"`
+  await clearLog()
+  console.log(`${env} release success !`)
 }
 
-async function isEnvBranch(env) {
-  // 根据情况自己更改配置
-  const env2branch = {
-    test: 'dev',
-    pre: 'pre',
-    prod: 'master'
-  }
+async function isEnvBranch() {
   const res = await $`git branch`
   const branchs = res.stdout.split('\n')
   const currentBranch = branchs.find(b => b.includes('*')).replace(/[\*|\s]*/g, '')
 
-  const aimBranch = env2branch[env]
-  await $`clear`
+  const aimBranch = tag2branch[env]
+  await clearLog()
   return aimBranch === currentBranch
 }
 
-async function getLatestTag(env) {
+async function getLatestTag() {
   const res = await $`git tag`
-  const prefix = `${env}-`
-  const allVersions = res.stdout.split('\n').filter(tag => tag.includes(env)).map(tag => tag.replace(new RegExp(prefix), ''))
+  const allVersions = res.stdout.split('\n')
+    .filter(tag => tag.includes(env))
+    .map(tag => tag.replace(new RegExp(`v(.+)-${env}`), '$1'))
   const sortVersions = sortVersion(allVersions)
+  await clearLog()
+  return sortVersions[sortVersions.length - 1] || undefined
+}
+
+async function clearLog() {
   await $`clear`
-  return [prefix, sortVersions[sortVersions.length - 1]]
 }
 
 function sortVersion(arr) {
   const result = [...arr]
   result.sort((a, b) => {
     const items1 = a.split('.')
-
     const items2 = b.split('.')
-
     let k = 0
-
     for (const i in items1) {
       const a1 = items1[i]
-
       const b1 = items2[i]
-
       if (typeof a1 === 'undefined') {
         k = -1
-
         break
-      } else if (typeof b1 === 'undefined') {
+      }
+      else if (typeof b1 === 'undefined') {
         k = 1
-
         break
-      } else {
+      }
+      else {
         if (a1 === b1)
-
           continue
-
         k = Number(a1) - Number(b1)
-
         break
       }
     }
-
     return k
   })
 
   return result
 }
-
 ```
-
-## 不足
-该脚本暂时只支持小版本号+1，如`v1.0.1`，使用脚本只能发`v1.0.2`，所以很局限性，大家可以根据自己的要求更改代码。好了，就这么多，欢迎使用。
