@@ -1,11 +1,8 @@
 <script lang="ts" setup>
 import { useTitle } from '@vueuse/core'
-// import repos from '~/data/repos.json'
 
 const { data } = await useFetch('/api/user')
 const user = data
-
-// console.log(repos)
 
 useTitle('Chris\' Blog')
 </script>
