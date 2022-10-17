@@ -1,6 +1,6 @@
 html,
 body {
-  @apply h-full base;
+  --at-apply: h-full base;
 }
 
 html * {
@@ -15,6 +15,6 @@ html.dark{
 }
 
 body::-webkit-scrollbar{
-  @apply w0;
+  --at-apply: w0;
 }
 
