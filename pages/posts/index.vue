@@ -5,7 +5,7 @@ useTitle('Chris\' Blog | Posts')
 </script>
 
 <template>
-  <div prose ma>
+  <div prose font-mono ma>
     <h1 text-3xl base text-black mb4>
       Posts
     </h1>

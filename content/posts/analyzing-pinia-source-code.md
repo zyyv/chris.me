@@ -1,5 +1,5 @@
 ---
-title: 'Analyzing Pinia Source Code'
+title: 'Analyzing Pinia Source Code ✨'
 description: 'A deep dive into Pinia source code'
 uid: 501
 ctime: 2022-10-17T10:56:06.284Z

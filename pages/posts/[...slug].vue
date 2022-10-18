@@ -1,5 +1,5 @@
 <template>
-  <article class="prose ma">
+  <article class="prose font-mono ma">
     <ContentDoc>
       <template #not-found>
         <h2>Ooops!</h2>

@@ -1,5 +1,5 @@
 ---
-title: "About Auto Release Script"
+title: "About Auto Release Script 🚀"
 description: "This is a description of the post."
 uid: 501
 ctime: 2022-10-17T07:02:48.054Z
