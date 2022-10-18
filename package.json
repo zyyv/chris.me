@@ -15,7 +15,7 @@
     "url": "git+https://github.com/chris-zhu/chris.me.git"
   },
   "scripts": {
-    "postinstall": "esno scripts/posts-route.ts",
+    "postinstall": "nuxi prepare && esno scripts/posts-route.ts",
     "build": "nuxi build",
     "dev": "nuxi dev -o",
     "start": "node .output/server/index.mjs",
