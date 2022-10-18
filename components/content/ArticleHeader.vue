@@ -9,8 +9,10 @@ useContentHead(page)
 </script>
 
 <template>
-  <div>
-    <h1>{{ title }}</h1>
-    <p>{{ time }} <sub bottom-0>{{ timeAgo }}</sub></p>
+  <div base>
+    <h1> {{ title }} </h1>
+    <p important-text-op-70>
+      {{ time }} <sub ml-2 bottom-0>{{ timeAgo }}</sub>
+    </p>
   </div>
 </template>

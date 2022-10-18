@@ -1,0 +1,12 @@
+<template>
+  <h3 :id="id" pr class="group">
+    {{ id }}
+    <a header-anchor no-underline :href="`#${id}`">
+      #
+    </a>
+  </h3>
+</template>
+
+<script setup lang="ts">
+defineProps<{ id: string }>()
+</script>

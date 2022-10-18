@@ -4,7 +4,6 @@ import {
   presetIcons,
   presetTypography,
   presetUno,
-  presetWebFonts,
   transformerDirectives,
   transformerVariantGroup,
 } from 'unocss'
@@ -53,8 +52,13 @@ export default defineConfig({
     ['linkOutside', '!text-teal-500 link-hoverImportant'],
     ['linkOrg', '!text-blue-300 link-hoverImportant'],
     ['linkBtn', '!text-purple-300 link-hoverImportant'],
+
+    ['header-anchor', 'block h-full w-8 pa left--7 top-0 op-0 group-hover-op-60 fw-600'],
   ],
   theme: {
+    fontFamily: {
+      mono: 'dm,ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace',
+    },
     colors: {
       bg: {
         default: '#fefefe',
@@ -76,12 +80,24 @@ export default defineConfig({
     presetIcons({
       scale: 1.2,
     }),
-    presetTypography(),
-    presetWebFonts({
-      fonts: {
-        sans: 'DM Sans',
-        serif: 'DM Serif Display',
-        mono: 'DM Mono',
+    presetTypography({
+      cssExtend: {
+        'a': {
+          'text-decoration-color': 'rgba(192, 132, 252, 0.4);',
+          'text-underline-offset': '4px',
+        },
+        'a:hover': {
+          'text-decoration-color': 'rgba(192, 132, 252, 0.8);',
+        },
+        'pre': {
+          background: '#23272d !important',
+        },
+        'p': {
+          color: 'rgba(61,66,72,0.8)',
+        },
+        'blockquote': {
+          'border-left': '0.25em solid rgba(168,85,247,.4)',
+        },
       },
     }),
   ],

@@ -6,7 +6,7 @@ useTitle('Chris\' Blog | Posts')
 
 <template>
   <div prose ma>
-    <h1 text-3xl base text-black mb4 fw500>
+    <h1 text-3xl base text-black mb4>
       Posts
     </h1>
     <p text-base base italic>

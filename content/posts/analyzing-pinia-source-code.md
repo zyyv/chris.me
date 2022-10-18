@@ -10,7 +10,8 @@ mtime: 2022-10-17T10:56:06.284Z
 :ArticleHeader
 
 ## 前言
-最近翻看`vue`的rfcs提案时，忽然看到`vuex5.0`的提案，看到社区也有很多的探索讲解，于是我想给大家来点干货，顺便记录下我学习`pinia`的过程。
+最近翻看`vue`的rfcs提案时，忽然看到`vuex5.0`{lang=ts}的提案，看到社区也有很多的探索讲解，于是我想给大家来点干货，顺便记录下我学习`pinia`{lang=ts}的过程。
+
 
 
 ![image.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d96b0f1f65dd443f888e8bce38a3c0b2~tplv-k3u1fbpfcp-watermark.image)

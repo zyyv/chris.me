@@ -7,14 +7,14 @@ useTitle('Chris\' Blog')
 </script>
 
 <template>
-  <div prose ma base>
+  <div prose font-mono ma base>
     <div flex flex-col items-center md="gap-10 flex-row">
       <img w-30 h-30 md="w-50 h-50" rounded-full :src="user?.avatar_url" alt="" srcset="">
       <div>
         <h1 fic justify-center md="justify-start">
           {{ user?.name }}
         </h1>
-        <p text-lg font-sans text-center md="text-left">
+        <p text-lg text-center md="text-left">
           {{ user?.bio }}
         </p>
         <div fic gap-4 justify-center md="justify-start">
