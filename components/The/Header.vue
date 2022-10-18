@@ -20,11 +20,21 @@ const routes = reactive([
   >
     <NuxtLink to="/">
       <img
+        v-show="isDark"
         h-6
         fixed
         left-8
         top-6
-        :src="`/logo${isDark ? '-light' : ''}.svg`"
+        src="/logo-light.svg"
+        alt="logo"
+      >
+      <img
+        v-show="!isDark"
+        h-6
+        fixed
+        left-8
+        top-6
+        src="/logo.svg"
         alt="logo"
       >
     </NuxtLink>
