@@ -1,6 +1,7 @@
 html,
 body {
   --at-apply: h-full base;
+  font-family: 'dm';
 }
 
 html * {

@@ -9,15 +9,7 @@ useTitle('Chris\' Blog')
 <template>
   <div prose ma base>
     <div flex flex-col items-center md="gap-10 flex-row">
-      <img
-        w-30
-        h-30
-        md="w-50 h-50"
-        rounded-full
-        :src="user?.avatar_url"
-        alt=""
-        srcset=""
-      >
+      <img w-30 h-30 md="w-50 h-50" rounded-full :src="user?.avatar_url" alt="" srcset="">
       <div>
         <h1 fic justify-center md="justify-start">
           {{ user?.name }}
@@ -59,23 +51,15 @@ useTitle('Chris\' Blog')
       </div>
     </div>
     <p>
-      ✨ <a href="https://github.com/unocss/unocss" target="_blank" link><strong>UnoCSS</strong></a> team member、<a
-        link
-        href="https://github.com/vitejs/vite"
-        target="_blank"
-      >Vite</a>、<a
-        link
-        href="https://github.com/vuejs-translations/docs-zh-cn"
-        target="_blank"
-      >Vue3</a>、<a
-        link
-        href="https://github.com/nuxt/framework"
-        target="_blank"
-      >Nuxt3</a> & etc. Ecological contributors ✨
+      ✨ <a href="https://github.com/unocss/unocss" target="_blank" link><strong>UnoCSS</strong></a> team member、<a link
+        href="https://github.com/vitejs/vite" target="_blank">Vite</a>、<a link
+        href="https://github.com/vuejs-translations/docs-zh-cn" target="_blank">Vue3</a>、<a link
+        href="https://github.com/nuxt/framework" target="_blank">Nuxt3</a> & etc. Ecological contributors ✨
     </p>
     <p>
       Introduce: Front-end Engineer 🧑🏻‍💻 Focus on UnoCSS, Vite, Vue & Nuxt3。At the same time, I am also the Creator
-      of <a linkOrg href="https://github.com/onu-ui/onu-ui" target="_blank" title="Just a awesome ui library toys now.">Onu-UI</a>.
+      of <a linkOrg href="https://github.com/onu-ui/onu-ui" target="_blank"
+        title="Just a awesome ui library toys now.">Onu-UI</a>.
     </p>
 
     <p>
@@ -85,10 +69,7 @@ useTitle('Chris\' Blog')
     <p>
       I have a wide range of interests, watching anime, climbing mountains, listening to music, learning foreign
       languages, playing games... Recently I am learning to edit videos and I am going to be an <a
-        href="https://space.bilibili.com/402454160"
-        target="_blank"
-        linkOutside
-      >uploader</a>。
+        href="https://space.bilibili.com/402454160" target="_blank" linkOutside>Uploader</a>.
     </p>
     <p>
       By the way, I also like to travel and take pictures, you can also simply <nuxt-link to="/" class="linkBtn">

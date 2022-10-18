@@ -9,7 +9,7 @@ useTitle('Chris\' Blog | Posts')
     <h1 text-3xl base text-black mb4 fw500>
       Posts
     </h1>
-    <p text-base base font-mono>
+    <p text-base base italic>
       Some boring but useful articles.
     </p>
     <ContentList>
@@ -24,7 +24,7 @@ useTitle('Chris\' Blog | Posts')
             hover:op-100
           >
             <h3>{{ article.title }}</h3>
-            <div fic text-sm text-gray4 fw-normal>
+            <div italic fic text-sm text-gray4 fw-normal>
               {{ new Date(article.ctime).toDateString() }}
             </div>
           </nuxt-link>

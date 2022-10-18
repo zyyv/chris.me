@@ -50,7 +50,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div pf right-10 class="text-14px">
+  <div pf right-10 text-sm hidden lg-block>
     <ul v-if="toc && toc.links" ref="tocRef" list-none>
       <li>On this page</li>
       <li v-for="link in toc.links" :key="link.text">
