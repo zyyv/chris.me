@@ -18,7 +18,7 @@ const routes = reactive([
     backdrop-blur
     b="b-1 dashed gray-300 dark:b-gray-500"
   >
-    <NuxtLink to="/">
+    <NuxtLink to="/" title="Home">
       <img
         v-show="isDark"
         h-6
@@ -52,6 +52,7 @@ const routes = reactive([
           v-for="route in routes"
           :key="route.path"
           :to="route.path"
+          :title="route.path.slice(1, 2).toUpperCase() + route.path.slice(2).toLowerCase()"
         >
           <div icon-btn :class="route.icon" />
         </NuxtLink>
@@ -62,6 +63,7 @@ const routes = reactive([
           <div icon-link i-carbon:language @click="toggleLocales" />
         </a> -->
         <a
+          title="Bilibili"
           hidden
           lg:block
           href="https://space.bilibili.com/402454160"
@@ -70,10 +72,11 @@ const routes = reactive([
           i-ri:bilibili-line
         />
         <a
+          title="Github"
           href="https://github.com/chris-zhu"
           target="_blank"
           icon-link
-          i-carbon:logo-github
+          i-ri-github-line
         />
         <!-- <div
           pr
