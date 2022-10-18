@@ -52,7 +52,7 @@ async function reWriteHeader(file: string) {
 
   if (header.length <= 0) return
 
-  cs[2] = `\n\n${header.join('\n')}\n${realContent.trim()}`
+  cs[2] = `\n\n${header.join('\n')}\n${realContent.trimStart()}`
 
   await fs.writeFile(path.resolve(source, file), cs.join('---'))
 }
@@ -60,7 +60,7 @@ async function reWriteHeader(file: string) {
 async function reWriteMeta(file: string, content: string, stat: fs.Stats) {
   const meta = generateMeta(file, content, stat)
   const metaContent = Object.entries(meta).map(([key, value]) => `${key}: ${value}`).join('\n')
-  const newContent = `---\n${metaContent}\n---\n\n${content.split('---')[2].trim()}`
+  const newContent = `---\n${metaContent}\n---\n\n${content.split('---')[2].trimStart()}`
 
   await fs.writeFile(path.resolve(source, file), newContent)
 
