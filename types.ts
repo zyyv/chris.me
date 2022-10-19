@@ -49,8 +49,6 @@ export interface ICursorStyle {
 }
 
 export interface Article {
-  id: number
-  uid?: number
   _id: string
   _draft: boolean
   _empty: boolean
@@ -59,10 +57,14 @@ export interface Article {
   _path: string
   _source: string
   _type: string
+
+  id: number
+  uid?: number
   mtime: string
   mtimeMs: number
   ctime: string
   ctimeMs: number
   slug: string
   title: string
+  draft: boolean
 }

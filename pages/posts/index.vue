@@ -18,7 +18,7 @@ function sortArticles(list: Article[]) {
       <template #default="{ list }">
         <template v-for="article in sortArticles(list)" :key="article._id">
           <nuxt-link
-            v-if="!article._draft"
+            v-if="!article.draft"
             :to="article._path"
             important-no-underline
             block
