@@ -48,10 +48,10 @@ export default defineConfig({
     ['icon-btn', 'icon color-inherit op64 hover-op100 hover-color-teal-500 dark-hover-color-inherit'],
     ['icon-link', 'icon color-inherit op64 hover:op100 hover-text-red-300 dark-hover-color-inherit'],
     ['link-hoverImportant', '!no-underline !hover-underline !hover-underline-offset-4 trans'],
-    ['link', '!text-red-300 link-hoverImportant'],
+    ['link', '!text-red-400 link-hoverImportant'],
     ['linkOutside', '!text-teal-500 link-hoverImportant'],
-    ['linkOrg', '!text-blue-300 link-hoverImportant'],
-    ['linkBtn', '!text-purple-300 link-hoverImportant'],
+    ['linkOrg', '!text-blue-400 link-hoverImportant'],
+    ['linkBtn', '!text-purple-400 link-hoverImportant'],
 
     ['header-anchor', 'float-left mt-[0.125em] ml-[-0.8em] pr-[0.2em] text-[0.85em] op-0 group-hover-op-60 fw-600'],
   ],
@@ -65,7 +65,8 @@ export default defineConfig({
         dark: '#1c1f24',
       },
       text: {
-        default: '#3D4248',
+        // default: '#3D4248',
+        default: '#6f6f6f',
         dark: '#C8CCD0',
       },
       primary: '#00bcd4',
@@ -91,9 +92,6 @@ export default defineConfig({
         },
         'pre': {
           background: '#23272d !important',
-        },
-        'p': {
-          color: 'rgba(61,66,72,0.8)',
         },
         'blockquote': {
           'border-left': '0.25em solid rgba(168,85,247,.4)',

@@ -5,7 +5,7 @@ useTitle('Chris\' Blog | Posts')
 </script>
 
 <template>
-  <div prose font-mono ma>
+  <div prose font-mono ma origin>
     <PageHeader title="Posts" description="Some boring but useful articles." />
     <ContentList>
       <template #default="{ list }">

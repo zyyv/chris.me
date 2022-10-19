@@ -7,7 +7,7 @@ useTitle('Chris\' Blog')
 </script>
 
 <template>
-  <div prose font-mono ma base>
+  <div prose font-mono ma origin>
     <div flex flex-col items-center md="gap-10 flex-row">
       <img
         w-30

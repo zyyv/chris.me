@@ -17,11 +17,3 @@ html.dark{
 body::-webkit-scrollbar{
   --at-apply: w0;
 }
-
-.prose, [prose=""]{
-  max-width: 75ch !important;
-}
-
-:is([prose=""],.prose) :where(p):not(:where(.not-prose,.not-prose *)){
-  --at-apply: base important-text-op-70;
-}
