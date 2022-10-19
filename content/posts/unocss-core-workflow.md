@@ -9,7 +9,7 @@ mtime: 2022-10-19T07:43:45.683Z
 :ArticleToc
 :ArticleHeader
 
-## 目录
+## Dirs
 ```md
 src/
 ├── extractors/    # UnoCSS 提取器（提取给`UnoCSS`引擎进行解析）
@@ -25,10 +25,7 @@ src/
 如果你想使用`UnoCSS`{lang=html}的核心功能，你可以直接使用`createGenerator`{lang=ts}函数。
 
 ```ts
-const uno = createGenerator({
-  // 你的配置
-  // ...
-})
+const uno = createGenerator({ // 你的配置 })
 ```
 
 ```ts
@@ -80,7 +77,7 @@ function mergePresets<T extends mergeKey>(key: T): Required<UserConfig>[T] {
   ])
 }
 ```
-`mergePresets`{lang=ts} 函数会对预设中的部分 `key`进行合并，并返回一个数组。
+`mergePresets`{lang=ts} 函数会对预设中的部分`key`{lang=ts}进行合并，并返回一个数组。
 > 此举主要是为了合并多个预设中的相同字段的值进行汇总。
 
 ### extractors
@@ -131,6 +128,35 @@ const rulesDynamic = rules
 > Check The [Playground](https://uno.antfu.me/play/?html=DwEwlgbgUABDDGBXAzgFwPYFsC0AnRANgKbIAiAngHYCGmY8sMqRAHqtgEwsFQB8j%2BYmSq16UYAHpwEfuOmMkaLHkJFGzNp258Bq4TToNJ0-kA&config=JYWwDg9gTgLgBAbzgEwKYDNgDtUGEJaYDmANHGFKgM6owCCMMUwARgK4zDoCeZF1tAKpYIcAL5x0UCCDgByNiIDGVKnIBQ61AA9IsFBgCGbADbw0mHPkLAiACgTq4cKKeoAuOAG0nz73KU2KhgZAFpXE1Q5MiQlCBNoTzkWEzYo8QBdEl9nLwCgkJBwt2jEODiEqCTKZDlM7JzvAHoAPUDgsIjqABFuLEMQYCUAEiayOwBKOABeAD44B3L4xPkaurEJrMavVvbC4siqXv7BkbGFqbmF2OWq%2BRS09c3s5y3nfhoYKk8vD6ERSZ8SifBhMVgcLjcSZbDbqIA&options=N4IgzgLgTglgxhEAuaBXApgGhNAhgOzADMB7KAW2SNwBswsQp0wAHEwmAN3StvoF8gA)
 
 
+### shortcuts
+我们知道我们的`shortcuts`{lang=ts}也有动静态区分，`StaticShortcutMap`{lang=ts} `DynamicShortcut<Theme>`{lang=ts}，而且`shortcuts`的类型不一，既可以是`Array`{lang=ts} Or `Object`{lang=ts}，所以我们需要对其进行处理：
+```ts
+export function resolveShortcuts(shortcuts: UserShortcuts): Shortcut[] {
+  return toArray(shortcuts).flatMap((s) => {
+    if (Array.isArray(s))
+      return [s]
+    return Object.entries(s)
+  })
+}
+```
+
+还记得我们的`rawPreset`{lang=ts}吗？在`preset`{lang=ts} `Resolve`{lang=html} 时，我们会将`shortcuts`{lang=ts}和`rules`{lang=ts}进行一并处理
+主要是因为当我们的`preset`{lang=ts}中指定了`prefix`{lang=ts} `layer`{lang=ts}时，为了使其工作在正确的预设环境中，我们需要将其进行一次`Resolve`{lang=html}。
+```ts
+if (preset.prefix || preset.layer) {
+  const apply = (i: Rule | Shortcut) => {
+    if (!i[2])
+      i[2] = {}
+    const meta = i[2]
+    if (meta.prefix == null && preset.prefix)
+      meta.prefix = preset.prefix
+    if (meta.layer == null && preset.layer)
+      meta.prefix = preset.layer
+  }
+  shortcuts?.forEach(apply)
+  preset.rules?.forEach(apply)
+}
+```
 
 ### themes
 ```ts
@@ -143,6 +169,43 @@ const theme = clone([
 ```
 我们将所有预设中的 `theme`{lang=ts} 和用户自定义的 `theme`{lang=ts} 进行深度合并，最后将 `extendTheme`{lang=ts} 中的函数执行，将 `theme`{lang=ts} 作为参数传入，这样用户就可以对 `theme`{lang=ts} 进行扩展。
 
-> 将来我会在`presetMini`中解析 `theme`，并介绍其中的用法，敬请期待。
+> 将来我会在`presetMini`{lang=ts}中解析 `theme`{lang=ts}，并介绍其中的用法，敬请期待。
 
-### shortcuts
+### autocomplete
+提取每个预设中的 `autocomplete`{lang=ts}，并将其合并为一个数组，最后将其作为 `autocomplete`{lang=ts} 的值。
+```ts
+const autocomplete = {
+  templates: uniq(sortedPresets.map(p => toArray(p.autocomplete?.templates)).flat()),
+  extractors: sortedPresets.map(p => toArray(p.autocomplete?.extractors)).flat()
+    .sort((a, b) => (a.order || 0) - (b.order || 0)),
+}
+```
+
+`ResolveConfig` 流程结束，最后返回我们的 `config`{lang=ts}。
+```ts
+return {
+  mergeSelectors: true,
+  warn: true,
+  blocklist: [],
+  sortLayers: layers => layers,
+  ...config,
+  presets: sortedPresets,
+  envMode: config.envMode || 'build',
+  shortcutsLayer: config.shortcutsLayer || 'shortcuts',
+  layers,
+  theme,
+  rulesSize,
+  rulesDynamic,
+  rulesStaticMap,
+  preprocess: mergePresets('preprocess') as Preprocessor[],
+  postprocess: mergePresets('postprocess') as Postprocessor[],
+  preflights: mergePresets('preflights'),
+  autocomplete,
+  variants: mergePresets('variants').map(normalizeVariant),
+  shortcuts: resolveShortcuts(mergePresets('shortcuts')),
+  extractors,
+  safelist: mergePresets('safelist'),
+}
+``` 
+
+
