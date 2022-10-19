@@ -1,5 +1,5 @@
 ---
-title: "Hwo to write a pinia plugin 🤔️"
+title: "How to write a pinia plugin 🤔️"
 description: "一文带入走进 Pinia 插件的世界"
 uid: 501
 ctime: 2022-10-17T10:51:13.858Z
