@@ -6,12 +6,7 @@ useTitle('Chris\' Blog | Posts')
 
 <template>
   <div prose font-mono ma>
-    <h1 text-3xl base text-black mb4>
-      Posts
-    </h1>
-    <p text-base base italic>
-      Some boring but useful articles.
-    </p>
+    <PageHeader title="Posts" description="Some boring but useful articles." />
     <ContentList>
       <template #default="{ list }">
         <template v-for="article in list" :key="article._path">
@@ -23,7 +18,9 @@ useTitle('Chris\' Blog | Posts')
             op-70
             hover:op-100
           >
-            <h3>{{ article.title }}</h3>
+            <h3 text-lg md-text-xl>
+              {{ article.title }}
+            </h3>
             <div italic fic text-sm text-gray4 fw-normal>
               {{ new Date(article.ctime).toDateString() }}
             </div>

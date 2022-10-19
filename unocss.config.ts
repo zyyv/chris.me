@@ -53,7 +53,7 @@ export default defineConfig({
     ['linkOrg', '!text-blue-300 link-hoverImportant'],
     ['linkBtn', '!text-purple-300 link-hoverImportant'],
 
-    ['header-anchor', 'block h-full w-8 pa left--7 top-0 op-0 group-hover-op-60 fw-600'],
+    ['header-anchor', 'float-left mt-[0.125em] ml-[-0.8em] pr-[0.2em] text-[0.85em] op-0 group-hover-op-60 fw-600'],
   ],
   theme: {
     fontFamily: {

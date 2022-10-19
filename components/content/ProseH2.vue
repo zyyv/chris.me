@@ -1,5 +1,5 @@
 <template>
-  <h2 :id="id" pr class="group">
+  <h2 :id="id" text-2xl class="group">
     {{ id }}
     <a header-anchor no-underline :href="`#${id}`">
       #
