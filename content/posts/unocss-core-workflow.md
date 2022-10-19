@@ -208,4 +208,59 @@ return {
 }
 ``` 
 
+## Generate
+`UnoCSS`{lang=html} 的 `Generate`{lang=html} 核心，主要是将我们的 `input`{lang=ts} 解析生成 `css`{lang=ts}。
 
+```ts
+async generate(
+  input: string | Set<string> | string[],
+  options: GenerateOptions = {},
+): Promise<GenerateResult> {
+  const {
+    id, // 在提取token阶段用到文件id
+    scope, // 生成的css的作用域
+    preflights = true, // 是否生成preflights
+    safelist = true, // 是否应用safelist
+    minify = false, // 是否压缩css
+  } = options
+  
+  // ...
+}  
+```
+首先我们先观察函数的参数与返回值，我们可以看到，`input`{lang=ts} 可以是 `string`{lang=ts} `Set`{lang=ts} `Array`{lang=ts}，`options`{lang=ts} 有 `id`{lang=ts} `scope`{lang=ts} `preflights`{lang=ts} `safelist`{lang=ts} `minify`{lang=ts}，返回值是一个`Promise`{lang=ts} `GenerateResult`{lang=ts}。
+
+
+### applyExtractors
+`UnoCSS`{lang=html} 会将 `input`{lang=ts} 交给 `extractors`{lang=ts} 进行解析提取`token`{lang=ts}，最终提取出的 `token`{lang=ts} 会是`Set`{lang=ts} `string`{lang=ts}的形式，确保每个 `token`{lang=ts} 是唯一的。
+```ts
+const tokens: Readonly<Set<string>> = isString(input)
+      ? await this.applyExtractors(input, id)
+      : Array.isArray(input)
+        ? new Set(input)
+        : input
+```
+
+因为我们的 `config.extractors`{lang=ts} 是一个数组，所以我们需要遍历它，将 `input`{lang=ts} 交给每个 `extractor`{lang=ts} 进行解析，最后将所有解析出来的 `token`{lang=ts} 合并为一个 `Set`{lang=ts}。
+```ts
+const context: ExtractorContext = {
+  get original() { return code },
+  code,
+  id,
+}
+
+for (const extractor of this.config.extractors) {
+  const result = await extractor.extract(context)
+  if (result) {
+    for (const token of result)
+      set.add(token)
+  }
+}
+``` 
+
+如果我们应用了`safelist`{lang=ts}，那么我们还需要将`safelist`{lang=ts}中的`token`{lang=ts}合并到`set`{lang=ts}中。
+```ts
+if (safelist)
+  this.config.safelist.forEach(s => tokens.add(s))
+```
+
+最后我们得到了我们需要去解析的所有`token`{lang=ts}，接下来将这些`token`{lang=ts}解析成`css`{lang=ts}。
