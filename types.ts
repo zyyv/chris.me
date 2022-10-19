@@ -50,9 +50,19 @@ export interface ICursorStyle {
 
 export interface Article {
   id: number
+  uid?: number
+  _id: string
+  _draft: boolean
+  _empty: boolean
+  _extension: string
+  _file: string
+  _path: string
+  _source: string
+  _type: string
   mtime: string
   mtimeMs: number
   ctime: string
   ctimeMs: number
   slug: string
+  title: string
 }

@@ -1,7 +1,14 @@
 <script lang='ts' setup>
 import { useTitle } from '@vueuse/core'
+import { Article } from '~/types'
 
 useTitle('Chris\' Blog | Posts')
+
+function sortArticles(list: Article[]) {
+  return list.sort((a, b) => {
+    return new Date(b.ctime).getTime() - new Date(a.ctime).getTime()
+  })
+}
 </script>
 
 <template>
@@ -9,9 +16,9 @@ useTitle('Chris\' Blog | Posts')
     <PageHeader title="Posts" description="Some boring but useful articles." />
     <ContentList>
       <template #default="{ list }">
-        <template v-for="article in list" :key="article._path">
+        <template v-for="article in sortArticles(list)" :key="article._id">
           <nuxt-link
-            v-if="!article.draft"
+            v-if="!article._draft"
             :to="article._path"
             important-no-underline
             block
@@ -33,6 +40,3 @@ useTitle('Chris\' Blog | Posts')
     </ContentList>
   </div>
 </template>
-
-<style lang='scss' scoped>
-</style>

@@ -2,7 +2,7 @@
 import { isDark } from '#imports'
 const routes = reactive([
   { icon: 'i-carbon-blog', path: '/posts' },
-  { icon: 'i-carbon-delivery-parcel', path: '/projects' },
+  // { icon: 'i-carbon-delivery-parcel', path: '/projects' },
   // { icon: 'i-carbon-bookmark', path: '/bookmark' },
   // { icon: 'i-carbon-notebook', path: '/notes' },
 ])
