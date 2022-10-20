@@ -4,7 +4,7 @@ const baseUrl = 'https://api.github.com'
 const user = 'chris-zhu'
 const url = `${baseUrl}/users/${user}`
 
-export default async() => {
+export default defineEventHandler(async() => {
   const user: User = await $fetch(url)
   return user
-}
+})

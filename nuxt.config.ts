@@ -28,7 +28,4 @@ export default defineNuxtConfig({
   //     locale: 'zh-cn',
   //   },
   // },
-  experimental: {
-    viteNode: true,
-  },
 })
