@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { isDark } from '#imports'
-
 const color = computed(() => isDark.value ? '#fff' : '#0d9488')
 </script>
 

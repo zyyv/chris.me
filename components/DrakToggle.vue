@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { isDark } from '#imports'
-
 function toggleDark() {
   isDark.value = !isDark.value
 }

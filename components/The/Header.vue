@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { isDark } from '#imports'
 const routes = reactive([
   { icon: 'i-carbon-blog', path: '/posts' },
   // { icon: 'i-carbon-delivery-parcel', path: '/projects' },
