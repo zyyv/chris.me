@@ -7,7 +7,7 @@ import {
   transformerDirectives,
   transformerVariantGroup,
 } from 'unocss'
-import type { Shortcut } from 'unocss'
+import type { CSSObject, Shortcut } from 'unocss'
 
 const usefulShortcuts: Shortcut[] = [
   ['pr', 'relative'],
@@ -34,6 +34,22 @@ const usefulShortcuts: Shortcut[] = [
 
   ['p-c', 'pa top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'],
 ]
+
+const typographyCssExtend: Record<string, CSSObject> = {
+  'a': {
+    'text-decoration-color': 'rgba(192, 132, 252, 0.4);',
+    'text-underline-offset': '4px',
+  },
+  'a:hover': {
+    'text-decoration-color': 'rgba(192, 132, 252, 0.8);',
+  },
+  'pre': {
+    background: '#23272d !important',
+  },
+  'blockquote': {
+    'border-left': '0.25em solid rgba(168,85,247,.4)',
+  },
+}
 
 export default defineConfig({
   shortcuts: [
@@ -71,9 +87,6 @@ export default defineConfig({
       },
       primary: '#00bcd4',
     },
-    boxShadow: {
-      switch: '0 0 0 2px rgba(24, 160, 88, 0.2)',
-    },
   },
   presets: [
     presetUno(),
@@ -81,23 +94,7 @@ export default defineConfig({
     presetIcons({
       scale: 1.2,
     }),
-    presetTypography({
-      cssExtend: {
-        'a': {
-          'text-decoration-color': 'rgba(192, 132, 252, 0.4);',
-          'text-underline-offset': '4px',
-        },
-        'a:hover': {
-          'text-decoration-color': 'rgba(192, 132, 252, 0.8);',
-        },
-        'pre': {
-          background: '#23272d !important',
-        },
-        'blockquote': {
-          'border-left': '0.25em solid rgba(168,85,247,.4)',
-        },
-      },
-    }),
+    presetTypography({ cssExtend: typographyCssExtend }),
   ],
   transformers: [
     transformerDirectives(),
