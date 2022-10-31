@@ -3,7 +3,7 @@ import fs from 'fs-extra'
 import type { Repo } from '~/types'
 
 const baseUrl = 'https://api.github.com'
-const user = 'chris-zhu'
+const user = 'zyyv'
 const url = `${baseUrl}/users/${user}/repos`
 
 const fileUrl = import.meta.url

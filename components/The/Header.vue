@@ -72,7 +72,7 @@ const routes = reactive([
         />
         <a
           title="Github"
-          href="https://github.com/chris-zhu"
+          href="https://github.com/zyyv"
           target="_blank"
           icon-link
           i-ri-github-line
@@ -116,7 +116,7 @@ const routes = reactive([
               <NuxtLink to="https://space.bilibili.com/402454160">
                 <div icon-link i-ri:bilibili-line />
               </NuxtLink>
-              <NuxtLink to="https://github.com/chris-zhu/chris.me">
+              <NuxtLink to="https://github.com/zyyv/chris.me">
                 <div icon-link i-carbon:logo-github />
               </NuxtLink>
             </div>

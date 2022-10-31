@@ -1,7 +1,7 @@
 import type { User } from '~/types'
 
 const baseUrl = 'https://api.github.com'
-const user = 'chris-zhu'
+const user = 'zyyv'
 const url = `${baseUrl}/users/${user}`
 
 export default defineEventHandler(async() => {

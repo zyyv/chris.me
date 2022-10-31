@@ -28,7 +28,7 @@ mtime: 2022-10-17T10:56:06.284Z
 
 官网：[https://pinia.esm.dev/](https://pinia.esm.dev)
 
-我的git地址：[https://github.com/chris-zhu/learn-pinia](https://github.com/chris-zhu/learn-pinia)
+我的git地址：[https://github.com/zyyv/learn-pinia](https://github.com/zyyv/learn-pinia)
 
 > 以下直接进行源码拆分讲解，api部分参考官网
 

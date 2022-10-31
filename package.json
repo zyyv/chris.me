@@ -9,10 +9,10 @@
     "unocss"
   ],
   "license": "MIT",
-  "author": "chris-zhu <https://github.com/chris-zhu>",
+  "author": "Chris <https://github.com/zyyv>",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chris-zhu/chris.me.git"
+    "url": "git+https://github.com/zyyv/chris.me.git"
   },
   "scripts": {
     "dev": "nuxt dev -o",
@@ -22,9 +22,9 @@
     "postinstall": "nuxt prepare && esno scripts/posts-route.ts"
   },
   "bugs": {
-    "url": "https://github.com/chris-zhu/chris.me/issues"
+    "url": "https://github.com/zyyv/chris.me/issues"
   },
-  "homepage": "https://github.com/chris-zhu/chris.me#readme",
+  "homepage": "https://github.com/zyyv/chris.me#readme",
   "devDependencies": {
     "@chris-zhu/eslint-config": "^1.0.5",
     "@iconify-json/akar-icons": "^1.1.9",
@@ -39,7 +39,7 @@
     "eslint": "^8.23.1",
     "esno": "^0.16.3",
     "fs-extra": "^10.1.0",
-    "nuxt": "3.0.0-rc.12",
+    "nuxt": "3.0.0-rc.11",
     "sass": "^1.55.0",
     "typescript": "^4.8.4",
     "unocss-preset-scrollbar": "^0.2.0"
