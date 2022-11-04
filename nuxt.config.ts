@@ -21,6 +21,9 @@ export default defineNuxtConfig({
     },
     documentDriven: true,
   },
+  experimental: {
+    inlineSSRStyles: false,
+  },
 
   // intlify: {
   //   localeDir: 'locales',
