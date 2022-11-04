@@ -9,7 +9,7 @@ const url = `${baseUrl}/users/${user}/repos`
 const fileUrl = import.meta.url
 const __dirname = path.dirname(fileUrl.slice(7))
 
-export default async() => {
+export default defineEventHandler(async() => {
   let repos: Repo[] = await $fetch(url)
 
   // console.log(path.resolve(__dirname, '../../data/repos.json'))
@@ -23,4 +23,4 @@ export default async() => {
     ps: repos.filter(i => !i.is_template),
     templates: repos.filter(i => i.is_template),
   }
-}
+})
