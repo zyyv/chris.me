@@ -32,14 +32,14 @@ async function reWrite(file: string) {
   const filePath = path.resolve(source, file)
   const stat = fs.statSync(filePath)
   await fs.ensureFile(filePath)
-  const content = (await fs.readFile(filePath)).toString()
+  const content = String(await fs.readFile(filePath))
   await reWriteMeta(file, content, stat)
   await reWriteHeader(file)
   return stat
 }
 
 async function reWriteHeader(file: string) {
-  const content = (await fs.readFile(path.resolve(source, file))).toString()
+  const content = String(await fs.readFile(path.resolve(source, file)))
   const cs = content.split('---')
   const realContent = cs[2]
   const header = []
