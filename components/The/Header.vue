@@ -15,7 +15,7 @@ const routes = reactive([
     inset-x-0
     trans
     backdrop-blur
-    b="b-1 dashed gray-300 dark:b-gray-500"
+    b="b-0 dashed gray-300 dark:b-gray-500"
   >
     <NuxtLink to="/" title="Home">
       <img
@@ -37,13 +37,7 @@ const routes = reactive([
         alt="logo"
       >
     </NuxtLink>
-    <nav
-      px-8
-      w-full
-      grid="~ cols-[auto_max-content]"
-      box-border
-      class="h-18"
-    >
+    <nav px-8 w-full grid="~ cols-[auto_max-content]" box-border class="h-18">
       <!-- 垫片 -->
       <div class="spacer" />
       <div grid gap-5 auto-flow-col items-center>
@@ -55,13 +49,11 @@ const routes = reactive([
         >
           <div icon-btn :class="route.icon" />
         </NuxtLink>
-        <div fcc>
-          <DrakToggle />
-        </div>
+
         <!-- <a hidden lg:block>
           <div icon-link i-carbon:language @click="toggleLocales" />
         </a> -->
-        <a
+        <!-- <a
           title="Bilibili"
           hidden
           lg:block
@@ -69,14 +61,20 @@ const routes = reactive([
           target="_blank"
           icon-link
           i-ri:bilibili-line
-        />
+        /> -->
         <a
-          title="Github"
-          href="https://github.com/zyyv"
+          title="Twitter"
+          hidden
+          lg:block
+          href="https://twitter.com/_Chris_zhu"
           target="_blank"
           icon-link
-          i-ri-github-line
+          i-ri:twitter-line
         />
+        <a title="Github" href="https://github.com/zyyv" target="_blank" icon-link i-ri-github-line />
+        <div fcc>
+          <DrakToggle />
+        </div>
         <!-- <div
           pr
           w-6
