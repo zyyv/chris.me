@@ -9,6 +9,6 @@
   >
     <a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备2022005364号</a>
     2022 ©
-    <a href="https://github.com/zyyv" target="_blank">Chris</a>
+    <a href="mailto:zyyz2@qq.com" target="_blank">Chris Ꙭ</a>
   </div>
 </template>

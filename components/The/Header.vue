@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 const routes = reactive([
-  { icon: 'i-carbon-blog', path: '/posts' },
+  { icon: 'i-carbon-blog', path: '/posts', text: 'Blog' },
+  // { icon: 'i-carbon-blog', path: '/posts' },
   // { icon: 'i-carbon-delivery-parcel', path: '/projects' },
   // { icon: 'i-carbon-bookmark', path: '/bookmark' },
   // { icon: 'i-carbon-notebook', path: '/notes' },
@@ -47,7 +48,8 @@ const routes = reactive([
           :to="route.path"
           :title="route.path.slice(1, 2).toUpperCase() + route.path.slice(2).toLowerCase()"
         >
-          <div icon-btn :class="route.icon" />
+          <span v-if="route.text" icon-text>{{ route.text }}</span>
+          <div v-else icon-btn :class="route.icon" />
         </NuxtLink>
 
         <!-- <a hidden lg:block>

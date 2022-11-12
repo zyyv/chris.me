@@ -80,12 +80,12 @@ useTitle('Chris\' Blog')
         href="https://github.com/onu-ui/onu-ui"
         target="_blank"
         title="Just a awesome ui library toys now."
-      >Onu-UI</a>.
+      >Onu-UI</a>. ꔛ‬☆*ﾟ
     </p>
 
     <p>
       A person who likes programming, likes to build all kinds of wheels and write scripts. Now living in the beautiful
-      Chengdu, China.
+      Chengdu, China. ഒ‬
     </p>
     <p>
       I have a wide range of interests, watching anime, climbing mountains, listening to music, learning foreign
@@ -93,12 +93,12 @@ useTitle('Chris\' Blog')
         href="https://space.bilibili.com/402454160"
         target="_blank"
         linkOutside
-      >Uploader</a>.
+      >Uploader</a>. ˗ˏˋ♡ˎˊ˗
     </p>
     <p>
       By the way, I also like to travel and take pictures, you can also simply <nuxt-link to="/" class="linkBtn">
         take a look
-      </nuxt-link> at my works 🤪.
+      </nuxt-link> at my works 🤪. ᯤ
     </p>
   </div>
 </template>

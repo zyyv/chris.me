@@ -63,6 +63,7 @@ export default defineConfig({
     ['icon', 'w-5.5 h-5.5 cursor-pointer select-none transition-opacity-300 ease-in-out text'],
     ['icon-btn', 'icon color-inherit op64 hover-op100 hover-color-teal-500 dark-hover-color-inherit'],
     ['icon-link', 'icon color-inherit op64 hover:op100 hover-text-red-300 dark-hover-color-inherit'],
+    ['icon-text', 'color-inherit op64 hover:op100 hover-text-purple dark-hover-color-inherit'],
     ['link-hoverImportant', '!no-underline !hover-underline !hover-underline-offset-4 trans'],
     ['link', '!text-red-400 link-hoverImportant'],
     ['linkOutside', '!text-teal-500 link-hoverImportant'],
