@@ -26,6 +26,7 @@ const color = computed(() => isDark.value ? '#fff' : '#0d9488')
         un-after="w-3px h-3px"
       />
     </div>
+    <Timer pa bottom-4 right-4 />
   </div>
 </template>
 

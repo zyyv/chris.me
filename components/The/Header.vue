@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-const routes = reactive([
-  { icon: 'i-carbon-blog', path: '/posts', text: 'Blog' },
-  // { icon: 'i-carbon-blog', path: '/posts' },
+const routes = reactive<{ icon?: string, path: string, text?: string }[]>([
+  // { icon: 'i-carbon-blog', path: '/posts', text: 'Blog' },
+  { icon: 'i-carbon-blog', path: '/posts' },
   // { icon: 'i-carbon-delivery-parcel', path: '/projects' },
-  // { icon: 'i-carbon-bookmark', path: '/bookmark' },
+  { icon: 'i-ri-bookmark-line', path: '/bookmark' },
   // { icon: 'i-carbon-notebook', path: '/notes' },
 ])
 </script>
@@ -18,25 +18,9 @@ const routes = reactive([
     backdrop-blur
     b="b-0 dashed gray-300 dark:b-gray-500"
   >
-    <NuxtLink to="/" title="Home">
-      <img
-        v-show="isDark"
-        h-6
-        fixed
-        left-8
-        top-6
-        src="/logo-light.svg"
-        alt="logo"
-      >
-      <img
-        v-show="!isDark"
-        h-6
-        fixed
-        left-8
-        top-6
-        src="/logo.svg"
-        alt="logo"
-      >
+    <NuxtLink to="/" title="Home" children="h-6 fixed left-8 top-6">
+      <img v-show="isDark" src="/logo-light.svg" alt="logo">
+      <img v-show="!isDark" src="/logo.svg" alt="logo">
     </NuxtLink>
     <nav px-8 w-full grid="~ cols-[auto_max-content]" box-border class="h-18">
       <!-- 垫片 -->

@@ -2,7 +2,7 @@
 import { useTitle } from '@vueuse/core'
 import { Article } from '~/types'
 
-useTitle('Chris\' Blog | Posts')
+useTitle('Chris\' Blog | Blog')
 
 function sortArticles(list: Article[]) {
   return list.sort((a, b) => {
@@ -14,6 +14,7 @@ function sortArticles(list: Article[]) {
 <template>
   <div prose font-mono ma origin>
     <PageHeader title="Posts" description="Some boring but useful articles." />
+    <hr>
     <ContentList>
       <template #default="{ list }">
         <template v-for="article in sortArticles(list)" :key="article._id">
