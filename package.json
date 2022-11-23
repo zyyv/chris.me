@@ -1,7 +1,7 @@
 {
   "name": "chris.me",
-  "private": true,
   "description": "Chris' blog build with Nuxt3.",
+  "private": true,
   "keywords": [
     "blog",
     "vue3",
