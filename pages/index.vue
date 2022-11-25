@@ -1,9 +1,8 @@
 <script lang="ts" setup>
 import { useTitle } from '@vueuse/core'
+useTitle('Chris\' Blog')
 
 const { data: user } = await useFetch('/api/user')
-
-useTitle('Chris\' Blog')
 </script>
 
 <template>
@@ -19,9 +18,9 @@ useTitle('Chris\' Blog')
         srcset=""
       >
       <div>
-        <h1 fic justify-center md="justify-start">
+        <h2 fic justify-center md="justify-start">
           {{ user?.name }}
-        </h1>
+        </h2>
         <p text-lg text-center md="text-left">
           {{ user?.bio }}
         </p>
@@ -74,18 +73,17 @@ useTitle('Chris\' Blog')
       >Nuxt3</a> & etc. Ecological contributors ✨
     </p>
     <p>
-      Introduce: Front-end Engineer 🧑🏻‍💻 Focus on UnoCSS, Vite, Vue & Nuxt3。At the same time, I am also the Creator
+      Front-end Engineer 🧑🏻‍💻 Focus on UnoCSS, Vite, Vue & Nuxt3。At the same time, I am also the Creator
       of <a
         linkOrg
         href="https://github.com/onu-ui/onu-ui"
         target="_blank"
         title="Just a awesome ui library toys now."
-      >Onu-UI</a>. ꔛ‬☆*ﾟ
+      >Onu-UI</a>.
     </p>
-
     <p>
       A person who likes programming, likes to build all kinds of wheels and write scripts. Now living in the beautiful
-      Chengdu, China. ഒ‬
+      Chengdu, China.
     </p>
     <p>
       I have a wide range of interests, watching anime, climbing mountains, listening to music, learning foreign
@@ -93,12 +91,12 @@ useTitle('Chris\' Blog')
         href="https://space.bilibili.com/402454160"
         target="_blank"
         linkOutside
-      >Uploader</a>. ˗ˏˋ♡ˎˊ˗
+      >Uploader</a>.
     </p>
     <p>
       By the way, I also like to travel and take pictures, you can also simply <nuxt-link to="/" class="linkBtn">
         take a look
-      </nuxt-link> at my works 🤪. ᯤ
+      </nuxt-link> at my works 🤪.
     </p>
   </div>
 </template>
