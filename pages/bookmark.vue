@@ -1,7 +1,9 @@
 <script lang='ts' setup>
 import { useTitle } from '@vueuse/core'
 
-useTitle('Chris\' Blog | Bookmark')
+useHead({
+  title: 'Chris\' Blog | Bookmark',
+})
 </script>
 
 <template>

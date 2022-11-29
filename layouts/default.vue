@@ -1,6 +1,6 @@
 <template>
   <div>
-    <TheHeader />
+    <NavHeader />
     <main px-7 py-10>
       <!-- <router-view v-slot="{ Component, route }">
         <transition
@@ -15,7 +15,7 @@
       </router-view> -->
       <slot />
     </main>
-    <TheFooter />
+    <NavFooter />
     <Cursor />
     <Bg />
   </div>

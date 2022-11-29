@@ -2,7 +2,9 @@
 import { useTitle } from '@vueuse/core'
 import { Article } from '~/types'
 
-useTitle('Chris\' Blog | Blog')
+useHead({
+  title: 'Chris\' Blog | Posts',
+})
 
 function sortArticles(list: Article[]) {
   return list.sort((a, b) => {
@@ -36,7 +38,7 @@ function sortArticles(list: Article[]) {
         </template>
       </template>
       <template #not-found>
-        1
+        No Posts Found
       </template>
     </ContentList>
   </div>

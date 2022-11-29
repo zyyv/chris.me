@@ -1,3 +1,9 @@
+<script setup>
+useHead({
+  title: 'Chris\' Blog | Posts',
+})
+</script>
+
 <template>
   <article class="prose font-mono ma">
     <ContentDoc>

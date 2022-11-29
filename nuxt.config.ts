@@ -6,7 +6,7 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@unocss/nuxt',
     // '@pinia/nuxt',
-    '@nuxtjs/color-mode',
+    // '@nuxtjs/color-mode',
     '@nuxt/content',
     // '@intlify/nuxt3',
   ],
@@ -46,6 +46,12 @@ export default defineNuxtConfig({
     plugins: [
       Inspect(),
     ],
+  },
+  nitro: {
+    prerender: {
+      crawlLinks: false,
+      routes: ['/'],
+    },
   },
 
   // intlify: {

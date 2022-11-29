@@ -1,6 +1,9 @@
 <script lang="ts" setup>
 import { useTitle } from '@vueuse/core'
-useTitle('Chris\' Blog')
+
+useHead({
+  title: 'Chris\' Blog',
+})
 
 const { data: user } = await useFetch('/api/user')
 </script>
