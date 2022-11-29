@@ -5,10 +5,6 @@
 </template>
 
 <script setup>
-import '~/styles/markdown.css'
-import '~/styles/dank-mono.css'
-import '~/styles/main.css'
-
 useHead({
   title: 'Chris\' Blog',
   link: [

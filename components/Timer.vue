@@ -9,6 +9,8 @@ const weekMap = new Map([
   [5, 'Fri'],
   [6, 'Sat'],
 ])
+const buildTime = import.meta.env.__BUILD_TIME__ as string
+const buildTimeAgo = useTimeAgo(buildTime)
 
 useIntervalFn(() => {
   time.value = new Date()
@@ -17,6 +19,7 @@ useIntervalFn(() => {
 
 <template>
   <div hidden lg:block font-mono text-sm>
-    {{ weekMap.get(time.getDay()) }}, {{ time.toLocaleTimeString('en-US', { hour12: false }) }}
+    {{ weekMap.get(time.getDay()) }}, <time :datetime="time.toISOString()" :title="time.toISOString()">{{ time.toLocaleTimeString('en-US', { hour12: false }) }}</time>
+    · Built <time :datetime="buildTime" :title="buildTime">{{ buildTimeAgo }}</time>
   </div>
 </template>
