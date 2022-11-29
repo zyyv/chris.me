@@ -17,14 +17,16 @@ const routes = reactive<{ icon?: string, path: string, text?: string }[]>([
     trans
     backdrop-blur
     b="b-0 dashed gray-300 dark:b-gray-500"
+    fbc
+    px-8
   >
-    <NuxtLink to="/" title="Home" children="h-6 fixed left-8 top-6">
-      <img v-show="isDark" src="/logo-light.svg" alt="logo">
-      <img v-show="!isDark" src="/logo.svg" alt="logo">
+    <NuxtLink to="/" title="Home">
+      <img v-show="isDark" h-6 src="/logo-light.svg" alt="logo">
+      <img v-show="!isDark" h-6 src="/logo.svg" alt="logo">
     </NuxtLink>
-    <nav px-8 w-full grid="~ cols-[auto_max-content]" box-border class="h-18">
+    <nav w-full grid="~ cols-[auto_max-content]" h-16 md:h-18>
       <!-- 垫片 -->
-      <div class="spacer" />
+      <div />
       <div grid gap-5 auto-flow-col items-center>
         <NuxtLink
           v-for="route in routes"
@@ -111,5 +113,5 @@ const routes = reactive<{ icon?: string, path: string, text?: string }[]>([
     </nav>
   </header>
   <!-- For header fixed -->
-  <div class="h-18" />
+  <div h-16 md:h-18 />
 </template>
