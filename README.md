@@ -1,15 +1,14 @@
-# Hi, here
+# Hi, there 🥳
 
-This is my Blog, build with Nuxt3.
+This is my personal website, build with Nuxt3.
 
-Welcome to clone and fork to learn.
+Welcome to clone and fork it to learn.
 
-You can visit [zyob.top](http://zyob.top) online.
+And you can visit [zyob.top](http://zyob.top) online.
 
-If you feel good, give me a Star.
-
+If you think it's good, can you give me a star 🌟?
 
 
 # Activity
 
-![Alt](https://repobeats.axiom.co/api/embed/1fde94f02f68cfa2c2269e730da4035ea162178a.svg "Repobeats analytics image")
+![Alt](https://repobeats.axiom.co/api/embed/97840bd668db10f4af44102c3bff2b93b2917fca.svg "Repobeats analytics image")
