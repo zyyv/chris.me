@@ -7,7 +7,7 @@
 
 <script setup>
 useHead({
-  title: 'Chris\' Blog',
+  title: 'Chris Zhu',
   link: [
     { rel: 'icon', type: 'image/x-icon', href: '/logo-light.svg' },
   ],

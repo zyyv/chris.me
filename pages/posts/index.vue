@@ -3,7 +3,7 @@ import { useTitle } from '@vueuse/core'
 import { Article } from '~/types'
 
 useHead({
-  title: 'Chris\' Blog | Posts',
+  title: 'Posts | Chris',
 })
 
 function sortArticles(list: Article[]) {

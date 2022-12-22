@@ -2,7 +2,7 @@
 import { useTitle } from '@vueuse/core'
 
 useHead({
-  title: 'Chris\' Blog | Bookmark',
+  title: 'Bookmark | Chris',
 })
 </script>
 
