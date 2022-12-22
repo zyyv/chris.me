@@ -1,7 +1,7 @@
 <template>
   <div>
     <NavHeader />
-    <main px-7 py-10>
+    <main px-7 pt-10 pb-18>
       <!-- <router-view v-slot="{ Component, route }">
         <transition
           enter-active-class="animate-fade-in animate-duration-500"

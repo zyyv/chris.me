@@ -18,8 +18,19 @@ useIntervalFn(() => {
 </script>
 
 <template>
-  <div hidden lg:block font-mono text-sm>
-    {{ weekMap.get(time.getDay()) }}, <time :datetime="time.toISOString()" :title="time.toISOString()">{{ time.toLocaleTimeString('en-US', { hour12: false }) }}</time>
-    · Built <time :datetime="buildTime" :title="buildTime">{{ buildTimeAgo }}</time>
+  <div
+    hidden
+    lg:flex
+    font-mono
+    text-xs
+    fcc
+    gap-1
+  >
+    {{ weekMap.get(time.getDay()) }}, <time :datetime="time.toISOString()" :title="time.toISOString()">{{
+      time.toLocaleTimeString('en-US', { hour12: false })
+    }}</time>
+    ·
+    <div i-logos:nuxt-icon />
+    Built <time :datetime="buildTime" :title="buildTime">{{ buildTimeAgo }}</time>
   </div>
 </template>
