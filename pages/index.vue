@@ -74,7 +74,7 @@ const { data: user } = await useFetch('/api/user')
       >Nuxt3</a> & etc. Ecological contributors ✨
     </p>
     <p>
-      Front-end Engineer 🧑🏻‍💻 Focus on UnoCSS, Vite, Vue & Nuxt3。At the same time, I am also the Creator
+      Front-end Engineer 🧑🏻‍💻 Focus on UnoCSS, Vite, Vue & Nuxt3. At the same time, I am also the Creator
       of <a
         linkOrg
         href="https://github.com/onu-ui/onu-ui"

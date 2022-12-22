@@ -54,7 +54,7 @@ const routes = reactive<{ icon?: string, path: string, text?: string }[]>([
           title="Twitter"
           hidden
           lg:block
-          href="https://twitter.com/_Chris_zhu"
+          href="https://twitter.com/chris_zyyv"
           target="_blank"
           icon-link
           i-ri:twitter-line
