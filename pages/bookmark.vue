@@ -7,6 +7,3 @@ useHead({
 <template>
   <div>BookMark</div>
 </template>
-
-<style lang='scss' scoped>
-</style>
