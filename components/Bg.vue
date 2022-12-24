@@ -23,7 +23,7 @@ const color = computed(() => isDark.value ? '#fff' : '#0d9488')
       h-full
       un-children="pa rounded-full blur-3xl w-30 md-w-40 lg-w-50 op-50 aspect-1/1 animate-pulse-alt animate-duration-3000"
     >
-      <div class="top-0 left-1/4 bg-gradient-to-br from-purple via-pink to-yellow" />
+      <div class="top-0 left-1/4 bg-gradient-shape-[circle] from-purple via-pink to-yellow !bg-gradient-radial" />
       <div class="bottom-1/5 left-1/8 bg-gradient-to-bl from-green via-red to-pink" />
       <div class="bottom-1/2 left-1/2 bg-gradient-to-tr from-teal via-red to-blue" />
       <div class="top-1/8 right-1.8 bg-gradient-to-tl from-orange via-blue to-yellow" />

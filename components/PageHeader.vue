@@ -6,10 +6,15 @@ defineProps<{
 </script>
 
 <template>
-  <h1 text-2xl md-text-3xl base text-black mb4>
+  <h2
+    text-2xl
+    md-text-3xl
+    mb4
+    mt-0
+  >
     {{ title }}
-  </h1>
-  <p text-base base italic>
+  </h2>
+  <p text-xs md-text-sm italic>
     {{ description }}
   </p>
 </template>

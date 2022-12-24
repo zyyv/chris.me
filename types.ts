@@ -1,3 +1,5 @@
+import type { Endpoints } from '@octokit/types'
+
 export interface User {
   login: string
   id: number
@@ -22,25 +24,27 @@ export interface User {
   updated_at: string
 }
 
-export interface Repo{
-  id: number
-  node_id: string
-  name: string
-  description: string
-  default_branch: string
-  created_at: string
-  updated_at: string
-  forks_count: number
-  stargazers_count: number
-  url: string
-  html_url: string
-  disabled: boolean
-  is_template: false
-  language: string
-  fork: boolean
-  archived: false
-  private: boolean
-}
+export type Repo = Endpoints['GET /user/repos']['response']['data'][number]
+
+// export interface Repo extends Endpoints['GET /user/teams'].response {
+//   id: number
+//   node_id: string
+//   name: string
+//   description: string
+//   default_branch: string
+//   created_at: string
+//   updated_at: string
+//   forks_count: number
+//   stargazers_count: number
+//   url: string
+//   html_url: string
+//   disabled: boolean
+//   is_template: false
+//   language: string
+//   fork: boolean
+//   archived: false
+//   private: boolean
+// }
 
 export interface ICursorStyle {
   dot: Record<string, number | string>

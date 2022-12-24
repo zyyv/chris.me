@@ -1,10 +1,9 @@
-import type { User } from '~/types'
-
-const baseUrl = 'https://api.github.com'
-const user = 'zyyv'
-const url = `${baseUrl}/users/${user}`
+import { OctokitCtx } from '../constants'
 
 export default defineEventHandler(async() => {
-  const user: User = await $fetch(url)
-  return user
+  const {
+    data,
+  } = await OctokitCtx.rest.users.getAuthenticated()
+
+  return data
 })
