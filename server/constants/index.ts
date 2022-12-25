@@ -1,3 +1,3 @@
 import { Octokit } from 'octokit'
-export const TOKEN = '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'
+export const TOKEN = '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'
 export const OctokitCtx = new Octokit({ auth: TOKEN })
