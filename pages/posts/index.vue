@@ -27,7 +27,8 @@ function sortArticles(list: Article[]) {
 </script>
 
 <template>
-  <div prose font-mono ma origin>
+  <!-- origin in markdown.css -->
+  <div prose ma origin>
     <PageHeader title="Posts" description="Some boring but useful articles." />
     <ContentList>
       <template #default="{ list }">
@@ -43,7 +44,14 @@ function sortArticles(list: Article[]) {
             <h3 text-lg md-text-xl>
               {{ article.title }}
             </h3>
-            <div italic fic text-sm text-gray4 fw-normal>
+            <div
+              font-mono
+              italic
+              fic
+              text-sm
+              text-gray4
+              fw-normal
+            >
               {{ new Date(article.ctime).toDateString() }}
             </div>
           </nuxt-link>
