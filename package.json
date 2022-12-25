@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/zyyv/chris.me#readme",
   "dependencies": {
+    "blurhash": "^2.0.4",
     "octokit": "^2.0.10"
   },
   "devDependencies": {

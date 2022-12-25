@@ -9,15 +9,15 @@ const { data: user } = await useFetch('/api/user')
 <template>
   <div prose font-mono ma origin>
     <div flex flex-col items-center md="gap-10 flex-row">
-      <img
+      <ImgBlurHash
+        :src="user!.avatar_url"
+        blurhash="U8B4RsM[08%j00og?ZR.%io$s:jVo$oeM^RP"
+        alt="Avatar"
         w-30
         h-30
         md="w-50 h-50"
         rounded-full
-        :src="user?.avatar_url"
-        alt=""
-        srcset=""
-      >
+      />
       <div>
         <h2 fic justify-center md="justify-start">
           {{ user?.name }}

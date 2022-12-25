@@ -14,6 +14,7 @@ specifiers:
   '@types/fs-extra': ^9.0.13
   '@unocss/nuxt': ^0.48.0
   '@vueuse/nuxt': ^9.9.0
+  blurhash: ^2.0.4
   eslint: ^8.30.0
   esno: ^0.16.3
   fs-extra: ^11.1.0
@@ -25,6 +26,7 @@ specifiers:
   vite-plugin-inspect: ^0.7.11
 
 dependencies:
+  blurhash: 2.0.4
   octokit: 2.0.10
 
 devDependencies:
@@ -2677,6 +2679,10 @@ packages:
       inherits: 2.0.4
       readable-stream: 3.6.0
     dev: true
+
+  /blurhash/2.0.4:
+    resolution: {integrity: sha512-r/As72u2FbucLoK5NTegM/GucxJc3d8GvHc4ngo13IO/nt2HU4gONxNLq1XPN6EM/V8Y9URIa7PcSz2RZu553A==}
+    dev: false
 
   /boolbase/1.0.0:
     resolution: {integrity: sha512-JZOSA7Mo9sNGB8+UjSgzdLtokWAky1zbztM3WRLCbZ70/3cTANmQmOdR7y2g+J0e2WXywy1yS468tY+IruqEww==}
