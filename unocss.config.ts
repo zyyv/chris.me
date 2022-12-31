@@ -109,4 +109,5 @@ export default defineConfig({
     transformerDirectives(),
     transformerVariantGroup(),
   ],
+  safelist: 'sm-fsc max-w-75'.split(' '),
 })
