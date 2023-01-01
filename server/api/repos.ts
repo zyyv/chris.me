@@ -13,18 +13,22 @@ export default defineEventHandler(async() => {
   const publicAndNotForkRepos = publicRepos.filter(repo => !repo.fork)
 
   const repoGroups: Record<string, Repo[]> = {
-    'Vite Ecosystem': publicAndNotForkRepos.filter(repo => repo.topics && repo.topics.includes('vite')),
-    'Plugins': publicAndNotForkRepos.filter(repo => repo.topics && repo.topics.includes('plugin')),
-    'Presets': publicAndNotForkRepos.filter(repo => repo.topics && repo.topics.includes('preset')),
-    'Utils': publicAndNotForkRepos.filter(repo => repo.topics && repo.topics.includes('util')),
-    'UnoCSS': publicRepos.filter(repo => repo.topics && repo.topics.includes('unocss')),
-    'Onu-UI': publicRepos.filter(repo => repo.topics && repo.topics.includes('onu')),
-    'Config': publicAndNotForkRepos.filter(repo => repo.topics && repo.topics.includes('config')),
-    'Component': publicAndNotForkRepos.filter(repo => repo.topics && repo.topics.includes('component')),
-    'Templates': publicAndNotForkRepos.filter(repo => repo.topics && repo.topics.includes('template')),
-    'Games': publicAndNotForkRepos.filter(repo => repo.topics && repo.topics.includes('game')),
+    'Vite Ecosystem': filterRepos(publicAndNotForkRepos, 'vite'),
+    'Plugins': filterRepos(publicAndNotForkRepos, 'plugin'),
+    'Presets': filterRepos(publicAndNotForkRepos, 'preset'),
+    'Utils': filterRepos(publicAndNotForkRepos, 'util'),
+    'UnoCSS': filterRepos(publicRepos, 'unocss'),
+    'UI': filterRepos(publicRepos, 'ui'),
+    'Config': filterRepos(publicAndNotForkRepos, 'config'),
+    'Component': filterRepos(publicAndNotForkRepos, 'component'),
+    'Templates': filterRepos(publicAndNotForkRepos, 'template'),
+    'Games': filterRepos(publicAndNotForkRepos, 'game'),
     'All': publicAndNotForkRepos,
   }
 
   return repoGroups
 })
+
+function filterRepos(repos: Repo[], key: string) {
+  return repos.filter(repo => repo.topics && repo.topics.includes(key))
+}

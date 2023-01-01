@@ -7,7 +7,7 @@ defineProps<{
 </script>
 
 <template>
-  <div>
+  <div v-if="data.length">
     <h4>
       {{ label }}
     </h4>
