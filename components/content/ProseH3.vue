@@ -1,5 +1,6 @@
 <template>
   <h3 :id="id" text-xl class="group">
+    <!-- {{ id.charAt(0).toUpperCase() + id.slice(1) }} -->
     {{ id }}
     <a header-anchor no-underline :href="`#${id}`">
       #
