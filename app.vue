@@ -1,5 +1,8 @@
 <template>
-  <NuxtLoadingIndicator :height="1" color="repeating-linear-gradient(to right,rgba(192,132,252,1) 0%,rgba(248,113,113,1) 50%,rgba(45,212,191,1) 100%)" />
+  <NuxtLoadingIndicator
+    :height="1"
+    color="repeating-linear-gradient(to right,rgba(192,132,252,1) 0%,rgba(248,113,113,1) 50%,rgba(45,212,191,1) 100%)"
+  />
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>
@@ -12,8 +15,14 @@ useHead({
     { rel: 'icon', type: 'image/x-icon', href: '/logo-light.svg' },
   ],
   meta: [
-    { hid: 'description', name: 'description', content: 'Chris blog is a place to share my thoughts and learn new things.' },
-    { hid: 'keywords', name: 'keywords', content: 'chris, blog, thoughts, learn, new, things' },
+    { name: 'author', content: 'Chris Zhu' },
+    { hid: 'description', name: 'description', content: 'Chris\' Portfolio' },
+    { hid: 'keywords', name: 'keywords', content: 'Chris, Chirs Zhu, Blog, Portfolio' },
+    { name: 'twitter:card', content: 'summary' },
+    { name: 'twitter:site', content: '@chris_zyyv' },
+    { property: 'og:title', content: 'Chris Zhu' },
+    { property: 'og:image', content: 'https://zyob.top/logo-light.svg' },
+
     { 'http-equiv': 'pragma', 'content': 'no-cache' },
     { 'http-equiv': 'cache-control', 'content': 'no-cache' },
     { 'http-equiv': 'expires', 'content': '0' },
