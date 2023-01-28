@@ -3,7 +3,7 @@ const routes = reactive<{ icon?: string, path: string, text?: string }[]>([
   // { icon: 'i-carbon-blog', path: '/posts', text: 'Blog' },
   { icon: 'i-carbon-blog', path: '/posts' },
   { icon: 'i-carbon-delivery-parcel', path: '/projects' },
-  { icon: 'i-carbon:bookmark', path: '/bookmark' },
+  // { icon: 'i-carbon:bookmark', path: '/bookmark' },
   // { icon: 'i-carbon-notebook', path: '/notes' },
 ])
 </script>
