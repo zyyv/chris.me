@@ -74,11 +74,11 @@ export default defineConfig({
 
     ['header-anchor', 'float-left mt-[0.125em] ml-[-0.8em] pr-[0.2em] text-[0.85em] op-0 group-hover-op-60 fw-600'],
 
+    [/^badge-(.*)$/, ([, c]) => `bg-${c}4:10 text-${c}5 rounded`],
     [/^badge-xs-(.*)$/, ([, c]) => `badge-${c} text-xs px2 py0.5`],
     [/^badge-sm-(.*)$/, ([, c]) => `badge-${c} text-sm px3 py0.6`],
     [/^badge-lg-(.*)$/, ([, c]) => `badge-${c} px3 py0.8`],
     [/^badge-square-(.*)$/, ([, c]) => `badge-${c} w-7 h-7 text-lg font-200 flex flex-none items-center justify-center`],
-    [/^badge-(.*)$/, ([, c]) => `bg-${c}4:10 text-${c}5 rounded`],
   ],
   theme: {
     fontFamily: {
