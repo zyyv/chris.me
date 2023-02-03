@@ -11,10 +11,10 @@
   >
     <div>
       <!-- TODO Command panel -->
-      <a fsc text-xs gap-1 hover-text-purple>
+      <!-- <a fsc text-xs gap-1 hover-text-purple>
         <div i-ri:command-line cursor-pointer />
         + K <sub>(WIP)</sub>
-      </a>
+      </a> -->
     </div>
     <div text="xs gray4" flex justify-center gap-3>
       <a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备2022005364号</a>
