@@ -18,5 +18,6 @@
     <NavFooter />
     <Cursor />
     <Bg />
+    <PwaContent />
   </div>
 </template>

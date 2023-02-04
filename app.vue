@@ -1,11 +1,12 @@
 <template>
-  <NuxtLoadingIndicator
-    :height="1"
-    color="repeating-linear-gradient(to right,rgba(192,132,252,1) 0%,rgba(248,113,113,1) 50%,rgba(45,212,191,1) 100%)"
-  />
-  <NuxtLayout>
-    <NuxtPage />
-  </NuxtLayout>
+  <div>
+    <VitePwaManifest />
+    <NuxtLoadingIndicator :height="1"
+      color="repeating-linear-gradient(to right,rgba(192,132,252,1) 0%,rgba(248,113,113,1) 50%,rgba(45,212,191,1) 100%)" />
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
+  </div>
 </template>
 
 <script setup>
@@ -15,7 +16,7 @@ useHead({
     { rel: 'icon', type: 'image/x-icon', href: '/logo-light.svg' },
   ],
   meta: [
-    { name: 'author', content: 'Chris Zhu' },
+    { name: 'author', content: 'Chris' },
     { hid: 'description', name: 'description', content: 'Chris\' Portfolio' },
     { hid: 'keywords', name: 'keywords', content: 'Chris, Chirs Zhu, Blog, Portfolio' },
     { name: 'twitter:card', content: 'summary' },
