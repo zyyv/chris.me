@@ -94,7 +94,6 @@ export default defineConfig({
         default: '#6f6f6f',
         dark: '#C8CCD0',
       },
-      primary: '#00bcd4',
     },
   },
   presets: [
