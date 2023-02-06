@@ -22,3 +22,23 @@ body::-webkit-scrollbar {
 ::selection {
   --at-apply: dark:badge-light dark:important-text-op-65 badge-warmgray;
 }
+
+.skeleton-loading-bg {
+  background: linear-gradient(
+    90deg,
+    rgba(190, 190, 190, 0.2) 25%,
+    rgba(129, 129, 129, 0.24) 37%,
+    rgba(190, 190, 190, 0.2) 63%
+  );
+  background-size: 400% 100%;
+  animation: skeleton-loading 1.4s ease infinite;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 100% 50%;
+  }
+  to {
+    background-position: 0 50%;
+  }
+}
