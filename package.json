@@ -1,58 +1,24 @@
 {
   "name": "chris.me",
-  "description": "Chris' blog build with Nuxt3.",
   "private": true,
-  "keywords": [
-    "blog",
-    "vue3",
-    "nuxt3",
-    "unocss"
-  ],
-  "license": "MIT",
-  "author": "Chris <https://github.com/zyyv>",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/zyyv/chris.me.git"
-  },
+  "description": "My personal website 2.0",
   "scripts": {
-    "dev": "nuxt dev",
     "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "lint": "eslint .",
-    "postinstall": "nuxt prepare && esno scripts/posts-route.ts"
-  },
-  "bugs": {
-    "url": "https://github.com/zyyv/chris.me/issues"
-  },
-  "homepage": "https://github.com/zyyv/chris.me#readme",
-  "dependencies": {
-    "blurhash": "^2.0.4",
-    "octokit": "^2.0.14"
+    "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@chris-zhu/eslint-config": "^1.0.7",
-    "@iconify-json/akar-icons": "^1.1.12",
-    "@iconify-json/carbon": "^1.1.14",
-    "@iconify-json/logos": "^1.1.22",
+    "@antfu/eslint-config": "^0.35.2",
     "@iconify-json/ri": "^1.1.4",
     "@nuxt/content": "^2.4.3",
-    "@types/fs-extra": "^11.0.1",
-    "@unocss/nuxt": "^0.49.4",
-    "@vite-pwa/nuxt": "^0.0.3",
-    "@vueuse/nuxt": "^9.12.0",
+    "@nuxt/devtools": "^0.1.6",
+    "@unocss/nuxt": "latest",
+    "@vueuse/nuxt": "latest",
     "eslint": "^8.33.0",
-    "esno": "^0.16.3",
-    "fs-extra": "^11.1.0",
-    "nuxt": "3.1.2",
-    "sass": "^1.58.0",
+    "nuxt": "^3.2.2",
     "typescript": "^4.9.5",
-    "unocss-preset-scrollbar": "^0.2.0",
-    "vite-plugin-inspect": "^0.7.15"
-  },
-  "pnpm": {
-    "overrides": {
-      "@nuxt/kit": "npm:@nuxt/kit-edge@latest",
-      "@nuxt/kit-edge": "latest"
-    }
+    "unocss-preset-useful": "^0.0.7"
   }
 }

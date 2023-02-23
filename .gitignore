@@ -1,10 +1,8 @@
 node_modules
-*.log
-dist
-.output
+*.log*
 .nuxt
+.nitro
+.cache
+.output
 .env
-.vscode
-*.zip
-data
-dev-dist
+dist

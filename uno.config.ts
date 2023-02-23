@@ -2,59 +2,13 @@ import {
   defineConfig,
   presetAttributify,
   presetIcons,
-  presetTypography,
   presetUno,
   transformerDirectives,
-  transformerVariantGroup,
 } from 'unocss'
-import type { CSSObject, Shortcut } from 'unocss'
-
-const usefulShortcuts: Shortcut[] = [
-  ['pr', 'relative'],
-  ['pa', 'absolute'],
-  ['pf', 'fixed'],
-  ['f-c', 'flex justify-center items-center'],
-  ['f-c-c', 'f-c flex-col'],
-
-  ['fc', 'flex justify-center'],
-  ['fcc', 'flex justify-center items-center'],
-  ['fs', 'flex justify-start'],
-  ['fsc', 'flex justify-start items-center'],
-  ['fe', 'flex justify-end'],
-  ['fec', 'flex justify-end items-center'],
-  ['fb', 'flex justify-between'],
-  ['fbc', 'flex justify-between items-center'],
-  ['fw', 'flex justify-wrap'],
-  ['fwr', 'flex justify-wrap-reverse'],
-  ['fa', 'flex justify-around'],
-  ['fac', 'flex justify-around items-center'],
-
-  ['fic', 'flex items-center'],
-  ['fccc', 'flex justify-center items-center flex-col'],
-
-  ['p-c', 'pa top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'],
-]
-
-const typographyCssExtend: Record<string, CSSObject> = {
-  'a': {
-    'text-decoration-color': 'rgba(192, 132, 252, 0.4);',
-    'text-underline-offset': '4px',
-  },
-  'a:hover': {
-    'text-decoration-color': 'rgba(192, 132, 252, 0.8);',
-  },
-  'pre': {
-    background: '#23272d !important',
-  },
-  'blockquote': {
-    'border-left': '0.25em solid rgba(168,85,247,.4)',
-  },
-}
+import { presetUseful } from 'unocss-preset-useful'
 
 export default defineConfig({
   shortcuts: [
-    ...usefulShortcuts,
-
     ['trans', 'transition-all-350 ease-linear'],
     ['text', 'text-text-default dark:text-text-dark'],
     ['bg', 'trans bg-bg-default dark:bg-bg-dark'],
@@ -81,16 +35,12 @@ export default defineConfig({
     [/^badge-square-(.*)$/, ([, c]) => `badge-${c} w-7 h-7 text-lg font-200 flex flex-none items-center justify-center`],
   ],
   theme: {
-    fontFamily: {
-      mono: 'dm,ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace',
-    },
     colors: {
       bg: {
         default: '#fefefe',
         dark: '#1c1f24',
       },
       text: {
-        // default: '#3D4248',
         default: '#6f6f6f',
         dark: '#C8CCD0',
       },
@@ -99,14 +49,10 @@ export default defineConfig({
   presets: [
     presetUno(),
     presetAttributify(),
-    presetIcons({
-      scale: 1.2,
-    }),
-    presetTypography({ cssExtend: typographyCssExtend }),
+    presetIcons(),
+    presetUseful(),
   ],
   transformers: [
     transformerDirectives(),
-    transformerVariantGroup(),
   ],
-  safelist: 'sm-fsc max-w-75'.split(' '),
 })
