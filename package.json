@@ -15,6 +15,7 @@
     "@nuxt/content": "^2.4.3",
     "@nuxt/devtools": "^0.1.6",
     "@unocss/nuxt": "latest",
+    "@unocss/preset-mini": "^0.50.1",
     "@vueuse/nuxt": "latest",
     "eslint": "^8.33.0",
     "nuxt": "^3.2.2",
