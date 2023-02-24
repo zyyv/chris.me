@@ -6,7 +6,8 @@ specifiers:
   '@nuxt/content': ^2.4.3
   '@nuxt/devtools': ^0.1.6
   '@unocss/nuxt': latest
-  '@unocss/preset-mini': ^0.50.1
+  '@unocss/preset-mini': latest
+  '@unocss/reset': latest
   '@vueuse/nuxt': latest
   eslint: ^8.33.0
   nuxt: ^3.2.2
@@ -20,6 +21,7 @@ devDependencies:
   '@nuxt/devtools': 0.1.6_nuxt@3.2.2+vite@4.1.4
   '@unocss/nuxt': 0.50.1_vite@4.1.4+webpack@5.75.0
   '@unocss/preset-mini': 0.50.1
+  '@unocss/reset': 0.50.1
   '@vueuse/nuxt': 9.13.0_nuxt@3.2.2+vue@3.2.47
   eslint: 8.34.0
   nuxt: 3.2.2_7kw3g6rralp5ps6mg3uyzz6azm

@@ -6,6 +6,9 @@ export default defineNuxtConfig({
     '@nuxt/content',
     // '@nuxt/devtools',
   ],
+  css: [
+    '@unocss/reset/tailwind.css',
+  ],
   // devtools: {
   //   // Enable devtools (default: true)
   //   enabled: true,
