@@ -4,22 +4,16 @@ const route = useRoute()
 
 <template>
   <div font-craft text="#6f6f6f" p-2>
-    <h1>Nuxt Routing set up successfully!</h1>
-    <p>Current route: {{ route.path }}</p>
-    <a href="https://nuxt.com/docs/getting-started/routing" target="_blank">Learn more about Nuxt Routing</a>
-    <div>
+    <div flex gap-2>
       <button class="btn">
         <span>Try Demo</span>
       </button>
 
       <CommonButton />
     </div>
-    <!-- <div mt-2 class="glowing-box-input">
-          <input type="text" placeholder="Enter your domain">
-        </div> -->
 
-    <div mt-2 style="--animation-speed:2s;" class="try-demo-input glowing-box glowing-box-active " q:key="C9_2">
-      <div class="glowing-box-borders-masker">
+    <div mt-2 style="--animation-speed:2s;" class="try-demo-input glowing-box group" q:key="C9_2">
+      <div class="glowing-box-borders-masker group-hover-op-100">
         <div class="glowing-box-borders" />
       </div>
       <div class="glowing-box-input" q:key="hu_0">
