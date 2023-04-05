@@ -38,7 +38,6 @@
     "@nuxt/content": "^2.5.2",
     "@types/fs-extra": "^11.0.1",
     "@unocss/nuxt": "^0.50.6",
-    "@vite-pwa/nuxt": "^0.0.7",
     "@vueuse/nuxt": "^9.13.0",
     "eslint": "^8.37.0",
     "esno": "^0.16.3",
