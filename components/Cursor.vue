@@ -25,12 +25,14 @@ watch(() => route.fullPath, () => {
     id="dot"
     ref="dotRef"
     :style="style.dot"
-    class="bg-gray4"
+    bg-white
     z-99999
     opacity-0
     pointer-events-none
     rounded-full
     fixed
+    w-2.5
+    h-2.5
   />
   <div
     id="cursor"
@@ -59,10 +61,8 @@ watch(() => route.fullPath, () => {
 }
 
 #dot {
-  mix-blend-mode: normal;
+  mix-blend-mode: difference;
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-  width: 9px;
-  height: 9px;
   transform: translate(-50%, -50%);
 }
 

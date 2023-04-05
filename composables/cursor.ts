@@ -69,8 +69,8 @@ export function useDot(style: ICursorStyle) {
 
     style.dot = {
       ...style.dot,
-      '--un-bg-opacity': opacity,
-      'transform': `translate(-50%, -50%) scale(${scale})`,
+      // '--un-bg-opacity': opacity,
+      transform: `translate(-50%, -50%) scale(${scale})`,
     }
   }
   const toggleDotVisibility = (newStatus: boolean) => {
