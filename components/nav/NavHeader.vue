@@ -16,32 +16,30 @@ const routes = reactive<{ icon?: string, path: string, text?: string }[]>([
     inset-x-0
     trans
     backdrop-blur
-    b="b-0 dashed gray-300 dark:b-gray-500"
-    fbc
+    fcc
     px-8
   >
-    <NuxtLink to="/" title="Home">
-      <img v-show="isDark" h-6 src="/logo-light.svg" alt="logo">
-      <img v-show="!isDark" h-6 src="/logo.svg" alt="logo">
-    </NuxtLink>
-    <nav w-full grid="~ cols-[auto_max-content]" h-16 md:h-18>
-      <!-- 垫片 -->
-      <div />
-      <div grid gap-5 auto-flow-col items-center>
-        <NuxtLink
-          v-for="route in routes"
-          :key="route.path"
-          :to="route.path"
-          :title="route.path.slice(1, 2).toUpperCase() + route.path.slice(2).toLowerCase()"
-        >
-          <span v-if="route.text" icon-text>{{ route.text }}</span>
-          <div v-else icon-btn :class="route.icon" />
-        </NuxtLink>
+    <nav
+      grid="~ gap-5"
+      auto-flow-col
+      items-center
+      h-16
+      md:h-18
+    >
+      <NuxtLink
+        v-for="route in routes"
+        :key="route.path"
+        :to="route.path"
+        :title="route.path.slice(1, 2).toUpperCase() + route.path.slice(2).toLowerCase()"
+      >
+        <span v-if="route.text" icon-text>{{ route.text }}</span>
+        <div v-else icon-btn :class="route.icon" />
+      </NuxtLink>
 
-        <!-- <a hidden lg:block>
+      <!-- <a hidden lg:block>
           <div icon-link i-carbon:language @click="toggleLocales" />
         </a> -->
-        <!-- <a
+      <!-- <a
           title="Bilibili"
           hidden
           lg:block
@@ -50,20 +48,20 @@ const routes = reactive<{ icon?: string, path: string, text?: string }[]>([
           icon-link
           i-ri:bilibili-line
         /> -->
-        <a
-          title="Twitter"
-          hidden
-          lg:block
-          href="https://twitter.com/chris_zyyv"
-          target="_blank"
-          icon-link
-          i-ri:twitter-line
-        />
-        <a title="Github" href="https://github.com/zyyv" target="_blank" icon-link i-ri-github-line />
-        <div fcc>
-          <DrakToggle />
-        </div>
-        <!-- <div
+      <a
+        title="Twitter"
+        hidden
+        lg:block
+        href="https://twitter.com/chris_zyyv"
+        target="_blank"
+        icon-link
+        i-ri:twitter-line
+      />
+      <a title="Github" href="https://github.com/zyyv" target="_blank" icon-link i-ri-github-line />
+      <div fcc>
+        <DrakToggle />
+      </div>
+      <!-- <div
           pr
           w-6
           h-full
@@ -109,7 +107,6 @@ const routes = reactive<{ icon?: string, path: string, text?: string }[]>([
             <div />
           </div>
         </div> -->
-      </div>
     </nav>
   </header>
   <!-- For header fixed -->

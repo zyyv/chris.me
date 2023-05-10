@@ -28,7 +28,7 @@ function sortArticles(list: Article[]) {
 
 <template>
   <!-- origin in markdown.css -->
-  <div prose ma origin>
+  <div prose ma>
     <PageHeader title="Posts" description="Some boring but useful articles." />
     <ContentList>
       <template #default="{ list }">

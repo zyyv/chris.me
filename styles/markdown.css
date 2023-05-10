@@ -1,4 +1,4 @@
-.prose, [prose=""] {
+/* .prose, [prose=""] {
   max-width: 75ch !important;
 }
 
@@ -14,4 +14,4 @@
 
 :is([prose=""], .prose):not([origin=""], .origin) :where(p):not(:where(.not-prose, .not-prose *)) {
   --at-apply: important-text-op-80;
-}
+} */

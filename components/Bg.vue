@@ -17,7 +17,7 @@ const color = computed(() => isDark.value ? '#fff' : '#0d9488')
       <div class="signup-bg-stars-2 w-2px h-2px" un-after="w-2px h-2px" />
       <div class="signup-bg-stars-3 w-3px h-3px" un-after="w-3px h-3px" />
     </div>
-    <div
+    <!-- <div
       pr
       w-full
       h-full
@@ -28,7 +28,7 @@ const color = computed(() => isDark.value ? '#fff' : '#0d9488')
       <div class="bottom-1/2 left-1/2 bg-gradient-to-tr from-teal via-red to-blue" />
       <div class="top-1/8 right-1.8 bg-gradient-to-tl from-orange via-blue to-yellow" />
       <div class="bottom-1/6 right-1/5 bg-gradient-to-tl from-purple via-pink to-yellow" />
-    </div>
+    </div> -->
   </div>
 </template>
 

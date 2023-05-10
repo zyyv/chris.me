@@ -11,12 +11,16 @@ export default defineNuxtConfig({
   experimental: {
     reactivityTransform: true,
     inlineSSRStyles: false,
+    viewTransition: true,
+    renderJsonPayloads: true,
   },
   css: [
     '~/styles/markdown.css',
     '~/styles/dank-mono.css',
     '~/styles/main.css',
+    '~/styles/vars.css',
   ],
+  // devtools: true,
   unocss: {
     preflight: true,
   },
