@@ -1,6 +1,9 @@
 import Inspect from 'vite-plugin-inspect'
 
 export default defineNuxtConfig({
+  devServer: {
+    port: 1111,
+  },
   // ssr: false,
   modules: [
     '@vueuse/nuxt',
