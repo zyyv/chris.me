@@ -1,6 +1,9 @@
 import Inspect from 'vite-plugin-inspect'
 
 export default defineNuxtConfig({
+  devServer: {
+    port: 1111,
+  },
   // ssr: false,
   modules: [
     '@vueuse/nuxt',
@@ -11,12 +14,16 @@ export default defineNuxtConfig({
   experimental: {
     reactivityTransform: true,
     inlineSSRStyles: false,
+    viewTransition: true,
+    renderJsonPayloads: true,
   },
   css: [
     '~/styles/markdown.css',
     '~/styles/dank-mono.css',
     '~/styles/main.css',
+    '~/styles/vars.css',
   ],
+  // devtools: true,
   unocss: {
     preflight: true,
   },

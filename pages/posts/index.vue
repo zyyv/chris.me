@@ -1,6 +1,6 @@
 <script lang='ts' setup>
 import { useTitle } from '@vueuse/core'
-import { Article } from '~/types'
+import type { Article } from '~/types'
 
 useTitle('Posts | Chris')
 useHead({
@@ -28,7 +28,7 @@ function sortArticles(list: Article[]) {
 
 <template>
   <!-- origin in markdown.css -->
-  <div prose ma origin>
+  <div prose ma>
     <PageHeader title="Posts" description="Some boring but useful articles." />
     <ContentList>
       <template #default="{ list }">
@@ -45,7 +45,6 @@ function sortArticles(list: Article[]) {
               {{ article.title }}
             </h3>
             <div
-              font-mono
               italic
               fic
               text-sm

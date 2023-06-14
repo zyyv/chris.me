@@ -22,7 +22,7 @@ function getAngle(diffX: number, diffY: number) {
 }
 
 function getSqueeze(diffX: number, diffY: number) {
-  const distance = Math.sqrt(Math.pow(diffX, 2) + Math.pow(diffY, 2))
+  const distance = Math.sqrt(diffX ** 2 + diffY ** 2)
   const maxSqueeze = 0.15
   const accelerator = 750
   return Math.min(distance / accelerator, maxSqueeze)

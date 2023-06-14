@@ -1,7 +1,7 @@
 // import { OctokitCtx } from '../constants'
 import type { Repo } from '~/types'
 
-export default defineEventHandler(async() => {
+export default defineEventHandler(async () => {
   // const { data } = await OctokitCtx.rest.repos.listForAuthenticatedUser({
   //   per_page: 100,
   //   type: 'owner',

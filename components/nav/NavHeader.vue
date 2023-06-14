@@ -1,11 +1,14 @@
 <script lang="ts" setup>
-const routes = reactive<{ icon?: string, path: string, text?: string }[]>([
+const routes = reactive<{ icon?: string; path: string; text?: string }[]>([
   // { icon: 'i-carbon-blog', path: '/posts', text: 'Blog' },
   { icon: 'i-carbon-blog', path: '/posts' },
   { icon: 'i-carbon-delivery-parcel', path: '/projects' },
   // { icon: 'i-carbon:bookmark', path: '/bookmark' },
   // { icon: 'i-carbon-notebook', path: '/notes' },
 ])
+
+const route = useRoute()
+const inHome = computed(() => route.path === '/')
 </script>
 
 <template>
@@ -16,26 +19,36 @@ const routes = reactive<{ icon?: string, path: string, text?: string }[]>([
     inset-x-0
     trans
     backdrop-blur
-    b="b-0 dashed gray-300 dark:b-gray-500"
-    fbc
+    fcc
     px-8
   >
-    <NuxtLink to="/" title="Home">
-      <img v-show="isDark" h-6 src="/logo-light.svg" alt="logo">
-      <img v-show="!isDark" h-6 src="/logo.svg" alt="logo">
-    </NuxtLink>
-    <nav w-full grid="~ cols-[auto_max-content]" h-16 md:h-18>
-      <!-- 垫片 -->
-      <div />
-      <div grid gap-5 auto-flow-col items-center>
+    <nav w-full :class="inHome ? 'fcc' : 'fbc'">
+      <div v-if="!inHome" class="transitionLogo">
+        <NuxtLink to="/" title="Home">
+          <img v-show="isDark" h-6 src="/logo-light.svg" alt="logo">
+          <img v-show="!isDark" h-6 src="/logo.svg" alt="logo">
+        </NuxtLink>
+      </div>
+
+      <div
+        class="transBlock"
+        grid="~ gap-5"
+        auto-flow-col
+        items-center
+        h-16
+        md:h-18
+      >
+        <NuxtLink to="/test">
+          <div icon-link i-carbon:language />
+        </NuxtLink>
         <NuxtLink
-          v-for="route in routes"
-          :key="route.path"
-          :to="route.path"
-          :title="route.path.slice(1, 2).toUpperCase() + route.path.slice(2).toLowerCase()"
+          v-for="_route in routes"
+          :key="_route.path"
+          :to="_route.path"
+          :title="_route.path.slice(1, 2).toUpperCase() + _route.path.slice(2).toLowerCase()"
         >
-          <span v-if="route.text" icon-text>{{ route.text }}</span>
-          <div v-else icon-btn :class="route.icon" />
+          <span v-if="_route.text" icon-text>{{ _route.text }}</span>
+          <div v-else icon-btn :class="_route.icon" />
         </NuxtLink>
 
         <!-- <a hidden lg:block>
@@ -115,3 +128,17 @@ const routes = reactive<{ icon?: string, path: string, text?: string }[]>([
   <!-- For header fixed -->
   <div h-16 md:h-18 />
 </template>
+
+<style scoped>
+.transitionLogo {
+  view-transition-name: logo;
+}
+
+.transBlock {
+  view-transition-name: nav-menu;
+}
+
+/* .aaa{
+  view-transition-name: selected-film
+} */
+</style>

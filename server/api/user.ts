@@ -1,7 +1,7 @@
 // import { OctokitCtx } from '../constants'
 import type { User } from '~/types'
 
-export default defineEventHandler(async() => {
+export default defineEventHandler(async () => {
   // const {
   //   data,
   // } = await OctokitCtx.rest.users.getAuthenticated()

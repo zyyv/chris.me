@@ -13,6 +13,7 @@ const usefulShortcuts: Shortcut[] = [
   ['pr', 'relative'],
   ['pa', 'absolute'],
   ['pf', 'fixed'],
+  ['ps', 'sticky'],
   ['f-c', 'flex justify-center items-center'],
   ['f-c-c', 'f-c flex-col'],
 
@@ -37,11 +38,12 @@ const usefulShortcuts: Shortcut[] = [
 
 const typographyCssExtend: Record<string, CSSObject> = {
   'a': {
-    'text-decoration-color': 'rgba(192, 132, 252, 0.4);',
+    'text-decoration-color': 'rgba(192, 132, 252, 0.3);',
     'text-underline-offset': '4px',
+    'transition': 'all 0.3s ease-in-out',
   },
   'a:hover': {
-    'text-decoration-color': 'rgba(192, 132, 252, 0.8);',
+    'text-decoration-color': 'rgba(192, 132, 252, 0.9);',
   },
   'pre': {
     background: '#23272d !important',
@@ -56,9 +58,10 @@ export default defineConfig({
     ...usefulShortcuts,
 
     ['trans', 'transition-all-350 ease-linear'],
-    ['text', 'text-text-default dark:text-text-dark'],
-    ['bg', 'trans bg-bg-default dark:bg-bg-dark'],
+    ['text', 'text-$text dark:text-$text-dark'],
+    ['bg', 'trans bg-$bg dark:bg-$bg-dark'],
     ['base', 'trans text'],
+    // ['u-prose', 'prose prose-reading'],
 
     ['text-main-linear', 'text-gradient-to-tr from-purple-400 to-red-500'],
 
@@ -82,25 +85,34 @@ export default defineConfig({
   ],
   theme: {
     fontFamily: {
-      mono: 'dm,ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace',
+      // mono: 'dm,ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace',
     },
     colors: {
-      bg: {
-        default: '#fefefe',
-        dark: '#1c1f24',
-      },
-      text: {
-        // default: '#3D4248',
-        default: '#6f6f6f',
-        dark: '#C8CCD0',
-      },
+      // reading: {
+      //   50: '#f9f9f9',
+      //   100: '#f2f2f2',
+      //   200: '#e0e0e0',
+      //   300: '#c7c7c7',
+      //   400: '#a8a8a8',
+      //   500: '#888888',
+      //   600: '#5f5f5f',
+      //   700: '#3c3c3c',
+      //   800: '#262626',
+      //   900: '#171717',
+      //   950: '#000000',
+      // }
     },
   },
   presets: [
     presetUno(),
     presetAttributify(),
     presetIcons({
-      scale: 1.2,
+      extraProperties: {
+        'display': 'inline-block',
+        'height': '1.2em',
+        'width': '1.2em',
+        'vertical-align': 'text-bottom',
+      },
     }),
     presetTypography({ cssExtend: typographyCssExtend }),
   ],

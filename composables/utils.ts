@@ -24,7 +24,7 @@ const language2Color: Record<string, string> = {
   'makefile': '#427819',
 }
 
-export const getLanguageColor = (language: string) => {
+export function getLanguageColor(language: string) {
   return language2Color[language.toLowerCase()] || '#ddd'
 }
 
