@@ -38,6 +38,9 @@ const inHome = computed(() => route.path === '/')
         h-16
         md:h-18
       >
+        <NuxtLink to="/test">
+          <div icon-link i-carbon:language />
+        </NuxtLink>
         <NuxtLink
           v-for="route in routes"
           :key="route.path"
@@ -46,10 +49,6 @@ const inHome = computed(() => route.path === '/')
         >
           <span v-if="route.text" icon-text>{{ route.text }}</span>
           <div v-else icon-btn :class="route.icon" />
-        </NuxtLink>
-
-        <NuxtLink to="/test">
-          <div icon-link i-carbon:language />
         </NuxtLink>
 
         <!-- <a hidden lg:block>
@@ -136,7 +135,7 @@ const inHome = computed(() => route.path === '/')
 }
 
 .transBlock {
-  view-transition-name: selected-film;
+  view-transition-name: nav-menu;
 }
 
 /* .aaa{

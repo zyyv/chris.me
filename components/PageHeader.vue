@@ -14,7 +14,7 @@ defineProps<{
   >
     {{ title }}
   </h2>
-  <p font-mono text-xs md-text-sm italic>
+  <p text-xs md-text-sm italic>
     {{ description }}
   </p>
 </template>

@@ -1,10 +1,6 @@
 <template>
   <div
     backdrop-blur
-    sticky
-    bottom-0
-    left-0
-    right-0
     py-2
     fbc
     prose

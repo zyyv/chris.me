@@ -8,7 +8,11 @@ draft: false
 ---
 
 :ArticleToc
-:ArticleHeader
+<!-- :ArticleHeader -->
+
+# {{ $doc.title}}
+
+{{  $doc.ctime  }}
 
 ## Dirs
 ```md
@@ -23,6 +27,7 @@ src/
 ```
 
 ## Generator
+
 如果你想使用`UnoCSS`{lang=html}的核心功能，你可以直接使用`createGenerator`{lang=ts}函数。
 
 ```ts

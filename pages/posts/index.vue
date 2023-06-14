@@ -45,7 +45,6 @@ function sortArticles(list: Article[]) {
               {{ article.title }}
             </h3>
             <div
-              font-mono
               italic
               fic
               text-sm

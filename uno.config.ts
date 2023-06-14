@@ -85,9 +85,9 @@ export default defineConfig({
   ],
   theme: {
     fontFamily: {
-      mono: 'dm,ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace',
+      // mono: 'dm,ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace',
     },
-    colors:{
+    colors: {
       // reading: {
       //   50: '#f9f9f9',
       //   100: '#f2f2f2',
@@ -101,7 +101,7 @@ export default defineConfig({
       //   900: '#171717',
       //   950: '#000000',
       // }
-    }
+    },
   },
   presets: [
     presetUno(),
