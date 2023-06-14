@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-const routes = reactive<{ icon?: string, path: string, text?: string }[]>([
+const routes = reactive<{ icon?: string; path: string; text?: string }[]>([
   // { icon: 'i-carbon-blog', path: '/posts', text: 'Blog' },
   { icon: 'i-carbon-blog', path: '/posts' },
   { icon: 'i-carbon-delivery-parcel', path: '/projects' },
@@ -42,13 +42,13 @@ const inHome = computed(() => route.path === '/')
           <div icon-link i-carbon:language />
         </NuxtLink>
         <NuxtLink
-          v-for="route in routes"
-          :key="route.path"
-          :to="route.path"
-          :title="route.path.slice(1, 2).toUpperCase() + route.path.slice(2).toLowerCase()"
+          v-for="_route in routes"
+          :key="_route.path"
+          :to="_route.path"
+          :title="_route.path.slice(1, 2).toUpperCase() + _route.path.slice(2).toLowerCase()"
         >
-          <span v-if="route.text" icon-text>{{ route.text }}</span>
-          <div v-else icon-btn :class="route.icon" />
+          <span v-if="_route.text" icon-text>{{ _route.text }}</span>
+          <div v-else icon-btn :class="_route.icon" />
         </NuxtLink>
 
         <!-- <a hidden lg:block>

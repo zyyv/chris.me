@@ -1,6 +1,6 @@
 <script lang='ts' setup>
 import { useTitle } from '@vueuse/core'
-import { Article } from '~/types'
+import type { Article } from '~/types'
 
 useTitle('Posts | Chris')
 useHead({

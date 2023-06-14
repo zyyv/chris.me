@@ -1,3 +1,7 @@
+<script setup lang="ts">
+defineProps<{ id: string }>()
+</script>
+
 <template>
   <h3 :id="id" text-xl class="group">
     <!-- {{ id.charAt(0).toUpperCase() + id.slice(1) }} -->
@@ -7,7 +11,3 @@
     </a>
   </h3>
 </template>
-
-<script setup lang="ts">
-defineProps<{ id: string }>()
-</script>

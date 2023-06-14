@@ -35,7 +35,8 @@ onMounted(() => {
       if (hash && (!pathname || pathname === location.pathname)) {
         window.history.replaceState({}, '', hash)
         navigate()
-      } else {
+      }
+      else {
         router.push({ path: pathname, hash })
       }
     }

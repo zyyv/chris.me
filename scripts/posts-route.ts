@@ -1,5 +1,5 @@
-import path from 'path'
-import { fileURLToPath } from 'url'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
 import fs from 'fs-extra'
 
 const __filename = fileURLToPath(import.meta.url)
@@ -11,7 +11,7 @@ async function prepareRoute() {
   await fs.ensureDir(source)
 
   const files = await fs.readdir(source)
-  const routes = files.map(async(file) => {
+  const routes = files.map(async (file) => {
     const { uid, mtime, ctime, mtimeMs, ctimeMs } = await reWrite(file)
     return {
       id: uid,
@@ -50,7 +50,8 @@ async function reWriteHeader(file: string) {
   if (!realContent.includes(':ArticleHeader'))
     header.push(':ArticleHeader')
 
-  if (header.length <= 0) return
+  if (header.length <= 0)
+    return
 
   cs[2] = `\n\n${header.join('\n')}\n${realContent.trimStart()}`
 
@@ -74,10 +75,14 @@ function generateMeta(file: string, content: string, stat: fs.Stats) {
     return [match[1], match[2]]
   }))
 
-  if (!meta.title) meta.title = file.replace('.md', '')
-  if (!meta.uid) meta.uid = stat.uid
-  if (!meta.ctime) meta.ctime = stat.ctime.toISOString()
-  if (!meta.mtime) meta.mtime = stat.mtime.toISOString()
+  if (!meta.title)
+    meta.title = file.replace('.md', '')
+  if (!meta.uid)
+    meta.uid = stat.uid
+  if (!meta.ctime)
+    meta.ctime = stat.ctime.toISOString()
+  if (!meta.mtime)
+    meta.mtime = stat.mtime.toISOString()
 
   return meta
 }
