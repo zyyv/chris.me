@@ -38,9 +38,6 @@ const inHome = computed(() => route.path === '/')
         h-16
         md:h-18
       >
-        <NuxtLink to="/test">
-          <div icon-link i-carbon:language />
-        </NuxtLink>
         <NuxtLink
           v-for="_route in routes"
           :key="_route.path"
