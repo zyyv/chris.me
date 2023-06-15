@@ -1,10 +1,8 @@
 <script lang="ts" setup>
 const routes = reactive<{ icon?: string; path: string; text?: string }[]>([
-  // { icon: 'i-carbon-blog', path: '/posts', text: 'Blog' },
-  { icon: 'i-carbon-blog', path: '/posts' },
-  { icon: 'i-carbon-delivery-parcel', path: '/projects' },
-  // { icon: 'i-carbon:bookmark', path: '/bookmark' },
-  // { icon: 'i-carbon-notebook', path: '/notes' },
+  { path: '/posts', text: 'Blog' },
+  { path: '/projects', text: 'Projects' },
+  { path: '/talks', text: 'Talks' },
 ])
 
 const route = useRoute()
