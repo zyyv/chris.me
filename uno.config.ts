@@ -1,13 +1,16 @@
 import {
+  type CSSObject,
+  type Shortcut,
   defineConfig,
   presetAttributify,
   presetIcons,
   presetTypography,
   presetUno,
+  transformerCompileClass,
   transformerDirectives,
   transformerVariantGroup,
 } from 'unocss'
-import type { CSSObject, Shortcut } from 'unocss'
+import { presetUseful } from 'unocss-preset-useful'
 
 const usefulShortcuts: Shortcut[] = [
   ['pr', 'relative'],
@@ -103,6 +106,7 @@ export default defineConfig({
       // }
     },
   },
+  configDeps: [],
   presets: [
     presetUno(),
     presetAttributify(),
@@ -115,10 +119,12 @@ export default defineConfig({
       },
     }),
     presetTypography({ cssExtend: typographyCssExtend }),
+    presetUseful(),
   ],
   transformers: [
     transformerDirectives(),
     transformerVariantGroup(),
+    transformerCompileClass(),
   ],
   safelist: 'sm-fsc max-w-75'.split(' '),
 })

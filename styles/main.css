@@ -1,26 +1,30 @@
 html,
 body {
-  --at-apply: h-full base;
+  /* --uno: h-full base; */
 }
 
 html * {
-  cursor: none !important;
+  --uno: cursor-none!;
 }
 
-html {
-  background: var(--bg);
+/* html {
+  --uno: bg-$bg;
 }
 
 html.dark {
-  background: var(--bg-dark);
+  --uno: bg-$bg-dark;
+} */
+
+body{
+  --uno: h-full base bg-$bg bg-$bg-dark;
 }
 
 body::-webkit-scrollbar {
-  --at-apply: w0;
+  --uno: w0;
 }
 
 ::selection {
-  --at-apply: dark:badge-light dark:important-text-op-65 badge-warmgray;
+  --uno: dark:badge-light dark:important-text-op-65 badge-warmgray;
 }
 
 ::view-transition-old(root),

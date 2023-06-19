@@ -71,6 +71,9 @@ devDependencies:
   unocss-preset-scrollbar:
     specifier: ^0.2.0
     version: 0.2.1(unocss@0.53.1)
+  unocss-preset-useful:
+    specifier: ^0.0.12
+    version: 0.0.12
   vite-plugin-inspect:
     specifier: ^0.7.28
     version: 0.7.28(vite@4.3.9)
@@ -1044,7 +1047,7 @@ packages:
   /@nuxt/content@2.7.0:
     resolution: {integrity: sha512-3vv3Rbpf6NH7RRuy7PLVmpQCt8C9DgV4aTWLmTCdnWpmlNsX+0wQT8bA/ypqmh8zrJ6BXWztFM35WVESkNvDvQ==}
     dependencies:
-      '@nuxt/kit': /@nuxt/kit-edge@3.6.0-28108658.05a8c2d9
+      '@nuxt/kit': /@nuxt/kit-edge@3.6.0-28117308.634829a0
       consola: 3.1.0
       defu: 6.1.2
       destr: 1.2.2
@@ -1106,7 +1109,7 @@ packages:
       nuxt: ^3.5.1
       vite: '*'
     dependencies:
-      '@nuxt/kit': /@nuxt/kit-edge@3.6.0-28108658.05a8c2d9
+      '@nuxt/kit': /@nuxt/kit-edge@3.6.0-28117308.634829a0
       '@nuxt/schema': 3.5.3
       execa: 7.1.1
       nuxt: 3.5.3(@types/node@20.3.1)(eslint@8.42.0)(sass@1.63.4)(typescript@5.1.3)
@@ -1142,7 +1145,7 @@ packages:
     dependencies:
       '@nuxt/devtools-kit': 0.6.0(nuxt@3.5.3)(vite@4.3.9)
       '@nuxt/devtools-wizard': 0.6.0
-      '@nuxt/kit': /@nuxt/kit-edge@3.6.0-28108658.05a8c2d9
+      '@nuxt/kit': /@nuxt/kit-edge@3.6.0-28117308.634829a0
       birpc: 0.2.12
       boxen: 7.1.0
       consola: 3.1.0
@@ -1184,11 +1187,11 @@ packages:
       - utf-8-validate
     dev: true
 
-  /@nuxt/kit-edge@3.6.0-28108658.05a8c2d9:
-    resolution: {integrity: sha512-VKb25qnnZy1+xZsprcfD4zfKiwLWGzJ7Halju6dkYhQC2/pW3aNEMCpC59c83QdAizzE5Hazdh+/kXA29k5DXw==}
+  /@nuxt/kit-edge@3.6.0-28117308.634829a0:
+    resolution: {integrity: sha512-IlrrODWLl5RykxRo59Z2W0kMqpFYmZn3s28pIIs/cuaqGyAXDTZMlTKZWYUwLOcOfifHvTgs/k3cy4+OKfSNVw==}
     engines: {node: ^14.18.0 || >=16.10.0}
     dependencies:
-      '@nuxt/schema': /@nuxt/schema-edge@3.6.0-28108658.05a8c2d9
+      '@nuxt/schema': /@nuxt/schema-edge@3.6.0-28117308.634829a0
       c12: 1.4.1
       consola: 3.1.0
       defu: 6.1.2
@@ -1201,7 +1204,7 @@ packages:
       pathe: 1.1.1
       pkg-types: 1.0.3
       scule: 1.0.0
-      semver: 7.5.1
+      semver: 7.5.2
       unctx: 2.3.1
       unimport: 3.0.8(rollup@3.25.1)
       untyped: 1.3.2
@@ -1210,8 +1213,8 @@ packages:
       - supports-color
     dev: true
 
-  /@nuxt/schema-edge@3.6.0-28108658.05a8c2d9:
-    resolution: {integrity: sha512-AqH1DRjd4CRENwQYmE539MlFkYtS3mE6vRp5/EJpr0/nE6ppnGUQYeFJLolSHCzeeAFOjuW9tM39aKsCaOpoyA==}
+  /@nuxt/schema-edge@3.6.0-28117308.634829a0:
+    resolution: {integrity: sha512-2uJNDnQy3hNtTvLlKpxmVT62/NZZBr03PK3cak1LFK4l3mi7B9lwU5ZTkRyF1VEBJ2BYG56BbcrJJAFZaiLevw==}
     engines: {node: ^14.18.0 || >=16.10.0}
     dependencies:
       defu: 6.1.2
@@ -1250,7 +1253,7 @@ packages:
     resolution: {integrity: sha512-Z2UmPkBy5WjxvHKuUcl1X6vKWnIyWSP+9UGde1F+MzzZxYgAQybFud1uL2B3KCowxZdoqT1hd2WklV7EtyCwrQ==}
     hasBin: true
     dependencies:
-      '@nuxt/kit': /@nuxt/kit-edge@3.6.0-28108658.05a8c2d9
+      '@nuxt/kit': /@nuxt/kit-edge@3.6.0-28117308.634829a0
       chalk: 5.2.0
       ci-info: 3.8.0
       consola: 3.1.0
@@ -1285,7 +1288,7 @@ packages:
     peerDependencies:
       vue: ^3.3.4
     dependencies:
-      '@nuxt/kit': /@nuxt/kit-edge@3.6.0-28108658.05a8c2d9
+      '@nuxt/kit': /@nuxt/kit-edge@3.6.0-28117308.634829a0
       '@rollup/plugin-replace': 5.0.2(rollup@3.25.1)
       '@vitejs/plugin-vue': 4.2.3(vite@4.3.9)(vue@3.3.4)
       '@vitejs/plugin-vue-jsx': 3.0.1(vite@4.3.9)(vue@3.3.4)
@@ -2162,7 +2165,7 @@ packages:
   /@unocss/nuxt@0.53.1(postcss@8.4.24)(vite@4.3.9)(webpack@5.86.0):
     resolution: {integrity: sha512-LTZYOK90bV2fC5gMs+8FMWMFgj64Ji7Nj1pT3Ov7BTob21BTRuvaJSUe2Mg3UHeauHXR/3VNn5vEFOwqtUic6Q==}
     dependencies:
-      '@nuxt/kit': /@nuxt/kit-edge@3.6.0-28108658.05a8c2d9
+      '@nuxt/kit': /@nuxt/kit-edge@3.6.0-28117308.634829a0
       '@unocss/config': 0.53.1
       '@unocss/core': 0.53.1
       '@unocss/preset-attributify': 0.53.1
@@ -2537,7 +2540,7 @@ packages:
     peerDependencies:
       nuxt: ^3.0.0
     dependencies:
-      '@nuxt/kit': /@nuxt/kit-edge@3.6.0-28108658.05a8c2d9
+      '@nuxt/kit': /@nuxt/kit-edge@3.6.0-28117308.634829a0
       '@vueuse/core': 10.1.2(vue@3.3.4)
       '@vueuse/metadata': 10.1.2
       local-pkg: 0.4.3
@@ -7360,7 +7363,7 @@ packages:
         optional: true
     dependencies:
       '@nuxt/devalue': 2.0.2
-      '@nuxt/kit': /@nuxt/kit-edge@3.6.0-28108658.05a8c2d9
+      '@nuxt/kit': /@nuxt/kit-edge@3.6.0-28117308.634829a0
       '@nuxt/schema': 3.5.3
       '@nuxt/telemetry': 2.2.0
       '@nuxt/ui-templates': 1.1.1
@@ -8697,6 +8700,14 @@ packages:
     dependencies:
       lru-cache: 6.0.0
 
+  /semver@7.5.2:
+    resolution: {integrity: sha512-SoftuTROv/cRjCze/scjGyiDtcUyxw1rgYQSZY7XTmtR5hX+dm76iDbTH8TkLPHCQmlbQVSSbNZCPM2hb0knnQ==}
+    engines: {node: '>=10'}
+    hasBin: true
+    dependencies:
+      lru-cache: 6.0.0
+    dev: true
+
   /send@0.18.0:
     resolution: {integrity: sha512-qqWzuOjSFOuqPjFe4NOsMLafToQQwBSOEpS+FwEt3A2V3vKubTquT3vmLTQpFgMXp8AlFWFuP1qKaJZOtPpVXg==}
     engines: {node: '>= 0.8.0'}
@@ -9534,6 +9545,12 @@ packages:
     dependencies:
       '@unocss/preset-mini': 0.31.17
       unocss: 0.53.1(@unocss/webpack@0.53.1)(postcss@8.4.24)(vite@4.3.9)
+    dev: true
+
+  /unocss-preset-useful@0.0.12:
+    resolution: {integrity: sha512-9IwwWyHROGLldi9qStqopnzFRloe3U2TLz+EHcSR2fTrYJkEhk3Ujs4fd7u3EJLnYKz3dL+ACIF705+NJmbmMQ==}
+    dependencies:
+      '@unocss/preset-mini': 0.53.1
     dev: true
 
   /unocss@0.53.1(@unocss/webpack@0.53.1)(postcss@8.4.24)(vite@4.3.9):

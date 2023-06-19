@@ -9,9 +9,9 @@
 }
 
 :is([prose=""], .prose) :where(p):not(:where(.not-prose, .not-prose *)) {
-  --at-apply: base;
+  --uno: base;
 }
 
 :is([prose=""], .prose):not([origin=""], .origin) :where(p):not(:where(.not-prose, .not-prose *)) {
-  --at-apply: important-text-op-80;
+  --uno: important-text-op-80;
 } */
