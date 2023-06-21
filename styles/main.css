@@ -1,22 +1,9 @@
-html,
-body {
-  /* --uno: h-full base; */
-}
-
 html * {
-  --uno: cursor-none!;
+  --uno: important-cursor-none;
 }
-
-/* html {
-  --uno: bg-$bg;
-}
-
-html.dark {
-  --uno: bg-$bg-dark;
-} */
 
 body{
-  --uno: h-full base bg-$bg bg-$bg-dark;
+  --uno: h-full trans text bg;
 }
 
 body::-webkit-scrollbar {

@@ -9,7 +9,7 @@ useContentHead(page)
 </script>
 
 <template>
-  <div base text-1.5em md-text-1.8em lg-text-2em>
+  <div text="~ 1.5em" md-text-1.8em lg-text-2em>
     <h1>
       {{ title }}
     </h1>

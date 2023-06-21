@@ -61,12 +61,12 @@ export default defineConfig({
     ...usefulShortcuts,
 
     ['trans', 'transition-all-350 ease-linear'],
-    ['text', 'text-$text dark:text-$text-dark'],
-    ['bg', 'trans bg-$bg dark:bg-$bg-dark'],
-    ['base', 'trans text'],
+    ['text', 'text-$text'],
+    ['bg', 'bg-$bg'],
     // ['u-prose', 'prose prose-reading'],
 
-    ['text-main-linear', 'text-gradient-to-tr from-purple-400 to-red-500'],
+    ['linear-text', 'text-transparent bg-clip-text bg-gradient-to-r'],
+    ['text-p-r', 'linear-text from-purple to-red'],
 
     ['icon', 'w-5.5 h-5.5 cursor-pointer select-none transition-opacity-300 ease-in-out text'],
     ['icon-btn', 'icon color-inherit op64 hover-op100 hover-color-teal-500 dark-hover-color-inherit'],
