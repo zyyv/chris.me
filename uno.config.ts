@@ -1,6 +1,6 @@
 import {
   type CSSObject,
-  type Shortcut,
+  type RuleContext,
   defineConfig,
   presetAttributify,
   presetIcons,
@@ -11,42 +11,18 @@ import {
   transformerVariantGroup,
 } from 'unocss'
 import { presetUseful } from 'unocss-preset-useful'
-
-const usefulShortcuts: Shortcut[] = [
-  ['pr', 'relative'],
-  ['pa', 'absolute'],
-  ['pf', 'fixed'],
-  ['ps', 'sticky'],
-  ['f-c', 'flex justify-center items-center'],
-  ['f-c-c', 'f-c flex-col'],
-
-  ['fc', 'flex justify-center'],
-  ['fcc', 'flex justify-center items-center'],
-  ['fs', 'flex justify-start'],
-  ['fsc', 'flex justify-start items-center'],
-  ['fe', 'flex justify-end'],
-  ['fec', 'flex justify-end items-center'],
-  ['fb', 'flex justify-between'],
-  ['fbc', 'flex justify-between items-center'],
-  ['fw', 'flex justify-wrap'],
-  ['fwr', 'flex justify-wrap-reverse'],
-  ['fa', 'flex justify-around'],
-  ['fac', 'flex justify-around items-center'],
-
-  ['fic', 'flex items-center'],
-  ['fccc', 'flex justify-center items-center flex-col'],
-
-  ['p-c', 'pa top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'],
-]
+import { parseColor } from '@unocss/preset-mini/utils'
 
 const typographyCssExtend: Record<string, CSSObject> = {
   'a': {
-    'text-decoration-color': 'rgba(192, 132, 252, 0.3);',
-    'text-underline-offset': '4px',
+    'display': 'inline-block',
+    'line-height': '1.5',
+    'border-bottom': '1px dashed rgba(var(--c-context), 0.5)',
+    'text-decoration': 'none',
     'transition': 'all 0.3s ease-in-out',
   },
   'a:hover': {
-    'text-decoration-color': 'rgba(192, 132, 252, 0.9);',
+    'border-bottom': '1px solid rgba(var(--c-context), 1)',
   },
   'pre': {
     background: '#23272d !important',
@@ -57,26 +33,35 @@ const typographyCssExtend: Record<string, CSSObject> = {
 }
 
 export default defineConfig({
+  rules: [
+    [/^o-(.*)$/, ([, body]: string[], { theme }: RuleContext<{}>) => {
+      const color = parseColor(body, theme)
+      if (color?.cssColor?.type === 'rgb' && color.cssColor.components) {
+        return {
+          '--c-context': `${color.cssColor.components.join(',')}`,
+        }
+      }
+      else {
+        return {
+          '--c-context': color?.color,
+        }
+      }
+    }],
+  ],
   shortcuts: [
-    ...usefulShortcuts,
-
     ['trans', 'transition-all-350 ease-linear'],
-    ['text', 'text-$text'],
-    ['bg', 'bg-$bg'],
+    ['text', 'text-primary-text'],
+    ['bg', 'bg-primary-bg'],
     // ['u-prose', 'prose prose-reading'],
 
     ['linear-text', 'text-transparent bg-clip-text bg-gradient-to-r'],
-    ['text-p-r', 'linear-text from-purple to-red'],
+    ['text-p-r', 'linear-text from-purple to-red'], // test case
 
     ['icon', 'w-5.5 h-5.5 cursor-pointer select-none transition-opacity-300 ease-in-out text'],
     ['icon-btn', 'icon color-inherit op64 hover-op100 hover-color-teal-500 dark-hover-color-inherit'],
     ['icon-link', 'icon color-inherit op64 hover:op100 hover-text-red-300 dark-hover-color-inherit'],
     ['icon-text', 'color-inherit op64 hover:op100 hover-text-purple dark-hover-color-inherit'],
-    ['link-hoverImportant', '!no-underline !hover-underline !hover-underline-offset-4 trans'],
-    ['link', '!text-red-400 link-hoverImportant'],
-    ['linkOutside', '!text-teal-500 link-hoverImportant'],
-    ['linkOrg', '!text-blue-400 link-hoverImportant'],
-    ['linkBtn', '!text-purple-400 link-hoverImportant'],
+    ['linkInProse', 'trans c-context'],
 
     ['header-anchor', 'float-left mt-[0.125em] ml-[-0.8em] pr-[0.2em] text-[0.85em] op-0 group-hover-op-60 fw-600'],
 
@@ -91,22 +76,14 @@ export default defineConfig({
       // mono: 'dm,ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace',
     },
     colors: {
-      // reading: {
-      //   50: '#f9f9f9',
-      //   100: '#f2f2f2',
-      //   200: '#e0e0e0',
-      //   300: '#c7c7c7',
-      //   400: '#a8a8a8',
-      //   500: '#888888',
-      //   600: '#5f5f5f',
-      //   700: '#3c3c3c',
-      //   800: '#262626',
-      //   900: '#171717',
-      //   950: '#000000',
-      // }
+      context: 'rgba(var(--c-context),%alpha)',
+      primary: {
+        DEFAULT: 'rgba(var(--text),%alpha)',
+        text: 'rgba(var(--text),%alpha)',
+        bg: 'rgba(var(--bg),%alpha)',
+      },
     },
   },
-  configDeps: [],
   presets: [
     presetUno(),
     presetAttributify(),

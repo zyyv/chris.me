@@ -6,7 +6,7 @@ const { data: user } = await useFetch('/api/user')
 </script>
 
 <template>
-  <div prose ma>
+  <div prose ma c-primary:75>
     <!-- <PersonInfo /> -->
     <h1 fsc gap-5>
       <ImgBlurHash
@@ -18,39 +18,41 @@ const { data: user } = await useFetch('/api/user')
         h-10
         rounded-full
       />
-      <NuxtLink to="/" title="Home" class="transitionLogo">
+      <!-- <NuxtLink to="/" title="Home" class="transitionLogo">
         <img v-show="isDark" h-6 src="/logo-light.svg" alt="logo">
         <img v-show="!isDark" h-6 src="/logo.svg" alt="logo">
-      </NuxtLink>
+      </NuxtLink> -->
     </h1>
     <p>
-      Hi, I'm Chris, front-end engineer 🧑🏻‍💻 from China & open source enthusiast.
+      I'm <strong c-primary>Chris</strong>, front-end engineer 🧑🏻‍💻 & open source enthusiast.
     </p>
     <p>
-      ✨
-      <a href="https://github.com/unocss/unocss" target="_blank" link><strong>UnoCSS</strong></a> team member、
-      <a href="https://github.com/elk-zone" target="_blank" link><strong>Elk</strong></a> <sub bottom-0>farm</sub> team
-      member、
-      Creator of <a href="https://github.com/onu-ui" target="_blank" link><strong>Onu UI</strong></a>
-      ✨
+      <i i-fluent-emoji-sparkles mr-1 />
+      Team member of
+      <a linkInProse o-red href="https://github.com/unocss/unocss" target="_blank"><strong>UnoCSS</strong></a>,
+      <a linkInProse o-red href="https://github.com/elk-zone" target="_blank"><strong>Elk</strong> <sub bottom-0>farm</sub></a>,
+      Creator of
+      <a linkInProse o-red href="https://github.com/onu-ui" target="_blank"><strong>Onu UI</strong></a>
+      <i i-fluent-emoji-sparkles ml-1 />
       <br>
       In the community, I am also a ecological contributors of the
-      <a linkOrg href="https://github.com/vitejs/vite" target="_blank">Vite</a>、
-      <a linkOrg href="https://github.com/vuejs-translations/docs-zh-cn" target="_blank">Vue</a>、
-      <a linkOrg href="https://github.com/nuxt/framework" target="_blank">Nuxt</a> & etc. ✌
+      <a linkInProse o-blue href="https://github.com/vitejs/vite" target="_blank">Vite</a>、
+      <a linkInProse o-blue href="https://github.com/vuejs-translations/docs-zh-cn" target="_blank">Vue</a>、
+      <a linkInProse o-blue href="https://github.com/nuxt/framework" target="_blank">Nuxt</a> & etc.
+      <i i-fluent-emoji-partying-face />
     </p>
 
     <p>
       I have a wide range of interests, watching anime, climbing mountains, listening to music, learning foreign
-      languages, playing games... Recently I am learning to edit videos and I am going to be an <a
-        href="https://space.bilibili.com/402454160"
-        target="_blank"
-        linkOutside
-      >Uploader</a>.
+      languages, playing games... Recently I am learning to edit videos and I am going to be an
+      <a linkInProse o-pink href="https://space.bilibili.com/402454160" target="_blank">Uploader <i i-ri-bilibili-line /></a>.
     </p>
 
     <p>
-      <a text-purple href="http://" target="_blank" rel="noopener noreferrer">Hire Me <span i-ri:arrow-right-up-line /></a>
+      <a trans text-p-r class="group" hover-op-75 href="http://" target="_blank" rel="noopener noreferrer">
+        Hire Me
+        <i trans group-hover="ml-2" i-ri:arrow-right-up-line bg-gradient-to-r />
+      </a>
     </p>
   </div>
 </template>
@@ -62,8 +64,4 @@ const { data: user } = await useFetch('/api/user')
 .transitionImg{
   view-transition-name: img
 }
-
-/* .aaa{
-  view-transition-name: selected-film
-} */
 </style>
