@@ -45,7 +45,7 @@ const { data: user } = await useFetch('/api/user')
     </p>
 
     <p>
-      <a trans text-p-r class="group" hover-op-75 :href="`mailto:${user?.email}`" target="_blank">
+      <a trans text-p-r class="group" hover-op-75 :href="`mailto:${user?.email ?? 'hizyyv@gmail.com'}`">
         Hire Me
         <i trans group-hover="ml-2" i-ri:arrow-right-up-line bg-gradient-to-r />
       </a>
