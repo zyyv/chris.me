@@ -25,10 +25,14 @@ const typographyCssExtend: Record<string, CSSObject> = {
     'border-bottom': '1px solid rgba(var(--c-context), 1)',
   },
   'pre': {
-    background: '#23272d !important',
+    'background': '#eee !important',
+    'font-family': 'dm',
+  },
+  '.dark pre': {
+    background: '#222 !important',
   },
   'blockquote': {
-    'border-left': '0.25em solid rgba(168,85,247,.4)',
+    'border-left': '0.1em solid rgba(168,85,247,.4)',
   },
 }
 
@@ -73,7 +77,8 @@ export default defineConfig({
   ],
   theme: {
     fontFamily: {
-      // mono: 'dm,ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace',
+      dm: 'dm',
+      craft: 'MonoCraft',
     },
     colors: {
       context: 'rgba(var(--c-context),%alpha)',

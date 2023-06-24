@@ -31,3 +31,11 @@ body::-webkit-scrollbar {
 .dark::view-transition-new(root) {
   z-index: 1;
 }
+
+.transLogo {
+  view-transition-name: logo;
+}
+
+.transNavMenu {
+  view-transition-name: nav-menu;
+}

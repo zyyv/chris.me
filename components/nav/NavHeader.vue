@@ -7,6 +7,8 @@ const routes = reactive<{ icon?: string; path: string; text?: string }[]>([
 
 const route = useRoute()
 const inHome = computed(() => route.path === '/')
+
+const { data: user } = await useFetch('/api/user')
 </script>
 
 <template>
@@ -19,17 +21,24 @@ const inHome = computed(() => route.path === '/')
     backdrop-blur
     fcc
     px-8
+    pl-4
   >
     <nav w-full :class="inHome ? 'fcc' : 'fbc'">
-      <div v-if="!inHome" class="transitionLogo">
+      <div v-if="!inHome" class="transLogo">
         <NuxtLink to="/" title="Home">
-          <img v-show="isDark" h-6 src="/logo-light.svg" alt="logo">
-          <img v-show="!isDark" h-6 src="/logo.svg" alt="logo">
+          <ImgBlurHash
+            :src="user!.avatar_url"
+            blurhash="U8B4RsM[08%j00og?ZR.%io$s:jVo$oeM^RP"
+            alt="Avatar"
+            w-10
+            h-10
+            rounded-full
+          />
         </NuxtLink>
       </div>
 
       <div
-        class="transBlock"
+        class="transNavMenu"
         grid="~ gap-5"
         auto-flow-col
         items-center
@@ -46,18 +55,6 @@ const inHome = computed(() => route.path === '/')
           <div v-else icon-btn :class="_route.icon" />
         </NuxtLink>
 
-        <!-- <a hidden lg:block>
-          <div icon-link i-carbon:language @click="toggleLocales" />
-        </a> -->
-        <!-- <a
-          title="Bilibili"
-          hidden
-          lg:block
-          href="https://space.bilibili.com/402454160"
-          target="_blank"
-          icon-link
-          i-ri:bilibili-line
-        /> -->
         <a
           title="Twitter"
           hidden
@@ -71,69 +68,9 @@ const inHome = computed(() => route.path === '/')
         <div fcc>
           <DrakToggle />
         </div>
-        <!-- <div
-          pr
-          w-6
-          h-full
-          lg:hidden
-          fcc
-          class="group"
-        >
-          <div
-            pa
-            right-0
-            trans
-            w-45
-            b="1 gray2 dark:gray2"
-            bg="white dark:gray9"
-            rounded-md
-            class="-bottom-full"
-            group-hover="op100 translate-y-8px visible"
-            invisible
-            translate-y-2px
-            transition-300
-            op-0
-          >
-            <div
-              p-3
-              fb
-              b="0 b-1 gray2 dark:gray6"
-            >
-              <span text="size-2 text-text dark:text-text-dark">外貌</span>
-            </div>
-            <div
-              p-3
-              fsc
-              flex
-              gap-3
-            >
-              <NuxtLink to="https://space.bilibili.com/402454160">
-                <div icon-link i-ri:bilibili-line />
-              </NuxtLink>
-              <NuxtLink to="https://github.com/zyyv/chris.me">
-                <div icon-link i-carbon:logo-github />
-              </NuxtLink>
-            </div>
-            <div />
-          </div>
-        </div> -->
       </div>
     </nav>
   </header>
   <!-- For header fixed -->
   <div h-16 md:h-18 />
 </template>
-
-<style scoped>
-.transitionLogo {
-  view-transition-name: logo;
-}
-
-.transBlock {
-  view-transition-name: nav-menu;
-}
-
-/* .aaa{
-  view-transition-name: selected-film
-} */
-</style>

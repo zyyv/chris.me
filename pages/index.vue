@@ -10,7 +10,7 @@ const { data: user } = await useFetch('/api/user')
     <!-- <PersonInfo /> -->
     <h1 fsc gap-5>
       <ImgBlurHash
-        class="transitionImg"
+        class="transLogo"
         :src="user!.avatar_url"
         blurhash="U8B4RsM[08%j00og?ZR.%io$s:jVo$oeM^RP"
         alt="Avatar"
@@ -18,10 +18,6 @@ const { data: user } = await useFetch('/api/user')
         h-10
         rounded-full
       />
-      <!-- <NuxtLink to="/" title="Home" class="transitionLogo">
-        <img v-show="isDark" h-6 src="/logo-light.svg" alt="logo">
-        <img v-show="!isDark" h-6 src="/logo.svg" alt="logo">
-      </NuxtLink> -->
     </h1>
     <p>
       I'm <strong c-primary>Chris</strong>, front-end engineer 🧑🏻‍💻 & open source enthusiast.
@@ -56,12 +52,3 @@ const { data: user } = await useFetch('/api/user')
     </p>
   </div>
 </template>
-
-<style scoped>
-.transitionLogo{
-  view-transition-name: logo;
-}
-.transitionImg{
-  view-transition-name: img
-}
-</style>

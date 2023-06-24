@@ -18,8 +18,7 @@ export default defineNuxtConfig({
     renderJsonPayloads: true,
   },
   css: [
-    '~/styles/markdown.css',
-    '~/styles/dank-mono.css',
+    '~/styles/fonts.css',
     '~/styles/main.css',
     '~/styles/vars.css',
   ],
