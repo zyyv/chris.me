@@ -12,6 +12,7 @@ import {
 } from 'unocss'
 import { presetUseful } from 'unocss-preset-useful'
 import { parseColor } from '@unocss/preset-mini/utils'
+import { FileSystemIconLoader } from '@iconify/utils/lib/loader/node-loaders'
 
 const typographyCssExtend: Record<string, CSSObject> = {
   'a': {
@@ -98,6 +99,9 @@ export default defineConfig({
         'height': '1.2em',
         'width': '1.2em',
         'vertical-align': 'text-bottom',
+      },
+      collections: {
+        'my-logos': FileSystemIconLoader('./assets/logos'),
       },
     }),
     presetTypography({ cssExtend: typographyCssExtend }),

@@ -27,7 +27,6 @@ function sortArticles(list: Article[]) {
 </script>
 
 <template>
-  <!-- origin in markdown.css -->
   <div prose ma>
     <PageHeader title="Posts" description="Some boring but useful articles." />
     <ContentList>
@@ -36,7 +35,6 @@ function sortArticles(list: Article[]) {
           <nuxt-link
             v-if="!article.draft"
             :to="article._path"
-            important-no-underline
             block
             op-70
             hover:op-100
@@ -46,12 +44,14 @@ function sortArticles(list: Article[]) {
             </h3>
             <div
               italic
-              fic
+              fsc
               text-sm
               text-gray4
               fw-normal
+              font-dm
             >
               {{ new Date(article.ctime).toDateString() }}
+              <!-- - 5mins -->
             </div>
           </nuxt-link>
         </template>
