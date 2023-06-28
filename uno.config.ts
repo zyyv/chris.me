@@ -101,7 +101,7 @@ export default defineConfig({
         'vertical-align': 'text-bottom',
       },
       collections: {
-        'my-logos': FileSystemIconLoader('./assets/logos'),
+        'my-logos': FileSystemIconLoader('./public/logos'),
       },
     }),
     presetTypography({ cssExtend: typographyCssExtend }),
