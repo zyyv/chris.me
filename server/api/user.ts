@@ -10,7 +10,7 @@ export default defineEventHandler(async () => {
   // return data
 
   if (import.meta.env.NODE_ENV === 'development')
-    return await import('~/data/user.json')
+    return (await import('~/data/user.json')).default as User
 
   return $fetch<User>('https://api.github.com/users/zyyv')
 })

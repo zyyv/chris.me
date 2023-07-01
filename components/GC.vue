@@ -76,6 +76,7 @@ function filterLastByMonth(contributions: Day[], month: number) {
 onMounted(async () => {
   loading.value = true
   const data = await fetchContribution(props.username)
+
   if (__DEV__)
     await sleep(3000)
 
@@ -96,12 +97,11 @@ onMounted(async () => {
   }
 })
 
-async function fetchContribution(username: string, _year = 'last') {
-  if (__DEV__)
-    return await import('../data/contributions.json') as ContributeData
+async function fetchContribution(name: string, _year = 'last') {
+  const { data } = await useFetch<ContributeData>('/api/contribution', {
+    query: { name, year: _year },
+  })
 
-  const API = `https://github-contributions-api.jogruber.de/v4/${username}?y=${_year}`
-  const { data } = await useFetch<ContributeData>(API)
   return toValue(data)
 }
 </script>
