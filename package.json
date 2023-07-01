@@ -30,7 +30,7 @@
     "octokit": "^2.1.0"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.39.5",
+    "@antfu/eslint-config": "^0.39.6",
     "@iconify-json/akar-icons": "^1.1.17",
     "@iconify-json/carbon": "^1.1.18",
     "@iconify-json/fluent-emoji": "^1.1.13",
@@ -38,19 +38,18 @@
     "@iconify-json/ri": "^1.1.10",
     "@iconify/utils": "^2.1.7",
     "@nuxt/content": "^2.7.0",
-    "@nuxt/devtools": "^0.6.4",
+    "@nuxt/devtools": "^0.6.6",
     "@types/fs-extra": "^11.0.1",
     "@unocss/nuxt": "^0.53.4",
-    "@vueuse/nuxt": "^10.2.0",
+    "@vueuse/nuxt": "^10.2.1",
     "eslint": "^8.43.0",
     "esno": "^0.16.3",
     "fs-extra": "^11.1.1",
     "nuxt": "3.6.1",
     "sass": "^1.63.6",
-    "typescript": "^5.1.5",
+    "typescript": "^5.1.6",
     "unocss-preset-scrollbar": "^0.2.1",
-    "unocss-preset-useful": "^0.0.12",
-    "vite-plugin-inspect": "^0.7.29"
+    "unocss-preset-useful": "^0.0.13"
   },
   "pnpm": {
     "overrides": {
