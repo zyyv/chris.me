@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "blurhash": "^2.0.5",
+    "dayjs": "^1.11.9",
     "octokit": "^2.1.0"
   },
   "devDependencies": {
