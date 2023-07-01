@@ -51,7 +51,7 @@ const { data: user } = await useFetch('/api/user')
     </p>
 
     <div lt-sm-fcc>
-      <GC username="zyyv" :month="5" borderable />
+      <GC :username="user?.login" :month="5" borderable />
     </div>
 
     <p>

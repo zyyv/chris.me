@@ -73,7 +73,7 @@ function filterLastByMonth(contributions: Day[], month: number) {
   return contributions.filter(day => range.includes(day.date))
 }
 
-onMounted(async () => {
+watch(() => props.username, async () => {
   loading.value = true
   const data = await fetchContribution(props.username)
 
@@ -95,11 +95,11 @@ onMounted(async () => {
 
     loading.value = false
   }
-})
+}, { immediate: true })
 
-async function fetchContribution(name: string, _year = 'last') {
+async function fetchContribution(name: string, year = 'last') {
   const { data } = await useFetch<ContributeData>('/api/contribution', {
-    query: { name, year: _year },
+    query: { name, year },
   })
 
   return toValue(data)
@@ -107,63 +107,65 @@ async function fetchContribution(name: string, _year = 'last') {
 </script>
 
 <template>
-  <div pr :class="borderable ? `b b-gray rd-2 p-2 w-fit` : ''">
-    <svg :width="WIDTH" :height="HEIGHT">
-      <g
-        :transform="`translate(${!props.hideWeekday ? STATIC_DATA.lrGap : -STATIC_DATA.lrGap + STATIC_DATA.bloclGap},${!props.hideMonth ? STATIC_DATA.tbGap : 1})`"
-      >
-        <template v-for="(list, index) in state.weeks" :key="index">
-          <g :transform="`translate(${index * (STATIC_DATA.blockWidth + 1)}, 0)`">
-            <template v-for="(item, i) in list" :key="i">
-              <rect
-                v-if="item"
-                :width="STATIC_DATA.blockSize"
-                :height="STATIC_DATA.blockSize"
-                :x="(STATIC_DATA.blockWidth) - index"
-                :y="i * (STATIC_DATA.blockWidth)"
-                :class="`fill-level-${item.level}`"
-                :rx="STATIC_DATA.blockRadius"
-                :ry="STATIC_DATA.blockRadius"
-                :data-count="item.count"
-                :data-date="item.date"
-                :data-level="item.level"
-              />
+  <ClientOnly>
+    <div pr :class="borderable ? `b b-gray rd-2 p-2 w-fit` : ''">
+      <svg :width="WIDTH" :height="HEIGHT">
+        <g
+          :transform="`translate(${!props.hideWeekday ? STATIC_DATA.lrGap : -STATIC_DATA.lrGap + STATIC_DATA.bloclGap},${!props.hideMonth ? STATIC_DATA.tbGap : 1})`"
+        >
+          <template v-for="(list, index) in state.weeks" :key="index">
+            <g :transform="`translate(${index * (STATIC_DATA.blockWidth + 1)}, 0)`">
+              <template v-for="(item, i) in list" :key="i">
+                <rect
+                  v-if="item"
+                  :width="STATIC_DATA.blockSize"
+                  :height="STATIC_DATA.blockSize"
+                  :x="(STATIC_DATA.blockWidth) - index"
+                  :y="i * (STATIC_DATA.blockWidth)"
+                  :class="`fill-level-${item.level}`"
+                  :rx="STATIC_DATA.blockRadius"
+                  :ry="STATIC_DATA.blockRadius"
+                  :data-count="item.count"
+                  :data-date="item.date"
+                  :data-level="item.level"
+                />
+              </template>
+            </g>
+          </template>
+          <!-- Month -->
+          <template v-if="!hideMonth">
+            <template v-for="(item, index) in state.labels" :key="index">
+              <text
+                v-if="rawFilterMonth(index)"
+                style="fill: rgba(var(--text), var(--un-text-opacity, 1));"
+                class="text-op-60 text-xs"
+                :x="(STATIC_DATA.blockWidth) * (item.x + 1)"
+                :y="item.y"
+              >
+                {{ item.text }}
+              </text>
             </template>
-          </g>
-        </template>
-        <!-- Month -->
-        <template v-if="!hideMonth">
-          <template v-for="(item, index) in state.labels" :key="index">
-            <text
-              v-if="rawFilterMonth(index)"
-              style="fill: rgba(var(--text), var(--un-text-opacity, 1));"
-              class="text-op-60 text-xs"
-              :x="(STATIC_DATA.blockWidth) * (item.x + 1)"
-              :y="item.y"
-            >
-              {{ item.text }}
-            </text>
           </template>
-        </template>
-        <!-- Week -->
-        <template v-if="!hideWeekday && state.weeks.length">
-          <template v-for="(item, index) in DEFAULT_WEEKDAY_LABELS" :key="index">
-            <text
-              v-if="rawFilterWeekDay(index)"
-              style="fill: rgba(var(--text), var(--un-text-opacity, 1));"
-              class="text-op-60 text-xs"
-              dx="-15"
-              :dy="8 + index * (STATIC_DATA.blockWidth)"
-              text-anchor="start"
-            >
-              {{ item }}
-            </text>
+          <!-- Week -->
+          <template v-if="!hideWeekday && state.weeks.length">
+            <template v-for="(item, index) in DEFAULT_WEEKDAY_LABELS" :key="index">
+              <text
+                v-if="rawFilterWeekDay(index)"
+                style="fill: rgba(var(--text), var(--un-text-opacity, 1));"
+                class="text-op-60 text-xs"
+                dx="-15"
+                :dy="8 + index * (STATIC_DATA.blockWidth)"
+                text-anchor="start"
+              >
+                {{ item }}
+              </text>
+            </template>
           </template>
-        </template>
-      </g>
-    </svg>
-    <p v-if="loading" pcc m0 animate-pulse>
-      <i animate-spin i-carbon:circle-dash /> Loading ···
-    </p>
-  </div>
+        </g>
+      </svg>
+      <p v-if="loading" pcc m0 animate-pulse>
+        <i animate-spin i-carbon:circle-dash /> Loading ···
+      </p>
+    </div>
+  </ClientOnly>
 </template>
