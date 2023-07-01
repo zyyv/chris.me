@@ -1,5 +1,5 @@
 <script lang='ts' setup>
-import { DEFAULT_WEEKDAY_LABELS, eachDayOfInterval, formatISO, getDayjsSubtract, getMonthLabels, groupByWeeks } from '~/utils'
+import { DEFAULT_WEEKDAY_LABELS, eachDayOfInterval, formatISO, getDayjsSubtract, getMonthLabels, groupByWeeks, sleep } from '~/utils'
 import type { Label } from '~/utils'
 import type { ContributeData, Day, Weeks } from '~/types'
 
@@ -73,14 +73,12 @@ function filterLastByMonth(contributions: Day[], month: number) {
   return contributions.filter(day => range.includes(day.date))
 }
 
-async function sleep(time: number) {
-  return new Promise(resolve => setTimeout(resolve, time))
-}
-
 onMounted(async () => {
   loading.value = true
   const data = await fetchContribution(props.username)
-  await sleep(10000)
+  if (__DEV__)
+    await sleep(3000)
+
   if (data != null) {
     let contributions = data.contributions
     let total = data.total
@@ -164,8 +162,8 @@ async function fetchContribution(username: string, _year = 'last') {
         </template>
       </g>
     </svg>
-    <p v-if="loading" pcc m0>
-      Loading ···
+    <p v-if="loading" pcc m0 animate-pulse>
+      <i animate-spin i-carbon:circle-dash /> Loading ···
     </p>
   </div>
 </template>
