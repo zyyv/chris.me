@@ -2,9 +2,21 @@
 :root {
   --bg: 245, 245, 245;
   --text: 60, 60, 67;
+  --gc-text: #1F2328;
+  --gc-level-0: #ebedf0;
+  --gc-level-1: #9be9a8;
+  --gc-level-2: #40c463;
+  --gc-level-3: #30a14e;
+  --gc-level-4: #216e39;
 }
 
 .dark {
   --bg: 30, 30, 32;
   --text: 220, 220, 220;
+  --gc-text: #adbac7;
+  --gc-level-0: #2d333b;
+  --gc-level-1: #0e4429;
+  --gc-level-2: #006d32;
+  --gc-level-3: #26a641;
+  --gc-level-4: #39d353;
 }

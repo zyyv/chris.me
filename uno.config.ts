@@ -88,6 +88,13 @@ export default defineConfig({
         text: 'rgba(var(--text),%alpha)',
         bg: 'rgba(var(--bg),%alpha)',
       },
+      level: {
+        0: 'var(--gc-level-0)',
+        1: 'var(--gc-level-1)',
+        2: 'var(--gc-level-2)',
+        3: 'var(--gc-level-3)',
+        4: 'var(--gc-level-4)',
+      },
     },
   },
   presets: [
@@ -112,5 +119,8 @@ export default defineConfig({
     transformerVariantGroup(),
     transformerCompileClass(),
   ],
-  safelist: 'sm-fsc max-w-75'.split(' '),
+  safelist: [
+    Array.from({ length: 5 }, (j, i) => `fill-level-${i}`),
+    'sm-fsc max-w-75'.split(' '),
+  ].flat(),
 })
