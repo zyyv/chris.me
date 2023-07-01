@@ -20,7 +20,7 @@ const { data: user } = await useFetch('/api/user')
       />
     </h1>
     <p>
-      I'm <strong c-primary>Chris</strong>, front-end engineer 🧑🏻‍💻 & open source enthusiast.
+      I'm <strong c-primary>{{ user?.name }}</strong>, front-end engineer 🧑🏻‍💻 & open source enthusiast.
     </p>
     <p>
       <i i-fluent-emoji-sparkles mr-1 />
@@ -49,6 +49,10 @@ const { data: user } = await useFetch('/api/user')
       languages, playing games... Recently I am learning to edit videos and I am going to be an
       <a linkInProse o="#ed7099" href="https://space.bilibili.com/402454160" target="_blank">Uploader <i i-ri-bilibili-line /></a>.
     </p>
+
+    <div lt-sm-fcc>
+      <GC :username="user?.login" :month="5" borderable />
+    </div>
 
     <p>
       <a trans text-p-r class="group" hover-op-75 :href="`mailto:${user?.email ?? 'hizyyv@gmail.com'}`">

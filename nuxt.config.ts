@@ -41,6 +41,7 @@ export default defineNuxtConfig({
   vite: {
     define: {
       'import.meta.env.__BUILD_TIME__': JSON.stringify(new Date().toISOString()),
+      '__DEV__': process.env.NODE_ENV !== 'production',
     },
     build: {
       target: 'esnext',
