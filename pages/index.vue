@@ -50,8 +50,8 @@ const { data: user } = await useFetch('/api/user')
       <a linkInProse o="#ed7099" href="https://space.bilibili.com/402454160" target="_blank">Uploader <i i-ri-bilibili-line /></a>.
     </p>
 
-    <div lt-sm-fcc>
-      <GC :username="user?.login" :month="5" borderable />
+    <div v-if="user" lt-sm-fcc>
+      <GC :username="user.login" :month="5" borderable />
     </div>
 
     <p>
