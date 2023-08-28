@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   modules: [
     '@vueuse/nuxt',
     '@unocss/nuxt',
-    '@nuxt/content',
+    // '@nuxt/content',
     // '@vite-pwa/nuxt',
   ],
   experimental: {
