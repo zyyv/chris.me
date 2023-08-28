@@ -39,7 +39,7 @@ const typographyCssExtend: Record<string, CSSObject> = {
 
 export default defineConfig({
   rules: [
-    [/^o-(.*)$/, ([, body]: string[], { theme }: RuleContext<{}>) => {
+    [/^o-(.*)$/, ([, body]: string[], { theme }: RuleContext) => {
       const color = parseColor(body, theme)
       if (color?.cssColor?.type === 'rgb' && color.cssColor.components) {
         return {
@@ -77,6 +77,11 @@ export default defineConfig({
     [/^badge-square-(.*)$/, ([, c]) => `badge-${c} w-7 h-7 text-lg font-200 flex flex-none items-center justify-center`],
   ],
   theme: {
+    animation: {
+      keyframes: {
+        shape: '{0%,100%{border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;transform: translate3d(0,0,0) rotateZ(0.01deg);}34%{border-radius: 70% 30% 46% 54% / 30% 29% 71% 70%;transform:  translate3d(0,5px,0) rotateZ(0.01deg);}50%{transform: translate3d(0,0,0) rotateZ(0.01deg);}67%{border-radius: 100% 60% 60% 100% / 100% 100% 60% 60% ;transform: translate3d(0,-3px,0) rotateZ(0.01deg);}}',
+      },
+    },
     fontFamily: {
       dm: 'dm',
       craft: 'MonoCraft',
@@ -112,7 +117,11 @@ export default defineConfig({
       },
     }),
     presetTypography({ cssExtend: typographyCssExtend }),
-    presetUseful(),
+    presetUseful({
+      themeAnimate: [
+        'shape 5s linear infinite',
+      ],
+    }),
   ],
   transformers: [
     transformerDirectives(),

@@ -53,7 +53,7 @@ watch(() => route.fullPath, () => {
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 #cursor {
   will-change: transform;
 }

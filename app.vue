@@ -1,17 +1,17 @@
 <script setup>
 useHead({
-  title: 'Chris Zhu',
+  title: 'Chris',
   link: [
-    { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+    { rel: 'icon', type: 'image/x-icon', href: '/avatar.png' },
   ],
   meta: [
     { name: 'author', content: 'Chris' },
     { hid: 'description', name: 'description', content: 'Chris\' Portfolio' },
-    { hid: 'keywords', name: 'keywords', content: 'Chris, Chirs Zhu, Blog, Portfolio' },
+    { hid: 'keywords', name: 'keywords', content: 'Chris, Blog, Portfolio' },
     { name: 'twitter:card', content: 'summary' },
     { name: 'twitter:site', content: '@chris_zyyv' },
-    { property: 'og:title', content: 'Chris Zhu' },
-    { property: 'og:image', content: 'https://zyob.top/logo-light.svg' },
+    { property: 'og:title', content: 'Chris' },
+    { property: 'og:image', content: 'https://zyob.top/avatar.png' },
 
     { 'http-equiv': 'pragma', 'content': 'no-cache' },
     { 'http-equiv': 'cache-control', 'content': 'no-cache' },

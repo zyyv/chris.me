@@ -54,6 +54,3 @@ const { data: user } = await useFetch('/api/user')
     </div>
   </div>
 </template>
-
-<style lang='scss' scoped>
-</style>

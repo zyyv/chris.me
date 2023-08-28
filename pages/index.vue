@@ -10,13 +10,16 @@ const { data: user } = await useFetch('/api/user')
     <!-- <PersonInfo /> -->
     <h1 fsc gap-5>
       <ImgBlurHash
+        mode="bg"
         class="transLogo"
         :src="user!.avatar_url"
-        blurhash="U8B4RsM[08%j00og?ZR.%io$s:jVo$oeM^RP"
+        blurhash="L4A1l2Mx0FN402eiyEx|00-;%MIV"
         alt="Avatar"
-        w-10
-        h-10
-        rounded-full
+        w-30
+        h-30
+        rd="[62%_47%_82%_35%/45%_45%_80%_66%]"
+        will-change="border-radius,transform,opacity"
+        animate-shape
       />
     </h1>
     <p>
@@ -31,7 +34,7 @@ const { data: user } = await useFetch('/api/user')
       <a linkInProse o="#c18139" href="https://github.com/elk-zone" target="_blank"><strong>Elk</strong> <sub bottom-0>farm</sub></a>,
       Creator of
       <i i-my-logos-onu-ui w-1.1em h-1.1em mr-1 />
-      <a linkInProse o="#737da1" href="https://github.com/onu-ui" target="_blank"><strong>Onu UI</strong></a>
+      <a trans linear-text shape-bl class="c-context::#C084FC" from="#ACC1EE" to="#C084FC" href="https://githb.com/onu-ui" target="_blank"><strong>Onu UI</strong></a>
       <i i-fluent-emoji-sparkles ml-1 />
       <br>
       In the community, I am also a ecological contributors of the

@@ -4,6 +4,11 @@ import { getDataUrlFromArr } from '~/composables/utils'
 export default defineComponent({
   inheritAttrs: false,
   props: {
+    // img or bg (background)
+    mode: {
+      type: String,
+      default: 'img',
+    },
     blurhash: {
       type: String,
       required: false,
@@ -20,6 +25,7 @@ export default defineComponent({
   setup(props, { attrs }) {
     const placeholderSrc = ref<string>()
     const isLoaded = ref(false)
+    const isImgMode = props.mode === 'img'
 
     onMounted(() => {
       const img = document.createElement('img')
@@ -39,8 +45,36 @@ export default defineComponent({
       }
     })
 
+    const domTag = isImgMode ? 'img' : 'div'
+
     return () => isLoaded.value || !placeholderSrc.value
-      ? h('img', { ...attrs, src: props.src, srcset: props.srcset })
-      : h('img', { ...attrs, src: placeholderSrc.value })
+      ? h(domTag,
+        {
+          ...attrs,
+          ...(isImgMode
+            ? {
+                src: props.src,
+                srcset: props.srcset,
+              }
+            : {
+                style: {
+                  backgroundImage: `url(${props.src})`,
+                  backgroundSize: 'cover',
+                },
+              }),
+        })
+      : h(domTag, {
+        ...attrs,
+        ...(isImgMode
+          ? {
+              src: placeholderSrc.value,
+            }
+          : {
+              style: {
+                backgroundImage: `url(${placeholderSrc.value})`,
+                backgroundSize: 'cover',
+              },
+            }),
+      })
   },
 })
