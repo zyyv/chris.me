@@ -1,9 +1,5 @@
 <script setup lang="ts">
-import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
-
 const distance = ref(200)
-
-const breakpoint = useBreakpoints(breakpointsTailwind)
 
 function generateRandomColor() {
   const r = Math.floor(Math.random() * 255)
@@ -62,6 +58,7 @@ const afterStyle_1_animate = computed(() => afterStyles.value[0].animation)
 </template>
 
 <style lang="scss" scoped>
+// @unocss-skip-start
 .bg-stars::after {
   content: '';
   display: block;
@@ -72,4 +69,5 @@ const afterStyle_1_animate = computed(() => afterStyles.value[0].animation)
   box-shadow: v-bind(afterStyle_1_boxShadow);
   animation: v-bind(afterStyle_1_animate);
 }
+// @unocss-skip-end
 </style>
