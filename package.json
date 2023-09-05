@@ -32,10 +32,10 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.41.0",
-    "@iconify-json/akar-icons": "^1.1.18",
-    "@iconify-json/carbon": "^1.1.20",
+    "@iconify-json/akar-icons": "^1.1.19",
+    "@iconify-json/carbon": "^1.1.21",
     "@iconify-json/fluent-emoji": "^1.1.14",
-    "@iconify-json/logos": "^1.1.34",
+    "@iconify-json/logos": "^1.1.35",
     "@iconify-json/ri": "^1.1.12",
     "@iconify/utils": "^2.1.9",
     "@nuxt/content": "npm:@nuxt/content-edge@latest",
@@ -50,7 +50,7 @@
     "sass": "^1.66.1",
     "typescript": "5.1.6",
     "unocss-preset-scrollbar": "^0.2.1",
-    "unocss-preset-useful": "^0.0.15"
+    "unocss-preset-useful": "latest"
   },
   "pnpm": {
     "overrides": {
