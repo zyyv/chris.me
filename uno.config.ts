@@ -2,9 +2,6 @@ import {
   type CSSObject,
   type RuleContext,
   defineConfig,
-  presetAttributify,
-  presetIcons,
-  presetTypography,
   presetUno,
   transformerCompileClass,
   transformerDirectives,
@@ -52,9 +49,19 @@ export default defineConfig({
         }
       }
     }],
+    [/^(.+)::(.+)$/, ([, n, v], { theme }) => {
+      const color = parseColor(v, theme)
+      if (color?.cssColor?.type === 'rgb' && color.cssColor.components) {
+        return {
+          [`--${n}`]: `${color.cssColor.components.join(',')}`,
+        }
+      }
+      return {
+        [`--${n}`]: v,
+      }
+    }],
   ],
   shortcuts: [
-    ['trans', 'transition-all-350 ease-linear'],
     ['text', 'text-primary-text'],
     ['bg', 'bg-primary-bg'],
     // ['u-prose', 'prose prose-reading'],
@@ -104,23 +111,26 @@ export default defineConfig({
   },
   presets: [
     presetUno(),
-    presetAttributify(),
-    presetIcons({
-      extraProperties: {
-        'display': 'inline-block',
-        'height': '1.2em',
-        'width': '1.2em',
-        'vertical-align': 'text-bottom',
-      },
-      collections: {
-        'my-logos': FileSystemIconLoader('./public/logos'),
-      },
-    }),
-    presetTypography({ cssExtend: typographyCssExtend }),
     presetUseful({
-      themeAnimate: [
-        'shape 5s linear infinite',
-      ],
+      theme: {
+        animation: {
+          animate: [
+            'shape 5s linear infinite',
+          ],
+        },
+      },
+      icons: {
+        extraProperties: {
+          'display': 'inline-block',
+          'height': '1.2em',
+          'width': '1.2em',
+          'vertical-align': 'text-bottom',
+        },
+        collections: {
+          'my-logos': FileSystemIconLoader('./public/logos'),
+        },
+      },
+      typography: { cssExtend: typographyCssExtend },
     }),
   ],
   transformers: [

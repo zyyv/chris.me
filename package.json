@@ -49,8 +49,7 @@
     "nuxt": "3.6.5",
     "sass": "^1.66.1",
     "typescript": "5.1.6",
-    "unocss-preset-scrollbar": "^0.2.1",
-    "unocss-preset-useful": "latest"
+    "unocss-preset-useful": "^0.1.2"
   },
   "pnpm": {
     "overrides": {
