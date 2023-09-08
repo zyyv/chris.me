@@ -34,7 +34,7 @@ const { data: user } = await useFetch('/api/user')
       <a linkInProse o="#c18139" href="https://github.com/elk-zone" target="_blank"><strong>Elk</strong> <sub bottom-0>farm</sub></a>,
       Creator of
       <i i-my-logos-onu-ui w-1.1em h-1.1em mr-1 />
-      <a trans linear-text shape-bl class="c-context::#C084FC" from="#ACC1EE" to="#C084FC" href="https://githb.com/onu-ui" target="_blank"><strong>Onu UI</strong></a>
+      <a trans linear-text shape-bl class="c-context::#C084FC" from="#ACC1EE" to="#C084FC" href="https://github.com/onu-ui" target="_blank"><strong>Onu UI</strong></a>
       <i i-fluent-emoji-sparkles ml-1 />
       <br>
       In the community, I am also a ecological contributors of the
