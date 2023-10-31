@@ -110,7 +110,6 @@ export default defineConfig({
     },
   },
   presets: [
-    presetUno(),
     presetUseful({
       theme: {
         animation: {
