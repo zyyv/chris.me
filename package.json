@@ -1,5 +1,6 @@
 {
   "name": "chris.me",
+  "type": "module",
   "private": true,
   "description": "Chris' blog build with Nuxt3.",
   "author": "Chris <https://github.com/zyyv>",
@@ -23,7 +24,7 @@
     "build": "nuxt build",
     "preview": "nuxt preview",
     "lint": "eslint .",
-    "postinstall": "nuxt prepare && esno scripts/posts-route.ts"
+    "postinstall": "nuxt prepare"
   },
   "dependencies": {
     "blurhash": "^2.0.5",
@@ -38,7 +39,6 @@
     "@iconify-json/logos": "^1.1.39",
     "@iconify-json/ri": "^1.1.13",
     "@iconify/utils": "^2.1.12",
-    "@nuxt/devtools": "^1.0.4",
     "@types/fs-extra": "^11.0.4",
     "@unocss/nuxt": "^0.57.7",
     "@vueuse/nuxt": "^10.6.1",

@@ -41,9 +41,6 @@ devDependencies:
   '@iconify/utils':
     specifier: ^2.1.12
     version: 2.1.12
-  '@nuxt/devtools':
-    specifier: ^1.0.4
-    version: 1.0.4(nuxt@3.8.2)(vite@4.5.0)
   '@types/fs-extra':
     specifier: ^11.0.4
     version: 11.0.4
