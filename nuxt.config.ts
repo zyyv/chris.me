@@ -19,7 +19,9 @@ export default defineNuxtConfig({
     '~/styles/main.css',
     '~/styles/vars.css',
   ],
-  // devtools: true,
+  devtools: {
+    enabled: true,
+  },
   unocss: {
     preflight: true,
   },
