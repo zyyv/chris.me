@@ -112,11 +112,11 @@ export default defineConfig({
   presets: [
     presetUseful({
       theme: {
-        animation: {
-          animate: [
-            'shape 5s linear infinite',
-          ],
-        },
+        extend: {
+          animation: {
+            shape: 'shape 5s linear infinite'
+          }
+        }
       },
       icons: {
         extraProperties: {

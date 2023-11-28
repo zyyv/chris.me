@@ -23,17 +23,17 @@ export default defineNuxtConfig({
   unocss: {
     preflight: true,
   },
-  content: {
-    highlight: {
-      theme: 'vitesse-dark',
-    },
-    markdown: {
-      toc: {
-        depth: 3,
-      },
-    },
-    documentDriven: true,
-  },
+  // content: {
+  //   highlight: {
+  //     theme: 'vitesse-dark',
+  //   },
+  //   markdown: {
+  //     toc: {
+  //       depth: 3,
+  //     },
+  //   },
+  //   documentDriven: true,
+  // },
   app: {
     keepalive: true,
   },
