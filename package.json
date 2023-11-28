@@ -51,11 +51,5 @@
     "sass": "^1.69.5",
     "typescript": "5.3.2",
     "unocss-preset-useful": "^0.3.4"
-  },
-  "pnpm": {
-    "overrides": {
-      "@nuxt/kit": "npm:@nuxt/kit-edge@latest",
-      "@nuxt/kit-edge": "latest"
-    }
   }
 }
