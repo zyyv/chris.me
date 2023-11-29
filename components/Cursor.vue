@@ -6,7 +6,8 @@ const route = useRoute()
 const pos = useStorage('dotPos', { x: 0, y: 0 })
 const style = reactive<ICursorStyle>({
   dot: {
-    top: `${pos.value.y}px`, left: `${pos.value.x}px`,
+    top: `${pos.value.y}px`,
+    left: `${pos.value.x}px`,
   },
   cursor: {},
   circle: {},

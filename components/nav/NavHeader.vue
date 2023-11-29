@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-const routes = reactive<{ icon?: string; path: string; text?: string }[]>([
+const routes = reactive<{ icon?: string, path: string, text?: string }[]>([
   { path: '/posts', text: 'Blog' },
   { path: '/projects', text: 'Projects' },
   { path: '/talks', text: 'Talks' },

@@ -48,21 +48,20 @@ export default defineComponent({
     const domTag = isImgMode ? 'img' : 'div'
 
     return () => isLoaded.value || !placeholderSrc.value
-      ? h(domTag,
-        {
-          ...attrs,
-          ...(isImgMode
-            ? {
-                src: props.src,
-                srcset: props.srcset,
-              }
-            : {
-                style: {
-                  backgroundImage: `url(${props.src})`,
-                  backgroundSize: 'cover',
-                },
-              }),
-        })
+      ? h(domTag, {
+        ...attrs,
+        ...(isImgMode
+          ? {
+              src: props.src,
+              srcset: props.srcset,
+            }
+          : {
+              style: {
+                backgroundImage: `url(${props.src})`,
+                backgroundSize: 'cover',
+              },
+            }),
+      })
       : h(domTag, {
         ...attrs,
         ...(isImgMode

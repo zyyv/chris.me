@@ -2,7 +2,6 @@ import {
   type CSSObject,
   type RuleContext,
   defineConfig,
-  presetUno,
   transformerCompileClass,
   transformerDirectives,
   transformerVariantGroup,
@@ -114,9 +113,9 @@ export default defineConfig({
       theme: {
         extend: {
           animation: {
-            shape: 'shape 5s linear infinite'
-          }
-        }
+            shape: 'shape 5s linear infinite',
+          },
+        },
       },
       icons: {
         extraProperties: {
