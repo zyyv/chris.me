@@ -48,8 +48,6 @@ const inHome = computed(() => route.path === '/')
 
         <a
           title="Twitter"
-          hidden
-          lg:block
           href="https://twitter.com/chris_zyyv"
           target="_blank"
           icon-link
