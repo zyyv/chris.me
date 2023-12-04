@@ -9,18 +9,7 @@ const { data: user } = await useFetch('/api/user')
   <div prose ma c-primary:75>
     <!-- <PersonInfo /> -->
     <h1 fsc gap-5>
-      <ImgBlurHash
-        mode="bg"
-        class="transLogo"
-        :src="user!.avatar_url"
-        blurhash="L4A1l2Mx0FN402eiyEx|00-;%MIV"
-        alt="Avatar"
-        w-30
-        h-30
-        rd="[62%_47%_82%_35%/45%_45%_80%_66%]"
-        will-change="border-radius,transform,opacity"
-        animate-shape
-      />
+      <UserAvatar />
     </h1>
     <p>
       I'm <strong c-primary>{{ user?.name }}</strong>, front-end engineer 🧑🏻‍💻 & open source enthusiast.
@@ -34,7 +23,9 @@ const { data: user } = await useFetch('/api/user')
       <a linkInProse o="#c18139" href="https://github.com/elk-zone" target="_blank"><strong>Elk</strong> <sub bottom-0>farm</sub></a>,
       Creator of
       <i i-my-logos-onu-ui w-1.1em h-1.1em mr-1 />
-      <a trans linear-text shape-bl class="c-context::#C084FC" from="#ACC1EE" to="#C084FC" href="https://github.com/onu-ui" target="_blank"><strong>Onu UI</strong></a>
+      <a trans linear-text shape-bl class="c-context::#C084FC" from="#ACC1EE" to="#C084FC" href="https://github.com/onu-ui" target="_blank"><strong>Onu UI</strong></a>,
+      <i i-my-logos-unpreset w-1.1em h-1.1em mr-1 />
+      <a trans linear-text shape-bl class="c-context::#DBE74F" from="#FF5C5C" to="#DBE74F" href="https://github.com/unpreset" target="_blank"><strong>UnPreset</strong></a>
       <i i-fluent-emoji-sparkles ml-1 />
       <br>
       In the community, I am also a ecological contributors of the
@@ -48,8 +39,8 @@ const { data: user } = await useFetch('/api/user')
     </p>
 
     <p>
-      I have a wide range of interests, watching anime, climbing mountains, listening to music, learning foreign
-      languages, playing games... Recently I am learning to edit videos and I am going to be an
+      I have diverse interests, including watching anime, mountain climbing, music appreciation, foreign language acquisition, gaming,
+       and recently, I have embarked on video editing with the goal of becoming a content
       <a linkInProse o="#ed7099" href="https://space.bilibili.com/402454160" target="_blank">Uploader <i i-ri-bilibili-line /></a>.
     </p>
 

@@ -1,14 +1,12 @@
 <script lang="ts" setup>
 const routes = reactive<{ icon?: string, path: string, text?: string }[]>([
-  { path: '/posts', text: 'Blog' },
+  // { path: '/posts', text: 'Blog' },
   { path: '/projects', text: 'Projects' },
-  { path: '/talks', text: 'Talks' },
+  // { path: '/talks', text: 'Talks' },
 ])
 
 const route = useRoute()
 const inHome = computed(() => route.path === '/')
-
-const { data: user } = await useFetch('/api/user')
 </script>
 
 <template>
@@ -26,14 +24,7 @@ const { data: user } = await useFetch('/api/user')
     <nav w-full :class="inHome ? 'fcc' : 'fbc'">
       <div v-if="!inHome" class="transLogo">
         <NuxtLink to="/" title="Home">
-          <ImgBlurHash
-            :src="user!.avatar_url"
-            blurhash="U8B4RsM[08%j00og?ZR.%io$s:jVo$oeM^RP"
-            alt="Avatar"
-            w-10
-            h-10
-            rounded-full
-          />
+          <UserAvatar />
         </NuxtLink>
       </div>
 
