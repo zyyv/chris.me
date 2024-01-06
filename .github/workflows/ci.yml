@@ -15,21 +15,19 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Set node
-        uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
-          node-version: 16.x
+          node-version: 18
+          cache: pnpm
 
       - name: Setup PNPM
-        uses: pnpm/action-setup@v2.2.1
-        with:
-          version: 7.10.0
+        uses: pnpm/action-setup@v2
 
-      - name: Install
+      - name: 📦 Install dependencies
         run: pnpm install
 
-      - name: Lint
+      - name: 📝 Lint
         run: pnpm lint
 
-      - name: Build
+      - name: 🍥 Build
         run: pnpm build

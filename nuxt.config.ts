@@ -9,8 +9,6 @@ export default defineNuxtConfig({
     // '@vite-pwa/nuxt',
   ],
   experimental: {
-    reactivityTransform: true,
-    inlineSSRStyles: false,
     viewTransition: true,
     renderJsonPayloads: true,
   },
