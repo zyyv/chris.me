@@ -15,10 +15,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - uses: actions/setup-node@v4
+      - name: Set node
+        uses: actions/setup-node@v4
         with:
           node-version: 18
-          cache: pnpm
 
       - name: Setup PNPM
         uses: pnpm/action-setup@v2
