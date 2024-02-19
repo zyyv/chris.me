@@ -64,13 +64,19 @@ export function useDot(style: ICursorStyle) {
   })
 
   const toggleDotSize = (newStatus: boolean) => {
-    const scale = newStatus ? '1.8' : '1'
+    const scale = newStatus ? '1.5' : '1'
     const opacity = newStatus ? '0.5' : '1'
 
     style.dot = {
       ...style.dot,
       '--un-bg-opacity': opacity,
       'transform': `translate(-50%, -50%) scale(${scale})`,
+      opacity: newStatus ? '0.5' : '1',
+    }
+
+    style.circle = {
+      ...style.circle,
+      opacity: newStatus ? '0' : '1',
     }
   }
   const toggleDotVisibility = (newStatus: boolean) => {

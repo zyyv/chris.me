@@ -12,7 +12,7 @@ const { data: user } = await useFetch('/api/user')
       <UserAvatar />
     </h1>
     <p>
-      I'm <strong c-primary>{{ user?.name }}</strong>, front-end engineer 🧑🏻‍💻 & open source enthusiast.
+      I'm <strong trans hover="text-3xl" c-primary>{{ user?.name }}</strong>, front-end engineer 🧑🏻‍💻 & open source enthusiast.
     </p>
     <p italic>「 {{ user?.bio }} 」</p>
     <p>
