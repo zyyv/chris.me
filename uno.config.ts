@@ -111,7 +111,7 @@ export default defineConfig({
       },
       vite: {
         from: '#41d1ff',
-        to: '#bd34fe'
+        to: '#bd34fe',
       },
       vue: '#64b687',
       nuxt: '#64d98a',
@@ -136,14 +136,14 @@ export default defineConfig({
                 'transform': 'translate3d(0,5px,0) rotateZ(0.01deg)',
               },
               '50%': {
-                'transform': 'translate3d(0,0,0) rotateZ(0.01deg)',
+                transform: 'translate3d(0,0,0) rotateZ(0.01deg)',
               },
               '67%': {
                 'border-radius': '100% 60% 60% 100% / 100% 100% 60% 60%',
                 'transform': 'translate3d(0,-3px,0) rotateZ(0.01deg)',
               },
             },
-          }
+          },
         },
       },
       icons: {

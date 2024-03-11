@@ -14,7 +14,9 @@ const { data: user } = await useFetch('/api/user')
     <p>
       I'm <strong c-primary>{{ user?.name }}</strong>, front-end engineer 🧑🏻‍💻 & open source enthusiast.
     </p>
-    <p italic>「 {{ user?.bio }} 」</p>
+    <p italic>
+      「 {{ user?.bio }} 」
+    </p>
     <p>
       <i i-fluent-emoji-sparkles mr-1 />
       Team member of

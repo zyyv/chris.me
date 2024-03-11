@@ -71,7 +71,7 @@ export function useDot(style: ICursorStyle) {
       ...style.dot,
       '--un-bg-opacity': opacity,
       'transform': `translate(-50%, -50%) scale(${scale})`,
-      opacity: newStatus ? '0.5' : '1',
+      'opacity': newStatus ? '0.5' : '1',
     }
 
     style.circle = {
