@@ -1,7 +1,3 @@
-html * {
-  --uno: important-cursor-none;
-}
-
 body{
   --uno: h-full trans text bg;
 }
@@ -11,7 +7,7 @@ body::-webkit-scrollbar {
 }
 
 ::selection {
-  --uno: dark:badge-light dark:important-text-op-65 badge-warmgray;
+  --uno: text-primary;
 }
 
 ::view-transition-old(root),

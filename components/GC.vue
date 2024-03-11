@@ -137,7 +137,7 @@ async function fetchContribution(name: string, year = 'last') {
             <template v-for="(item, index) in state.labels" :key="index">
               <text
                 v-if="rawFilterMonth(index)"
-                style="fill: rgba(var(--text), var(--un-text-opacity, 1));"
+                style="fill: rgba(var(--c-text), var(--un-text-opacity, 1));"
                 class="text-op-60 text-xs"
                 :x="(STATIC_DATA.blockWidth) * (item.x + 1)"
                 :y="item.y"
@@ -151,7 +151,7 @@ async function fetchContribution(name: string, year = 'last') {
             <template v-for="(item, index) in DEFAULT_WEEKDAY_LABELS" :key="index">
               <text
                 v-if="rawFilterWeekDay(index)"
-                style="fill: rgba(var(--text), var(--un-text-opacity, 1));"
+                style="fill: rgba(var(--c-text), var(--un-text-opacity, 1));"
                 class="text-op-60 text-xs"
                 dx="-15"
                 :dy="8 + index * (STATIC_DATA.blockWidth)"

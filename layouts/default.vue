@@ -17,6 +17,6 @@
     </main>
     <NavFooter />
     <Cursor />
-    <Bg />
+    <!-- <Bg /> -->
   </div>
 </template>

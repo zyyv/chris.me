@@ -76,3 +76,9 @@ watch(() => route.fullPath, () => {
     height 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
 </style>
+
+<style>
+html * {
+  --uno: important-cursor-none;
+}
+</style>

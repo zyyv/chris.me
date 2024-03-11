@@ -26,7 +26,7 @@ defineProps<{
           fw-normal
           inline-block
           important-rounded-full
-          :class="repo.is_template ? 'dark-badge-xs-yellow badge-xs-blue' : 'dark-badge-xs-teal badge-xs-red'"
+          :class="repo.is_template ? 'bg-yellow bg-blue' : 'dark-bg-teal bg-red'"
         >
           {{ repo.private ? 'Private' : 'Public' }}
           {{ repo.is_template ? 'Template' : '' }}

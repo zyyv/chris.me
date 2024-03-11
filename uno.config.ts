@@ -63,7 +63,6 @@ export default defineConfig({
   shortcuts: [
     ['text', 'text-primary-text'],
     ['bg', 'bg-primary-bg'],
-    // ['u-prose', 'prose prose-reading'],
 
     ['linear-text', 'text-transparent bg-clip-text bg-gradient-to-r'],
     ['text-p-r', 'linear-text from-purple to-red'], // test case
@@ -72,22 +71,11 @@ export default defineConfig({
     ['icon-btn', 'icon color-inherit op64 hover-op100 hover-color-teal-500 dark-hover-color-inherit'],
     ['icon-link', 'icon color-inherit op64 hover:op100 hover-text-red-300 dark-hover-color-inherit'],
     ['icon-text', 'color-inherit op64 hover:op100 hover-text-purple dark-hover-color-inherit'],
-    ['linkInProse', 'trans c-context'],
+    ['linkWithIcon', 'trans c-context'],
 
     ['header-anchor', 'float-left mt-[0.125em] ml-[-0.8em] pr-[0.2em] text-[0.85em] op-0 group-hover-op-60 fw-600'],
-
-    [/^badge-(.*)$/, ([, c]) => `bg-${c}4:10 text-${c}5 rounded`],
-    [/^badge-xs-(.*)$/, ([, c]) => `badge-${c} text-xs px2 py0.5`],
-    [/^badge-sm-(.*)$/, ([, c]) => `badge-${c} text-sm px3 py0.6`],
-    [/^badge-lg-(.*)$/, ([, c]) => `badge-${c} px3 py0.8`],
-    [/^badge-square-(.*)$/, ([, c]) => `badge-${c} w-7 h-7 text-lg font-200 flex flex-none items-center justify-center`],
   ],
   theme: {
-    animation: {
-      keyframes: {
-        shape: '{0%,100%{border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;transform: translate3d(0,0,0) rotateZ(0.01deg);}34%{border-radius: 70% 30% 46% 54% / 30% 29% 71% 70%;transform:  translate3d(0,5px,0) rotateZ(0.01deg);}50%{transform: translate3d(0,0,0) rotateZ(0.01deg);}67%{border-radius: 100% 60% 60% 100% / 100% 100% 60% 60% ;transform: translate3d(0,-3px,0) rotateZ(0.01deg);}}',
-      },
-    },
     fontFamily: {
       dm: 'dm',
       craft: 'MonoCraft',
@@ -95,9 +83,9 @@ export default defineConfig({
     colors: {
       context: 'rgba(var(--c-context),%alpha)',
       primary: {
-        DEFAULT: 'rgba(var(--text),%alpha)',
-        text: 'rgba(var(--text),%alpha)',
-        bg: 'rgba(var(--bg),%alpha)',
+        DEFAULT: 'rgba(var(--c-text),%alpha)',
+        text: 'rgba(var(--c-text),%alpha)',
+        bg: 'rgba(var(--c-bg),%alpha)',
       },
       level: {
         0: 'var(--gc-level-0)',
@@ -106,6 +94,28 @@ export default defineConfig({
         3: 'var(--gc-level-3)',
         4: 'var(--gc-level-4)',
       },
+      unocss: {
+        DEFAULT: '#818181',
+        from: '#ccc',
+        via: '#858585',
+        to: '#4d4d4d',
+      },
+      elk: '#c18139',
+      onuui: {
+        from: '#acc1ee',
+        to: '#c084fc',
+      },
+      unpreset: {
+        from: '#ff5c5c',
+        to: '#dbe74f',
+      },
+      vite: {
+        from: '#41d1ff',
+        to: '#bd34fe'
+      },
+      vue: '#64b687',
+      nuxt: '#64d98a',
+      bilibili: '#ed7099',
     },
   },
   presets: [
@@ -115,6 +125,25 @@ export default defineConfig({
           animation: {
             shape: 'shape 5s linear infinite',
           },
+          keyframes: {
+            shape: {
+              '0%,100%': {
+                'border-radius': '42% 58% 70% 30% / 45% 45% 55% 55%',
+                'transform': 'translate3d(0,0,0) rotateZ(0.01deg)',
+              },
+              '34%': {
+                'border-radius': '70% 30% 46% 54% / 30% 29% 71% 70%',
+                'transform': 'translate3d(0,5px,0) rotateZ(0.01deg)',
+              },
+              '50%': {
+                'transform': 'translate3d(0,0,0) rotateZ(0.01deg)',
+              },
+              '67%': {
+                'border-radius': '100% 60% 60% 100% / 100% 100% 60% 60%',
+                'transform': 'translate3d(0,-3px,0) rotateZ(0.01deg)',
+              },
+            },
+          }
         },
       },
       icons: {
