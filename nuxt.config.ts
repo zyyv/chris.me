@@ -20,9 +20,6 @@ export default defineNuxtConfig({
   devtools: {
     enabled: true,
   },
-  unocss: {
-    preflight: true,
-  },
   // content: {
   //   highlight: {
   //     theme: 'vitesse-dark',
@@ -52,44 +49,6 @@ export default defineNuxtConfig({
       routes: ['/'],
     },
   },
-  // pwa: {
-  //   manifest: {
-  //     name: 'Chris',
-  //     short_name: 'Chris',
-  //     description: 'Chris\' Portfolio',
-  //     theme_color: '#6f6f6f',
-  //     icons: [
-  //       {
-  //         src: 'favicon-192x192.png',
-  //         sizes: '192x192',
-  //         type: 'image/png',
-  //       },
-  //       {
-  //         src: 'favicon-512x512.png',
-  //         sizes: '512x512',
-  //         type: 'image/png',
-  //       },
-  //       {
-  //         src: 'favicon-512x512.png',
-  //         sizes: '512x512',
-  //         type: 'image/png',
-  //         purpose: 'any maskable',
-  //       },
-  //     ],
-  //   },
-  //   workbox: {
-  //     navigateFallback: '/',
-  //   },
-  //   client: {
-  //     installPrompt: true,
-  //     periodicSyncForUpdates: 20,
-  //   },
-  //   devOptions: {
-  //     enabled: true,
-  //     type: 'module',
-  //   },
-  // },
-
   // intlify: {
   //   localeDir: 'locales',
   //   vueI18n: {
