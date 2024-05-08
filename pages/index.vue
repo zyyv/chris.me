@@ -14,40 +14,42 @@ const { data: user } = await useFetch('/api/user')
     <p>
       I'm <strong c-primary>{{ user?.name }}</strong>, front-end engineer 🧑🏻‍💻 & open source enthusiast.
     </p>
-    <p italic>
+    <p italic font-dm>
       「 {{ user?.bio }} 」
     </p>
     <p>
-      <i i-fluent-emoji-sparkles mr-1 />
-      Team member of
+      <i i-fluent-emoji-sports-medal mr-1 />
+      Team member of:
       <IconsUnoCSS />
       ,
       <IconsElk />
-      ,
-      Creator of
+    </p>
+    <p>
+      <i i-fluent-emoji-sparkles mr-1 />
+      Creator of:
       <IconsOnuUI />
       ,
       <IconsUnPreset />
-      <i i-fluent-emoji-sparkles ml-1 />
-      <br>
-      In the community, I am also a ecological contributors of the
+    </p>
+    <p>
+      <i i-fluent-emoji-party-popper mr-1 />
+      Contributor of:
       <IconsVite />
       、
       <IconsVue />
       、
       <IconsNuxt /> & etc.
-      <i i-fluent-emoji-partying-face />
     </p>
 
-    <p>
+    <!-- <p>
       I have diverse interests, including watching anime, mountain climbing, music appreciation, foreign language acquisition, gaming,
       and recently, I have embarked on video editing with the goal of becoming a content
       <IconsBilibili />
       .
-    </p>
+    </p> -->
 
     <div v-if="user" lt-sm-fcc>
-      <GC :username="user.login" :month="5" borderable />
+      <GC :username="user.login" :month="8" borderable />
     </div>
 
     <p>

@@ -78,7 +78,6 @@ export default defineConfig({
   theme: {
     fontFamily: {
       dm: 'dm',
-      craft: 'MonoCraft',
     },
     colors: {
       context: 'rgba(var(--c-context),%alpha)',
