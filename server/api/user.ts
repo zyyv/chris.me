@@ -10,7 +10,7 @@ export default defineEventHandler(async () => {
   // return data
 
   if (import.meta.dev)
-    return (await import('~/data/user.json')).default as User
+    return (await import('~/mock/user.json')).default as User
 
   return $fetch<User>('https://api.github.com/users/zyyv')
 })

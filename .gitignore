@@ -6,5 +6,5 @@ dist
 .env
 .vscode
 *.zip
-data
+mock
 dev-dist
