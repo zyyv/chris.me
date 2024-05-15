@@ -5,7 +5,7 @@
       trans linear-text shape-bottom-right o-vite-to from-vite-from to-vite-to href="https://github.com/vitejs/vite"
       target="_blank"
     >
-      Vite
+      <strong>Vite</strong>
     </a>
   </div>
 </template>
