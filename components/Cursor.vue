@@ -77,7 +77,7 @@ watch(() => route.fullPath, () => {
 }
 </style>
 
-<style>
+<style scoped>
 html * {
   --uno: important-cursor-none;
 }

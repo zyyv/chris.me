@@ -57,8 +57,8 @@ const afterStyle_1_animate = computed(() => afterStyles.value[0].animation)
   </div>
 </template>
 
-<style lang="scss" scoped>
-// @unocss-skip-start
+<style scoped>
+/* @unocss-skip-start */
 .bg-stars::after {
   content: '';
   display: block;
@@ -69,5 +69,5 @@ const afterStyle_1_animate = computed(() => afterStyles.value[0].animation)
   box-shadow: v-bind(afterStyle_1_boxShadow);
   animation: v-bind(afterStyle_1_animate);
 }
-// @unocss-skip-end
+/* @unocss-skip-end */
 </style>

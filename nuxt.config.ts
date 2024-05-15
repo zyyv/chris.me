@@ -18,7 +18,7 @@ export default defineNuxtConfig({
     '~/styles/vars.css',
   ],
   devtools: {
-    enabled: true,
+    enabled: false,
   },
   // content: {
   //   highlight: {

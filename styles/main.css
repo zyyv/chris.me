@@ -1,5 +1,11 @@
+html,
+body,
+#__nuxt {
+  min-height: 100%;
+}
+
 body{
-  --uno: h-full trans text bg;
+  --uno: text text-op-64 bg;
 }
 
 body::-webkit-scrollbar {
@@ -8,24 +14,6 @@ body::-webkit-scrollbar {
 
 ::selection {
   --uno: text-primary;
-}
-
-::view-transition-old(root),
-::view-transition-new(root) {
-  animation: none;
-  mix-blend-mode: normal;
-}
-::view-transition-old(root) {
-  z-index: 1;
-}
-::view-transition-new(root) {
-  z-index: 9999;
-}
-.dark::view-transition-old(root) {
-  z-index: 9999;
-}
-.dark::view-transition-new(root) {
-  z-index: 1;
 }
 
 .transLogo {
