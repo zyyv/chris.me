@@ -48,13 +48,15 @@ const afterStyle_1_animate = computed(() => afterStyles.value[0].animation)
 </script>
 
 <template>
-  <div h-screen w-screen z--1 pf top-0 left-0 overflow-hidden>
-    <div un-children="z--200 rounded-full pa">
-      <div class="w-30px h-30px bg-stars" :style="styles[0]" />
-      <div class="signup-bg-stars-2 w-2px h-2px" />
-      <div class="signup-bg-stars-3 w-3px h-3px" />
+  <ClientOnly>
+    <div h-screen w-screen z--1 pf top-0 left-0 overflow-hidden>
+      <div un-children="z--2 rounded-full pa">
+        <div class="w-30px h-30px bg-stars" :style="styles[0]" />
+        <div class="signup-bg-stars-2 w-2px h-2px" />
+        <div class="signup-bg-stars-3 w-3px h-3px" />
+      </div>
     </div>
-  </div>
+  </ClientOnly>
 </template>
 
 <style scoped>

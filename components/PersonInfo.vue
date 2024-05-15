@@ -3,13 +3,17 @@ const { data: user } = await useFetch('/api/user')
 </script>
 
 <template>
-  <div flex items-center md="gap-10 flex-row">
+  <div flex items-center md="gap-10 flex-row" py-2>
     <h1 fsc gap-5>
       <UserAvatar />
     </h1>
     <section>
       <p>
-        I'm <strong c-primary>{{ user?.name }}</strong>, front-end engineer 🧑🏻‍💻 & open source enthusiast.
+        I'm <strong text-primary>{{ user?.name }}</strong>,
+        <code text-p-r font-dm v-text="`<Front-End Developer />`" />
+        <span text-p-r animate-count-infinite animate-duration-2000 animate-flash> | </span>
+        🧑🏻‍💻 &
+        <code text-sm rd-sm b="~ dashed orange/60" p-1 text-p-r>open source enthusiast</code>.
       </p>
       <p italic font-dm mt-2>
         「 {{ user?.bio }} 」
@@ -39,7 +43,7 @@ const { data: user } = await useFetch('/api/user')
           <IconsNuxt /> & etc.
         </li>
         <li>
-          <i i-fluent-emoji-party-popper mr-1 />
+          <i i-fluent-emoji-balloon mr-1 />
           Find me on:
           <IconsBilibili />
           & etc.
