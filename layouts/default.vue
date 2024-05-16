@@ -15,6 +15,5 @@
     <slot />
   </main>
   <NavFooter />
-  <!-- <Cursor /> -->
   <Bg />
 </template>

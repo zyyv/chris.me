@@ -5,7 +5,7 @@ useHead({
 </script>
 
 <template>
-  <div ma w-fit>
+  <div fcc size-screen>
     <PersonInfo />
     <!-- <p>
       I have diverse interests, including watching anime, mountain climbing, music appreciation, foreign language acquisition, gaming,

@@ -33,6 +33,4 @@ const inHome = computed(() => route.path === '/')
       </div>
     </nav>
   </header>
-  <!-- For header fixed -->
-  <div h-16 md:h-18 />
 </template>

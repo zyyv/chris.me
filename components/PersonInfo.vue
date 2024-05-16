@@ -13,7 +13,7 @@ const { data: user } = await useFetch('/api/user')
         <code text-p-r font-dm v-text="`<Front-End Developer />`" />
         <span text-p-r animate-count-infinite animate-duration-2000 animate-flash> | </span>
         🧑🏻‍💻 &
-        <code text-sm rd-sm b="~ dashed orange/60" p-1 text-p-r>open source enthusiast</code>.
+        <code text-sm rd-sm font-dm b="~ dashed orange/60" p-1 text-p-r>Open Source Enthusiast</code>
       </p>
       <p italic font-dm mt-2>
         「 {{ user?.bio }} 」
