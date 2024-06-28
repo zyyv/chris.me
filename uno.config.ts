@@ -48,7 +48,8 @@ export default defineConfig({
         }
       }
     }],
-    [/^(.+)::(.+)$/, ([, n, v], { theme }) => {
+    // eslint-disable-next-line regexp/no-super-linear-backtracking
+    [/^(.+?)::(.+)$/, ([, n, v], { theme }) => {
       const color = parseColor(v, theme)
       if (color?.cssColor?.type === 'rgb' && color.cssColor.components) {
         return {
@@ -77,7 +78,7 @@ export default defineConfig({
   ],
   theme: {
     fontFamily: {
-      dm: 'dm',
+      dank: 'dank',
     },
     colors: {
       context: 'rgba(var(--c-context),%alpha)',
@@ -157,6 +158,11 @@ export default defineConfig({
         },
       },
       typography: { cssExtend: typographyCssExtend },
+      webFonts: {
+        fonts: {
+          dm: 'DM Sans',
+        },
+      },
     }),
   ],
   transformers: [

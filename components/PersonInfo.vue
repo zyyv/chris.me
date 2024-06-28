@@ -10,12 +10,12 @@ const { data: user } = await useFetch('/api/user')
     <section>
       <p>
         I'm <strong text-primary>{{ user?.name }}</strong>,
-        <code text-p-r font-dm v-text="`<Front-End Developer />`" />
+        <code text-p-r font-dank v-text="`<Front-End Developer />`" />
         <span text-p-r animate-count-infinite animate-duration-2000 animate-flash> | </span>
         🧑🏻‍💻 &
-        <code text-sm rd-sm font-dm b="~ dashed orange/60" p-1 text-p-r>Open Source Enthusiast</code>
+        <code text-sm rd-sm font-dank b="~ dashed orange/60" p-1 text-p-r>Open Source Enthusiast</code>
       </p>
-      <p italic font-dm mt-2>
+      <p italic font-dank mt-2>
         「 {{ user?.bio }} 」
       </p>
       <ul my-6 space-y-2>
