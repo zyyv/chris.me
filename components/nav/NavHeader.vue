@@ -12,13 +12,13 @@ const inHome = computed(() => route.path === '/')
 <template>
   <header fixed z-9999 top-0 inset-x-0 trans backdrop-blur fcc px-8 pl-4>
     <nav w-full :class="inHome ? 'fcc' : 'fbc'">
-      <div v-if="!inHome" class="transLogo">
+      <div v-show="!inHome">
         <NuxtLink to="/" title="Home">
           <UserAvatar />
         </NuxtLink>
       </div>
 
-      <div class="transNavMenu" grid="~ gap-5" auto-flow-col items-center h-16 md:h-18>
+      <div view-transition-nav-menu grid="~ gap-5" auto-flow-col items-center h-16 md:h-18>
         <NuxtLink
           v-for="_route in routes" :key="_route.path" :to="_route.path"
           :title="_route.path.slice(1, 2).toUpperCase() + _route.path.slice(2).toLowerCase()"

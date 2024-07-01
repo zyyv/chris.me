@@ -4,8 +4,8 @@ body,
   min-height: 100%;
 }
 
-body{
-  --uno: text text-op-64 bg;
+body {
+  --uno: text text-op-64 bg font-dm;
 }
 
 body::-webkit-scrollbar {
@@ -14,14 +14,6 @@ body::-webkit-scrollbar {
 
 ::selection {
   --uno: text-primary;
-}
-
-.transLogo {
-  view-transition-name: logo;
-}
-
-.transNavMenu {
-  view-transition-name: nav-menu;
 }
 
 @keyframes animStar {
@@ -33,6 +25,11 @@ body::-webkit-scrollbar {
     transform: translateY(-2000px);
   }
 }
-.bg-stars{
+
+.bg-stars {
   clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+@view-transition {
+  navigation: auto; /* enabled! */
 }

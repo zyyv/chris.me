@@ -38,7 +38,7 @@ function toggleDark(event: MouseEvent) {
             : clipPath,
         },
         {
-          duration: 400,
+          duration: 300,
           easing: 'ease-out',
           pseudoElement: isDark.value
             ? '::view-transition-old(root)'
@@ -51,30 +51,35 @@ function toggleDark(event: MouseEvent) {
 
 <template>
   <ClientOnly>
-    <div
-      :title="isDark ? 'Switch to light mode' : 'Switch to dark mode'" icon-btn select-none
-      @click="toggleDark"
-    >
+    <div :title="isDark ? 'Switch to light mode' : 'Switch to dark mode'" icon-btn select-none @click="toggleDark">
       <i dark:i-akar-icons:moon-fill i-carbon:light-filled />
     </div>
   </ClientOnly>
 </template>
 
 <style scoped>
+@view-transition {
+  navigation: auto; /* enabled! */
+}
+
 ::view-transition-old(root),
 ::view-transition-new(root) {
   animation: none;
   mix-blend-mode: normal;
 }
+
 ::view-transition-old(root) {
   z-index: 1;
 }
+
 ::view-transition-new(root) {
   z-index: 9999;
 }
+
 .dark::view-transition-old(root) {
   z-index: 9999;
 }
+
 .dark::view-transition-new(root) {
   z-index: 1;
 }

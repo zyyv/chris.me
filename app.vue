@@ -1,4 +1,9 @@
 <script setup>
+const ogUrl = 'https://zyob.top/'
+const ogImage = `${ogUrl}og.png#1`
+const title = 'Chris.me'
+const description = 'Regardless of the past, do not ask the future.'
+
 useHead({
   title: 'Chris',
   link: [
@@ -8,10 +13,16 @@ useHead({
     { name: 'author', content: 'Chris' },
     { hid: 'description', name: 'description', content: 'Chris\' Portfolio' },
     { hid: 'keywords', name: 'keywords', content: 'Chris, Blog, Portfolio' },
-    { name: 'twitter:card', content: 'summary' },
+
+    { property: 'og:type', content: 'website' },
+    { name: 'og:title', content: title },
+    { name: 'og:description', content: description },
+    { property: 'og:image', content: ogImage },
+    { name: 'twitter:title', content: title },
+    { name: 'twitter:card', content: 'summary_large_image' },
+    { name: 'twitter:image', content: ogImage },
     { name: 'twitter:site', content: '@chris_zyyv' },
-    { property: 'og:title', content: 'Chris' },
-    { property: 'og:image', content: 'https://zyob.top/avatar.png' },
+    { name: 'twitter:url', content: ogUrl },
 
     { 'http-equiv': 'pragma', 'content': 'no-cache' },
     { 'http-equiv': 'cache-control', 'content': 'no-cache' },

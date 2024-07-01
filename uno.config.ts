@@ -160,7 +160,7 @@ export default defineConfig({
       typography: { cssExtend: typographyCssExtend },
       webFonts: {
         fonts: {
-          dm: 'DM Sans',
+          dm: ['DM Sans', 'DM Sans:400,700'],
         },
       },
     }),
