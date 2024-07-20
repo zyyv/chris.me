@@ -2,7 +2,7 @@
   "name": "chris.me",
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@9.1.0",
+  "packageManager": "pnpm@9.5.0",
   "description": "Chris' blog build with Nuxt3.",
   "author": "Chris <https://github.com/zyyv>",
   "license": "MIT",
