@@ -2,9 +2,6 @@ import {
   type CSSObject,
   type RuleContext,
   defineConfig,
-  transformerCompileClass,
-  transformerDirectives,
-  transformerVariantGroup,
 } from 'unocss'
 import { presetUseful } from 'unocss-preset-useful'
 import { parseColor } from '@unocss/preset-mini/utils'
@@ -163,12 +160,8 @@ export default defineConfig({
           dm: ['DM Sans', 'DM Sans:400,700'],
         },
       },
+      compileClass: true,
     }),
-  ],
-  transformers: [
-    transformerDirectives(),
-    transformerVariantGroup(),
-    transformerCompileClass(),
   ],
   safelist: [
     Array.from({ length: 5 }, (j, i) => `fill-level-${i}`),
