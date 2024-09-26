@@ -1,11 +1,11 @@
+import { FileSystemIconLoader } from '@iconify/utils/lib/loader/node-loaders'
+import { parseColor } from '@unocss/preset-mini/utils'
 import {
   type CSSObject,
-  type RuleContext,
   defineConfig,
+  type RuleContext,
 } from 'unocss'
 import { presetUseful } from 'unocss-preset-useful'
-import { parseColor } from '@unocss/preset-mini/utils'
-import { FileSystemIconLoader } from '@iconify/utils/lib/loader/node-loaders'
 
 const typographyCssExtend: Record<string, CSSObject> = {
   'a': {

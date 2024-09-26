@@ -1,7 +1,7 @@
 import type { Endpoints } from '@octokit/types'
 
-export * from './gc'
 export * from './article'
+export * from './gc'
 
 export type Repo = Endpoints['GET /user/repos']['response']['data'][number]
 export type User = Endpoints['GET /user']['response']['data']
