@@ -19,7 +19,7 @@ defineProps<{
     dark-hover="bg-white bg-op-3"
   >
     <a :href="repo.homepage || repo.html_url" target="_blank" decoration-none flex="~ col gap-3" h-full>
-      <h5 m0 fsc gap-1 text-sm>
+      <h5 fsc gap-1 text-sm>
         <i i-ri:git-repository-line />
         <span>{{ repo.name }}</span>
         <span
@@ -32,10 +32,10 @@ defineProps<{
           {{ repo.is_template ? 'Template' : '' }}
         </span>
       </h5>
-      <p m0 flex-1>
+      <p flex-1>
         {{ repo.description }}
       </p>
-      <p fsc gap-4 m0>
+      <p fsc gap-4>
         <span v-if="repo.language" fsc gap-1>
           <i
             w-3

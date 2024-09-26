@@ -12,6 +12,10 @@ body::-webkit-scrollbar {
   --uno: w0;
 }
 
+#__nuxt{
+  --uno: min-h-screen flex flex-col;
+}
+
 ::selection {
   --uno: text-primary;
 }

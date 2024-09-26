@@ -1,8 +1,14 @@
 <script lang="ts" setup>
-const routes = reactive<{ icon?: string, path: string, text?: string }[]>([
-  // { path: '/posts', text: 'Blog' },
-  { path: '/projects', text: 'Projects' },
-  // { path: '/talks', text: 'Talks' },
+interface Menu {
+  icon?: string
+  path: string
+  text?: string
+}
+
+const routes = reactive<Menu[]>([
+  { path: '/posts', icon: 'i-ri-blogger-line' },
+  { path: '/projects', icon: 'i-ri-dashboard-line' },
+  { path: '/talks', icon: 'i-ri-file-ppt-line' },
 ])
 
 const route = useRoute()
@@ -10,7 +16,7 @@ const inHome = computed(() => route.path === '/')
 </script>
 
 <template>
-  <header fixed z-9999 top-0 inset-x-0 trans backdrop-blur fcc px-8 pl-4>
+  <header sticky z-999 top-0 trans backdrop-blur fcc px-6>
     <nav w-full :class="inHome ? 'fcc' : 'fbc'">
       <div v-show="!inHome">
         <NuxtLink to="/" title="Home">
@@ -24,7 +30,7 @@ const inHome = computed(() => route.path === '/')
           :title="_route.path.slice(1, 2).toUpperCase() + _route.path.slice(2).toLowerCase()"
         >
           <span v-if="_route.text" icon-text>{{ _route.text }}</span>
-          <div v-if="_route.icon" icon-btn :class="_route.icon" />
+          <i v-if="_route.icon" icon-btn :class="_route.icon" />
         </NuxtLink>
 
         <a title="Twitter" href="https://twitter.com/chris_zyyv" target="_blank" icon-link i-ri:twitter-line />

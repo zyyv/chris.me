@@ -21,10 +21,6 @@ export default defineNuxtConfig({
     '~/styles/vars.css',
   ],
 
-  devtools: {
-    enabled: false,
-  },
-
   // content: {
   //   highlight: {
   //     theme: 'vitesse-dark',
@@ -36,9 +32,10 @@ export default defineNuxtConfig({
   //   },
   //   documentDriven: true,
   // },
-  app: {
-    keepalive: true,
-  },
+
+  // app: {
+  //   keepalive: true,
+  // },
 
   vite: {
     define: {

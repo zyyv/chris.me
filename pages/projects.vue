@@ -22,8 +22,15 @@ useHead({
 </script>
 
 <template>
-  <div prose ma pt-18>
+  <div ma max-w-65ch>
     <PageHeader title="Projects" description="List of projects that I am proud of." />
-    <RepoPanel v-for="(repos, key) in repoGroup" :key="key" :label="key" :data="repos" />
+    <template v-for="(repos, key) in repoGroup" :key="key">
+      <h4>
+        {{ key }}
+      </h4>
+      <div grid="~ cols-1 md:cols-2 gap-4">
+        <RepoCard v-for="repo in repos" :key="repo.id" :repo="repo" />
+      </div>
+    </template>
   </div>
 </template>

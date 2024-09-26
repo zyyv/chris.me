@@ -1,6 +1,6 @@
 <template>
   <NavHeader />
-  <main>
+  <main flex="~ col 1">
     <!-- <router-view v-slot="{ Component, route }">
         <transition
           enter-active-class="animate-fade-in animate-duration-500"

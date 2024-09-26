@@ -5,7 +5,6 @@
   "packageManager": "pnpm@9.11.0",
   "description": "Chris' blog build with Nuxt3.",
   "author": "Chris <https://github.com/zyyv>",
-  "license": "MIT",
   "homepage": "https://github.com/zyyv/chris.me#readme",
   "repository": {
     "type": "git",

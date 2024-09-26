@@ -5,7 +5,7 @@ useHead({
 </script>
 
 <template>
-  <div fcc size-screen>
+  <div flex-1 fccc>
     <PersonInfo />
     <!-- <p>
       I have diverse interests, including watching anime, mountain climbing, music appreciation, foreign language acquisition, gaming,
