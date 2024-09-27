@@ -8,6 +8,7 @@ defineProps<{
 <template>
   <h2
     text-2xl
+    fw-bold
     md-text-3xl
     mb4
     mt-0

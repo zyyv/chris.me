@@ -5,7 +5,7 @@ body,
 }
 
 body {
-  --uno: text text-op-64 bg font-dm;
+  --uno: text text-op-64 bg;
 }
 
 body::-webkit-scrollbar {
@@ -13,7 +13,7 @@ body::-webkit-scrollbar {
 }
 
 #__nuxt{
-  --uno: min-h-screen flex flex-col;
+  --uno: min-h-screen flex flex-col font-dm;
 }
 
 ::selection {

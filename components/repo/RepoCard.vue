@@ -23,10 +23,13 @@ defineProps<{
         <i i-ri:git-repository-line />
         <span>{{ repo.name }}</span>
         <span
-          fw-normal
           inline-block
-          important-rounded-full
-          :class="repo.is_template ? 'bg-yellow bg-blue' : 'dark-bg-teal bg-red'"
+          rounded-full
+          text-xs p="x1 y0.25"
+          :class="repo.is_template
+            ? 'dark:bg-yellow/20 dark:text-yellow/80 bg-blue/20 text-blue/80'
+            : 'dark:bg-purple/20 dark:text-purple/80 bg-red/20 text-red/80'
+          "
         >
           {{ repo.private ? 'Private' : 'Public' }}
           {{ repo.is_template ? 'Template' : '' }}
