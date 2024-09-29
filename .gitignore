@@ -8,3 +8,4 @@ dist
 *.zip
 mock
 dev-dist
+.eslintcache
