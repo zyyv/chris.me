@@ -28,7 +28,8 @@
   },
   "dependencies": {
     "blurhash": "^2.0.5",
-    "dayjs": "^1.11.13"
+    "dayjs": "^1.11.13",
+    "unsplash-js": "^7.0.19"
   },
   "devDependencies": {
     "@antfu/eslint-config": "3.7.1",
@@ -45,6 +46,7 @@
     "esno": "^4.7.0",
     "fs-extra": "^11.2.0",
     "lint-staged": "^15.2.10",
+    "node-fetch": "^3.3.2",
     "nuxt": "3.13.2",
     "octokit": "^4.0.2",
     "postcss-import": "^16.1.0",

@@ -9,6 +9,7 @@ const routes = reactive<Menu[]>([
   { path: '/posts', icon: 'i-ri-blogger-line' },
   { path: '/projects', icon: 'i-ri-dashboard-line' },
   { path: '/talks', icon: 'i-ri-file-ppt-line' },
+  { path: '/images', icon: 'i-ri-image-line' },
 ])
 
 const route = useRoute()

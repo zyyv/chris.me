@@ -39,6 +39,12 @@ function getDataUrlFromArr(arr: Uint8ClampedArray, w: number, h: number) {
 }
 
 onMounted(() => {
+  // Decode the blurhash if available
+  if (props.blurhash) {
+    const pixels = decode(props.blurhash, 32, 32)
+    placeholderSrc.value = getDataUrlFromArr(pixels, 32, 32)
+  }
+
   // Create a temporary image to check when the image has loaded
   const img = document.createElement('img')
   img.onload = () => {
@@ -52,12 +58,6 @@ onMounted(() => {
   setTimeout(() => {
     isLoaded.value = true
   }, 3000)
-
-  // Decode the blurhash if available
-  if (props.blurhash) {
-    const pixels = decode(props.blurhash, 32, 32)
-    placeholderSrc.value = getDataUrlFromArr(pixels, 32, 32)
-  }
 })
 </script>
 

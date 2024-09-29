@@ -1,7 +1,5 @@
 <script lang="ts" setup>
 const { data } = await useFetch('/api/images')
-
-console.log(data.value)
 </script>
 
 <template>
