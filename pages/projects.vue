@@ -18,7 +18,7 @@ useHead({
   ],
 })
 
-const { data } = await useFetch('/api/repos')
+const { data } = useFetch('/api/repos')
 </script>
 
 <template>
