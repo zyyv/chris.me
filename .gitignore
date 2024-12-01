@@ -9,3 +9,4 @@ dist
 mock
 dev-dist
 .eslintcache
+.data
