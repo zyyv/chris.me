@@ -1,11 +1,7 @@
+import type { CSSObject, RuleContext } from 'unocss'
 import { FileSystemIconLoader } from '@iconify/utils/lib/loader/node-loaders'
 import { parseColor } from '@unocss/preset-mini/utils'
-import {
-  type CSSObject,
-  defineConfig,
-  type RuleContext,
-} from 'unocss'
-import { presetUseful } from 'unocss-preset-useful'
+import { defineUsefulConfig } from 'unocss-preset-useful'
 
 const typographyCssExtend: Record<string, CSSObject> = {
   'a': {
@@ -30,7 +26,52 @@ const typographyCssExtend: Record<string, CSSObject> = {
   },
 }
 
-export default defineConfig({
+export default defineUsefulConfig({
+  theme: {
+    extend: {
+      animation: {
+        shape: 'shape 5s linear infinite',
+      },
+      keyframes: {
+        shape: {
+          '0%,100%': {
+            'border-radius': '42% 58% 70% 30% / 45% 45% 55% 55%',
+            'transform': 'translate3d(0,0,0) rotateZ(0.01deg)',
+          },
+          '34%': {
+            'border-radius': '70% 30% 46% 54% / 30% 29% 71% 70%',
+            'transform': 'translate3d(0,5px,0) rotateZ(0.01deg)',
+          },
+          '50%': {
+            transform: 'translate3d(0,0,0) rotateZ(0.01deg)',
+          },
+          '67%': {
+            'border-radius': '100% 60% 60% 100% / 100% 100% 60% 60%',
+            'transform': 'translate3d(0,-3px,0) rotateZ(0.01deg)',
+          },
+        },
+      },
+    },
+  },
+  icons: {
+    extraProperties: {
+      'display': 'inline-block',
+      'height': '1.2em',
+      'width': '1.2em',
+      'vertical-align': 'text-bottom',
+    },
+    collections: {
+      'my-logos': FileSystemIconLoader('./public/logos'),
+    },
+  },
+  typography: { cssExtend: typographyCssExtend },
+  webFonts: {
+    fonts: {
+      dm: 'DM Sans',
+    },
+  },
+  compileClass: true,
+}, {
   rules: [
     [/^o-(.*)$/, ([, body]: string[], { theme }: RuleContext) => {
       const color = parseColor(body, theme)
@@ -115,54 +156,6 @@ export default defineConfig({
       bilibili: '#ed7099',
     },
   },
-  presets: [
-    presetUseful({
-      theme: {
-        extend: {
-          animation: {
-            shape: 'shape 5s linear infinite',
-          },
-          keyframes: {
-            shape: {
-              '0%,100%': {
-                'border-radius': '42% 58% 70% 30% / 45% 45% 55% 55%',
-                'transform': 'translate3d(0,0,0) rotateZ(0.01deg)',
-              },
-              '34%': {
-                'border-radius': '70% 30% 46% 54% / 30% 29% 71% 70%',
-                'transform': 'translate3d(0,5px,0) rotateZ(0.01deg)',
-              },
-              '50%': {
-                transform: 'translate3d(0,0,0) rotateZ(0.01deg)',
-              },
-              '67%': {
-                'border-radius': '100% 60% 60% 100% / 100% 100% 60% 60%',
-                'transform': 'translate3d(0,-3px,0) rotateZ(0.01deg)',
-              },
-            },
-          },
-        },
-      },
-      icons: {
-        extraProperties: {
-          'display': 'inline-block',
-          'height': '1.2em',
-          'width': '1.2em',
-          'vertical-align': 'text-bottom',
-        },
-        collections: {
-          'my-logos': FileSystemIconLoader('./public/logos'),
-        },
-      },
-      typography: { cssExtend: typographyCssExtend },
-      webFonts: {
-        fonts: {
-          dm: 'DM Sans',
-        },
-      },
-      compileClass: true,
-    }),
-  ],
   safelist: [
     Array.from({ length: 5 }, (j, i) => `fill-level-${i}`),
     'sm-fsc max-w-75'.split(' '),

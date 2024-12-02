@@ -1,8 +1,11 @@
-import { defineCollection } from '@nuxt/content'
+import { defineCollection, z } from '@nuxt/content'
 
 export const collections = {
-  content: defineCollection({
+  posts: defineCollection({
     type: 'page',
-    source: '**/*.md',
+    source: 'posts/**',
+    schema: z.object({
+      date: z.string(),
+    }),
   }),
 }

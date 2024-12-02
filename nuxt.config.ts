@@ -2,6 +2,7 @@ export default defineNuxtConfig({
   devServer: {
     port: 1111,
   },
+
   modules: [
     '@vueuse/nuxt',
     '@unocss/nuxt',
@@ -52,12 +53,15 @@ export default defineNuxtConfig({
   //     locale: 'zh-cn',
   //   },
   // },
-  nitro: {
-    prerender: {
-      crawlLinks: false,
-      routes: ['/'],
-    },
-  },
+  // nitro: {
+  //   prerender: {
+  //     crawlLinks: false,
+  //     routes: ['/'],
+  //   },
+  // },
 
+  future: {
+    compatibilityVersion: 4,
+  },
   compatibilityDate: '2024-09-05',
 })

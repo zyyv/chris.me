@@ -1,5 +1,5 @@
 <script setup>
-const ogUrl = 'https://zyob.top/'
+const ogUrl = 'https://zyyv.dev/'
 const ogImage = `${ogUrl}og.png#1`
 const title = 'Chris.me'
 const description = 'Regardless of the past, do not ask the future.'

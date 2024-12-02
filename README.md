@@ -4,7 +4,7 @@ This is my personal website, build with Nuxt3.
 
 Welcome to clone and fork it to learn.
 
-And you can visit [zyob.top](http://zyob.top) online.
+And you can visit [zyyv.dev](http://zyyv.dev) online.
 
 If you think it's good, can you give me a star 🌟?
 
