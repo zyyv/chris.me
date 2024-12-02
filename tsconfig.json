@@ -5,7 +5,6 @@
       "node",
       "vite/client"
     ],
-    "strict": true,
     "strictNullChecks": true
   },
   "exclude": [

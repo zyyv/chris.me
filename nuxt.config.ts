@@ -7,12 +7,17 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@unocss/nuxt',
     '@nuxt/content',
+    '@nuxtjs/color-mode',
     // '@vite-pwa/nuxt',
   ],
 
   experimental: {
     viewTransition: true,
     renderJsonPayloads: true,
+  },
+
+  colorMode: {
+    classSuffix: '',
   },
 
   css: [

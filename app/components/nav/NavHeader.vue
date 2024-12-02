@@ -6,9 +6,9 @@ interface Menu {
 }
 
 const routes = reactive<Menu[]>([
-  { path: '/posts', icon: 'i-ri-blogger-line' },
-  { path: '/projects', icon: 'i-ri-dashboard-line' },
-  { path: '/talks', icon: 'i-ri-file-ppt-line' },
+  { path: '/posts', icon: 'i-custom-post' },
+  { path: '/projects', icon: 'i-custom-package' },
+  { path: '/talks', icon: 'i-custom-ppt' },
   { path: '/images', icon: 'i-ri-image-line' },
 ])
 
@@ -36,7 +36,7 @@ const inHome = computed(() => route.path === '/')
 
         <a title="Twitter" href="https://twitter.com/chris_zyyv" target="_blank" icon-link i-ri:twitter-line />
         <a title="Github" href="https://github.com/zyyv" target="_blank" icon-link i-ri-github-line />
-        <DrakToggle />
+        <DrakToggles />
       </div>
     </nav>
   </header>
