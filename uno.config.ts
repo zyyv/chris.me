@@ -1,32 +1,9 @@
-import type { CSSObject } from 'unocss'
+import type { UsefulTheme } from 'unocss-preset-useful'
 import { FileSystemIconLoader } from '@iconify/utils/lib/loader/node-loaders'
 import { parseColor } from '@unocss/preset-mini/utils'
 import { defineUsefulConfig } from 'unocss-preset-useful'
 
-const typographyCssExtend: Record<string, CSSObject> = {
-  'a': {
-    'display': 'inline-block',
-    'line-height': '1.5',
-    'border-bottom': '1px dashed rgba(var(--c-context), 0.5)',
-    'text-decoration': 'none',
-    'transition': 'all 0.3s ease-in-out',
-  },
-  'a:hover': {
-    'border-bottom': '1px solid rgba(var(--c-context), 1)',
-  },
-  'pre': {
-    'background': '#eee !important',
-    'font-family': 'dm',
-  },
-  '.dark pre': {
-    background: '#222 !important',
-  },
-  'blockquote': {
-    'border-left': '0.1em solid rgba(168,85,247,.4)',
-  },
-}
-
-export default defineUsefulConfig({
+export default defineUsefulConfig<UsefulTheme>({
   theme: {
     extend: {
       animation: {
@@ -69,7 +46,7 @@ export default defineUsefulConfig({
       },
     },
   },
-  typography: { cssExtend: typographyCssExtend },
+  typography: true,
   webFonts: {
     fonts: {
       dm: 'DM Sans',
@@ -79,32 +56,38 @@ export default defineUsefulConfig({
 }, {
   rules: [
     [/^o-(.*)$/, ([, body], { theme }) => {
-      const color = parseColor(body, theme)
-      if (color?.cssColor?.type === 'rgb' && color.cssColor.components) {
-        return {
-          '--c-context': `${color.cssColor.components.join(',')}`,
+      if (body) {
+        const color = parseColor(body, theme)
+        if (color?.cssColor?.type === 'rgb' && color.cssColor.components) {
+          return {
+            '--c-context': `${color.cssColor.components.join(',')}`,
+          }
         }
-      }
-      else {
-        return {
-          '--c-context': color?.color,
+        else {
+          return {
+            '--c-context': color?.color,
+          }
         }
       }
     }],
-    // eslint-disable-next-line regexp/no-super-linear-backtracking
-    [/^(.+?)::(.+)$/, ([, n, v], { theme }) => {
-      const color = parseColor(v, theme)
-      if (color?.cssColor?.type === 'rgb' && color.cssColor.components) {
-        return {
-          [`--${n}`]: `${color.cssColor.components.join(',')}`,
+    [/^([^:]+)::(\S+)$/, ([, n, v], { theme }) => {
+      if (n && v) {
+        const color = parseColor(v, theme)
+        if (color?.cssColor?.type === 'rgb' && color.cssColor.components) {
+          return {
+            [`--${n}`]: `${color.cssColor.components.join(',')}`,
+          }
         }
-      }
-      return {
-        [`--${n}`]: v,
+        return {
+          [`--${n}`]: v,
+        }
       }
     }],
   ],
   shortcuts: [
+    {
+      'page-container': 'container mx-auto my-4',
+    },
     ['text', 'text-primary-text'],
     ['bg', 'bg-primary-bg'],
 

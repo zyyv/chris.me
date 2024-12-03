@@ -8,12 +8,12 @@ const router = useRouter()
       <button
         op-70
         hover:op-100
+        class="group"
         text="#7D7D7D dark:#acbac6"
         bg-transparent
-        border="0 b-1 #7D7D7D dark:#acbac6 op-70 hover:op-100"
         @click="router.back()"
       >
-        cd ··
+        <i i-carbon-arrow-left group-hover="mr-2" trans /> cd ··
       </button>
     </slot>
   </div>

@@ -21,26 +21,29 @@ export default defineNuxtConfig({
   },
 
   css: [
-    '~/styles/fonts.css',
-    '~/styles/main.css',
     '~/styles/vars.css',
+    '~/styles/fonts.css',
+    '~/styles/prose.css',
+    '~/styles/main.css',
   ],
 
-  // content: {
-  //   highlight: {
-  //     theme: 'vitesse-dark',
-  //   },
-  //   markdown: {
-  //     toc: {
-  //       depth: 3,
-  //     },
-  //   },
-  //   documentDriven: true,
-  // },
+  content: {
+    build: {
+      markdown: {
+        toc: {
+          depth: 3,
+          searchDepth: 3,
+        },
+        highlight: {
+          theme: {
+            default: 'vitesse-dark',
+            light: 'vitesse-light',
+          },
+        },
+      },
+    },
 
-  // app: {
-  //   keepalive: true,
-  // },
+  },
 
   vite: {
     define: {
@@ -58,12 +61,12 @@ export default defineNuxtConfig({
   //     locale: 'zh-cn',
   //   },
   // },
-  // nitro: {
-  //   prerender: {
-  //     crawlLinks: false,
-  //     routes: ['/'],
-  //   },
-  // },
+  nitro: {
+    prerender: {
+      crawlLinks: false,
+      routes: ['/'],
+    },
+  },
 
   future: {
     compatibilityVersion: 4,

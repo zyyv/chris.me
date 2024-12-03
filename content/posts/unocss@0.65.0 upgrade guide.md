@@ -1,3 +1,11 @@
+---
+date: 2024-12-02
+description: UnoCSS@0.65.0 brings an asynchronous engine, enhancing extensibility and supporting asynchronous presets. The update includes bug fixes, new features, and optimizations. Join the unocss-community to share and promote presets and transformers.
+title: UnoCSS@0.65.0 Upgrade Guide
+tags: ['UnoCSS']
+lang: en
+---
+
 Hi, Unoers!
 
 We have released UnoCSS@0.65.0. This version includes bug fixes, new features, and optimizations. Here are the details of this update:

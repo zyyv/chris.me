@@ -1,0 +1,43 @@
+:is([prose=""], .prose) {
+  a {
+    text-decoration: none !important;
+  }
+
+  :not(h1, h2, h3, h4, h5)>a {
+    display: inline-block;
+    line-height: 1.5;
+    border-bottom: 1px dashed rgba(var(--c-text), 0.5);
+    text-decoration: none !important;
+    transition: border-bottom 0.3s ease-in-out;
+  }
+
+  :not(h1, h2, h3, h4, h5)>a:hover {
+    border-bottom: 1px solid rgba(var(--c-text), 0.72);
+  }
+
+  code {
+    font-family: dank !important;
+    font-size: 14px;
+  }
+
+  :not(pre) > code {
+    display: inline-block;
+    border-radius: 2px;
+    line-height: 1.2;
+    background-color: rgba(var(--c-text), 0.08);
+  }
+
+  pre {
+    background: #eee !important;
+  }
+
+  blockquote {
+    border-left: 0.1em solid rgba(var(--c-text), 0.5);
+  }
+}
+
+.dark :is([prose=""], .prose) {
+  pre {
+    background: #222 !important;
+  }
+}

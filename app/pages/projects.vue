@@ -22,9 +22,9 @@ const { data, pending } = useFetch('/api/repos')
 </script>
 
 <template>
-  <div ma max-w-65ch>
+  <div mxa max-w-65ch>
     <PageHeader title="Projects" description="List of projects that I am proud of." />
-    <div mt-8 space-y-8>
+    <div my-8 space-y-8>
       <template v-if="pending">
         <div v-for="section in 2" :key="section">
           <h4 mb-2 class="h-6 w-32 bg-gray-200 rounded animate-pulse" />

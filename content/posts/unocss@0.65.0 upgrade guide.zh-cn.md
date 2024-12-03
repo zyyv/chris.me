@@ -1,4 +1,16 @@
+---
+date: 2024-12-02
+description: UnoCSS@0.65.0 版本带来了异步引擎，增强了可扩展性，支持异步预设。此次更新包括了 bug 修复、新特性和优化。加入 unocss-community，分享和推广预设和转换器。
+title: UnoCSS@0.65.0 升级指南
+tags: ['UnoCSS']
+lang: zh-cn
+---
+
+
 Hi, 各位 Unoer，你们好！
+
+
+## UnoCSS 0.65.0 发布
 
 我们发布了 UnoCSS@0.65.0 版本，这个版本在 bug 修复的基础上，增加了一些新特性，以及对一些特性进行了优化。下面是本次更新的详细内容：
 
@@ -20,7 +32,19 @@ https://github.com/unocss/unocss/pull/4268
 const uno = await createGenerator(userConfig) // ✅
 ```
 
-如果你是预设或者转换器的开发者，你可能会在测试文件更改你的代码，以适应新的异步引擎。
+#### test h4
+
+
+
+> 如果你是预设或者转换器的开发者，你可能会在测试文件更改你的代码，以适应新的异步引擎。
+
+```ts
+{
+  uno: import('@unocss/preset-uno').then(m => m.presetUno),
+  attributify: import('@unocss/preset-attributify').then(m => m.presetAttributify),
+  // icons: import('@unocss/preset-icons').then(m => m.presetIcons),
+}
+```
 
 得益于异步的引擎，我们在 https://github.com/unocss/unocss/pull/4294 支持了异步预设，这是一项壮举 🚀，你现在可以在预设中使用异步函数。
 
