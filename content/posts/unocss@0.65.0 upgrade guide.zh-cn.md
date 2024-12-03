@@ -1,24 +1,23 @@
 ---
-date: 2024-12-02
+date: 2024-12-02T00:00:00.000Z
 description: UnoCSS@0.65.0 版本带来了异步引擎，增强了可扩展性，支持异步预设。此次更新包括了 bug 修复、新特性和优化。加入 unocss-community，分享和推广预设和转换器。
 title: UnoCSS@0.65.0 升级指南
-tags: ['UnoCSS']
+tags:
+  - UnoCSS
 lang: zh-cn
 ---
 
-
 Hi, 各位 Unoer，你们好！
-
 
 ## UnoCSS 0.65.0 发布
 
-我们发布了 UnoCSS@0.65.0 版本，这个版本在 bug 修复的基础上，增加了一些新特性，以及对一些特性进行了优化。下面是本次更新的详细内容：
+我们发布了 UnoCSS\@0.65.0 版本，这个版本在 bug 修复的基础上，增加了一些新特性，以及对一些特性进行了优化。下面是本次更新的详细内容：
 
 ### Async UnoCSS Engine
 
 从 0.65.0 版本开始，UnoCSS 引擎从创建到解析过程中，都是异步的，这极大的增强了 UnoCSS 的扩展性。
 
-https://github.com/unocss/unocss/pull/4268
+<https://github.com/unocss/unocss/pull/4268>
 
 `new UnoGenerator` 已弃用，将不再作为推荐的使用方式，强行使用会抛出错误 ❌
 
@@ -34,8 +33,6 @@ const uno = await createGenerator(userConfig) // ✅
 
 #### test h4
 
-
-
 > 如果你是预设或者转换器的开发者，你可能会在测试文件更改你的代码，以适应新的异步引擎。
 
 ```ts
@@ -46,7 +43,7 @@ const uno = await createGenerator(userConfig) // ✅
 }
 ```
 
-得益于异步的引擎，我们在 https://github.com/unocss/unocss/pull/4294 支持了异步预设，这是一项壮举 🚀，你现在可以在预设中使用异步函数。
+得益于异步的引擎，我们在 <https://github.com/unocss/unocss/pull/4294> 支持了异步预设，这是一项壮举 🚀，你现在可以在预设中使用异步函数。
 
 例如：
 
@@ -79,14 +76,11 @@ const uno = await createGenerator({
 
 你可以在使用时按需使用你使用到的预设，参考社区预设[unocss-preset-useful](https://github.com/unpreset/unocss-preset-useful/blob/6cf6a41a222b223e9f5f708cf99c00cf026bf8a4/packages/core/src/resolve.ts#L53-L63)
 
-
-
-
 ### mutiple result variant
 
 起初只是为了解决 `marker`、`selection` varaint 问题，但由于现阶段的 variant 的设计，我们需要对 variant 进行多结果的支持。
 
-于是在 https://github.com/unocss/unocss/pull/4291 进行了改进，现在你可以在 variant 中返回多个结果。
+于是在 <https://github.com/unocss/unocss/pull/4291> 进行了改进，现在你可以在 variant 中返回多个结果。
 
 ```ts
 const uno = await createGenerator({
@@ -115,18 +109,18 @@ const uno = await createGenerator({
   ],
 })
 ```
+
 将会生成：
+
 ```css
 /* uno.generate('v-text-red') */
 .v-text-red{color:red;}
 .v-text-red{color:green;}
 ```
 
-
 一般情况下，utilities 伴随着多个 variant, 但对于多结果的 variant，它的解析是成指数级增长的，这非常耗费性能。
 
 因此我们决定在使用 mutiple result variant 时，请确保改 variant 关闭了 `multiPass`, 防止进行下一轮的解析。
-
 
 惊喜，我们发现它额外的支持了一个 UnoCSS 长久的问题，这是一个意外的收获 🎉
 
@@ -138,13 +132,11 @@ const uno = await createGenerator({
 <div border="red:10" /> ✅
 ```
 
-之前我们在属性模式下，就像支持 `text="hover:blue"` 会被解析为 `hover:text-blue` 一样
-解析变体时，`border="red:10"` 会被解析为 `red:border-10`，因为我们不确定 variant 的载体是什么。
+之前我们在属性模式下，就像支持 `text="hover:blue"` 会被解析为 `hover:text-blue` 一样 解析变体时，`border="red:10"` 会被解析为 `red:border-10`，因为我们不确定 variant 的载体是什么。
 
 由于支持多变体结果，我们会尽可能的解析这种情况，并生成正确的结果。
 
-https://github.com/unocss/unocss/pull/4295
-
+<https://github.com/unocss/unocss/pull/4295>
 
 ### On-demand Preflights
 
@@ -191,7 +183,7 @@ https://github.com/unocss/unocss/pull/4295
 ]
 ```
 
-https://github.com/unocss/unocss/pull/4252
+<https://github.com/unocss/unocss/pull/4252>
 
 ### 预解析 icon-set
 
@@ -199,7 +191,7 @@ https://github.com/unocss/unocss/pull/4252
 
 但对于自定义的 icon-set，在此之前也会自动检测，这是不必要的，因此我们在 0.65.0 版本中增加了对自动检测的 icon-set 集合进行过滤，筛选掉用户自定义的 icon 集合。
 
-https://github.com/unocss/unocss/pull/4278
+<https://github.com/unocss/unocss/pull/4278>
 
 ### Layer css order
 
@@ -214,14 +206,11 @@ https://github.com/unocss/unocss/pull/4278
 
 在 0.65.0 版本中，我们会在顶部生成layer 的排序结果，以便于你查看。
 
-
 ```css
 @layer shortcuts, default;
 ```
 
-https://github.com/unocss/unocss/pull/4299
-
-
+<https://github.com/unocss/unocss/pull/4299>
 
 以上是一些主要的更新，更多的更新请查看 [CHANGELOG](https://github.com/unocss/unocss/releases)。
 

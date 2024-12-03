@@ -1,30 +1,31 @@
 ---
-date: 2024-12-02
+date: 2024-12-02T00:00:00.000Z
 description: UnoCSS@0.65.0 brings an asynchronous engine, enhancing extensibility and supporting asynchronous presets. The update includes bug fixes, new features, and optimizations. Join the unocss-community to share and promote presets and transformers.
 title: UnoCSS@0.65.0 Upgrade Guide
-tags: ['UnoCSS']
+tags:
+  - UnoCSS
 lang: en
 ---
 
 Hi, Unoers!
 
-We have released UnoCSS@0.65.0. This version includes bug fixes, new features, and optimizations. Here are the details of this update:
+We have released UnoCSS\@0.65.0. This version includes bug fixes, new features, and optimizations. Here are the details of this update:
 
 ### Async UnoCSS Engine
 
 Starting from version 0.65.0, the UnoCSS engine is asynchronous from creation to parsing, greatly enhancing its extensibility.
 
-https://github.com/unocss/unocss/pull/4268
+<https://github.com/unocss/unocss/pull/4268>
 
 `new UnoGenerator` is deprecated and will throw an error if used ❌
 
-```txt
+```text
 `new UnoGenerator()` is deprecated, please use `createGenerator()` instead
 ```
 
 It is recommended to use `createGenerator` to create your UnoCSS engine.
 
-```ts
+```ts [uno.config.ts]
 const uno = await createGenerator(userConfig) // ✅
 ```
 
@@ -34,7 +35,7 @@ Thanks to the asynchronous engine, we now support asynchronous presets, which is
 
 For example:
 
-```ts
+```ts [uno.config.ts]
 const uno = await createGenerator({
   presets: [
     async () => {
@@ -67,9 +68,9 @@ You can use the presets you need on demand, refer to the community preset [unocs
 
 Initially, this was to solve the `marker` and `selection` variant issues, but due to the current design of variants, we needed to support multiple results for variants.
 
-So, in https://github.com/unocss/unocss/pull/4291, we made improvements, and now you can return multiple results in a variant.
+So, in <https://github.com/unocss/unocss/pull/4291>, we made improvements, and now you can return multiple results in a variant.
 
-```ts
+```ts [uno.config.ts]
 const uno = await createGenerator({
   rules: [
     ['text-red', { color: 'red' }],
@@ -96,7 +97,9 @@ const uno = await createGenerator({
   ],
 })
 ```
+
 This will generate:
+
 ```css
 /* uno.generate('v-text-red') */
 .v-text-red{color:red;}
@@ -121,7 +124,7 @@ Previously, in attribute mode, just like supporting `text="hover:blue"` being pa
 
 With support for multiple variant results, we will try to parse such cases and generate the correct results.
 
-https://github.com/unocss/unocss/pull/4295
+<https://github.com/unocss/unocss/pull/4295>
 
 ### On-demand Preflights
 
@@ -159,8 +162,7 @@ But now!
 
 In version 0.65.0, we support on-demand preflights. We have added dependencies on preflights to the rules in advance, and it will only generate the preflights that are needed.
 
-```ts
-// uno.config.ts
+```ts [uno.config.ts]
 [
   presetUno({
     preflights: 'on-demand', // enable on-demand preflights
@@ -168,7 +170,7 @@ In version 0.65.0, we support on-demand preflights. We have added dependencies o
 ]
 ```
 
-https://github.com/unocss/unocss/pull/4252
+<https://github.com/unocss/unocss/pull/4252>
 
 ### Pre-parsing icon-set
 
@@ -176,7 +178,7 @@ https://github.com/unocss/unocss/pull/4252
 
 But for custom icon-sets, it would also automatically detect them before, which was unnecessary. Therefore, in version 0.65.0, we added filtering for automatically detected icon-sets to exclude user-defined icon sets.
 
-https://github.com/unocss/unocss/pull/4278
+<https://github.com/unocss/unocss/pull/4278>
 
 ### Layer CSS Order
 
@@ -195,16 +197,15 @@ In version 0.65.0, we will generate the layer sorting results at the top for you
 @layer shortcuts, default;
 ```
 
-https://github.com/unocss/unocss/pull/4299
+<https://github.com/unocss/unocss/pull/4299>
 
----------------
+---
 
 These are some of the main updates. For more updates, please check the [CHANGELOG](https://github.com/unocss/unocss/releases).
 
 Thanks to antfu for providing endless possibilities for the upgrade and transformation of the engine, and to all the contributors to UnoCSS, thank you for your contributions!
 
 Thank you for your attention to UnoCSS, have fun! 🎉
-
 
 ### One more thing !
 
