@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { useStorage } from '@vueuse/core'
 import type { ICursorStyle } from '~/types'
+import { useStorage } from '@vueuse/core'
 
 const route = useRoute()
 const pos = useStorage('dotPos', { x: 0, y: 0 })

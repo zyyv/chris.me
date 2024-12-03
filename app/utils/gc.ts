@@ -1,5 +1,5 @@
-import dayjs from 'dayjs'
 import type { Day, WeekDay, Weeks } from '~/types'
+import dayjs from 'dayjs'
 
 export interface Label {
   x: number

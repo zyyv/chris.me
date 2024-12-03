@@ -1,7 +1,7 @@
 <script lang='ts' setup>
 import type { ContributeData, Day, Weeks } from '~/types'
-import { DEFAULT_WEEKDAY_LABELS, eachDayOfInterval, formatISO, getDayjsSubtract, getMonthLabels, groupByWeeks, sleep } from '~/utils'
 import type { Label } from '~/utils'
+import { DEFAULT_WEEKDAY_LABELS, eachDayOfInterval, formatISO, getDayjsSubtract, getMonthLabels, groupByWeeks, sleep } from '~/utils'
 
 const props = withDefaults(defineProps<{
   username: string
