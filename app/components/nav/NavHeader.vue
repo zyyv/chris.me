@@ -36,7 +36,7 @@ const inHome = computed(() => route.path === '/')
 
         <a title="Twitter" href="https://twitter.com/chris_zyyv" target="_blank" icon-link i-ri:twitter-line />
         <a title="Github" href="https://github.com/zyyv" target="_blank" icon-link i-ri-github-line />
-        <DrakToggle />
+        <DrakToggle op-64 hover:op-100 />
       </div>
     </nav>
   </header>
