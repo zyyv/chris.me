@@ -18,22 +18,23 @@ useHead({
   ],
 })
 
-const { data, pending } = useFetch('/api/repos')
+const { data, status } = useFetch('/api/repos')
 </script>
 
 <template>
-  <div mxa max-w-65ch>
+  <div mxa w-65ch>
     <PageHeader title="Projects" description="List of projects that I am proud of." />
     <div my-8 space-y-8>
-      <template v-if="pending">
+      <template v-if="status === 'pending'">
         <div v-for="section in 2" :key="section">
-          <h4 mb-2 class="h-6 w-32 bg-gray-200 rounded animate-pulse" />
+          <h4 mb-3 class="h-6 w-32 bg-gray-300:72 dark:bg-gray:32 rounded animate-pulse" />
           <div grid="~ cols-1 md:cols-2 gap-4">
             <RepoSkeleton v-for="n in 4" :key="n" />
           </div>
         </div>
       </template>
-      <template v-else>
+
+      <template v-else-if="status === 'success'">
         <div v-for="(repos, key) in data" :key="key">
           <h4 mb-2>
             {{ key }}

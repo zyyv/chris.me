@@ -34,7 +34,7 @@ function calculateReadingTime(text: string): number {
         </p>
 
         <div fbc op-36>
-          <div>
+          <div flex="~ wrap gap-2">
             <span
               v-for="tag in post.tags"
               :key="tag"

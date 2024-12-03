@@ -11,7 +11,7 @@ defineProps<{
     fw-bold
     md-text-3xl
     mb4
-    mt-0
+    mt-12
   >
     {{ title }}
   </h2>
