@@ -18,17 +18,26 @@ useHead({
   ],
 })
 
-const { data, status } = useFetch('/api/repos')
+const { data, status, refresh } = useFetch('/api/repos')
 
 watchEffect(() => {
   // eslint-disable-next-line no-console
   console.log(data.value?.data)
 })
+
+function getasd() {
+  refresh()
+  // eslint-disable-next-line no-console
+  console.log('data.value?.data', data.value)
+}
 </script>
 
 <template>
   <div mxa w-65ch>
     <PageHeader title="Projects" description="List of projects that I am proud of." />
+    <button @click="getasd">
+      asd
+    </button>
     <div my-8 space-y-8>
       <template v-if="status === 'pending'">
         <div v-for="section in 2" :key="section">
