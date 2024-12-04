@@ -19,6 +19,11 @@ useHead({
 })
 
 const { data, status } = useFetch('/api/repos')
+
+watchEffect(() => {
+  // eslint-disable-next-line no-console
+  console.log(data.value?.data)
+})
 </script>
 
 <template>
@@ -35,7 +40,7 @@ const { data, status } = useFetch('/api/repos')
       </template>
 
       <template v-else-if="status === 'success'">
-        <div v-for="(repos, key) in data" :key="key">
+        <div v-for="(repos, key) in data?.list" :key="key">
           <h4 mb-2>
             {{ key }}
           </h4>
