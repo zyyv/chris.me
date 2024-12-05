@@ -1,23 +1,11 @@
 <script lang="ts" setup>
 import type { TocLink } from '@nuxt/content'
+import { proseHeadingClick } from '~/utils'
 
 defineProps<{
   links: TocLink[]
   highlights: string[]
 }>()
-
-function handleClickToc(event: MouseEvent, link: TocLink) {
-  event.preventDefault()
-  window.history.replaceState(null, '', `#${link.id}`)
-
-  const element = document.getElementById(link.id)
-  if (element) {
-    window.scrollTo({
-      top: element.offsetTop - 86, // header height + 16px
-      behavior: 'smooth',
-    })
-  }
-}
 </script>
 
 <template>
@@ -27,7 +15,7 @@ function handleClickToc(event: MouseEvent, link: TocLink) {
         :href="`#${link.id}`" class="text op-50 trans"
         :class="highlights.includes(link.id) ? 'op-100!' : ''"
         hover="underline op-100"
-        @click="handleClickToc($event, link)"
+        @click="proseHeadingClick($event, link.id)"
       >{{ link.text }}</a>
       <Toc v-if="link.children" :links="link.children" :highlights pl-4 my-1 />
     </li>

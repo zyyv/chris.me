@@ -17,14 +17,20 @@
 
   code {
     font-family: dank !important;
-    font-size: 14px;
+    font-size: 13px;
+
+    &::after, &::before {
+      content: '';
+    }
   }
 
   :not(pre) > code {
     display: inline-block;
-    border-radius: 2px;
-    line-height: 1.2;
-    background-color: rgba(var(--c-text), 0.08);
+    padding: 0 4px;
+    border-radius: 0.4em;
+    line-height: 1.5;
+    background-color: rgba(var(--c-text), 0.05);
+    border: 1px solid rgba(var(--c-text), 0.1);
   }
 
   pre {
