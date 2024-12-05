@@ -65,11 +65,10 @@ export default defineNuxtConfig({
   // },
   nitro: {
     prerender: {
-      autoSubfolderIndex: false,
-      // crawlLinks: false,
+      crawlLinks: false,
       routes: ['/'],
     },
-    // preset: 'netlify',
+    preset: 'netlify',
   },
 
   future: {
