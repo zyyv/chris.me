@@ -21,7 +21,7 @@ Hi, 各位 Unoer，你们好！
 
 `new UnoGenerator` 已弃用，将不再作为推荐的使用方式，强行使用会抛出错误 ❌
 
-```txt
+```bash
 `new UnoGenerator()` is deprecated, please use `createGenerator()` instead
 ```
 
@@ -45,7 +45,7 @@ const uno = await createGenerator(userConfig) // ✅
 
 例如：
 
-```ts
+```ts [uno.config.ts] {3-4}
 const uno = await createGenerator({
   presets: [
     async () => {
@@ -64,7 +64,7 @@ const uno = await createGenerator({
 
 如果你想集成一个多合一的预设，那么此异步预设将会是你的最佳选择。
 
-```ts
+```ts [uno.config.ts]
 {
   uno: import('@unocss/preset-uno').then(m => m.presetUno),
   attributify: import('@unocss/preset-attributify').then(m => m.presetAttributify),
@@ -80,7 +80,7 @@ const uno = await createGenerator({
 
 于是在 <https://github.com/unocss/unocss/pull/4291> 进行了改进，现在你可以在 variant 中返回多个结果。
 
-```ts
+```ts [uno.config.ts]
 const uno = await createGenerator({
   rules: [
     ['text-red', { color: 'red' }],
@@ -110,7 +110,7 @@ const uno = await createGenerator({
 
 将会生成：
 
-```css
+```css [__uno.css]
 /* uno.generate('v-text-red') */
 .v-text-red{color:red;}
 .v-text-red{color:green;}
@@ -122,7 +122,7 @@ const uno = await createGenerator({
 
 惊喜，我们发现它额外的支持了一个 UnoCSS 长久的问题，这是一个意外的收获 🎉
 
-```html
+```html [index.html]
 <!-- 在 0.65.0 之前 -->
 <div border="red:10" /> ❌
 
@@ -172,8 +172,7 @@ const uno = await createGenerator({
 
 在 0.65.0 版本中，我们支持了 on-demand preflights，我们在规则上提前添加了对 preflights 的依赖，它只会按需生成有所依赖的 preflights。
 
-```ts
-// uno.config.ts
+```ts [uno.config.ts]
 [
   presetUno({
     preflights: 'on-demand', // enable on-demand preflights
@@ -195,8 +194,7 @@ const uno = await createGenerator({
 
 如果你开启了 `outputCssLayers` 选项，生成的 css 将会按照 layer 的顺序进行排序。
 
-```ts
-// uno.config.ts
+```ts [uno.config.ts]
 {
   outputCssLayers: true,
 }

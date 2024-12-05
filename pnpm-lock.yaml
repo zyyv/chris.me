@@ -42,6 +42,9 @@ importers:
       '@iconify-json/ri':
         specifier: ^1.2.3
         version: 1.2.3
+      '@iconify-json/vscode-icons':
+        specifier: ^1.1.28
+        version: 1.1.28
       '@iconify/utils':
         specifier: ^2.1.33
         version: 2.1.33
@@ -832,6 +835,9 @@ packages:
 
   '@iconify-json/ri@1.2.3':
     resolution: {integrity: sha512-UVKofd5xkSevGd5K01pvO4NWsu+2C9spu+GxnMZUYymUiaWmpCAxtd22MFSpm6MGf0MP4GCwhDCo1Q8L8oZ9wg==}
+
+  '@iconify-json/vscode-icons@1.1.28':
+    resolution: {integrity: sha512-B2slvmqiwzBI4vrkJAuHn3wSDHJ2XNjapUVaeuPr5qXM3FY/HoCKE/gFIbTNHFRi5oLNC8c1huRLo1yITn15GQ==}
 
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -3584,9 +3590,6 @@ packages:
   micromark-util-character@2.1.1:
     resolution: {integrity: sha512-wv8tdUTJ3thSFFFJKtpYKOYiGP2+v96Hvk4Tu8KpCAsTMs6yi+nVmGh1syvSCsaxz45J6Jbw+9DD6g97+NV67Q==}
 
-  micromark-util-chunked@2.0.0:
-    resolution: {integrity: sha512-anK8SWmNphkXdaKgz5hJvGa7l00qmcaUQoMYsBwDlSKFKjc6gjGXPDw3FNL3Nbwq5L8gE+RCbGqTw49FK5Qyvg==}
-
   micromark-util-chunked@2.0.1:
     resolution: {integrity: sha512-QUNFEOPELfmvv+4xiNg2sRYeS/P84pTW0TCgP5zc9FpXetHY0ab7SxKyAQCNCc1eK0459uoLI1y5oO5Vc1dbhA==}
 
@@ -3596,14 +3599,8 @@ packages:
   micromark-util-combine-extensions@2.0.1:
     resolution: {integrity: sha512-OnAnH8Ujmy59JcyZw8JSbK9cGpdVY44NKgSM7E9Eh7DiLS2E9RNQf0dONaGDzEG9yjEl5hcqeIsj4hfRkLH/Bg==}
 
-  micromark-util-decode-numeric-character-reference@2.0.1:
-    resolution: {integrity: sha512-bmkNc7z8Wn6kgjZmVHOX3SowGmVdhYS7yBpMnuMnPzDq/6xwVA604DuOXMZTO1lvq01g+Adfa0pE2UKGlxL1XQ==}
-
   micromark-util-decode-numeric-character-reference@2.0.2:
     resolution: {integrity: sha512-ccUbYk6CwVdkmCQMyr64dXz42EfHGkPQlBj5p7YVGzq8I7CtjXZJrubAYezf7Rp+bjPseiROqe7G6foFd+lEuw==}
-
-  micromark-util-decode-string@2.0.0:
-    resolution: {integrity: sha512-r4Sc6leeUTn3P6gk20aFMj2ntPwn6qpDZqWvYmAG6NgvFTIlj4WtrAudLi65qYoaGdXYViXYw2pkmn7QnIFasA==}
 
   micromark-util-decode-string@2.0.1:
     resolution: {integrity: sha512-nDV/77Fj6eH1ynwscYTOsbK7rR//Uj0bZXBwJZRfaLEJ1iGBR6kIfNmlNqaqJf649EP0F3NWNdeJi03elllNUQ==}
@@ -3614,14 +3611,8 @@ packages:
   micromark-util-html-tag-name@2.0.0:
     resolution: {integrity: sha512-xNn4Pqkj2puRhKdKTm8t1YHC/BAjx6CEwRFXntTaRf/x16aqka6ouVoutm+QdkISTlT7e2zU7U4ZdlDLJd2Mcw==}
 
-  micromark-util-normalize-identifier@2.0.0:
-    resolution: {integrity: sha512-2xhYT0sfo85FMrUPtHcPo2rrp1lwbDEEzpx7jiH2xXJLqBuy4H0GgXk5ToU8IEwoROtXuL8ND0ttVa4rNqYK3w==}
-
   micromark-util-normalize-identifier@2.0.1:
     resolution: {integrity: sha512-sxPqmo70LyARJs0w2UclACPUUEqltCkJ6PhKdMIDuJ3gSf/Q+/GIe3WKl0Ijb/GyH9lOpUkRAO2wp0GVkLvS9Q==}
-
-  micromark-util-resolve-all@2.0.0:
-    resolution: {integrity: sha512-6KU6qO7DZ7GJkaCgwBNtplXCvGkJToU86ybBAUdavvgsCiG8lSSvYxr9MhwmQ+udpzywHsl4RpGJsYWG1pDOcA==}
 
   micromark-util-resolve-all@2.0.1:
     resolution: {integrity: sha512-VdQyxFWFT2/FGJgwQnJYbe1jjQoNTS4RjglmSjTUlpUMa95Htx9NHeYW4rGDJzbjvCsl9eLjMQwGeElsqmzcHg==}
@@ -3629,14 +3620,8 @@ packages:
   micromark-util-sanitize-uri@2.0.1:
     resolution: {integrity: sha512-9N9IomZ/YuGGZZmQec1MbgxtlgougxTodVwDzzEouPKo3qFWvymFHWcnDi2vzV1ff6kas9ucW+o3yzJK9YB1AQ==}
 
-  micromark-util-subtokenize@2.0.1:
-    resolution: {integrity: sha512-jZNtiFl/1aY73yS3UGQkutD0UbhTt68qnRpw2Pifmz5wV9h8gOVsN70v+Lq/f1rKaU/W8pxRe8y8Q9FX1AOe1Q==}
-
   micromark-util-subtokenize@2.0.3:
     resolution: {integrity: sha512-VXJJuNxYWSoYL6AJ6OQECCFGhIU2GGHMw8tahogePBrjkG8aCCas3ibkp7RnVOSTClg2is05/R7maAhF1XyQMg==}
-
-  micromark-util-symbol@2.0.0:
-    resolution: {integrity: sha512-8JZt9ElZ5kyTnO94muPxIGS8oyElRJaiJO8EzV6ZSyGQ1Is8xwl4Q45qU5UOg+bGH4AikWziz0iN4sFLWs8PGw==}
 
   micromark-util-symbol@2.0.1:
     resolution: {integrity: sha512-vs5t8Apaud9N28kgCrRUdEed4UJ+wWNvicHLPxCa9ENlYuAY31M0ETy5y1vA33YoNPDFTghEbnh6efaE8h4x0Q==}
@@ -6055,6 +6040,10 @@ snapshots:
       '@iconify/types': 2.0.0
 
   '@iconify-json/ri@1.2.3':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/vscode-icons@1.1.28':
     dependencies:
       '@iconify/types': 2.0.0
 
@@ -9431,7 +9420,7 @@ snapshots:
       devlop: 1.1.0
       mdast-util-from-markdown: 2.0.2
       mdast-util-to-markdown: 2.1.2
-      micromark-util-normalize-identifier: 2.0.0
+      micromark-util-normalize-identifier: 2.0.1
     transitivePeerDependencies:
       - supports-color
 
@@ -9499,7 +9488,7 @@ snapshots:
       mdast-util-phrasing: 4.1.0
       mdast-util-to-string: 4.0.0
       micromark-util-classify-character: 2.0.0
-      micromark-util-decode-string: 2.0.0
+      micromark-util-decode-string: 2.0.1
       unist-util-visit: 5.0.0
       zwitch: 2.0.4
 
@@ -9527,20 +9516,20 @@ snapshots:
       micromark-factory-title: 2.0.0
       micromark-factory-whitespace: 2.0.1
       micromark-util-character: 2.1.1
-      micromark-util-chunked: 2.0.0
+      micromark-util-chunked: 2.0.1
       micromark-util-classify-character: 2.0.0
       micromark-util-html-tag-name: 2.0.0
-      micromark-util-normalize-identifier: 2.0.0
-      micromark-util-resolve-all: 2.0.0
-      micromark-util-subtokenize: 2.0.1
-      micromark-util-symbol: 2.0.0
+      micromark-util-normalize-identifier: 2.0.1
+      micromark-util-resolve-all: 2.0.1
+      micromark-util-subtokenize: 2.0.3
+      micromark-util-symbol: 2.0.1
       micromark-util-types: 2.0.1
 
   micromark-extension-gfm-autolink-literal@2.1.0:
     dependencies:
       micromark-util-character: 2.1.1
       micromark-util-sanitize-uri: 2.0.1
-      micromark-util-symbol: 2.0.0
+      micromark-util-symbol: 2.0.1
       micromark-util-types: 2.0.1
 
   micromark-extension-gfm-footnote@2.1.0:
@@ -9549,18 +9538,18 @@ snapshots:
       micromark-core-commonmark: 2.0.2
       micromark-factory-space: 2.0.1
       micromark-util-character: 2.1.1
-      micromark-util-normalize-identifier: 2.0.0
+      micromark-util-normalize-identifier: 2.0.1
       micromark-util-sanitize-uri: 2.0.1
-      micromark-util-symbol: 2.0.0
+      micromark-util-symbol: 2.0.1
       micromark-util-types: 2.0.1
 
   micromark-extension-gfm-strikethrough@2.1.0:
     dependencies:
       devlop: 1.1.0
-      micromark-util-chunked: 2.0.0
+      micromark-util-chunked: 2.0.1
       micromark-util-classify-character: 2.0.0
-      micromark-util-resolve-all: 2.0.0
-      micromark-util-symbol: 2.0.0
+      micromark-util-resolve-all: 2.0.1
+      micromark-util-symbol: 2.0.1
       micromark-util-types: 2.0.1
 
   micromark-extension-gfm-table@2.1.0:
@@ -9568,7 +9557,7 @@ snapshots:
       devlop: 1.1.0
       micromark-factory-space: 2.0.1
       micromark-util-character: 2.1.1
-      micromark-util-symbol: 2.0.0
+      micromark-util-symbol: 2.0.1
       micromark-util-types: 2.0.1
 
   micromark-extension-gfm-tagfilter@2.0.0:
@@ -9580,7 +9569,7 @@ snapshots:
       devlop: 1.1.0
       micromark-factory-space: 2.0.1
       micromark-util-character: 2.1.1
-      micromark-util-symbol: 2.0.0
+      micromark-util-symbol: 2.0.1
       micromark-util-types: 2.0.1
 
   micromark-extension-gfm@3.0.0:
@@ -9597,14 +9586,14 @@ snapshots:
   micromark-factory-destination@2.0.0:
     dependencies:
       micromark-util-character: 2.1.1
-      micromark-util-symbol: 2.0.0
+      micromark-util-symbol: 2.0.1
       micromark-util-types: 2.0.1
 
   micromark-factory-label@2.0.0:
     dependencies:
       devlop: 1.1.0
       micromark-util-character: 2.1.1
-      micromark-util-symbol: 2.0.0
+      micromark-util-symbol: 2.0.1
       micromark-util-types: 2.0.1
 
   micromark-factory-space@2.0.1:
@@ -9616,24 +9605,20 @@ snapshots:
     dependencies:
       micromark-factory-space: 2.0.1
       micromark-util-character: 2.1.1
-      micromark-util-symbol: 2.0.0
+      micromark-util-symbol: 2.0.1
       micromark-util-types: 2.0.1
 
   micromark-factory-whitespace@2.0.1:
     dependencies:
       micromark-factory-space: 2.0.1
       micromark-util-character: 2.1.1
-      micromark-util-symbol: 2.0.0
+      micromark-util-symbol: 2.0.1
       micromark-util-types: 2.0.1
 
   micromark-util-character@2.1.1:
     dependencies:
       micromark-util-symbol: 2.0.1
       micromark-util-types: 2.0.1
-
-  micromark-util-chunked@2.0.0:
-    dependencies:
-      micromark-util-symbol: 2.0.0
 
   micromark-util-chunked@2.0.1:
     dependencies:
@@ -9642,51 +9627,32 @@ snapshots:
   micromark-util-classify-character@2.0.0:
     dependencies:
       micromark-util-character: 2.1.1
-      micromark-util-symbol: 2.0.0
+      micromark-util-symbol: 2.0.1
       micromark-util-types: 2.0.1
 
   micromark-util-combine-extensions@2.0.1:
     dependencies:
-      micromark-util-chunked: 2.0.0
+      micromark-util-chunked: 2.0.1
       micromark-util-types: 2.0.1
-
-  micromark-util-decode-numeric-character-reference@2.0.1:
-    dependencies:
-      micromark-util-symbol: 2.0.0
 
   micromark-util-decode-numeric-character-reference@2.0.2:
     dependencies:
-      micromark-util-symbol: 2.0.0
-
-  micromark-util-decode-string@2.0.0:
-    dependencies:
-      decode-named-character-reference: 1.0.2
-      micromark-util-character: 2.1.1
-      micromark-util-decode-numeric-character-reference: 2.0.1
-      micromark-util-symbol: 2.0.0
+      micromark-util-symbol: 2.0.1
 
   micromark-util-decode-string@2.0.1:
     dependencies:
       decode-named-character-reference: 1.0.2
       micromark-util-character: 2.1.1
-      micromark-util-decode-numeric-character-reference: 2.0.1
-      micromark-util-symbol: 2.0.0
+      micromark-util-decode-numeric-character-reference: 2.0.2
+      micromark-util-symbol: 2.0.1
 
   micromark-util-encode@2.0.1: {}
 
   micromark-util-html-tag-name@2.0.0: {}
 
-  micromark-util-normalize-identifier@2.0.0:
-    dependencies:
-      micromark-util-symbol: 2.0.0
-
   micromark-util-normalize-identifier@2.0.1:
     dependencies:
-      micromark-util-symbol: 2.0.0
-
-  micromark-util-resolve-all@2.0.0:
-    dependencies:
-      micromark-util-types: 2.0.1
+      micromark-util-symbol: 2.0.1
 
   micromark-util-resolve-all@2.0.1:
     dependencies:
@@ -9698,21 +9664,12 @@ snapshots:
       micromark-util-encode: 2.0.1
       micromark-util-symbol: 2.0.1
 
-  micromark-util-subtokenize@2.0.1:
-    dependencies:
-      devlop: 1.1.0
-      micromark-util-chunked: 2.0.0
-      micromark-util-symbol: 2.0.0
-      micromark-util-types: 2.0.1
-
   micromark-util-subtokenize@2.0.3:
     dependencies:
       devlop: 1.1.0
-      micromark-util-chunked: 2.0.0
-      micromark-util-symbol: 2.0.0
+      micromark-util-chunked: 2.0.1
+      micromark-util-symbol: 2.0.1
       micromark-util-types: 2.0.1
-
-  micromark-util-symbol@2.0.0: {}
 
   micromark-util-symbol@2.0.1: {}
 

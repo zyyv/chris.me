@@ -17,7 +17,7 @@ const generate = computed(() => props.id && (
 </script>
 
 <template>
-  <component :is="props.tag" :id="props.id" class="pr group">
+  <component :is="props.tag" :id="props.id" class="pr group text text-op-90">
     <a
       v-if="props.id && generate"
       :href="`#${props.id}`"

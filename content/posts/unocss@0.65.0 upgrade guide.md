@@ -19,13 +19,13 @@ Starting from version 0.65.0, the UnoCSS engine is asynchronous from creation to
 
 `new UnoGenerator` is deprecated and will throw an error if used ❌
 
-```text
+```bash
 `new UnoGenerator()` is deprecated, please use `createGenerator()` instead
 ```
 
 It is recommended to use `createGenerator` to create your UnoCSS engine.
 
-```ts [uno.config.ts]
+```ts
 const uno = await createGenerator(userConfig) // ✅
 ```
 
@@ -35,7 +35,7 @@ Thanks to the asynchronous engine, we now support asynchronous presets, which is
 
 For example:
 
-```ts [uno.config.ts]
+```ts [uno.config.ts] {3-4}
 const uno = await createGenerator({
   presets: [
     async () => {
@@ -54,7 +54,7 @@ const uno = await createGenerator({
 
 If you want to integrate an all-in-one preset, this asynchronous preset will be your best choice.
 
-```ts
+```ts [uno.config.ts]
 {
   uno: import('@unocss/preset-uno').then(m => m.presetUno),
   attributify: import('@unocss/preset-attributify').then(m => m.presetAttributify),
@@ -100,7 +100,7 @@ const uno = await createGenerator({
 
 This will generate:
 
-```css
+```css [__uno.css]
 /* uno.generate('v-text-red') */
 .v-text-red{color:red;}
 .v-text-red{color:green;}
@@ -112,7 +112,7 @@ Therefore, we decided to ensure that the variant has `multiPass` disabled when u
 
 Surprisingly, we found that it additionally supports a long-standing UnoCSS issue, which is an unexpected gain 🎉
 
-```html
+```html [index.html]
 <!-- Before 0.65.0 -->
 <div border="red:10" /> ❌
 
@@ -184,8 +184,7 @@ But for custom icon-sets, it would also automatically detect them before, which 
 
 If you enable the `outputCssLayers` option, the generated CSS will be sorted according to the order of the layers.
 
-```ts
-// uno.config.ts
+```ts [uno.config.ts]
 {
   outputCssLayers: true,
 }

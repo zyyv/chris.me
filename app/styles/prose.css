@@ -33,17 +33,8 @@
     border: 1px solid rgba(var(--c-text), 0.1);
   }
 
-  pre {
-    background: #eee !important;
-  }
-
   blockquote {
     border-left: 0.1em solid rgba(var(--c-text), 0.5);
   }
 }
 
-.dark :is([prose=""], .prose) {
-  pre {
-    background: #222 !important;
-  }
-}

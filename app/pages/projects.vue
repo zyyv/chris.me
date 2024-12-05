@@ -23,7 +23,7 @@ const { data, status } = useFetch('/api/repos')
 
 <template>
   <div mxa w-65ch>
-    <PageHeader title="Projects" description="List of projects that I am proud of." />
+    <PageHeader title="Projects" description="List of projects (maintained or created) that I am proud of." />
     <div my-8 space-y-8>
       <template v-if="status === 'pending'">
         <div v-for="section in 2" :key="section">
