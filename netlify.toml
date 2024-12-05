@@ -9,3 +9,8 @@ NODE_VERSION = "20"
 from = "/*"
 to = "/index.html"
 status = 200
+
+[[redirects]]
+from = "/api/*"
+to = "/api/:splat"
+status = 200
