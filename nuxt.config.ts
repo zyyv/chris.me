@@ -67,7 +67,7 @@ export default defineNuxtConfig({
     prerender: {
       autoSubfolderIndex: false,
       // crawlLinks: false,
-      // routes: ['/'],
+      routes: ['/'],
     },
     // preset: 'netlify',
   },
