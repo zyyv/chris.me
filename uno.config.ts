@@ -142,6 +142,7 @@ export default defineUsefulConfig<UsefulTheme>({
       vue: '#64b687',
       nuxt: '#64d98a',
       bilibili: '#ed7099',
+      bluesky: '#1185fe',
     },
   },
   safelist: [
