@@ -69,9 +69,11 @@ const icon = computed(() => {
 </script>
 
 <template>
-  <button class="!outline-none" @click="toggleDark">
-    <i :class="icon" />
-  </button>
+  <ClientOnly>
+    <button class="!outline-none op-64 hover:op-100" @click="toggleDark">
+      <i :class="icon" size-5.5 />
+    </button>
+  </ClientOnly>
 </template>
 
 <style>
