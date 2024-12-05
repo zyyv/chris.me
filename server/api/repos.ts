@@ -21,10 +21,7 @@ export default defineEventHandler(async () => {
     'Me': filterRepos(publicAndNotForkRepos, 'me'),
   }
 
-  return {
-    list: Object.fromEntries(Object.entries(repoGroups).filter(([_, repos]) => repos.length > 0)),
-    data,
-  }
+  return Object.fromEntries(Object.entries(repoGroups).filter(([_, repos]) => repos.length > 0))
 })
 
 function filterRepos(repos: Repo[], key: string) {
