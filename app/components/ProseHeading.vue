@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import { computed, useRuntimeConfig } from '#imports'
-import { proseHeadingClick } from '~/utils'
-
 // @unocss-skip-start
 const props = defineProps<{
   id?: string
