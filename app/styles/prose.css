@@ -24,6 +24,10 @@
     }
   }
 
+  strong {
+    color: rgba(var(--c-text), 0.8);
+  }
+
   :not(pre) > code {
     display: inline-block;
     padding: 0 4px;
