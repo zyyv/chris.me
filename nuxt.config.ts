@@ -68,7 +68,6 @@ export default defineNuxtConfig({
       crawlLinks: false,
       routes: ['/'],
     },
-    preset: 'netlify',
   },
 
   future: {
