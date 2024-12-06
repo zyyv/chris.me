@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import { computed, useRuntimeConfig } from '#imports'
-import { proseHeadingClick } from '~/utils'
-
 // @unocss-skip-start
 const props = defineProps<{
   id?: string
@@ -17,7 +14,7 @@ const generate = computed(() => props.id && (
 </script>
 
 <template>
-  <component :is="props.tag" :id="props.id" class="pr group text text-op-90">
+  <component :is="tag" :id class="pr group text text-op-90">
     <a
       v-if="props.id && generate"
       :href="`#${props.id}`"
