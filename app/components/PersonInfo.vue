@@ -20,21 +20,21 @@ const { data: user } = await useFetch('/api/user')
       </p>
       <ul my-6 space-y-2>
         <li>
-          <i i-fluent-emoji-sports-medal mr-1 />
+          <i i-fluent-emoji:sports-medal mr-1 />
           Team member of:
           <IconsUnoCSS />
           ,
           <IconsElk />
         </li>
         <li>
-          <i i-fluent-emoji-sparkles mr-1 />
+          <i i-fluent-emoji:sparkles mr-1 />
           Creator of:
           <IconsOnuUI />
           ,
           <IconsUnPreset />
         </li>
         <li>
-          <i i-fluent-emoji-party-popper mr-1 />
+          <i i-fluent-emoji:party-popper mr-1 />
           Contributor of:
           <IconsVite />
           、
@@ -43,10 +43,13 @@ const { data: user } = await useFetch('/api/user')
           <IconsNuxt /> & etc.
         </li>
         <li>
-          <i i-fluent-emoji-balloon mr-1 />
+          <i i-fluent-emoji:bubbles mr-1 />
           Find me on:
           <IconsBilibili />
-          & etc.
+          、
+          <IconsBlueSky />
+          、
+          <IconsX /> & etc.
         </li>
       </ul>
       <p>

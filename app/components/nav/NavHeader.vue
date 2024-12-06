@@ -8,8 +8,8 @@ interface Menu {
 const routes = reactive<Menu[]>([
   { path: '/posts', icon: 'i-custom-post' },
   { path: '/projects', icon: 'i-custom-package' },
-  { path: '/talks', icon: 'i-custom-ppt' },
-  { path: '/images', icon: 'i-ri-image-line' },
+  // { path: '/talks', icon: 'i-custom-ppt' },
+  // { path: '/images', icon: 'i-ri-image-line' },
 ])
 
 const route = useRoute()
@@ -33,10 +33,8 @@ const inHome = computed(() => route.path === '/')
           <span v-if="_route.text" icon-text>{{ _route.text }}</span>
           <i v-if="_route.icon" icon-btn :class="_route.icon" />
         </NuxtLink>
-
-        <a title="Twitter" href="https://twitter.com/chris_zyyv" target="_blank" icon-link i-ri:twitter-line />
-        <a title="Github" href="https://github.com/zyyv" target="_blank" icon-link i-ri-github-line />
-        <DrakToggle op-64 hover:op-100 />
+        <a title="Github" href="https://github.com/zyyv" target="_blank" icon-link i-custom:github />
+        <DrakToggle />
       </div>
     </nav>
   </header>
