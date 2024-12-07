@@ -62,6 +62,11 @@
     "unocss": "^0.65.0",
     "unocss-preset-useful": "^0.9.0"
   },
+  "pnpm": {
+    "patchedDependencies": {
+      "@nuxt/content": "patches/@nuxt__content.patch"
+    }
+  },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged"
   },

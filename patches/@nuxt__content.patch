@@ -1,0 +1,29 @@
+diff --git a/dist/module.mjs b/dist/module.mjs
+index 9d745db0a0500a1d63d8277badbfcfdf5853231a..d72e4584ce8f894287ff1f8a8c36e16413e413f8 100644
+--- a/dist/module.mjs
++++ b/dist/module.mjs
+@@ -2115,7 +2115,9 @@ async function processCollectionItems(nuxt, collections, options) {
+   const uniqueTags = [
+     ...Object.values(options.renderer.alias || {}),
+     ...new Set(tags)
+-  ].filter((tag) => !htmlTags.includes(kebabCase(tag))).map((tag) => pascalCase(tag));
++  ]
++  .map(tag => getMappedTag(tag, options.renderer.alias))
++  .filter((tag) => !htmlTags.includes(kebabCase(tag))).map((tag) => pascalCase(tag));
+   const endTime = performance.now();
+   logger.success(`Processed ${collections.length} collections and ${filesCount} files in ${(endTime - startTime).toFixed(2)}ms (${cachedFilesCount} cached, ${parsedFilesCount} parsed)`);
+   return {
+@@ -2125,4 +2127,13 @@ async function processCollectionItems(nuxt, collections, options) {
+   };
+ }
+ 
++const proseTags = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'a', 'strong', 'em', 's', 'code', 'span', 'blockquote', 'pre', 'hr', 'img', 'ul', 'ol', 'li', 'table', 'thead', 'tbody', 'tr', 'th', 'td']
++function getMappedTag(tag, additionalTags) {
++  additionalTags ||= {}
++  if (proseTags.includes(tag)) {
++    return `prose-${tag}`
++  }
++  return additionalTags[tag] || tag
++}
++
+ export { module as default, defineCollection, metaSchema, pageSchema, z };
