@@ -28,7 +28,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@nuxt/content": "https://pkg.pr.new/@nuxt/content@d77177e",
+    "@nuxt/content": "3.0.0-alpha.8",
     "blurhash": "^2.0.5",
     "dayjs": "^1.11.13",
     "unsplash-js": "^7.0.19",

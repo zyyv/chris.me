@@ -10,3 +10,4 @@ mock
 dev-dist
 .eslintcache
 .data
+.netlify
